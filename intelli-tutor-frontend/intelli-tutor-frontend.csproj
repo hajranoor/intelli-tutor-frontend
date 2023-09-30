@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,13 +53,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="BackendApi\CourseApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
-    <Compile Include="Form1.cs">
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +77,18 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentSide\availableCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\availableCourses.Designer.cs">
+      <DependentUpon>availableCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentSide\myCourses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,13 +100,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-
+    <EmbeddedResource Include="StudentSide\availableCourses.resx">
+      <DependentUpon>availableCourses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,16 +120,10 @@
       <DependentUpon>myCourses.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -112,42 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\purple-gradient-simple-lock-icon-with-place-vector-29001953-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download-removebg-preview %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\contact.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\contacts.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\purple-gradient-simple-lock-icon-with-place-vector-29001953-removebg-preview1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\passord.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Login.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Login1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Loginimg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Register.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Register1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
