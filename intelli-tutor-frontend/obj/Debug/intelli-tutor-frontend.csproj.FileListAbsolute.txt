@@ -13,3 +13,4 @@ D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\inte
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.availableCourses.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.dll
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.xml
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.myCourses.resources

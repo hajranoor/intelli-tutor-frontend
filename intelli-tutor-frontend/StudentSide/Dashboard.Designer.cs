@@ -111,7 +111,7 @@ namespace intelli_tutor_frontend.StudentSide
             this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
             this.dashboardToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(164, 41);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             // 
             // availableCoursesToolStripMenuItem
@@ -130,6 +130,7 @@ namespace intelli_tutor_frontend.StudentSide
             this.myCoursesToolStripMenuItem.Name = "myCoursesToolStripMenuItem";
             this.myCoursesToolStripMenuItem.Size = new System.Drawing.Size(174, 41);
             this.myCoursesToolStripMenuItem.Text = "My Courses";
+            this.myCoursesToolStripMenuItem.Click += new System.EventHandler(this.myCoursesToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -237,6 +238,7 @@ namespace intelli_tutor_frontend.StudentSide
         }
 
         public virtual void dashboardData() { 
+
         }
 
         #endregion

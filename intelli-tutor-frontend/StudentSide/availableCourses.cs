@@ -19,6 +19,8 @@ namespace intelli_tutor_frontend.StudentSide
     public partial class availableCourses : Dashboard
     {
         CourseApi courseApi = new CourseApi();
+        EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
+
         List<coursesModel> availableCoursesList;
         public availableCourses()
         {
@@ -95,13 +97,19 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.Font = new Font("Segoe UI Semibold", 12F);
                 enrollButton.BackColor = Color.DarkSlateBlue;
                 enrollButton.ForeColor = Color.White;
-                enrollButton.Click += (sender, e) =>
+                enrollButton.Click += async (sender, e) =>
                 {
-                    DialogResult result = MessageBox.Show("Do you want to enroll in this course?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Do you want to enroll in this course " + item.course_title + " ?" , "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
-                        // check if already enrolled or not
+                        enrolledCourses enrolledCourses = new enrolledCourses();
+                        enrolledCourses.courseId = item.course_id;
+                        enrolledCourses.studentId = 1;
+                        enrolledCourses.grade = "";
+                        string data = await  enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
+
+                        MessageBox.Show(data);
                     }
                     else
                     {
@@ -114,7 +122,6 @@ namespace intelli_tutor_frontend.StudentSide
                 outerPanel.Controls.Add(cardPanel);
 
                 flowLayoutPanel1.Controls.Add(outerPanel);
-
             }
 
         }
