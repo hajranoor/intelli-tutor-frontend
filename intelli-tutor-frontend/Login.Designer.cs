@@ -238,7 +238,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(28)))), ((int)(((byte)(79)))));
-            this.label2.Location = new System.Drawing.Point(481, 194);
+            this.label2.Location = new System.Drawing.Point(527, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(183, 21);
             this.label2.TabIndex = 7;
