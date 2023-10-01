@@ -54,6 +54,14 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.3.1.1\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -81,6 +89,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,15 +99,25 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="compilerInterface.cs" />
     <Compile Include="cSharpClass.cs" />
     <Compile Include="Form1.cs">
+    <Compile Include="BackendApi\CourseApi.cs" />
+    <Compile Include="BackendApi\EnrolledCourseApi.cs" />
+    <Compile Include="BackendApi\LabApi.cs" />
+    <Compile Include="BackendApi\problemApi.cs" />
+    <Compile Include="BackendApi\WeekApi.cs" />
+    <Compile Include="CustomComponent\NoCaretRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="javaClass.cs" />
     <Compile Include="Program.cs" />
@@ -110,6 +129,56 @@
     <Compile Include="QuestionForm.Designer.cs">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
+    <Compile Include="Model\CoursesModel.cs" />
+    <Compile Include="Model\enrolledCourses.cs" />
+    <Compile Include="Model\labModel.cs" />
+    <Compile Include="Model\problemModel.cs" />
+    <Compile Include="Model\weekModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\availableCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\availableCourses.Designer.cs">
+      <DependentUpon>availableCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\CourseContent.cs" />
+    <Compile Include="StudentSide\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\Labs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\Labs.Designer.cs">
+      <DependentUpon>Labs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\LabsContent.cs" />
+    <Compile Include="StudentSide\myCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\myCourses.Designer.cs">
+      <DependentUpon>myCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\problems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\problems.Designer.cs">
+      <DependentUpon>problems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\ProblemsContent.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -121,6 +190,23 @@
     </Compile>
     <EmbeddedResource Include="QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\availableCourses.resx">
+      <DependentUpon>availableCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\Labs.resx">
+      <DependentUpon>Labs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\myCourses.resx">
+      <DependentUpon>myCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\problems.resx">
+      <DependentUpon>problems.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -139,6 +225,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <Content Include="labimage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
