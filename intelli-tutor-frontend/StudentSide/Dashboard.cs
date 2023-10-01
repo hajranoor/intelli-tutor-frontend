@@ -57,5 +57,12 @@ namespace intelli_tutor_frontend.StudentSide
         {
 
         }
+
+        private void myCoursesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Labs labs = new Labs();
+            labs.Show();
+        }
     }
 }

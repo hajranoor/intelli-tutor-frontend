@@ -57,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendApi\CourseApi.cs" />
+    <Compile Include="BackendApi\LabApi.cs" />
+    <Compile Include="BackendApi\problemApi.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +66,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\CoursesModel.cs" />
+    <Compile Include="Model\labModel.cs" />
+    <Compile Include="Model\problemModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentSide\availableCourses.cs">
@@ -77,6 +81,18 @@
     </Compile>
     <Compile Include="StudentSide\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\Labs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\Labs.Designer.cs">
+      <DependentUpon>Labs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\problems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\problems.Designer.cs">
+      <DependentUpon>problems.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\Labs.resx">
+      <DependentUpon>Labs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\problems.resx">
+      <DependentUpon>problems.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
