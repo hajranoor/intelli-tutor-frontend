@@ -46,6 +46,8 @@ namespace intelli_tutor_frontend.StudentSide
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
                 //outerPanel.BackColor = Color.Lavender;
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
+                
+
 
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
                 cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -55,6 +57,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Margin = new Padding(20, 20, 20, 20);
                 cardPanel.BackColor = Color.Lavender;
                 cardPanel.AutoScroll = true;
+
 
                 PictureBox pictureBox = new PictureBox();
                 //pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
@@ -103,7 +106,8 @@ namespace intelli_tutor_frontend.StudentSide
                 {
                     
                         flowLayoutPanel1.Controls.Clear();
-                        CourseContent(item);
+                    CourseContent c = new CourseContent();
+                    c.CourseContentSjow(item, flowLayoutPanel1);
 
                 };
 
@@ -124,51 +128,59 @@ namespace intelli_tutor_frontend.StudentSide
             
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel1.AutoScroll = false;
-            flowLayoutPanel1.Margin = new Padding(10, 10, 10, 10);
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.BackColor = Color.BurlyWood;
-            mainPanel.Height = flowLayoutPanel1.Height;
+            mainPanel.Padding = new Padding(30, 30, 30, 30);
             mainPanel.Width = flowLayoutPanel1.Width;
-            mainPanel.Margin = flowLayoutPanel1.Margin;
-            mainPanel.Padding = flowLayoutPanel1.Padding;
-
+            mainPanel.Height = flowLayoutPanel1.Height;
+            mainPanel.AutoScroll = true;
+            
+            // Add mainPanel to flowLayoutPanel1
             flowLayoutPanel1.Controls.Add(mainPanel);
-            //mainPanel.Location = flowLayoutPanel1.Location;
 
-            //mainPanel.Size = flowLayoutPanel1.Size;
-            //mainPanel.AutoScroll = true;
-            //mainPanel.Anchor = flowLayoutPanel1.Anchor;
-            //mainPanel.Margin = flowLayoutPanel1.Margin;
-            //mainPanel.Padding = flowLayoutPanel1.Padding;
+            // Handle the SizeChanged event of flowLayoutPanel1
+            flowLayoutPanel1.SizeChanged += (sender, e) =>
+            {
+                // Adjust the size of mainPanel to match the size of flowLayoutPanel1
+                mainPanel.Size = new Size(flowLayoutPanel1.Width - 100, flowLayoutPanel1.Height);
 
-            //mainPanel.BackColor = Color.Aquamarine;
-            //mainPanel.Dock = DockStyle.Fill;
+                // Optionally, adjust the size of other controls within mainPanel
+                // based on the new size of mainPanel.
+            };
 
-            //MessageBox.Show(mainPanel.Width.ToString() + " - " + mainPanel.Height.ToString());
 
             Label courseTitle = new Label();
-            courseTitle.Text = myCourseData.course_title;
+            courseTitle.Text = myCourseData.course_title + "iuwehwuheuhsdkjhaskjdn,msa dkjnsajkdaskjdkjsadkjsa   asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav";
             courseTitle.Dock = DockStyle.Fill;
             courseTitle.Font = new Font("Segoe UI Semibold", 16F);
             courseTitle.Height = 60;
+            courseTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.Controls.Add(courseTitle, 0, 1);
 
-
-
-            Label CourseDescription = new Label();
+            RichTextBox CourseDescription = new RichTextBox();
             CourseDescription.Text = myCourseData.description;
-            CourseDescription.Dock = DockStyle.Fill;
             CourseDescription.Font = new Font("Segoe UI Semibold", 10F);
-            CourseDescription.Height = 300;
-            mainPanel.Controls.Add(CourseDescription, 0, 2);
+            CourseDescription.Dock = DockStyle.Fill;
+            CourseDescription.ReadOnly = true;
+
+            Panel descriptionPanel = new Panel();
+            descriptionPanel.Dock = DockStyle.Fill;
+            descriptionPanel.AutoScroll = true;
+            descriptionPanel.BackColor = Color.CadetBlue;
+            descriptionPanel.Height = 500;
+            descriptionPanel.Controls.Add(CourseDescription);
+            descriptionPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+            mainPanel.Controls.Add(descriptionPanel, 0, 2);
 
 
             TableLayoutPanel weekPanel = new TableLayoutPanel();
             weekPanel.AutoScroll = true;
-            weekPanel.Anchor = AnchorStyles.Left;
+            weekPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             weekPanel.Height = 300;
             weekPanel.Dock = DockStyle.Bottom;
             weekPanel.BackColor = Color.Cyan;
-            weekPanel.HorizontalScroll.Enabled = true; 
+            weekPanel.HorizontalScroll.Enabled = true;
             weekPanel.HorizontalScroll.Visible = true;
             mainPanel.Controls.Add(weekPanel, 0, 3);
             int counter = 0;
@@ -181,11 +193,11 @@ namespace intelli_tutor_frontend.StudentSide
                 outerPanel.Width = 200;
                 outerPanel.Height = 200;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
-                //outerPanel.BackColor = Color.Lavender;
+                ////outerPanel.BackColor = Color.Lavender;
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
 
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
-                //cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                ////cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
                 cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
                 cardPanel.Width = 200;
                 cardPanel.Height = 200;
@@ -206,9 +218,6 @@ namespace intelli_tutor_frontend.StudentSide
 
                 weekPanel.Controls.Add(outerPanel, counter, 0);
             }
-
-            MessageBox.Show(weeksList.Count.ToString());
-
         }
     }
 }
