@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace intelli_tutor_frontend.BackendApi
 {
@@ -21,6 +22,7 @@ namespace intelli_tutor_frontend.BackendApi
                 using (var response = await client.GetAsync(apiUrl))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
+
 
                     labList = JsonConvert.DeserializeObject<List<labModel>>(apiResponse);
                     Console.WriteLine(labList);

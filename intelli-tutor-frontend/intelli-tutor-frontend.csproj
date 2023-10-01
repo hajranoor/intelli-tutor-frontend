@@ -57,10 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendApi\CourseApi.cs" />
+    <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\LabApi.cs" />
     <Compile Include="BackendApi\problemApi.cs" />
-    <Compile Include="Form1.cs">
-    <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
     <Compile Include="CustomComponent\NoCaretRichTextBox.cs">
       <SubType>Component</SubType>
@@ -73,9 +72,9 @@
     </Compile>
     <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
     <Compile Include="Model\CoursesModel.cs" />
+    <Compile Include="Model\enrolledCourses.cs" />
     <Compile Include="Model\labModel.cs" />
     <Compile Include="Model\problemModel.cs" />
-    <Compile Include="Model\enrolledCourses.cs" />
     <Compile Include="Model\weekModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,18 +103,20 @@
     <Compile Include="StudentSide\Labs.Designer.cs">
       <DependentUpon>Labs.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide\problems.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentSide\problems.Designer.cs">
-      <DependentUpon>problems.cs</DependentUpon>
-    </Compile>
+    <Compile Include="StudentSide\LabsContent.cs" />
     <Compile Include="StudentSide\myCourses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentSide\myCourses.Designer.cs">
       <DependentUpon>myCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentSide\problems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\problems.Designer.cs">
+      <DependentUpon>problems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSide\ProblemsContent.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,10 +141,11 @@
     <EmbeddedResource Include="StudentSide\Labs.resx">
       <DependentUpon>Labs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide\problems.resx">
-      <DependentUpon>problems.cs</DependentUpon>
     <EmbeddedResource Include="StudentSide\myCourses.resx">
       <DependentUpon>myCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSide\problems.resx">
+      <DependentUpon>problems.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -158,6 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="labimage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

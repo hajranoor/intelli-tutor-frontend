@@ -24,7 +24,7 @@ namespace intelli_tutor_frontend.StudentSide
             flowLayoutPanel1.AutoScroll = false;
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.BackColor = Color.Lavender;
-            mainPanel.Width = flowLayoutPanel1.Width - 10;
+            mainPanel.Width = flowLayoutPanel1.Width;
             mainPanel.Height = flowLayoutPanel1.Height;
             mainPanel.AutoScroll = true;
 
@@ -33,7 +33,8 @@ namespace intelli_tutor_frontend.StudentSide
 
             flowLayoutPanel1.SizeChanged += (sender, e) =>
             {
-                mainPanel.Size = new Size(flowLayoutPanel1.Width - 10, flowLayoutPanel1.Height);
+                mainPanel.Size = new Size(flowLayoutPanel1.Width, flowLayoutPanel1.Height);
+                flowLayoutPanel1.Margin = new Padding(3, 3, 3, 3);
             };
 
 
@@ -106,7 +107,26 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.BackColor = Color.DarkSlateBlue;
                 //cardPanel.AutoScroll = true;
 
+                Button enrollButton = new Button();
 
+                enrollButton.Text = "Week " + counter;
+                enrollButton.Dock = DockStyle.Fill;
+                enrollButton.Width = 70;
+                enrollButton.Height = 30;
+                enrollButton.TextAlign = ContentAlignment.MiddleCenter;
+                //enrollButton.Padding = new Padding(5, 15, 5, 15);
+                enrollButton.Font = new Font("Segoe UI Semibold", 16F);
+                enrollButton.BackColor = Color.DarkSlateBlue;
+                enrollButton.ForeColor = Color.White;
+                enrollButton.FlatStyle = FlatStyle.Flat;
+                //enrollButton.Click += async (sender, e) =>
+                //{
+
+                    //flowLayoutPanel1.Controls.Clear();
+                    //CourseContent c = new CourseContent();
+                    //c.CourseContentSjow(item, flowLayoutPanel1);
+
+                //};
 
                 Label titleLabel = new Label();
                 titleLabel.Text = "Week " + counter;
@@ -115,8 +135,18 @@ namespace intelli_tutor_frontend.StudentSide
                 titleLabel.Font = new Font("Segoe UI Semibold", 16F);
                 titleLabel.Height = 30;
                 titleLabel.ForeColor = Color.White;
-                cardPanel.Controls.Add(titleLabel, 0, 1);
+
+                cardPanel.Controls.Add(enrollButton, 0, 1);
                 outerPanel.Controls.Add(cardPanel);
+
+                enrollButton.Click += async (sender, e) =>
+                {
+
+                    flowLayoutPanel1.Controls.Clear();
+                    LabsContent l = new LabsContent();
+                    l.LabContentShow(item.week_id, flowLayoutPanel1);
+
+                };
 
                 weekPanel.Controls.Add(outerPanel, counter, 0);
             }

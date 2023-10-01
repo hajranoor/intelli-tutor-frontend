@@ -44,5 +44,7 @@ C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\in
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.exe
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.pdb
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\intelli-tutor-frontend.pdb
-D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Form1.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Register.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Labs.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.problems.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Form1.resources
