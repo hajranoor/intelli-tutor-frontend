@@ -113,6 +113,7 @@ namespace intelli_tutor_frontend.StudentSide
             this.dashboardToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(216, 52);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             // 
             // availableCoursesToolStripMenuItem
@@ -243,6 +244,7 @@ namespace intelli_tutor_frontend.StudentSide
         }
 
         public virtual void dashboardData() { 
+
         }
 
         #endregion

@@ -60,22 +60,38 @@
     <Compile Include="BackendApi\LabApi.cs" />
     <Compile Include="BackendApi\problemApi.cs" />
     <Compile Include="Form1.cs">
+    <Compile Include="BackendApi\EnrolledCourseApi.cs" />
+    <Compile Include="BackendApi\WeekApi.cs" />
+    <Compile Include="CustomComponent\NoCaretRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
     <Compile Include="Model\CoursesModel.cs" />
     <Compile Include="Model\labModel.cs" />
     <Compile Include="Model\problemModel.cs" />
+    <Compile Include="Model\enrolledCourses.cs" />
+    <Compile Include="Model\weekModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentSide\availableCourses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentSide\availableCourses.Designer.cs">
       <DependentUpon>availableCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentSide\CourseContent.cs" />
     <Compile Include="StudentSide\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +110,15 @@
     <Compile Include="StudentSide\problems.Designer.cs">
       <DependentUpon>problems.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentSide\myCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\myCourses.Designer.cs">
+      <DependentUpon>myCourses.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -103,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\availableCourses.resx">
       <DependentUpon>availableCourses.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +142,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\problems.resx">
       <DependentUpon>problems.cs</DependentUpon>
+    <EmbeddedResource Include="StudentSide\myCourses.resx">
+      <DependentUpon>myCourses.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

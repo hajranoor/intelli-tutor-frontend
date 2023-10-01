@@ -1,6 +1,6 @@
 ﻿namespace intelli_tutor_frontend.StudentSide
 {
-    partial class availableCourses
+    partial class myCourses
     {
         /// <summary>
         /// Required designer variable.
@@ -39,27 +39,22 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(410, 110);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(940, 630);
-            this.flowLayoutPanel1.TabIndex = 5;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(890, 630);
+            this.flowLayoutPanel1.TabIndex = 6;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // availableCourses
+            // myCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 746);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "availableCourses";
-            this.Text = "availableCourses";
-            this.Load += new System.EventHandler(this.availableCourses_Load);
+            this.Name = "myCourses";
+            this.Text = "myCourses";
+            this.Load += new System.EventHandler(this.myCourses_Load);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.ResumeLayout(false);
-
-        }
-
-        public override void dashboardData()
-        {
 
         }
 
