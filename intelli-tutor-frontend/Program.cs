@@ -19,7 +19,8 @@ namespace intelli_tutor_frontend
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new QuestionForm());
             problemModel p = new problemModel();
-            Application.Run(new QuestionForm(p));
+            //Application.Run(new QuestionForm(p));
+            Application.Run(new StudentSide.Dashboard());
         }
     }
 }
