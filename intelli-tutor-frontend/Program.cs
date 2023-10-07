@@ -1,4 +1,5 @@
-﻿using System;
+﻿using intelli_tutor_frontend.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,8 +17,9 @@ namespace intelli_tutor_frontend
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuestionForm());
-            Application.Run(new StudentSide.Dashboard());
+            //Application.Run(new QuestionForm());
+            problemModel p = new problemModel();
+            Application.Run(new QuestionForm(p));
         }
     }
 }

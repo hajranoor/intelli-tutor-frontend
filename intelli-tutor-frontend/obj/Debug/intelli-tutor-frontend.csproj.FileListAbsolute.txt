@@ -160,3 +160,13 @@ D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\inte
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Labs.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.problems.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Form1.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Form1.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Register.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.availableCourses.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Dashboard.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Labs.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.myCourses.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.problems.resources
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\FontAwesome.Sharp.dll
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.dll
+D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.xml

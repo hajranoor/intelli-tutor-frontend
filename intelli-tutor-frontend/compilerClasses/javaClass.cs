@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,7 +41,7 @@ namespace intelli_tutor_frontend
 
         }
 
-        public string CompileCode()
+        public string CompileCode(string code)
         {
             Process compileProcess = new Process();
             compileProcess.StartInfo.FileName = javaCompilerPath;
@@ -98,5 +99,75 @@ namespace intelli_tutor_frontend
 
 
         }
+
+        public string compileType1(string startercode, string codeText, string trigger)
+        {
+
+            string textAppend = "haahahaha";
+            string TextAppend2 = "lalalalala";
+            try
+            {
+                File.WriteAllText(javaFilePath, startercode);
+                //File.AppendAllText(InputFilePath, TextAppend2);
+                Console.WriteLine("text appended successfully");
+            }
+
+            catch (IOException e)
+            {
+                Console.WriteLine("An error occurred while appending text: " + e.Message);
+
+
+            }
+
+            appendInFile(trigger, codeText);
+            string returnval = CompileCode("hahaah");
+            Console.WriteLine("this is return value");
+            Console.WriteLine(returnval);
+            return returnval;
+        }
+
+        public void appendInFile(string trigger, string codeToBeInserted)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(javaFilePath);
+                string pattern = @"^\s*int\s+n\s*=\s*5\s*;";
+                Regex regex = new Regex(trigger);
+
+
+
+
+                //int index = Array.IndexOf(lines, trigger);
+                int index = Array.FindIndex(lines, line => regex.IsMatch(line));
+
+
+                if (index != -1)
+                {
+                    lines[index] += Environment.NewLine + codeToBeInserted;
+
+                    File.WriteAllLines(javaFilePath, lines);
+                    //File.AppendAllText(javaFilePath, "hahaahha");
+
+
+                    Console.WriteLine("Code appended successfully.");
+
+                }
+
+                else
+                {
+                    Console.WriteLine($"{trigger} not found");
+                }
+            }
+
+            catch (IOException e)
+            {
+                Console.WriteLine("An error occurred while appending code: " + e.Message);
+            }
+
+
+
+        }
+
+
     }
 }

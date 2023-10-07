@@ -1,4 +1,4 @@
-﻿namespace intelli_tutor_frontend.Model
+﻿    namespace intelli_tutor_frontend.Model
 
 {
     public class enrolledCourses

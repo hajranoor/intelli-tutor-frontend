@@ -1,15 +1,19 @@
-using System;
-using System.Diagnostics;
+using System; using System.Diagnostics;
+ using System.IO;
 
-namespace tast_folder {
-    class Program 
+
+class Program
+{
+    static void Main()
     {
-        static void Main() {
-            Console.WriteLine("hello world")
-            Console.WriteLine("this code is working");
-            
+        int factorial = CalculateFactorial();
 
-    } 
+        Console.WriteLine($"factorial is {factorial}");
+    }
 
+    static int CalculateFactorial()
+    {
+        int n = 5; 
+return n+n;
     }
 }

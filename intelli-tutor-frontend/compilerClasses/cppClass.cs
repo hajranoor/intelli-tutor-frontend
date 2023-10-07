@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace intelli_tutor_frontend
+namespace intelli_tutor_frontend.compilerClasses
 {
-    internal interface compilerInterface
+    internal class cppClass
     {
-        string CompileCode();
+        public cppClass() { }
     }
 }

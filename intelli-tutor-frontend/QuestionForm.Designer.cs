@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.problemName = new System.Windows.Forms.TextBox();
             this.questionBox = new System.Windows.Forms.TextBox();
             this.compilerComboBox1 = new System.Windows.Forms.ComboBox();
             this.codeBox = new System.Windows.Forms.TextBox();
@@ -36,16 +36,19 @@
             this.compileButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // problemName
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 80);
-            this.textBox1.TabIndex = 0;
+            this.problemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.problemName.Location = new System.Drawing.Point(12, 2);
+            this.problemName.Multiline = true;
+            this.problemName.Name = "problemName";
+            this.problemName.Size = new System.Drawing.Size(178, 80);
+            this.problemName.TabIndex = 0;
+            this.problemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // questionBox
             // 
+            this.questionBox.Enabled = false;
             this.questionBox.Location = new System.Drawing.Point(12, 88);
             this.questionBox.Multiline = true;
             this.questionBox.Name = "questionBox";
@@ -96,7 +99,7 @@
             this.Controls.Add(this.codeBox);
             this.Controls.Add(this.compilerComboBox1);
             this.Controls.Add(this.questionBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.problemName);
             this.Name = "QuestionForm";
             this.Text = "QuestionForm";
             this.Load += new System.EventHandler(this.QuestionForm_Load);
@@ -107,7 +110,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox problemName;
         private System.Windows.Forms.TextBox questionBox;
         private System.Windows.Forms.ComboBox compilerComboBox1;
         private System.Windows.Forms.TextBox codeBox;

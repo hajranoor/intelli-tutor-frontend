@@ -6,25 +6,23 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Windows.Documents;
 
 namespace intelli_tutor_frontend.BackendApi
 {
-    internal class CourseApi
+    internal class TestCasesApi
     {
-        public async Task<List<coursesModel>> getAllCourseData()
+        public async Task<List<testCaseModel>> getAllTestCasesData(int problemId)
         {
-            List<coursesModel> courseList = new List<coursesModel>();
+            List<testCaseModel> testCaseList = new List<testCaseModel>();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:7008/Courses"))
+                using (var response = await client.GetAsync("http://localhost:7008/testcases/" + problemId))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    courseList = JsonConvert.DeserializeObject<List<coursesModel>>(apiResponse);
+                    testCaseList = JsonConvert.DeserializeObject<List<testCaseModel>>(apiResponse);
                 }
             }
-            return courseList;
+            return testCaseList;
         }
-
     }
 }

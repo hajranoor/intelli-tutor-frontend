@@ -18,28 +18,37 @@ namespace intelli_tutor_frontend.StudentSide
         public async void ProblemContentShow(int labId, FlowLayoutPanel flowLayoutPanel1)
         {
             problemList = await ProblemApi.getAllproblemData(labId);
+            flowLayoutPanel1.AutoScroll = true;
 
             int count = 1;
             foreach (var item in problemList)
             {
-
+               
                 Panel outerPanel = new Panel();
                 outerPanel.Width = 1300;
                 outerPanel.Height = 100;
                 outerPanel.Margin = new Padding(20, 0, 20, 20);
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
 
+                outerPanel.Width = flowLayoutPanel1.Width-60;
+
+
+
 
 
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
                 cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
                 cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
-                cardPanel.Width = 1300;
+                cardPanel.Width = outerPanel.Width;
                 cardPanel.Height = 100;
                 cardPanel.Margin = new Padding(20, 10, 20, 10);
                 cardPanel.BackColor = Color.Lavender;
                 cardPanel.AutoScroll = true;
 
+                flowLayoutPanel1.SizeChanged += (sender, e) =>
+                {
+                    outerPanel.Size = new Size(flowLayoutPanel1.Width - 60, outerPanel.Height);
+                };
                 cardPanel.ColumnCount = 2;
 
                 Label titleLabel = new Label();
@@ -48,8 +57,9 @@ namespace intelli_tutor_frontend.StudentSide
                 titleLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                 titleLabel.Font = new Font("Segoe UI Semibold", 12F);
                 titleLabel.Height = 30;
-                titleLabel.Width = 400;
+                titleLabel.Width = 300;
                 titleLabel.Top = 15;
+                titleLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 count = count + 1;
 
 
@@ -62,7 +72,7 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.Text = "Solve";
                 enrollButton.TextAlign = ContentAlignment.MiddleCenter;
                 enrollButton.Height = 60;
-                enrollButton.Width = 200;
+                enrollButton.Width = 100;
                 enrollButton.Top = 15;
                 enrollButton.Padding = new Padding(5, 5, 5, 5); // Adjust padding
                 enrollButton.Font = new Font("Segoe UI Semibold", 12F);
@@ -70,14 +80,15 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += (sender, e) =>
                 {
-                    // Handle button click event here
+                    QuestionForm questionForm = new QuestionForm(item);
+                    questionForm.Show();
                 };
 
                 buttonPanel.Controls.Add(enrollButton);
 
                 // Add the label and button to the same row
-                cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F)); // First column
-                cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F)); // Second column
+                cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F)); // First column
+                cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F)); // Second column
                 cardPanel.Controls.Add(titleLabel);
                 cardPanel.Controls.Add(buttonPanel);
                 //cardPanel.SetColumnSpan(titleLabel, 1);

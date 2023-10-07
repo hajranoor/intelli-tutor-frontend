@@ -1,4 +1,7 @@
-﻿using System;
+﻿using intelli_tutor_frontend.BackendApi;
+using intelli_tutor_frontend.compilerClasses;
+using intelli_tutor_frontend.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,15 +17,39 @@ namespace intelli_tutor_frontend
 {
     public partial class QuestionForm : Form
     {
-        public QuestionForm()
+        private problemModel problem;
+        private List<testCaseModel> testcaseList;
+        public QuestionForm(problemModel problem)
         {
             InitializeComponent();
+            this.problem = problem;
         }
 
         string path;
 
-        private void QuestionForm_Load(object sender, EventArgs e)
+        private async void QuestionForm_Load(object sender, EventArgs e)
         {
+            //TestCasesApi testCasesApi = new TestCasesApi();
+            //testcaseList = await testCasesApi.getAllTestCasesData(problem.problem_id);
+            //this.problemName.Text = problem.problem_name;
+            //this.questionBox.Text = problem.description;
+            //int count = 1;
+            //foreach (var item in testcaseList)
+            //{
+                //questionBox.Text += "Test Case " + count + " : ";
+                //count++;
+                //questionBox.Text += "Input : ";
+                //foreach (var item1 in item.input_data)
+
+                //{
+                    //questionBox.Text += item1;
+                //}
+                //questionBox.Text += "Output : " + item.output_data;
+            //}
+
+                //MessageBox.Show(problem.description);
+            Console.WriteLine("this is path");
+
             string applicationDirectory = AppDomain.CurrentDomain.BaseDirectory;
             Console.WriteLine("Application is running from: " + applicationDirectory);
 
@@ -46,7 +73,7 @@ namespace intelli_tutor_frontend
             {
                 string codeText = codeBox.Text;
                 pythonClass pythonObj = new pythonClass(path, codeText);
-                string returnValue = pythonObj.CompileCode();
+                string returnValue = pythonObj.CompileCode(codeText);
                 outputBox.Text = returnValue;
             }
 
@@ -54,18 +81,33 @@ namespace intelli_tutor_frontend
             {
                 string codeText = codeBox.Text;
                 javaClass javaClassObj = new javaClass(path, codeText);
-                string returnValue = javaClassObj.CompileCode();
-                Console.WriteLine("this is response" + returnValue);
-                outputBox.Text = returnValue;
+                //string returnValue = javaClassObj.CompileCode(codeText);
+                string startercode = "public class java {\r\n    public static void main(String[] args) {\r\n        int n = 5;\r\n    }\r\n}\r\n";
+                string trigger  = @"^\s*int\s+n\s*=\s*5\s*;";
+                string returnValue2 = javaClassObj.compileType1(startercode, codeText, trigger);
 
+
+                //Console.WriteLine("this is response" + returnValue);
+                outputBox.Text = returnValue2;
+            }
+
+            if (compilerComboBox1.Text == "c++")
+            {
+                string codeText = codeBox.Text;
+                cppClass cppClassObj = new cppClass();
             }
 
             if (compilerComboBox1.Text == "c#")
             {
                 string codeText = codeBox.Text;
                 cSharpClass csharpObj = new cSharpClass(path, codeText);
-                string returnValue = csharpObj.CompileCode();
-                outputBox.Text = returnValue;
+                string returnValue = csharpObj.CompileCode(codeText);
+                string startercode = "public class java {\r\n    public static void main(String[] args) {\r\n        int n = 5;\r\n    }\r\n}\r\n";
+                //string trigger = @"^\s*int\s+n\s*=\s*5\s*;";
+                string trigger = "int n = 5;";
+
+                string returnValue2 = csharpObj.compileType1(startercode , codeText, trigger);
+                outputBox.Text = returnValue2;
 
             }
 

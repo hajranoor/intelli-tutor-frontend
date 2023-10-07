@@ -31,7 +31,7 @@ namespace intelli_tutor_frontend
 
         }
 
-        public string CompileCode()
+        public string CompileCode(string code)
         {
             try
             {
@@ -107,5 +107,9 @@ namespace intelli_tutor_frontend
 
         }
 
+        public string compileType1(string rightcode, string leftcode, string trigger)
+        {
+            return "hahaaha";
+        }
     }
 }
