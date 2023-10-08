@@ -34,8 +34,15 @@ namespace intelli_tutor_frontend.StudentSide
             selectLanguage.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
         }
 
+        private void loadStarterCode()
+        {
+            this.codeEditor.Text = "";
+            this.codeEditor.Text = problem.startercode;
+        }
+
         private async void SolveProblem_Load(object sender, EventArgs e)
         {
+            loadStarterCode();
             TestCasesApi testCasesApi = new TestCasesApi();
             testcaseList = await testCasesApi.getAllTestCasesData(problem.problem_id);
 
@@ -83,6 +90,8 @@ namespace intelli_tutor_frontend.StudentSide
         public void loadIcons()
         {
             this.barIcon.Image = IconChar.Bars.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+            this.resetCode.Image = IconChar.ArrowRightRotate.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -161,6 +170,11 @@ namespace intelli_tutor_frontend.StudentSide
         private void codeEditor_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void resetCode_Click(object sender, EventArgs e)
+        {
+            loadStarterCode();
         }
     }
 }

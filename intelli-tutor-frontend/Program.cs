@@ -17,11 +17,8 @@ namespace intelli_tutor_frontend
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new QuestionForm());
-            problemModel p = new problemModel();
-            //Application.Run(new QuestionForm(p));
-            //Application.Run(new StudentSide.Dashboard());
-            Application.Run(new Loginform());
+            Application.Run(new StudentSide.Dashboard());
+            //Application.Run(new Loginform());
         }
     }
 }

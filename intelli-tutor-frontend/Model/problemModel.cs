@@ -15,8 +15,8 @@ namespace intelli_tutor_frontend.Model
         public int labid { get; set; }
         public string rightcode { get; set; }
         public string startercode { get; set; }
-
         public string category { get; set; }
         public int teastcasescount { get; set; }
+        public string regex {  get; set; }
     }
 }

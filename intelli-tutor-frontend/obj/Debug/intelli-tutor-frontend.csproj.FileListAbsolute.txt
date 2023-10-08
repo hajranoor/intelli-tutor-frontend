@@ -384,3 +384,5 @@ C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\zh
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.CopyComplete
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Loginform.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Registerform.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Loginform.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Registerform.resources

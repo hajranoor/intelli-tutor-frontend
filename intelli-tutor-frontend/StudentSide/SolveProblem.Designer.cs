@@ -44,12 +44,14 @@
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.codeEditor = new System.Windows.Forms.RichTextBox();
             this.outputBox = new System.Windows.Forms.RichTextBox();
+            this.resetCode = new System.Windows.Forms.PictureBox();
             this.sidePanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barIcon)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resetCode)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -178,17 +180,18 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 299F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.selectLanguage, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.selectLanguage, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.resetCode, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(903, 107);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -220,10 +223,10 @@
             "Python",
             "Java",
             "C#"});
-            this.selectLanguage.Location = new System.Drawing.Point(513, 30);
+            this.selectLanguage.Location = new System.Drawing.Point(623, 30);
             this.selectLanguage.Margin = new System.Windows.Forms.Padding(3, 30, 40, 3);
             this.selectLanguage.Name = "selectLanguage";
-            this.selectLanguage.Size = new System.Drawing.Size(350, 44);
+            this.selectLanguage.Size = new System.Drawing.Size(240, 44);
             this.selectLanguage.TabIndex = 3;
             // 
             // mainPanel
@@ -232,6 +235,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.mainPanel.ColumnCount = 1;
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.mainPanel.Controls.Add(this.codeEditor, 0, 1);
             this.mainPanel.Controls.Add(this.tableLayoutPanel2);
@@ -273,6 +278,17 @@
             this.outputBox.TabIndex = 7;
             this.outputBox.Text = "";
             // 
+            // resetCode
+            // 
+            this.resetCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resetCode.Location = new System.Drawing.Point(520, 3);
+            this.resetCode.Name = "resetCode";
+            this.resetCode.Size = new System.Drawing.Size(81, 101);
+            this.resetCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.resetCode.TabIndex = 4;
+            this.resetCode.TabStop = false;
+            this.resetCode.Click += new System.EventHandler(this.resetCode_Click);
+            // 
             // SolveProblem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,6 +311,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resetCode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,10 +328,11 @@
         private System.Windows.Forms.Button runProgram;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox selectLanguage;
         private System.Windows.Forms.TableLayoutPanel mainPanel;
         private System.Windows.Forms.RichTextBox outputBox;
         private System.Windows.Forms.RichTextBox codeEditor;
         private System.Windows.Forms.RichTextBox questionBox;
+        private System.Windows.Forms.ComboBox selectLanguage;
+        private System.Windows.Forms.PictureBox resetCode;
     }
 }
