@@ -1,6 +1,8 @@
 ﻿using FontAwesome.Sharp;
 using intelli_tutor_frontend.BackendApi;
+using intelli_tutor_frontend.compilerClasses;
 using intelli_tutor_frontend.Model;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.IO;
 
 namespace intelli_tutor_frontend.StudentSide
 {
@@ -175,6 +178,28 @@ namespace intelli_tutor_frontend.StudentSide
         private void resetCode_Click(object sender, EventArgs e)
         {
             loadStarterCode();
+        }
+
+        private void runProgram_Click(object sender, EventArgs e)
+        {
+            string compilersPath = "compilersFolder";
+            string path = Path.Combine(Application.StartupPath, compilersPath);
+
+            if (selectLanguage.Text == "C++")
+            {
+       
+                foreach(testCaseModel tc in testcaseList)
+                {
+                    string studentCode = codeEditor.Text;
+                    MessageBox.Show(studentCode, path);
+                    cppClass cppClassObj = new cppClass(path, studentCode);
+                    bool result = cppClassObj.runCode(studentCode, problem.regex, tc.input_data, tc.output_data);
+                    if (result == true)
+                    {
+                        MessageBox.Show("test case passed.");
+                    }
+                }
+            }
         }
     }
 }

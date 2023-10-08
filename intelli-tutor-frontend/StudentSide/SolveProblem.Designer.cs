@@ -41,17 +41,17 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.selectLanguage = new System.Windows.Forms.ComboBox();
+            this.resetCode = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.codeEditor = new System.Windows.Forms.RichTextBox();
             this.outputBox = new System.Windows.Forms.RichTextBox();
-            this.resetCode = new System.Windows.Forms.PictureBox();
             this.sidePanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barIcon)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetCode)).BeginInit();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -174,6 +174,7 @@
             this.runProgram.TabIndex = 4;
             this.runProgram.Text = "Run ";
             this.runProgram.UseVisualStyleBackColor = false;
+            this.runProgram.Click += new System.EventHandler(this.runProgram_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -229,6 +230,17 @@
             this.selectLanguage.Size = new System.Drawing.Size(240, 44);
             this.selectLanguage.TabIndex = 3;
             // 
+            // resetCode
+            // 
+            this.resetCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resetCode.Location = new System.Drawing.Point(520, 3);
+            this.resetCode.Name = "resetCode";
+            this.resetCode.Size = new System.Drawing.Size(81, 101);
+            this.resetCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.resetCode.TabIndex = 4;
+            this.resetCode.TabStop = false;
+            this.resetCode.Click += new System.EventHandler(this.resetCode_Click);
+            // 
             // mainPanel
             // 
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -278,17 +290,6 @@
             this.outputBox.TabIndex = 7;
             this.outputBox.Text = "";
             // 
-            // resetCode
-            // 
-            this.resetCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resetCode.Location = new System.Drawing.Point(520, 3);
-            this.resetCode.Name = "resetCode";
-            this.resetCode.Size = new System.Drawing.Size(81, 101);
-            this.resetCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.resetCode.TabIndex = 4;
-            this.resetCode.TabStop = false;
-            this.resetCode.Click += new System.EventHandler(this.resetCode_Click);
-            // 
             // SolveProblem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -310,8 +311,8 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resetCode)).EndInit();
+            this.mainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
