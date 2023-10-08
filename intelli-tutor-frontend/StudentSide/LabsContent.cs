@@ -18,7 +18,8 @@ namespace intelli_tutor_frontend.StudentSide
         public async void LabContentShow(int weekId, FlowLayoutPanel flowLayoutPanel1)
         {
             labList = await labApi.getAlllabData(weekId);
-
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel1.AutoScroll = true;
             foreach (var item in labList)
             {
                 Panel outerPanel = new Panel();
@@ -39,7 +40,7 @@ namespace intelli_tutor_frontend.StudentSide
 
                 PictureBox pictureBox = new PictureBox();
                 //pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
-                pictureBox.Load("D:\\fyp\\serious\\frontend\\intelli-tutor-frontend\\intelli-tutor-frontend\\labimage.png");
+                pictureBox.Load("D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\labimage.png");
 
                 pictureBox.Width = 200;
                 pictureBox.Height = 200;
