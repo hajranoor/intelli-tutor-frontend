@@ -88,7 +88,8 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += (sender, e) =>
                 {
-                    // Handle button click event here
+                    SolveProblem solveProblem = new SolveProblem(item);
+                    solveProblem.Show();
                 };
 
                 buttonPanel.Controls.Add(enrollButton);
