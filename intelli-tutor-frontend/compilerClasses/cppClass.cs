@@ -8,9 +8,10 @@ using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-//using System.Windows;
+using System.Windows;
 using System.Windows.Forms;
 using intelli_tutor_frontend.Model;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
 namespace intelli_tutor_frontend.compilerClasses
@@ -29,9 +30,9 @@ namespace intelli_tutor_frontend.compilerClasses
             //}
             Console.WriteLine("yes, u got called");
 
-            filePath = Path.Combine(Application.StartupPath, "files\\cplus.cpp");
+            filePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "files\\cplus.cpp");
              path = Path.GetDirectoryName(filePath);
-             outputFile = Path.Combine(Application.StartupPath, "outputFiles\\output.txt");
+             outputFile = Path.Combine(System.Windows.Forms.Application.StartupPath, "outputFiles\\output.txt");
              compilerPath = Path.Combine(folderPath, "c++\\MinGW\\bin\\g++.exe");
             using (StreamWriter sw =  new StreamWriter(filePath))
             {
@@ -46,10 +47,10 @@ namespace intelli_tutor_frontend.compilerClasses
         public string CompileCode(string code)
         {
             string command = "g++";
-            string outputExePath = Path.Combine(Application.StartupPath, "output.exe");
+            string outputExePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "files\\output.exe");
 
             //string arguments = $"\"{filePath}\" -o \"{path}\\output.exe\"";
-            string arguments = $"\"{filePath}\" -o \"{outputExePath}\"";
+            string arguments = $"{filePath} -o {outputExePath}";
 
 
             ProcessStartInfo processInfo = new ProcessStartInfo(command, arguments);
@@ -64,10 +65,10 @@ namespace intelli_tutor_frontend.compilerClasses
             compileProcess.WaitForExit();
 
             string compilationOutput = compileProcess.StandardOutput.ReadToEnd();
-            MessageBox.Show("this is compilation output", compilationOutput);
+            System.Windows.Forms.MessageBox.Show("this is compilation output", compilationOutput);
 
             string compilationErrors = compileProcess.StandardError.ReadToEnd();
-            MessageBox.Show("this is compilation errors", compilationErrors);
+            System.Windows.Forms.MessageBox.Show("this is compilation errors", compilationErrors);
 
 
             if (compileProcess.ExitCode == 0)
@@ -85,14 +86,14 @@ namespace intelli_tutor_frontend.compilerClasses
 
                 string output = executeProcess.StandardOutput.ReadToEnd();
                 executeProcess.WaitForExit();
-                MessageBox.Show(output);
+                System.Windows.Forms.MessageBox.Show(output);
                 File.WriteAllText(outputFile, output);
                 return output;
             }
             else
             {
                 File.WriteAllText(outputFile, compilationErrors);
-                MessageBox.Show(compilationErrors);
+                System.Windows.Forms.MessageBox.Show(compilationErrors);
                 return compilationErrors;
 
             }
@@ -105,6 +106,66 @@ namespace intelli_tutor_frontend.compilerClasses
 
         }
 
+        public bool runCode(string studentCode, string regexPattern, string[] testCaseInput, string testCaseOutput)
+        {
+            //Match m = Regex.Match("void myFunction(int n, string m, float val, Array data){\\n      Console.WriteLine(n + m);\\n}", @"(myFunction\([\w\s,]+)\)");
+            string escapedPatternString = @regexPattern;
+            
+            Match m = Regex.Match(studentCode,escapedPatternString);
+
+            if (m.Success)
+            {
+                System.Windows.Forms.MessageBox.Show("Pattern matched: " + m.Value);
+                Console.WriteLine();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Pattern did not match.");
+                Console.WriteLine();
+            }
+            string studentCodeWithInputs = Regex.Replace(studentCode, regexPattern, match => replaceInputData(match, testCaseInput));
+            System.Windows.Forms.MessageBox.Show(studentCodeWithInputs);
+            try
+            {
+                File.WriteAllText(filePath, studentCodeWithInputs);
+                System.Windows.Forms.MessageBox.Show("starter code appended");
+                string output = CompileCode("compile");
+
+                if(output == testCaseOutput)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("An error occured while appending", e.Message);
+            }
+            return false;
+
+        }
+
+        public string replaceInputData(Match match, string[] inputData)
+        {
+            System.Windows.Forms.MessageBox.Show("yes called");
+
+            string parametersText = match.Groups[1].Value;
+            string[] parameters = parametersText.Split(',');
+
+            string[] modifiedParameters = new string[parameters.Length];
+
+            for (int i = 0; i < parameters.Length; i++)
+            {
+                string param = parameters[i].Trim();
+                modifiedParameters[i] = $"{param} = {inputData[i]}";
+            }
+
+            return $"{string.Join(", ", modifiedParameters)}";
+        }
 
         public void compileType1(string startercode, string codeText , string trigger, JArray jsonArray, string removingPattern)
         {
@@ -112,6 +173,8 @@ namespace intelli_tutor_frontend.compilerClasses
             {
                 File.WriteAllText(filePath, codeText);
                 MessageBox.Show("starter code appended");
+                File.WriteAllText(filePath, startercode);
+                System.Windows.Forms.MessageBox.Show("starter code appended");
 
 
             }
@@ -188,6 +251,7 @@ namespace intelli_tutor_frontend.compilerClasses
 
 
         }
+       
 
         public void appendInFile(string trigger, string codeToBeInserted)
         {
@@ -202,12 +266,12 @@ namespace intelli_tutor_frontend.compilerClasses
                 {
                     lines[index] += Environment.NewLine + codeToBeInserted;
                     File.WriteAllLines(filePath, lines);
-                    MessageBox.Show("codetobeinserted appended");
+                    System.Windows.Forms.MessageBox.Show("codetobeinserted appended");
                 }
                 else
                 {
                     Console.WriteLine("error");
-                    MessageBox.Show("regex not found");
+                    System.Windows.Forms.MessageBox.Show("regex not found");
 
                 }
             }
@@ -237,8 +301,8 @@ namespace intelli_tutor_frontend.compilerClasses
                         System.Windows.MessageBox.Show("testcase appended");
                     }
                     else
-                    {
-                        MessageBox.Show("test case not added");
+                    {   
+                        System.Windows.Forms.MessageBox.Show("test case not added");
                     }
 
 
@@ -254,9 +318,11 @@ namespace intelli_tutor_frontend.compilerClasses
                 {
                     MessageBox.Show("test case passed");
                 } 
+                    System.Windows.Forms.MessageBox.Show("test case passed");
+                }
                 else
                 {
-                    MessageBox.Show("test case failed");
+                    System.Windows.Forms.MessageBox.Show("test case failed");
                 }
 
 

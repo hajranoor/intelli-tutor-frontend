@@ -1,6 +1,8 @@
 ﻿using FontAwesome.Sharp;
 using intelli_tutor_frontend.BackendApi;
+using intelli_tutor_frontend.compilerClasses;
 using intelli_tutor_frontend.Model;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.IO;
 
 namespace intelli_tutor_frontend.StudentSide
 {
@@ -36,6 +39,12 @@ namespace intelli_tutor_frontend.StudentSide
             selectLanguage.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
         }
 
+        private void loadStarterCode()
+        {
+            this.codeEditor.Text = "";
+            this.codeEditor.Text = problem.startercode;
+        }
+
         private async void SolveProblem_Load(object sender, EventArgs e)
         {
 
@@ -57,6 +66,7 @@ namespace intelli_tutor_frontend.StudentSide
 
 
 
+            loadStarterCode();
             TestCasesApi testCasesApi = new TestCasesApi();
             testcaseList = await testCasesApi.getAllTestCasesData(problem.problem_id);
 
@@ -104,6 +114,8 @@ namespace intelli_tutor_frontend.StudentSide
         public void loadIcons()
         {
             this.barIcon.Image = IconChar.Bars.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+            this.resetCode.Image = IconChar.ArrowRightRotate.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -189,6 +201,30 @@ namespace intelli_tutor_frontend.StudentSide
             if (selectLanguage.Text == "c++")
             {
                 MessageBox.Show("c++ was selected");
+        private void resetCode_Click(object sender, EventArgs e)
+        {
+            loadStarterCode();
+        }
+
+        private void runProgram_Click(object sender, EventArgs e)
+        {
+            string compilersPath = "compilersFolder";
+            string path = Path.Combine(Application.StartupPath, compilersPath);
+
+            if (selectLanguage.Text == "C++")
+            {
+       
+                foreach(testCaseModel tc in testcaseList)
+                {
+                    string studentCode = codeEditor.Text;
+                    MessageBox.Show(studentCode, path);
+                    cppClass cppClassObj = new cppClass(path, studentCode);
+                    bool result = cppClassObj.runCode(studentCode, problem.regex, tc.input_data, tc.output_data);
+                    if (result == true)
+                    {
+                        MessageBox.Show("test case passed.");
+                    }
+                }
             }
         }
     }

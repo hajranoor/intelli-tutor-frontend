@@ -14,7 +14,6 @@ namespace intelli_tutor_frontend.BackendApi
         public async Task<List<problemModel>> getAllproblemData(int id)
         {
             List<problemModel> problemList = new List<problemModel>();
-            Console.WriteLine(id);
             string apiUrl = $"http://localhost:7008/Problem/{id}";
             using (var client = new HttpClient())
             {

@@ -387,3 +387,5 @@ C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\in
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Loginform.resources
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Registerform.resources
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.SolveProblem.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Loginform.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Registerform.resources

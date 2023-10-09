@@ -14,7 +14,6 @@ namespace intelli_tutor_frontend.BackendApi
     {
         public async Task<List<testCaseModel>> getAllTestCasesData(int problemId)
         {
-            MessageBox.Show(problemId.ToString());
             List<testCaseModel> testCaseList = new List<testCaseModel>();
             using (var client = new HttpClient())
             {
