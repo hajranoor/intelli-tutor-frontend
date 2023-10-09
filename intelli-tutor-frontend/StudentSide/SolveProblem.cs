@@ -8,13 +8,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace intelli_tutor_frontend.StudentSide
 {
@@ -27,7 +27,6 @@ namespace intelli_tutor_frontend.StudentSide
         private int sidebarStep = 20;
         private int originalSidebarWidth;
         private int originalMainPanelWidth;
-        string path;
         //private Dictionary<Control, int> originalControlLeftPositions = new Dictionary<Control, int>();
         public SolveProblem(problemModel problem)
         {
@@ -39,6 +38,18 @@ namespace intelli_tutor_frontend.StudentSide
             selectLanguage.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
         }
 
+        private void loadCompilers()
+        {
+            string path = Path.Combine(Application.StartupPath, "compilersFolder");
+
+            string[] CompilersName = Directory.GetDirectories(path);
+            foreach (string compiler in CompilersName)
+            {
+                string displayName = Path.GetFileName(compiler);
+                selectLanguage.Items.Add(displayName);
+            }
+        }
+
         private void loadStarterCode()
         {
             this.codeEditor.Text = "";
@@ -47,25 +58,7 @@ namespace intelli_tutor_frontend.StudentSide
 
         private async void SolveProblem_Load(object sender, EventArgs e)
         {
-
-            //code for displaying compiler data in combobox 
-            //hajra code start
-            string compilersPath = "CompilersFolder";
-            path = Path.Combine(Application.StartupPath, compilersPath);
-
-            string[] CompilersName = Directory.GetDirectories(path);
-            foreach (string compiler in CompilersName)
-            {
-                string displayName = Path.GetFileName(compiler);
-                selectLanguage.Items.Add(displayName);
-
-            }
-            //hajra code end
-
-
-
-
-
+            loadCompilers();
             loadStarterCode();
             TestCasesApi testCasesApi = new TestCasesApi();
             testcaseList = await testCasesApi.getAllTestCasesData(problem.problem_id);
@@ -75,7 +68,7 @@ namespace intelli_tutor_frontend.StudentSide
             questionBox.AppendText(problem.problem_name + "\n");
 
             questionBox.SelectionFont = questionBox.Font;
-            questionBox.AppendText(problem.description + "\n" + "\n" +"");
+            questionBox.AppendText(problem.description + "\n" + "\n" + "");
 
             int count = 1;
             foreach (var item in testcaseList)
@@ -149,7 +142,7 @@ namespace intelli_tutor_frontend.StudentSide
                     tableLayoutPanel1.TabIndex = 0;
                     tableLayoutPanel1.Width += sidebarStep;
 
-                    mainPanel.Width -= sidebarStep; 
+                    mainPanel.Width -= sidebarStep;
                     mainPanel.Location = new Point(mainPanel.Location.X + sidebarStep, mainPanel.Location.Y);
                 }
                 else
@@ -163,7 +156,7 @@ namespace intelli_tutor_frontend.StudentSide
                 if (sidePanel.Width > 100)
                 {
                     sidePanel.Width -= sidebarStep;
-                    mainPanel.Width += sidebarStep; 
+                    mainPanel.Width += sidebarStep;
 
                     mainPanel.Location = new Point(mainPanel.Location.X - sidebarStep, mainPanel.Location.Y);
                 }
@@ -172,9 +165,9 @@ namespace intelli_tutor_frontend.StudentSide
                     sideBarTimer.Stop();
                     isSidebarCollapsed = true;
 
-                    
+
                 }
-                if(sidePanel.Width <= 100)
+                if (sidePanel.Width <= 100)
                 {
                     tableLayoutPanel1.Controls.Clear();
                     tableLayoutPanel1.RowCount = 1;
@@ -196,11 +189,6 @@ namespace intelli_tutor_frontend.StudentSide
 
         }
 
-        private void runProgram_Click(object sender, EventArgs e)
-        {
-            if (selectLanguage.Text == "c++")
-            {
-                MessageBox.Show("c++ was selected");
         private void resetCode_Click(object sender, EventArgs e)
         {
             loadStarterCode();
@@ -208,22 +196,35 @@ namespace intelli_tutor_frontend.StudentSide
 
         private void runProgram_Click(object sender, EventArgs e)
         {
-            string compilersPath = "compilersFolder";
-            string path = Path.Combine(Application.StartupPath, compilersPath);
+            MessageBox.Show("button has been clicked");
+            string path = Path.Combine(Application.StartupPath, "compilersFolder");
+            //string studentCode1 = codeEditor.Text;
 
-            if (selectLanguage.Text == "C++")
+            //cppClass cppclassObj = new cppClass(path, studentCode1);
+            //string returnval = cppclassObj.CompileCode();
+            //MessageBox.Show(returnval , "this is return val");
+
+            if (selectLanguage.Text == "c++")
             {
-       
-                foreach(testCaseModel tc in testcaseList)
+                 
+                foreach (testCaseModel tc in testcaseList)
                 {
                     string studentCode = codeEditor.Text;
                     MessageBox.Show(studentCode, path);
+                    MessageBox.Show(tc.input_data[0]);
                     cppClass cppClassObj = new cppClass(path, studentCode);
-                    bool result = cppClassObj.runCode(studentCode, problem.regex, tc.input_data, tc.output_data);
-                    if (result == true)
-                    {
-                        MessageBox.Show("test case passed.");
-                    }
+                    //bool result = cppClassObj.runCode(studentCode, problem.regex, tc.input_data, tc.output_data);
+                    //if (result == true)
+                    //{
+                    // MessageBox.Show("test case passed.");
+                    // }
+                   string responseStr = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data, tc.output_data);
+
+                    var jsonArray = JsonConvert.DeserializeObject<dynamic[]>(responseStr);
+
+                    var toShow = jsonArray[0].ToString();
+                    //string yourOutputValue = (string)toShow["YourOutput"];
+                    //MessageBox.Show(yourOutputValue);
                 }
             }
         }

@@ -63,7 +63,7 @@
             this.sidePanel.Controls.Add(this.questionBox, 0, 1);
             this.sidePanel.Controls.Add(this.tableLayoutPanel1);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sidePanel.Margin = new System.Windows.Forms.Padding(2);
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.RowCount = 2;
             this.sidePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
@@ -77,7 +77,7 @@
             this.questionBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.questionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.questionBox.Location = new System.Drawing.Point(6, 93);
-            this.questionBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.questionBox.Margin = new System.Windows.Forms.Padding(6);
             this.questionBox.Name = "questionBox";
             this.questionBox.ReadOnly = true;
             this.questionBox.Size = new System.Drawing.Size(303, 510);
@@ -120,7 +120,7 @@
             // 
             this.barIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.barIcon.Location = new System.Drawing.Point(254, 2);
-            this.barIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barIcon.Margin = new System.Windows.Forms.Padding(2);
             this.barIcon.Name = "barIcon";
             this.barIcon.Size = new System.Drawing.Size(59, 83);
             this.barIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -144,7 +144,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.runProgram, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 350);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -200,7 +200,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(677, 87);
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(903, 107);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label2
@@ -227,28 +226,18 @@
             this.selectLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectLanguage.ItemHeight = 29;
-            this.selectLanguage.Location = new System.Drawing.Point(383, 24);
-            this.selectLanguage.Margin = new System.Windows.Forms.Padding(2, 24, 30, 2);
-            this.selectLanguage.Name = "selectLanguage";
-            this.selectLanguage.Size = new System.Drawing.Size(264, 37);
-            this.selectLanguage.ItemHeight = 36;
-            this.selectLanguage.Items.AddRange(new object[] {
-            "C++",
-            "Python",
-            "Java",
-            "C#"});
-            this.selectLanguage.Location = new System.Drawing.Point(623, 30);
+            this.selectLanguage.Location = new System.Drawing.Point(397, 30);
             this.selectLanguage.Margin = new System.Windows.Forms.Padding(3, 30, 40, 3);
             this.selectLanguage.Name = "selectLanguage";
-            this.selectLanguage.Size = new System.Drawing.Size(240, 44);
+            this.selectLanguage.Size = new System.Drawing.Size(240, 37);
             this.selectLanguage.TabIndex = 3;
             // 
             // resetCode
             // 
             this.resetCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resetCode.Location = new System.Drawing.Point(520, 3);
+            this.resetCode.Location = new System.Drawing.Point(294, 3);
             this.resetCode.Name = "resetCode";
-            this.resetCode.Size = new System.Drawing.Size(81, 101);
+            this.resetCode.Size = new System.Drawing.Size(81, 81);
             this.resetCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.resetCode.TabIndex = 4;
             this.resetCode.TabStop = false;
@@ -268,7 +257,7 @@
             this.mainPanel.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.mainPanel.Controls.Add(this.outputBox, 0, 3);
             this.mainPanel.Location = new System.Drawing.Point(320, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.RowCount = 4;
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
@@ -284,7 +273,7 @@
             this.codeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.codeEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.codeEditor.Location = new System.Drawing.Point(6, 93);
-            this.codeEditor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.codeEditor.Margin = new System.Windows.Forms.Padding(6);
             this.codeEditor.Name = "codeEditor";
             this.codeEditor.Size = new System.Drawing.Size(665, 249);
             this.codeEditor.TabIndex = 8;
@@ -297,7 +286,7 @@
             this.outputBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.outputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.outputBox.Location = new System.Drawing.Point(6, 441);
-            this.outputBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.outputBox.Margin = new System.Windows.Forms.Padding(6);
             this.outputBox.Name = "outputBox";
             this.outputBox.ReadOnly = true;
             this.outputBox.Size = new System.Drawing.Size(665, 162);
@@ -312,7 +301,7 @@
             this.ClientSize = new System.Drawing.Size(998, 606);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.sidePanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1014, 591);
             this.Name = "SolveProblem";
             this.Text = "SolveProblem";

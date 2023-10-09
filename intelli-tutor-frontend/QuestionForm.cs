@@ -168,7 +168,7 @@ namespace intelli_tutor_frontend
                 string trigger = @"(main\([\w\s,]+)\)";
 
                 string startercode = "void myFunction(int param1, double param2) {\r\n        std::cout << param1 + param2<< std::endl;\r\n\r\n}\r\n\r\nint main() {\r\n    myFunction()\r\n    return 0;\r\n}\r\n";
-
+                
 
 
                 string codeText = codeBox.Text;

@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using intelli_tutor_frontend.Model;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
 
 namespace intelli_tutor_frontend.compilerClasses
 {
@@ -44,10 +46,10 @@ namespace intelli_tutor_frontend.compilerClasses
             Console.WriteLine(compilerPath);
         }
 
-        public string CompileCode(string code)
+        public string CompileCode()
         {
             string command = "g++";
-            string outputExePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "files\\output.exe");
+            string outputExePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "output.exe");
 
             //string arguments = $"\"{filePath}\" -o \"{path}\\output.exe\"";
             string arguments = $"{filePath} -o {outputExePath}";
@@ -129,7 +131,7 @@ namespace intelli_tutor_frontend.compilerClasses
             {
                 File.WriteAllText(filePath, studentCodeWithInputs);
                 System.Windows.Forms.MessageBox.Show("starter code appended");
-                string output = CompileCode("compile");
+                string output = CompileCode();
 
                 if(output == testCaseOutput)
                 {
@@ -167,12 +169,104 @@ namespace intelli_tutor_frontend.compilerClasses
             return $"{string.Join(", ", modifiedParameters)}";
         }
 
+
+
+        //working code starts here
+
+        public string AddEquals(Match match, string[] inputData)
+        {
+            string parametersText = match.Groups[1].Value;
+            string[] parameters = parametersText.Split(',');
+
+            string[] modifiedParameters = new string[parameters.Length];
+
+            for (int i = 0; i < parameters.Length; i++)
+            {
+                string param = parameters[i].Trim();
+                modifiedParameters[i] = $"{param} = {inputData[i]}";
+            }
+
+            return $"{string.Join(", ", modifiedParameters)})";
+        }
+
+        string inputString = "#include <iostream>\r\n\r\nint add(int a, int b) {\r\n            std::cout << a + b<< std::endl;\r\n\r\n}\r\n\r\nint main() {\r\n    add();\r\n    return 0;\r\n}";
+
+
+        public string compileWithTestCases(string code, string regexPattern, string[] inputData, string output )
+        {
+            try
+            {
+                File.WriteAllText(filePath, code);
+                string fileContent = File.ReadAllText(filePath);
+                string outputString = Regex.Replace(fileContent, regexPattern, match => AddEquals(match, inputData));
+                File.WriteAllText(filePath, outputString);
+
+                string compilationOutput = CompileCode();
+                System.Windows.MessageBox.Show("this is compilation output", compilationOutput);
+                System.Windows.MessageBox.Show("this is output from db", output);
+                
+                
+                if (int.Parse(compilationOutput) == int.Parse(output))
+                {
+                    System.Windows.MessageBox.Show("test case passed");
+                    var responseArray1 = new[]
+                    {new {YourOutput = compilationOutput , responseBool = "true" }};
+                    string responseString = JsonConvert.SerializeObject(responseArray1);
+
+
+                    string responseBool = "true";
+                    string[] responseArray = { compilationOutput, output , responseBool }; 
+                    //return responseArray;
+                    return responseString;
+
+                }
+                else 
+                {
+                    System.Windows.MessageBox.Show("test case failed");
+                    var responseArray1 = new[]
+                    {new {YourOutput = compilationOutput , responseBool = "false" }};
+                    string responseString = JsonConvert.SerializeObject(responseArray1);
+
+                    string responseBool = "false";
+                    string[] responseArray = {compilationOutput, output , responseBool };
+                    //return responseArray;
+                    return responseString;
+
+
+                }
+                
+
+
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("exception occured", e.Message);
+                string responseBool = "exception occured";
+                var responseArray1 = new[]
+                    {new {YourOutput = "inner system exception occured" , responseBool = "exception" }};
+                string responseString = JsonConvert.SerializeObject(responseArray1);
+
+                string[] responseArray = {responseBool};
+                return responseString;
+
+                //return responseArray;
+            }
+        }
+
+        //working code ends here
+
+
+
+
+
+
+
         public void compileType1(string startercode, string codeText , string trigger, JArray jsonArray, string removingPattern)
         {
             try
             {
                 File.WriteAllText(filePath, codeText);
-                MessageBox.Show("starter code appended");
+                System.Windows.MessageBox.Show("starter code appended");
                 File.WriteAllText(filePath, startercode);
                 System.Windows.Forms.MessageBox.Show("starter code appended");
 
@@ -189,7 +283,7 @@ namespace intelli_tutor_frontend.compilerClasses
             
         }
 
-        public string AddEquals(Match match, string[] inputData)
+        public string AddEquals2(Match match, string[] inputData)
         {
             System.Windows.Forms.MessageBox.Show("yes called");
 
@@ -211,7 +305,6 @@ namespace intelli_tutor_frontend.compilerClasses
 
         public void appendInFile2(string trigger, JArray jsonArray)
         {
-            
 
 
             string fileContent = File.ReadAllText(filePath);
@@ -223,19 +316,19 @@ namespace intelli_tutor_frontend.compilerClasses
             string outputString = Regex.Replace(fileContent, trigger, match => AddEquals(match, inputData));
             File.WriteAllText(filePath, outputString);
 
-            string returnVal = CompileCode("haahaha");
+            string returnVal = CompileCode();
             int retval = int.Parse(returnVal);
 
             if (retval == expectedOutput)
             {
-                MessageBox.Show("test case passed");
+                System.Windows.MessageBox.Show("test case passed");
             }
             else
             {
-                MessageBox.Show("test case failed");
+                System.Windows.MessageBox.Show("test case failed");
             }
 
-            MessageBox.Show(outputString);
+            System.Windows.MessageBox.Show(outputString);
 
             //string inputString = "#include <iostream>\r\n\r\nvoid myFunction(int param1, double param2) {\r\n    // Function implementation here\r\n}\r\n\r\nint main() {\r\n    // Main program logic\r\n    return 0;\r\n}";
             //string inputString = "double multiply(double num1, double num2, double num3) {\r\n";
@@ -308,7 +401,7 @@ namespace intelli_tutor_frontend.compilerClasses
 
                     //now send code for compilation and bring result
                 }
-                string returnValue = CompileCode("hahaah");
+                string returnValue = CompileCode();
                 int expectedOutput = item.Value<int>("expected_output");
                 //MessageBox.Show(expectedOutput);
 
@@ -316,10 +409,9 @@ namespace intelli_tutor_frontend.compilerClasses
 
                 if (returnval == expectedOutput)
                 {
-                    MessageBox.Show("test case passed");
+                    System.Windows.MessageBox.Show("test case passed");
                 } 
-                    System.Windows.Forms.MessageBox.Show("test case passed");
-                }
+                
                 else
                 {
                     System.Windows.Forms.MessageBox.Show("test case failed");
