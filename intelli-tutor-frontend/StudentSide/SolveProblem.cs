@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace intelli_tutor_frontend.StudentSide
         private int sidebarStep = 20;
         private int originalSidebarWidth;
         private int originalMainPanelWidth;
+        string path;
         //private Dictionary<Control, int> originalControlLeftPositions = new Dictionary<Control, int>();
         public SolveProblem(problemModel problem)
         {
@@ -36,6 +38,25 @@ namespace intelli_tutor_frontend.StudentSide
 
         private async void SolveProblem_Load(object sender, EventArgs e)
         {
+
+            //code for displaying compiler data in combobox 
+            //hajra code start
+            string compilersPath = "CompilersFolder";
+            path = Path.Combine(Application.StartupPath, compilersPath);
+
+            string[] CompilersName = Directory.GetDirectories(path);
+            foreach (string compiler in CompilersName)
+            {
+                string displayName = Path.GetFileName(compiler);
+                selectLanguage.Items.Add(displayName);
+
+            }
+            //hajra code end
+
+
+
+
+
             TestCasesApi testCasesApi = new TestCasesApi();
             testcaseList = await testCasesApi.getAllTestCasesData(problem.problem_id);
 
@@ -161,6 +182,14 @@ namespace intelli_tutor_frontend.StudentSide
         private void codeEditor_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void runProgram_Click(object sender, EventArgs e)
+        {
+            if (selectLanguage.Text == "c++")
+            {
+                MessageBox.Show("c++ was selected");
+            }
         }
     }
 }

@@ -98,6 +98,10 @@ namespace intelli_tutor_frontend
                 compilerComboBox1.Items.Add(displayName);
             }
             //codeBox.Text = "#include <iostream>\r\n\r\nint main() {\r\n\r\n}\r\n";  //from backend
+            //codeBox.Text = "#include bgfbtreabb\r\n\r\n// Function to calculate factorial\r\nunsigned long long calculateFactorial(int n) {\r\n    if (n <= 1) {\r\n        return 1; // Base case: factorial of 0 and 1 is 1\r\n    } else {\r\n        return n * calculateFactorial(n - 1); // Recursive case\r\n    }\r\n}\r\n\r\n\r\nint main() {\r\n    \r\n    if (num < 0) {\r\n        std::cout << \"Factorial is not defined for negative numbers.\" << std::endl;\r\n    } else {\r\n        unsigned long long factorial = calculateFactorial();\r\n        std::cout << \"Factorial of \" << num << \" is \" << factorial << std::endl;\r\n    }\r\n\r\n    return 0;\r\n}\r\n\r\n\r\n\r\n";
+            //ghghgghghghghghghghgyFunction(int param1, double param2) {\r\n        std::cout << param1 + param2<< std::endl;\r\n\r\n}\r\n\r\nint main() {\r\n    myFunction()\r\n    return 0;\r\n}\r\n";
+            codeBox.Text = "#include<iostream>\r\nusing namespace std;\r\nint main(int a, int b){\r\n}";
+
 
 
 
@@ -128,17 +132,77 @@ namespace intelli_tutor_frontend
                 outputBox.Text = returnValue2;
             }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             if (compilerComboBox1.Text == "c++")
             {
                 JArray jsonArray = JArray.Parse(json);  //from backend
                 string removingPattern = @"int\s+n\s*=\s*\d+\s*;|int\s+m\s*=\s*\d+\s*;";  //from backend
-                string startercode = "#include <iostream>\r\n\r\nint main() {\r\n\r\n}\r\n";  //from backend
-                string trigger = @"^\s*int\s+main\s*\(\s*\)\s*{";   //from backend
+                //string startercode = "#include <iostream>\r\n\r\nint main() {\r\n\r\n}\r\n";  //from backend
+                //string trigger = @"^\s*int\s+main\s*\(\s*\)\s*{";   //from backend
+
+
+                //string trigger = @"(unsigned long long calculateFactorial\([\w\s,=]+\) \{)";  //new
+                //string trigger = @"void\s+myFunction\(int\s+\w+,\s+double\s+\w+\)";
+                //string startercode = "#include <iostream>\r\n\r\n// Function to calculate factorial\r\nunsigned long long calculateFactorial(int n = 0) {\r\n    if (n <= 1) {\r\n        return 1; // Base case: factorial of 0 and 1 is 1\r\n    } else {\r\n        return n * calculateFactorial(n - 1); // Recursive case\r\n    }\r\n}\r\n\r\n\r\nint main() {\r\n    \r\n    if (num < 0) {\r\n        std::cout << \"Factorial is not defined for negative numbers.\" << std::endl;\r\n    } else {\r\n        unsigned long long factorial = calculateFactorial();\r\n        std::cout << \"Factorial of \" << num << \" is \" << factorial << std::endl;\r\n    }\r\n\r\n    return 0;\r\n}\r\n\r\n\r\n\r\n"; //new
+                //string trigger = @"(main\\([\\w\\s,]+)";
+                string trigger = @"(main\([\w\s,]+)\)";
+
+                string startercode = "void myFunction(int param1, double param2) {\r\n        std::cout << param1 + param2<< std::endl;\r\n\r\n}\r\n\r\nint main() {\r\n    myFunction()\r\n    return 0;\r\n}\r\n";
+
+
+
                 string codeText = codeBox.Text;
                 cppClass cppClassObj = new cppClass(path, codeText);
                 //cppClassObj.CompileCode(codeText);
                 cppClassObj.compileType1(startercode, codeText, trigger, jsonArray, removingPattern);
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             if (compilerComboBox1.Text == "c#")
             {

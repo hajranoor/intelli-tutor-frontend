@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Packaging;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 //using System.Windows;
 using System.Windows.Forms;
+using intelli_tutor_frontend.Model;
 using Newtonsoft.Json.Linq;
 
 namespace intelli_tutor_frontend.compilerClasses
@@ -107,7 +110,7 @@ namespace intelli_tutor_frontend.compilerClasses
         {
             try
             {
-                File.WriteAllText(filePath, startercode);
+                File.WriteAllText(filePath, codeText);
                 MessageBox.Show("starter code appended");
 
 
@@ -117,8 +120,70 @@ namespace intelli_tutor_frontend.compilerClasses
                 Console.WriteLine("An error occured while appending", e.Message);
             }
 
-            appendInFile(trigger, codeText);
-            testCases(jsonArray, trigger, removingPattern);
+            //appendInFile(trigger, codeText);
+            //testCases(jsonArray, trigger, removingPattern);
+            appendInFile2(trigger, jsonArray);
+            
+        }
+
+        public string AddEquals(Match match, string[] inputData)
+        {
+            System.Windows.Forms.MessageBox.Show("yes called");
+
+            string parametersText = match.Groups[1].Value;
+            string[] parameters = parametersText.Split(',');
+
+            string[] modifiedParameters = new string[parameters.Length];
+
+            for (int i = 0; i < parameters.Length; i++)
+            {
+                string param = parameters[i].Trim();
+                modifiedParameters[i] = $"{param} = {inputData[i]}";
+            }
+
+            return $"{string.Join(", ", modifiedParameters)})";
+        }
+
+
+
+        public void appendInFile2(string trigger, JArray jsonArray)
+        {
+            
+
+
+            string fileContent = File.ReadAllText(filePath);
+
+            string regexPattern = @"unsigned\s+long\s+long\s+calculateFactorial\(int\s+n\s*=\s*0\s*\)";
+            string[] inputData = new string[] { "2", "3" };
+            int expectedOutput = 5;
+
+            string outputString = Regex.Replace(fileContent, trigger, match => AddEquals(match, inputData));
+            File.WriteAllText(filePath, outputString);
+
+            string returnVal = CompileCode("haahaha");
+            int retval = int.Parse(returnVal);
+
+            if (retval == expectedOutput)
+            {
+                MessageBox.Show("test case passed");
+            }
+            else
+            {
+                MessageBox.Show("test case failed");
+            }
+
+            MessageBox.Show(outputString);
+
+            //string inputString = "#include <iostream>\r\n\r\nvoid myFunction(int param1, double param2) {\r\n    // Function implementation here\r\n}\r\n\r\nint main() {\r\n    // Main program logic\r\n    return 0;\r\n}";
+            //string inputString = "double multiply(double num1, double num2, double num3) {\r\n";
+
+
+
+
+
+
+
+
 
 
 
@@ -188,7 +253,7 @@ namespace intelli_tutor_frontend.compilerClasses
                 if (returnval == expectedOutput)
                 {
                     MessageBox.Show("test case passed");
-                }
+                } 
                 else
                 {
                     MessageBox.Show("test case failed");
