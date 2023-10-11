@@ -21,7 +21,10 @@ namespace intelli_tutor_frontend
             problemModel p = new problemModel();
             //Application.Run(new QuestionForm(p));
             //Application.Run(new StudentSide.Dashboard());
-            Application.Run(new Loginform());
+            //Application.Run(new Loginform());
+            // Application.Run(new TeacherSide.CreateCourse());
+            //Application.Run(new TeacherSide.TeacherDashboard());
+            Application.Run(new TeacherSide.Create_Course());
         }
     }
 }
