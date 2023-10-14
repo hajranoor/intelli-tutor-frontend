@@ -103,6 +103,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <!-- <Compile Include="compilerInterface.cs" /> -->
+    <!-- <Compile Include="cSharpClass.cs" /> -->
     <Compile Include="BackendApi\CourseApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\LabApi.cs" />
@@ -136,6 +138,7 @@
     <Compile Include="Model\testCaseModel.cs" />
     <Compile Include="Model\weekModel.cs" />
     <Compile Include="Program.cs" />
+    <!-- <Compile Include="javaClass.cs" /> -->
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="compilerClasses\pythonClass.cs" />
     <Compile Include="QuestionForm.cs">
@@ -206,6 +209,11 @@
     </Compile>
     <Compile Include="TeacherSide\TeacherDashboard.Designer.cs">
       <DependentUpon>TeacherDashboard.cs</DependentUpon>
+    <Compile Include="StudentSide\SolveProblem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSide\SolveProblem.Designer.cs">
+      <DependentUpon>SolveProblem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -252,6 +260,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherSide\TeacherDashboard.resx">
       <DependentUpon>TeacherDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="StudentSide\SolveProblem.resx">
+      <DependentUpon>SolveProblem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

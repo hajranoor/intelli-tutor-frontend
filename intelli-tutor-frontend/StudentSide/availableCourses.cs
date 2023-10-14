@@ -56,7 +56,7 @@ namespace intelli_tutor_frontend.StudentSide
                
                 PictureBox pictureBox = new PictureBox();
                 //pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
-                pictureBox.Load("D:\\fyp\\serious\\frontend\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
+                pictureBox.Load("D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
                 
                 pictureBox.Width = 150;
                 pictureBox.Height = 150;

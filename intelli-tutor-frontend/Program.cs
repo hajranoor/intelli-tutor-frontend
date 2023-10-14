@@ -25,6 +25,10 @@ namespace intelli_tutor_frontend
             // Application.Run(new TeacherSide.CreateCourse());
             //Application.Run(new TeacherSide.TeacherDashboard());
             Application.Run(new TeacherSide.Create_Course());
+            //Application.Run(new QuestionForm(p));
+            Application.Run(new StudentSide.Dashboard());
+            //Application.Run(new StudentSide.Dashboard());
+            //Application.Run(new Loginform());
         }
     }
 }
