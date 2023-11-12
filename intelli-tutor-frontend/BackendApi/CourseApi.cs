@@ -26,5 +26,20 @@ namespace intelli_tutor_frontend.BackendApi
             return courseList;
         }
 
+        public async Task<string> InsertCourseData(coursesModel course)
+        {
+            using (var client = new HttpClient())
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(course), Encoding.UTF8, "application/json");
+
+                using (var response = await client.PostAsync("http://localhost:7008/Courses", content))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    return apiResponse;
+                }
+            }
+        }
+
+
     }
 }
