@@ -247,7 +247,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(209)))));
             this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.panel8);
@@ -318,6 +318,9 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Fall 2022",
+            "spring 2022"});
             this.comboBox1.Location = new System.Drawing.Point(7, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(447, 27);
@@ -344,7 +347,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 12);
+            this.textBox1.Location = new System.Drawing.Point(7, 12);
             this.textBox1.MaxLength = 32768;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(447, 20);
@@ -373,7 +376,7 @@
             this.textBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(3, 13);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(454, 20);
+            this.textBox2.Size = new System.Drawing.Size(451, 20);
             this.textBox2.TabIndex = 4;
             // 
             // label7
