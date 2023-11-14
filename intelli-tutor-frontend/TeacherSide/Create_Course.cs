@@ -1,4 +1,6 @@
-﻿using System;
+﻿using intelli_tutor_frontend.BackendApi;
+using intelli_tutor_frontend.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using System.Windows.Input;
 
 namespace intelli_tutor_frontend.TeacherSide
 {
     public partial class Create_Course : Form
     {
+        CourseApi courseApi = new CourseApi();
+       
         public Create_Course()
         {
             InitializeComponent();
@@ -145,6 +151,46 @@ namespace intelli_tutor_frontend.TeacherSide
             panel12.BackColor = Color.MediumPurple;
             panel13.BackColor = Color.MediumPurple;
             panel14.BackColor = Color.MediumPurple;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+
+        {
+            coursesModel cm = new coursesModel();
+             cm.course_title = textBox1.Text;
+             cm.description = textBox2.Text;
+            cm.course_session = int.Parse(comboBox1.SelectedItem as string);
+             cm.credit_hour = int.Parse(comboBox2.SelectedItem as string);
+             cm.weekcount = int.Parse(textBox3.Text);
+
+            try
+            {
+                var apiResponse = courseApi.InsertCourseData(cm);
+                Console.WriteLine(apiResponse.ToString());
+               
+                  
+                    YourDialogBoxMethod("Course inserted successfully!");
+               
+            }
+            catch (Exception ex)
+            {
+              
+                YourDialogBoxMethod($"An error occurred: {ex.Message}");
+            }
+
+
+        
+        }
+
+        private void YourDialogBoxMethod(string message)
+        {
+          
+            MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
