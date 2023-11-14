@@ -17,6 +17,10 @@ namespace intelli_tutor_frontend.TeacherSide
         {
             InitializeComponent();
             panel5.Visible = false;
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;    
+            pictureBox3.Visible = false;
+
         }
 
         private void formName_Click(object sender, EventArgs e)
@@ -30,6 +34,7 @@ namespace intelli_tutor_frontend.TeacherSide
             SetPanelRegion(panel3);
             SetPanelRegion(panel4);
             SetPanelRegion(panel5);
+            SetPanelRegion(panel9);
         }
 
         private void SetPanelRegion(Panel panel)
@@ -50,21 +55,96 @@ namespace intelli_tutor_frontend.TeacherSide
             SetPanelRegion(panel3);
             SetPanelRegion(panel4);
             SetPanelRegion(panel5);
+            SetPanelRegion(panel9);
+            SetPanelRegion(panel10);
+            SetPanelRegion(panel11);
+            SetPanelRegion(panel12);
+            SetPanelRegion(panel13);
+            SetPanelRegion(panel14);
         }
 
         private void panel1_Click(object sender, EventArgs e)
         {
             panel5.Visible = true;
+            pictureBox1.Visible= true;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
             panel5.Visible = true;
+            pictureBox2.Visible= true;
+            pictureBox1.Visible = false;
+            pictureBox3.Visible = false;
         }
 
         private void panel4_Click(object sender, EventArgs e)
         {
             panel5.Visible = true;
+            pictureBox3.Visible= true;
+            pictureBox2.Visible = false;
+            pictureBox2.Visible = false;
+        }
+
+        private void panel14_Click(object sender, EventArgs e)
+        {
+            panel14.BackColor = Color.White;
+            panel9.BackColor = Color.MediumPurple;
+            panel10.BackColor = Color.MediumPurple;
+            panel11.BackColor = Color.MediumPurple;
+            panel12.BackColor = Color.MediumPurple;
+            panel13.BackColor = Color.MediumPurple;
+        }
+
+        private void panel10_Click(object sender, EventArgs e)
+        {
+            panel10.BackColor = Color.White;
+            panel11.BackColor = Color.MediumPurple;
+            panel12.BackColor = Color.MediumPurple;
+            panel13.BackColor = Color.MediumPurple;
+            panel14.BackColor = Color.MediumPurple;
+            panel9.BackColor= Color.MediumPurple;
+        }
+
+        private void panel13_Click(object sender, EventArgs e)
+        {
+            panel13.BackColor = Color.White;
+            panel14.BackColor = Color.MediumPurple;
+            panel10.BackColor = Color.MediumPurple;
+            panel11.BackColor = Color.MediumPurple;
+            panel12.BackColor = Color.MediumPurple;
+            panel9.BackColor = Color.MediumPurple;
+        }
+
+        private void panel12_Click(object sender, EventArgs e)
+        {
+            panel12.BackColor = Color.White;
+            panel13.BackColor = Color.MediumPurple;
+            panel14.BackColor = Color.MediumPurple;
+            panel10.BackColor = Color.MediumPurple;
+            panel11.BackColor = Color.MediumPurple;
+            panel9.BackColor = Color.MediumPurple;
+        }
+
+        private void panel11_Click(object sender, EventArgs e)
+        {
+            panel11.BackColor = Color.White;
+            panel12.BackColor = Color.MediumPurple;
+            panel13.BackColor = Color.MediumPurple;
+            panel14.BackColor = Color.MediumPurple;
+            panel10.BackColor = Color.MediumPurple;
+            panel9.BackColor = Color.MediumPurple;
+        }
+
+        private void panel9_Click(object sender, EventArgs e)
+        {
+            panel9.BackColor = Color.White;
+            panel10.BackColor = Color.MediumPurple;
+            panel11.BackColor = Color.MediumPurple;
+            panel12.BackColor = Color.MediumPurple;
+            panel13.BackColor = Color.MediumPurple;
+            panel14.BackColor = Color.MediumPurple;
         }
     }
 }
