@@ -198,12 +198,6 @@
     <Compile Include="TeacherSide\CreateCourse.Designer.cs">
       <DependentUpon>CreateCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherSide\Create_Course.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeacherSide\Create_Course.Designer.cs">
-      <DependentUpon>Create_Course.cs</DependentUpon>
-    </Compile>
     <Compile Include="TeacherSide\TeacherDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,8 +250,8 @@
     <EmbeddedResource Include="StudentSide\problems.resx">
       <DependentUpon>problems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherSide\Create_Course.resx">
-      <DependentUpon>Create_Course.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherSide\CreateCourse.resx">
+      <DependentUpon>CreateCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherSide\TeacherDashboard.resx">
       <DependentUpon>TeacherDashboard.cs</DependentUpon>
