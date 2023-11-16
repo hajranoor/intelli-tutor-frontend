@@ -1,4 +1,5 @@
-﻿using System;
+﻿using intelli_tutor_frontend.StudentSide;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -133,7 +134,9 @@ namespace intelli_tutor_frontend.TeacherSide
             panel8.BackColor = Color.MediumPurple;
             panel9.BackColor = Color.MediumPurple;
             panel10.BackColor = Color.MediumPurple;
-        }
+            Available_Courses available_CoursesForm= new Available_Courses();
+            available_CoursesForm.Show();
+                 }
 
         private void panel7_Click(object sender, EventArgs e)
         {
@@ -143,6 +146,8 @@ namespace intelli_tutor_frontend.TeacherSide
             panel8.BackColor = Color.MediumPurple;  
             panel9.BackColor = Color.MediumPurple;
             panel10.BackColor = Color.MediumPurple;
+            My_Courses MyCoursesForm = new My_Courses();
+            MyCoursesForm.Show();
         }
 
         private void panel8_Click(object sender, EventArgs e)
@@ -173,6 +178,8 @@ namespace intelli_tutor_frontend.TeacherSide
             panel6.BackColor= Color.MediumPurple;   
             panel7.BackColor= Color.MediumPurple;
             panel8.BackColor= Color.MediumPurple;
+            CreateCourse CreateCourseForm = new CreateCourse();
+            CreateCourseForm.Show();
         }
     }
 }

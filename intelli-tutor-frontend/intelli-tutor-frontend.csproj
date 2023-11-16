@@ -192,11 +192,23 @@
       <DependentUpon>problems.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentSide\ProblemsContent.cs" />
+    <Compile Include="TeacherSide\Available_Courses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherSide\Available_Courses.Designer.cs">
+      <DependentUpon>Available_Courses.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherSide\CreateCourse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TeacherSide\CreateCourse.Designer.cs">
       <DependentUpon>CreateCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherSide\My_Courses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherSide\My_Courses.Designer.cs">
+      <DependentUpon>My_Courses.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherSide\TeacherDashboard.cs">
       <SubType>Form</SubType>
@@ -250,8 +262,14 @@
     <EmbeddedResource Include="StudentSide\problems.resx">
       <DependentUpon>problems.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeacherSide\Available_Courses.resx">
+      <DependentUpon>Available_Courses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherSide\CreateCourse.resx">
       <DependentUpon>CreateCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherSide\My_Courses.resx">
+      <DependentUpon>My_Courses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherSide\TeacherDashboard.resx">
       <DependentUpon>TeacherDashboard.cs</DependentUpon>
@@ -280,6 +298,7 @@
   <ItemGroup>
     <Content Include="image.png" />
     <Content Include="labimage.png" />
+    <None Include="Resources\OOP.png" />
     <None Include="Resources\download-removebg-preview1.png" />
     <None Include="Resources\download-removebg-preview.png" />
     <None Include="Resources\GTH.png" />
