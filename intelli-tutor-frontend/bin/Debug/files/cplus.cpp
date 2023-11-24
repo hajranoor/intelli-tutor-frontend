@@ -1,8 +1,17 @@
-#include <iostream>
-	int add(int a = 2, int b = 3) {
-            std::cout << a * b<< std::endl;
+
+			#include <iostream>
+using namespace std;
+	int table(int a = 2) {
+int  i, res;
+    for(i=1; i<=5; i++)
+    {
+        res = a*i;
+        cout<<a<<"* "<<i<<" = "<<res;
+        cout<<endl;
+    }
+    cout<<endl;
 	}
 	int main() {
-    add();
+    table();
     return 0;
 	}

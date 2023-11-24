@@ -14,6 +14,7 @@ using intelli_tutor_frontend.Model;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using intelli_tutor_frontend.StudentSide;
 
 
 namespace intelli_tutor_frontend.compilerClasses
@@ -24,6 +25,8 @@ namespace intelli_tutor_frontend.compilerClasses
         string path;
         string outputFile;
         string compilerPath;
+        bool isError = false;
+
         public cppClass(string folderPath, string codeText) 
         {
             //using (StreamWriter sw = new StreamWriter(codePath))
@@ -35,7 +38,7 @@ namespace intelli_tutor_frontend.compilerClasses
             filePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "files\\cplus.cpp");
              path = Path.GetDirectoryName(filePath);
              outputFile = Path.Combine(System.Windows.Forms.Application.StartupPath, "outputFiles\\output.txt");
-             compilerPath = Path.Combine(folderPath, "c++\\MinGW\\bin\\g++.exe");
+             compilerPath = Path.Combine(System.Windows.Forms.Application.StartupPath, "compilersFolder\\c++\\MinGW\\bin\\g++.exe");
             using (StreamWriter sw =  new StreamWriter(filePath))
             {
                 sw.WriteLine(codeText);
@@ -52,25 +55,25 @@ namespace intelli_tutor_frontend.compilerClasses
             string outputExePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "output.exe");
 
             //string arguments = $"\"{filePath}\" -o \"{path}\\output.exe\"";
-            string arguments = $"{filePath} -o {outputExePath}";
+            string arguments = $"\"{filePath}\" -o \"{outputExePath}\"";
+            compilerPath = Path.Combine(System.Windows.Forms.Application.StartupPath, "compilersFolder\\c++\\MinGW\\bin\\g++.exe");
 
-
-            ProcessStartInfo processInfo = new ProcessStartInfo(command, arguments);
+            ProcessStartInfo processInfo = new ProcessStartInfo(compilerPath, arguments);
 
             Process compileProcess = new Process();
-            compileProcess.StartInfo.FileName = compilerPath;
+            //System.Windows.Forms.MessageBox.Show(compileProcess.StartInfo.FileName);
             compileProcess.StartInfo = processInfo;
             compileProcess.StartInfo.UseShellExecute = false;
+            compileProcess.StartInfo.CreateNoWindow = true;
             compileProcess.StartInfo.RedirectStandardOutput = true;
             compileProcess.StartInfo.RedirectStandardError = true;
             compileProcess.Start();
             compileProcess.WaitForExit();
-
             string compilationOutput = compileProcess.StandardOutput.ReadToEnd();
-            System.Windows.Forms.MessageBox.Show("this is compilation output", compilationOutput);
+            //System.Windows.Forms.MessageBox.Show(compilationOutput, "this is compilation output");
 
             string compilationErrors = compileProcess.StandardError.ReadToEnd();
-            System.Windows.Forms.MessageBox.Show("this is compilation errors", compilationErrors);
+            //System.Windows.Forms.MessageBox.Show("this is compilation errors", compilationErrors);
 
 
             if (compileProcess.ExitCode == 0)
@@ -78,24 +81,25 @@ namespace intelli_tutor_frontend.compilerClasses
                 Process executeProcess = new Process();
                 executeProcess.StartInfo.FileName = "output.exe";
                 executeProcess.StartInfo.UseShellExecute = false;
+                executeProcess.StartInfo.CreateNoWindow = true;
                 executeProcess.StartInfo.RedirectStandardInput = true;
                 executeProcess.StartInfo.RedirectStandardOutput = true;
                 executeProcess.Start();
 
-      
                 executeProcess.StandardInput.Flush();
                 executeProcess.StandardInput.Close();
 
                 string output = executeProcess.StandardOutput.ReadToEnd();
                 executeProcess.WaitForExit();
-                System.Windows.Forms.MessageBox.Show(output);
+                //System.Windows.Forms.MessageBox.Show(output, "this is standard output");
                 File.WriteAllText(outputFile, output);
                 return output;
             }
             else
             {
                 File.WriteAllText(outputFile, compilationErrors);
-                System.Windows.Forms.MessageBox.Show(compilationErrors);
+                //System.Windows.Forms.MessageBox.Show(compilationErrors);
+                isError = true;
                 return compilationErrors;
 
             }
@@ -117,20 +121,20 @@ namespace intelli_tutor_frontend.compilerClasses
 
             if (m.Success)
             {
-                System.Windows.Forms.MessageBox.Show("Pattern matched: " + m.Value);
+                //System.Windows.Forms.MessageBox.Show("Pattern matched: " + m.Value);
                 Console.WriteLine();
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Pattern did not match.");
+                //System.Windows.Forms.MessageBox.Show("Pattern did not match.");
                 Console.WriteLine();
             }
             string studentCodeWithInputs = Regex.Replace(studentCode, regexPattern, match => replaceInputData(match, testCaseInput));
-            System.Windows.Forms.MessageBox.Show(studentCodeWithInputs);
+            //System.Windows.Forms.MessageBox.Show(studentCodeWithInputs);
             try
             {
                 File.WriteAllText(filePath, studentCodeWithInputs);
-                System.Windows.Forms.MessageBox.Show("starter code appended");
+                //System.Windows.Forms.MessageBox.Show("starter code appended");
                 string output = CompileCode();
 
                 if(output == testCaseOutput)
@@ -153,7 +157,7 @@ namespace intelli_tutor_frontend.compilerClasses
 
         public string replaceInputData(Match match, string[] inputData)
         {
-            System.Windows.Forms.MessageBox.Show("yes called");
+            //System.Windows.Forms.MessageBox.Show("yes called");
 
             string parametersText = match.Groups[1].Value;
             string[] parameters = parametersText.Split(',');
@@ -192,51 +196,216 @@ namespace intelli_tutor_frontend.compilerClasses
         string inputString = "#include <iostream>\r\n\r\nint add(int a, int b) {\r\n            std::cout << a + b<< std::endl;\r\n\r\n}\r\n\r\nint main() {\r\n    add();\r\n    return 0;\r\n}";
 
 
-        public string compileWithTestCases(string code, string regexPattern, string[] inputData, string output )
+        public bool compileWithTestCases(string code, string regexPattern, string[] inputData, string[] output , RichTextBox outputBox, int testCaseCount)
         {
+            string responseString = "";
             try
             {
-                File.WriteAllText(filePath, code);
-                string fileContent = File.ReadAllText(filePath);
-                string outputString = Regex.Replace(fileContent, regexPattern, match => AddEquals(match, inputData));
+                outputBox.SelectionStart = outputBox.TextLength;
+
+                //File.WriteAllText(filePath, code);
+                //string fileContent = File.ReadAllText(filePath);
+                string outputString = Regex.Replace(code, regexPattern, match => AddEquals(match, inputData));
                 File.WriteAllText(filePath, outputString);
 
                 string compilationOutput = CompileCode();
-                System.Windows.MessageBox.Show("this is compilation output", compilationOutput);
-                System.Windows.MessageBox.Show("this is output from db", output);
-                
-                
-                if (int.Parse(compilationOutput) == int.Parse(output))
+                if (isError)
                 {
-                    System.Windows.MessageBox.Show("test case passed");
-                    var responseArray1 = new[]
-                    {new {YourOutput = compilationOutput , responseBool = "true" }};
-                    string responseString = JsonConvert.SerializeObject(responseArray1);
-
-
-                    string responseBool = "true";
-                    string[] responseArray = { compilationOutput, output , responseBool }; 
-                    //return responseArray;
-                    return responseString;
-
+                    outputBox.Text = "";
+                    outputBox.AppendText(compilationOutput);
+                    return false;
                 }
-                else 
-                {
-                    System.Windows.MessageBox.Show("test case failed");
-                    var responseArray1 = new[]
-                    {new {YourOutput = compilationOutput , responseBool = "false" }};
-                    string responseString = JsonConvert.SerializeObject(responseArray1);
-
-                    string responseBool = "false";
-                    string[] responseArray = {compilationOutput, output , responseBool };
-                    //return responseArray;
-                    return responseString;
-
-
-                }
+                //System.Windows.MessageBox.Show(compilationOutput, "OUTPUT");
+                //System.Windows.MessageBox.Show("this is output from db", output);
                 
+                if(compilationOutput == null || compilationOutput == "")
+                {
+                    return false;
+                }
+                string[] splitCompilationOutput = compilationOutput.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                if(splitCompilationOutput.Length == output.Length)
+                {
+                    int finalOutputCount = 0;
+                    string printExpectedOutput = "";
+                    string printOutput = "";
+                    //System.Windows.Forms.MessageBox.Show("yes called");
+                    for (int i = 0;i< splitCompilationOutput.Length; i++)
+                    {
+                        printOutput += splitCompilationOutput[i] + ", ";
+                        printExpectedOutput += output[i] + ", ";
+
+                        int intCompilationResult;
+                        int intOutputResult;
+                        if (int.TryParse(splitCompilationOutput[i], out intCompilationResult) && int.TryParse(output[i], out intOutputResult))
+                        {
+                            if (intCompilationResult == intOutputResult)
+                            {
+                                outputBox.SelectionColor = System.Drawing.Color.Black;
+                                outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                                //outputBox.AppendText("Test Case " + testCaseCount + ": ");
+                                //outputBox.SelectionColor = System.Drawing.Color.Green;
+                                //outputBox.AppendText("(Passed)" + "\n" + "\n");
 
 
+
+
+                                ////System.Windows.MessageBox.Show("test case passed");
+                                //var responseArray1 = new[]
+                                //{new {YourOutput = compilationOutput , responseBool = "true" }};
+                                //responseString = JsonConvert.SerializeObject(responseArray1);
+
+
+                                string responseBool = "true";
+                                //string[] responseArray = { compilationOutput, output[i], responseBool };
+                                finalOutputCount++;
+                            }
+                            else
+                            {
+                                //outputBox.SelectionStart = outputBox.TextLength;
+                                ////outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                                ////outputBox.AppendText("Test Case " + testCaseCount + ": (Failed)" + "\n");
+
+                                //outputBox.SelectionColor = System.Drawing.Color.Black;
+                                //outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                                //outputBox.AppendText("Test Case " + testCaseCount + ": ");
+                                //outputBox.SelectionColor = System.Drawing.Color.Red;
+                                //outputBox.AppendText("(Failed)" + "\n" + "\n");
+
+                                ////System.Windows.MessageBox.Show("test case failed");
+                                //var responseArray1 = new[]
+                                //{new {YourOutput = compilationOutput , responseBool = "false" }};
+                                //responseString = JsonConvert.SerializeObject(responseArray1);
+
+                                string responseBool = "false";
+                                //string[] responseArray = { compilationOutput, output[i], responseBool };
+                                //return responseArray;
+                            }
+                            //outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 12, System.Drawing.FontStyle.Bold);
+                            //outputBox.AppendText("Expected Output : " + output[i] + "\n");
+                            //outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 12, System.Drawing.FontStyle.Bold);
+                            //outputBox.AppendText("Output : " + splitCompilationOutput[i] + "\n" + "\n");
+                            //outputBox.SelectAll();
+                            //outputBox.SelectionBackColor = outputBox.BackColor;
+                            //outputBox.SelectionIndent = 10;
+                            //outputBox.SelectionRightIndent = 10;
+                            //outputBox.SelectionStart = 0;
+                            //outputBox.DeselectAll();
+                            //outputBox.WordWrap = true;
+                            //return true;
+                            //return responseArray
+                        }
+                        else if (splitCompilationOutput[i] is string && output[i] is string){
+                            if (splitCompilationOutput[i] == output[i])
+                            {
+                                //outputBox.SelectionColor = System.Drawing.Color.Black;
+                                //outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                                //outputBox.AppendText("Test Case " + testCaseCount + ": ");
+                                //outputBox.SelectionColor = System.Drawing.Color.Green;
+                                //outputBox.AppendText("(Passed)" + "\n" + "\n");
+
+
+
+
+                                ////System.Windows.MessageBox.Show("test case passed");
+                                //var responseArray1 = new[]
+                                //{new {YourOutput = compilationOutput , responseBool = "true" }};
+                                //responseString = JsonConvert.SerializeObject(responseArray1);
+
+
+                                //string responseBool = "true";
+                                //string[] responseArray = { compilationOutput, output[i], responseBool };
+                                finalOutputCount++;
+
+                            }
+                            else
+                            {
+                                //outputBox.SelectionStart = outputBox.TextLength;
+                                ////outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                                ////outputBox.AppendText("Test Case " + testCaseCount + ": (Failed)" + "\n");
+
+                                //outputBox.SelectionColor = System.Drawing.Color.Black;
+                                //outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                                //outputBox.AppendText("Test Case " + testCaseCount + ": ");
+                                //outputBox.SelectionColor = System.Drawing.Color.Red;
+                                //outputBox.AppendText("(Failed)" + "\n" + "\n");
+
+                                ////System.Windows.MessageBox.Show("test case failed");
+                                //var responseArray1 = new[]
+                                //{new {YourOutput = compilationOutput , responseBool = "false" }};
+                                //responseString = JsonConvert.SerializeObject(responseArray1);
+
+                                string responseBool = "false";
+                                //string[] responseArray = { compilationOutput, output[i], responseBool };
+                                //return responseArray;
+                            }
+                            
+                            //return responseArray
+                        }
+                    }
+                    //System.Windows.Forms.MessageBox.Show(finalOutputCount + ":" + splitCompilationOutput.Length);
+
+                    if (finalOutputCount == splitCompilationOutput.Length)
+                    {
+                        outputBox.SelectionColor = System.Drawing.Color.Black;
+                        outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                        outputBox.AppendText("Test Case " + testCaseCount + ": ");
+                        outputBox.SelectionColor = System.Drawing.Color.Green;
+                        outputBox.AppendText("(Passed)" + "\n" + "\n");
+
+                        outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 12, System.Drawing.FontStyle.Bold);
+                        outputBox.AppendText("Expected Output : " + printExpectedOutput + "\n");
+                        outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 12, System.Drawing.FontStyle.Bold);
+                        outputBox.AppendText("Output : " + printOutput + "\n" + "\n");
+                        outputBox.SelectAll();
+                        outputBox.SelectionBackColor = outputBox.BackColor;
+                        outputBox.SelectionIndent = 10;
+                        outputBox.SelectionRightIndent = 10;
+                        outputBox.SelectionStart = 0;
+                        outputBox.DeselectAll();
+                        outputBox.WordWrap = true;
+                        return true;
+                    }
+                    else
+                    {
+                        outputBox.SelectionStart = outputBox.TextLength;
+                        //outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                        //outputBox.AppendText("Test Case " + testCaseCount + ": (Failed)" + "\n");
+
+                        outputBox.SelectionColor = System.Drawing.Color.Black;
+                        outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
+                        outputBox.AppendText("Test Case " + testCaseCount + ": ");
+                        outputBox.SelectionColor = System.Drawing.Color.Red;
+                        outputBox.AppendText("(Failed)" + "\n" + "\n");
+                        outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 12, System.Drawing.FontStyle.Bold);
+                        outputBox.AppendText("Expected Output : " + printExpectedOutput + "\n");
+                        outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 12, System.Drawing.FontStyle.Bold);
+                        outputBox.AppendText("Output : " + printOutput + "\n" + "\n");
+                        outputBox.SelectAll();
+                        outputBox.SelectionBackColor = outputBox.BackColor;
+                        outputBox.SelectionIndent = 10;
+                        outputBox.SelectionRightIndent = 10;
+                        outputBox.SelectionStart = 0;
+                        outputBox.DeselectAll();
+                        outputBox.WordWrap = true;
+                        return true; // to run other test case any one is failed
+                    }
+                }
+                else
+                {
+                    string data = "";
+                    //for(int j = 0; j<= splitCompilationOutput.Length; j++)
+                    //{
+                    //    data += splitCompilationOutput[j] + " : ";
+                    //}
+
+                    //System.Windows.MessageBox.Show(compilationOutput + " <> " + data + " <> " + splitCompilationOutput.Length.ToString() );
+                    outputBox.AppendText("The outputs are not complete");
+                    return false; // stop matching he output if the number of putput is not same 
+                }
+                //if (int.Parse(compilationOutput) == int.Parse(output))
+                
+                return false;
+                    
             }
             catch (IOException e)
             {
@@ -244,10 +413,10 @@ namespace intelli_tutor_frontend.compilerClasses
                 string responseBool = "exception occured";
                 var responseArray1 = new[]
                     {new {YourOutput = "inner system exception occured" , responseBool = "exception" }};
-                string responseString = JsonConvert.SerializeObject(responseArray1);
+                responseString = JsonConvert.SerializeObject(responseArray1);
 
                 string[] responseArray = {responseBool};
-                return responseString;
+                return false;
 
                 //return responseArray;
             }
@@ -266,9 +435,9 @@ namespace intelli_tutor_frontend.compilerClasses
             try
             {
                 File.WriteAllText(filePath, codeText);
-                System.Windows.MessageBox.Show("starter code appended");
+                //System.Windows.MessageBox.Show("starter code appended");
                 File.WriteAllText(filePath, startercode);
-                System.Windows.Forms.MessageBox.Show("starter code appended");
+                //System.Windows.Forms.MessageBox.Show("starter code appended");
 
 
             }
@@ -285,7 +454,7 @@ namespace intelli_tutor_frontend.compilerClasses
 
         public string AddEquals2(Match match, string[] inputData)
         {
-            System.Windows.Forms.MessageBox.Show("yes called");
+            //System.Windows.Forms.MessageBox.Show("yes called");
 
             string parametersText = match.Groups[1].Value;
             string[] parameters = parametersText.Split(',');
@@ -321,14 +490,14 @@ namespace intelli_tutor_frontend.compilerClasses
 
             if (retval == expectedOutput)
             {
-                System.Windows.MessageBox.Show("test case passed");
+                //System.Windows.MessageBox.Show("test case passed");
             }
             else
             {
-                System.Windows.MessageBox.Show("test case failed");
+                //System.Windows.MessageBox.Show("test case failed");
             }
 
-            System.Windows.MessageBox.Show(outputString);
+            //System.Windows.MessageBox.Show(outputString);
 
             //string inputString = "#include <iostream>\r\n\r\nvoid myFunction(int param1, double param2) {\r\n    // Function implementation here\r\n}\r\n\r\nint main() {\r\n    // Main program logic\r\n    return 0;\r\n}";
             //string inputString = "double multiply(double num1, double num2, double num3) {\r\n";
@@ -359,12 +528,12 @@ namespace intelli_tutor_frontend.compilerClasses
                 {
                     lines[index] += Environment.NewLine + codeToBeInserted;
                     File.WriteAllLines(filePath, lines);
-                    System.Windows.Forms.MessageBox.Show("codetobeinserted appended");
+                    //System.Windows.Forms.MessageBox.Show("codetobeinserted appended");
                 }
                 else
                 {
                     Console.WriteLine("error");
-                    System.Windows.Forms.MessageBox.Show("regex not found");
+                    //System.Windows.Forms.MessageBox.Show("regex not found");
 
                 }
             }
@@ -391,11 +560,11 @@ namespace intelli_tutor_frontend.compilerClasses
                     {
                         lines[index] += Environment.NewLine + value;
                         File.WriteAllLines(filePath, lines);
-                        System.Windows.MessageBox.Show("testcase appended");
+                        //System.Windows.MessageBox.Show("testcase appended");
                     }
                     else
                     {   
-                        System.Windows.Forms.MessageBox.Show("test case not added");
+                        //System.Windows.Forms.MessageBox.Show("test case not added");
                     }
 
 
@@ -409,12 +578,12 @@ namespace intelli_tutor_frontend.compilerClasses
 
                 if (returnval == expectedOutput)
                 {
-                    System.Windows.MessageBox.Show("test case passed");
+                    //System.Windows.MessageBox.Show("test case passed");
                 } 
                 
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("test case failed");
+                    //System.Windows.Forms.MessageBox.Show("test case failed");
                 }
 
 
