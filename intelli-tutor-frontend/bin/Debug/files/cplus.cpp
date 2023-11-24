@@ -1,17 +1,9 @@
-
-			#include <iostream>
+#include <iostream>
 using namespace std;
-	int table(int a = 2) {
-int  i, res;
-    for(i=1; i<=5; i++)
-    {
-        res = a*i;
-        cout<<a<<"* "<<i<<" = "<<res;
-        cout<<endl;
-    }
-    cout<<endl;
+	int add(int a = 6, int b = 7) {
+cout<<a+b<<endl;
 	}
 	int main() {
-    table();
+    add();
     return 0;
 	}
