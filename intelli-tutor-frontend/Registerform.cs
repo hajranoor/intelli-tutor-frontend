@@ -1,17 +1,27 @@
-﻿using System;
+﻿using intelli_tutor_frontend.BackendApi;
+using intelli_tutor_frontend.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace intelli_tutor_frontend
 {
+    
     public partial class Registerform : Form
     {
+        UserApi userApi = new UserApi();
+        TeacherApi teacherApi = new TeacherApi();
+        StudentApi studentApi = new StudentApi();
+        UniversityApi universityApi = new UniversityApi();
+        List<userModel> userList;
         public Registerform()
         {
             InitializeComponent();
@@ -19,32 +29,9 @@ namespace intelli_tutor_frontend
             StudentInfo.Visible = false;
         }
 
-        private void Registerform_Load(object sender, EventArgs e)
+        private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedItem = comboBox1.SelectedItem.ToString();
+            string selectedItem = roleComboBox.SelectedItem.ToString();
             Teacher_Role.Visible = false;
             StudentInfo.Visible = false;
             if (selectedItem == "Teacher")
@@ -54,12 +41,144 @@ namespace intelli_tutor_frontend
             else if (selectedItem == "Student")
             {
                 StudentInfo.Visible = true;
+                List<string> data = await universityApi.getAllUniversity();
+                MessageBox.Show(data.Count.ToString());
+                universityComboBox.DataSource = data;
+                
             }
         }
 
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        private bool CheckValidations()
         {
-            
+            if (!IsValidEmail(email.Text))
+            {
+                MessageBox.Show("Invalid email format!", "Validation Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+                //MessageBox.Show("Email is valid!", "Validation Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (password.Text != cPassword.Text)
+            {
+                MessageBox.Show("Password does not match", "Match Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+        private bool IsValidEmail(string email)
+        {
+            // Define a simple regular expression for email validation
+            string emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+
+            // Check if the email matches the pattern
+            return Regex.IsMatch(email, emailPattern);
+        }
+
+        private async void registerBtn_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(username.Text) && !string.IsNullOrEmpty(email.Text) && !string.IsNullOrEmpty(password.Text) && !string.IsNullOrEmpty(cPassword.Text) || string.IsNullOrEmpty(roleComboBox.Text))
+            {
+                if (roleComboBox.Text == "Teacher")
+                {
+                    if (!string.IsNullOrEmpty(designationComboBox.Text) && !string.IsNullOrEmpty(qualification.Text))
+                    {
+                        if (CheckValidations())
+                        {
+                            
+                            userList = await userApi.checkUserEmailExists(email.Text);
+                            if (userList.Count == 0)
+                            {
+                                userModel u = new userModel();
+                                u.email = email.Text;
+                                u.username = username.Text;
+                                u.pass_word = password.Text;
+                                u.active = true;
+                                u.google_verification = true;
+                                u.user_role = roleComboBox.Text;
+                                int newUserId = await userApi.insertUser(u);
+                                if ( newUserId != -1)
+                                {   
+                                    TeacherModel t = new TeacherModel();
+                                    t.user_id = newUserId;
+                                    t.qualification = qualification.Text;
+                                    t.designation = designationComboBox.Text;
+                                    MessageBox.Show(await teacherApi.insertTeacherData(t));
+                                }
+                                else
+                                {
+                                    userApi.DeleteUserById(newUserId);
+                                    MessageBox.Show("Error");
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Email already exists");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fill all the fields");
+                    }
+
+                }
+                if (roleComboBox.Text == "Student")
+                {
+                    if (!string.IsNullOrEmpty(sectionComboBox.Text) && !string.IsNullOrEmpty(sessionComboBox.Text) && !string.IsNullOrEmpty(regNo.Text))
+                    {
+                        if (CheckValidations())
+                        {
+                            userList = await userApi.checkUserEmailExists(email.Text);
+                            if (userList.Count == 0)
+                            {
+                                userModel u = new userModel();
+                                u.email = email.Text;
+                                u.username = username.Text;
+                                u.pass_word = password.Text;
+                                u.active = true;
+                                u.google_verification = true;
+                                u.user_role = roleComboBox.Text;
+                                int newUserId = await userApi.insertUser(u);
+                                if (newUserId != -1)
+                                {
+                                    StudentModel s = new StudentModel();
+                                    s.user_id = newUserId;
+                                    s.session_student = int.Parse(sessionComboBox.Text);
+                                    s.section_student = sectionComboBox.Text;
+                                    s.registration_no = regNo.Text;
+                                    s.university_id = await universityApi.getUniversityId(universityComboBox.Text);
+                                    
+                                    MessageBox.Show(await studentApi.insertStudentData(s));
+                                }
+                                else
+                                {
+                                    userApi.DeleteUserById(newUserId);
+                                    MessageBox.Show("Error");
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Email already exists");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fill all the fields");
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Fill all the fileds");
+            }
+        }
+
+        private void Registerform_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

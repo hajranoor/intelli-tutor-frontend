@@ -16,32 +16,19 @@ namespace intelli_tutor_frontend.BackendApi
     {
         public async Task<string> makeEnrollmentInCourse(enrolledCourses enrolledCourses)
         {
-            //List<coursesModel> courseList = new List<coursesModel>();
             using (var client = new HttpClient())
             {
-                // Serialize the course object to JSON
                 string courseJson = JsonConvert.SerializeObject(enrolledCourses);
-
-                // Define the content for the POST request
                 var content = new StringContent(courseJson, Encoding.UTF8, "application/json");
-
-                // Send the POST request to the API endpoint
                 using (var response = await client.PostAsync("http://localhost:7008/EnrolledCourses", content))
                 {
-                    // Check if the response is successful
                     if (response.IsSuccessStatusCode)
                     {
-                        // Read the response content
                         string apiResponse = await response.Content.ReadAsStringAsync();
                         return apiResponse;
                     }
-
-                    
-
                     else
                     {
-                        // Handle the case where the POST request was not successful
-                        // You can throw an exception or handle the error as needed
                         string apiResponse = await response.Content.ReadAsStringAsync();
                         return apiResponse;
                     }
