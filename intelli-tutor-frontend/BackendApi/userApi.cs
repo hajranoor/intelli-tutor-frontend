@@ -6,60 +6,62 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace intelli_tutor_frontend.BackendApi
 {
-    internal class userApi
+    internal class UserApi
     {
-        public async Task<List<problemModel>> getAllproblemData(int id)
+        public async Task<List<userModel>> checkUserEmailExists(string email)
         {
-            List<problemModel> problemList = new List<problemModel>();
-            string apiUrl = $"http://localhost:7008/Problem/{id}";
+            List<userModel> userList = new List<userModel>();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync(apiUrl))
+                var content = new StringContent(JsonConvert.SerializeObject(email), Encoding.UTF8, "application/json");
+
+                using (var response = await client.GetAsync($"http://localhost:7008/user/checkEmail?email={Uri.EscapeDataString(email)}"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
 
-                    problemList = JsonConvert.DeserializeObject<List<problemModel>>(apiResponse);
-                    Console.WriteLine(problemList);
+                    userList = JsonConvert.DeserializeObject<List<userModel>>(apiResponse);
                 }
             }
-            return problemList;
-
-
+            return userList;
         }
-
-        public async Task<string> checkUserExists(Model.userModel u)
+        public async Task<int> insertUser(userModel user)
         {
-            string Response;
-
-            Console.WriteLine(u);
             using (var client = new HttpClient())
             {
-                string apiUrl = $"http://localhost:7008/user/checkuser?username={Uri.EscapeDataString(u.username)}&password={Uri.EscapeDataString(u.pass_word)}";
-
-                using (var response = await client.GetAsync(apiUrl))
+                string userJson = JsonConvert.SerializeObject(user);
+                var content = new StringContent(userJson, Encoding.UTF8, "application/json");
+                using (var response = await client.PostAsync("http://localhost:7008/user", content))
                 {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-
-                    Response = JsonConvert.DeserializeObject<string>(apiResponse);
-                    Console.WriteLine(Response);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show(apiResponse);
+                        return int.Parse(apiResponse);
+                    }
+                    else
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        return -1;
+                    }
                 }
             }
-            return Response;
+
         }
-
-
-
-       
-
-
-
-
-
+        public async void DeleteUserById(int userId)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync($"http://localhost:7008/user/{userId}"))
+                {
+                    //return response.IsSuccessStatusCode;
+                }
+            }
+        }
     }
 }
-
