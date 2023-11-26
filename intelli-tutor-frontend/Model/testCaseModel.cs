@@ -10,6 +10,6 @@ namespace intelli_tutor_frontend.Model
     {
         public int problem_id { get; set; }
         public string[] input_data { get; set; }
-        public string output_data { get; set; }
+        public string[] output_data { get; set; }
     }
 }

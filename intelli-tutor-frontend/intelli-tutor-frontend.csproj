@@ -62,6 +62,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -109,7 +112,11 @@
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\LabApi.cs" />
     <Compile Include="BackendApi\problemApi.cs" />
+    <Compile Include="BackendApi\StudentApi.cs" />
+    <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
+    <Compile Include="BackendApi\UniversityApi.cs" />
+    <Compile Include="BackendApi\UserApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
     <Compile Include="compilerClasses\compilerInterface.cs" />
     <Compile Include="compilerClasses\cppClass.cs" />
@@ -135,7 +142,11 @@
     <Compile Include="Model\enrolledCourses.cs" />
     <Compile Include="Model\labModel.cs" />
     <Compile Include="Model\problemModel.cs" />
+    <Compile Include="Model\StudentModel.cs" />
+    <Compile Include="Model\TeacherModel.cs" />
     <Compile Include="Model\testCaseModel.cs" />
+    <Compile Include="Model\UniversityModel.cs" />
+    <Compile Include="Model\userModel.cs" />
     <Compile Include="Model\weekModel.cs" />
     <Compile Include="Program.cs" />
     <!-- <Compile Include="javaClass.cs" /> -->
