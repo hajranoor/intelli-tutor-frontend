@@ -371,7 +371,6 @@ C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\ob
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Register.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Registerform.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.myCourses.resources
-C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.Create_Course.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherDashboard.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.SolveProblem.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\intelli-tutor-frontend.exe
@@ -509,3 +508,8 @@ D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\inte
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.CreateCourse.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.My_Courses.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherDashboard.resources
+C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.Available_Courses.resources
+C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.CreateCourse.resources
+C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.My_Courses.resources
+C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.dll
+C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.xml
