@@ -155,6 +155,11 @@
     <!-- <Compile Include="javaClass.cs" /> -->
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="compilerClasses\pythonClass.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,14 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,9 +313,6 @@
     <Content Include="image.png" />
     <Content Include="labimage.png" />
     <None Include="Resources\OOP.png" />
-    <None Include="Resources\download-removebg-preview1.png" />
-    <None Include="Resources\download-removebg-preview.png" />
-    <None Include="Resources\GTH.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

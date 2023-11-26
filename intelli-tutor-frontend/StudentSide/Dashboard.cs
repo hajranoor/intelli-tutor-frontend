@@ -64,5 +64,7 @@ namespace intelli_tutor_frontend.StudentSide
             myCourses myCourses = new myCourses();
             myCourses.Show();
         }
+
+       
     }
 }

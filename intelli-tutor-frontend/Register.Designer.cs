@@ -383,6 +383,11 @@
             // 
             // contextMenuStrip1
             // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(435, 504);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
