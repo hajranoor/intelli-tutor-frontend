@@ -47,16 +47,8 @@
             this.formName = new System.Windows.Forms.Label();
             this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.currentUser = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -67,17 +59,13 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackColor = System.Drawing.Color.MediumPurple;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel11);
@@ -91,7 +79,7 @@
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.MediumPurple;
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel10.Controls.Add(this.label8);
             this.panel10.Location = new System.Drawing.Point(6, 175);
             this.panel10.Name = "panel10";
@@ -188,7 +176,7 @@
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.Color.MediumPurple;
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel14.Controls.Add(this.label13);
             this.panel14.Location = new System.Drawing.Point(6, 115);
             this.panel14.Name = "panel14";
@@ -234,12 +222,13 @@
             this.tableLayoutPanel2.Controls.Add(this.formName, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.notificationIcon, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.currentUser, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(240, -3);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(956, 78);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
@@ -249,7 +238,7 @@
             this.accountIcon.Location = new System.Drawing.Point(766, 3);
             this.accountIcon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.accountIcon.Name = "accountIcon";
-            this.accountIcon.Size = new System.Drawing.Size(43, 52);
+            this.accountIcon.Size = new System.Drawing.Size(43, 64);
             this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.accountIcon.TabIndex = 3;
             this.accountIcon.TabStop = false;
@@ -260,7 +249,7 @@
             this.formName.AutoSize = true;
             this.formName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formName.ForeColor = System.Drawing.Color.White;
-            this.formName.Location = new System.Drawing.Point(7, 16);
+            this.formName.Location = new System.Drawing.Point(7, 22);
             this.formName.Margin = new System.Windows.Forms.Padding(7, 0, 2, 0);
             this.formName.Name = "formName";
             this.formName.Size = new System.Drawing.Size(138, 26);
@@ -273,7 +262,7 @@
             this.notificationIcon.Location = new System.Drawing.Point(719, 3);
             this.notificationIcon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.notificationIcon.Name = "notificationIcon";
-            this.notificationIcon.Size = new System.Drawing.Size(43, 52);
+            this.notificationIcon.Size = new System.Drawing.Size(43, 64);
             this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.notificationIcon.TabIndex = 2;
             this.notificationIcon.TabStop = false;
@@ -284,151 +273,43 @@
             this.currentUser.AutoSize = true;
             this.currentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentUser.ForeColor = System.Drawing.Color.White;
-            this.currentUser.Location = new System.Drawing.Point(818, 16);
+            this.currentUser.Location = new System.Drawing.Point(818, 22);
             this.currentUser.Margin = new System.Windows.Forms.Padding(7, 0, 2, 0);
             this.currentUser.Name = "currentUser";
             this.currentUser.Size = new System.Drawing.Size(92, 26);
             this.currentUser.TabIndex = 1;
             this.currentUser.Text = "Shanza";
             // 
-            // panel1
+            // flowLayoutPanel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 73);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 2);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(296, 125);
-            this.panel1.MaximumSize = new System.Drawing.Size(350, 250);
-            this.panel1.MinimumSize = new System.Drawing.Size(230, 190);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 227);
-            this.panel1.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(83, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Muhammad Abdullah";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(137, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "By";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(50, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Object Oriented Programming";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::intelli_tutor_frontend.Properties.Resources.OOP;
-            this.pictureBox1.Location = new System.Drawing.Point(76, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 134);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(683, 125);
-            this.panel3.MaximumSize = new System.Drawing.Size(350, 250);
-            this.panel3.MinimumSize = new System.Drawing.Size(230, 190);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(309, 227);
-            this.panel3.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(82, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 18);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Muhammad Abdullah";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(137, 162);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "By";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(42, 143);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(231, 19);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Data Structures and Algorithms";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::intelli_tutor_frontend.Properties.Resources.OOP;
-            this.pictureBox2.Location = new System.Drawing.Point(76, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(152, 134);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(248, 78);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(933, 571);
+            this.flowLayoutPanel2.TabIndex = 18;
             // 
             // My_Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 661);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "My_Courses";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.My_Courses_Load);
             this.Resize += new System.EventHandler(this.My_Courses_Resize);
             this.panel2.ResumeLayout(false);
@@ -448,12 +329,6 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,15 +355,7 @@
         public System.Windows.Forms.Label formName;
         private System.Windows.Forms.PictureBox notificationIcon;
         private System.Windows.Forms.Label currentUser;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

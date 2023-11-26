@@ -322,7 +322,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::intelli_tutor_frontend.Properties.Resources.GTH;
             this.pictureBox1.Location = new System.Drawing.Point(3, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(435, 504);

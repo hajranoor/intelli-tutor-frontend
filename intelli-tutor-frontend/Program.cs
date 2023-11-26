@@ -22,10 +22,10 @@ namespace intelli_tutor_frontend
             //Application.Run(new QuestionForm(p));
             //Application.Run(new StudentSide.Dashboard());
             //Application.Run(new Loginform());
-            Application.Run(new TeacherSide.TeacherDashboard());
+            //Application.Run(new TeacherSide.TeacherDashboard());
             //Application.Run(new TeacherSide.CreateCourse());
             //Application.Run(new TeacherSide.My_Courses());
-            //Application.Run(new TeacherSide.Available_Courses());
+            Application.Run(new TeacherSide.Available_Courses());
             //Application.Run(new QuestionForm(p));
             //Application.Run(new StudentSide.Dashboard());
             //Application.Run(new Loginform());
