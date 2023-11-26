@@ -8,11 +8,11 @@ namespace intelli_tutor_frontend.Model
 {
     internal class userModel
     {
-        public int userid { get; set; } // Assuming you have an ID column as well, adjust the data type accordingly
+        public int user_id { get; set; }
         public string username { get; set; }
         public string email { get; set; }
         public string pass_word { get; set; }
-        public string google_verification { get; set; }
+        public bool google_verification { get; set; }
         public string user_role { get; set; }
         public DateTime create_at { get; set; }
         public DateTime update_at { get; set; }
