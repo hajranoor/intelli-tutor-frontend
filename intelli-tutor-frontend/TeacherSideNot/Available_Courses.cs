@@ -157,7 +157,8 @@ namespace intelli_tutor_frontend.TeacherSide
 
                 PictureBox pictureBox = new PictureBox();
                 //pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
-                pictureBox.Load("C:\\Users\\Aqsa\\Desktop\\Login1.png");
+                pictureBox.Load("C:\\Users\\Laiba\\Documents\\GitHub\\intelli-tutor-frontend\\laibaa.png");
+          
                 pictureBox.Width = 180;
                 pictureBox.Height = 150;
                 pictureBox.SizeMode = PictureBoxSizeMode.Zoom;

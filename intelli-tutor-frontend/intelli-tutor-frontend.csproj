@@ -115,7 +115,6 @@
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
-    <Compile Include="BackendApi\userApi.cs" />
     <Compile Include="BackendApi\UniversityApi.cs" />
     <Compile Include="BackendApi\UserApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
@@ -146,9 +145,7 @@
     <Compile Include="Model\StudentModel.cs" />
     <Compile Include="Model\TeacherModel.cs" />
     <Compile Include="Model\testCaseModel.cs" />
-
     <Compile Include="Model\UniversityModel.cs" />
-
     <Compile Include="Model\userModel.cs" />
     <Compile Include="Model\weekModel.cs" />
     <Compile Include="Program.cs" />

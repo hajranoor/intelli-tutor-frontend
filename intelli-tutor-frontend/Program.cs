@@ -18,15 +18,15 @@ namespace intelli_tutor_frontend
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new QuestionForm());
-            problemModel p = new problemModel();
+           // problemModel p = new problemModel();
             //Application.Run(new QuestionForm(p));
             //Application.Run(new StudentSide.Dashboard());
             //Application.Run(new Loginform());
             //Application.Run(new TeacherSide.TeacherDashboard());
-            Application.Run(new Registerform());
+            //Application.Run(new Registerform());
             //Application.Run(new TeacherSide.CreateCourse());
             //Application.Run(new TeacherSide.My_Courses());
-            Application.Run(new TeacherSide.Available_Courses());
+            //Application.Run(new TeacherSide.Available_Courses());
             //Application.Run(new QuestionForm(p));
             //Application.Run(new StudentSide.Dashboard());
             //Application.Run(new Loginform());
