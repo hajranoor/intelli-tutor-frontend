@@ -321,5 +321,10 @@ namespace intelli_tutor_frontend.TeacherSide
         {
 
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

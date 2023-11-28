@@ -63,5 +63,27 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
         }
+
+        public async Task<string> checkUserExists(Model.userModel u)
+        {
+            string Response;
+            Console.WriteLine(u);
+            using (var client = new HttpClient())
+            {
+                string apiUrl = $"http://localhost:7008/user/checkuser?username={Uri.EscapeDataString(u.username)}&password={Uri.EscapeDataString(u.pass_word)}";
+                using (var response = await client.GetAsync(apiUrl))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return apiResponse;
+                    }
+                    else
+                    {
+                        return apiResponse;
+                    }
+                }
+            }
+        }
     }
 }

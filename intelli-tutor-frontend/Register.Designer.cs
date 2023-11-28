@@ -94,7 +94,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::intelli_tutor_frontend.Properties.Resources.GTH;
+            //this.pictureBox1.Image = global::intelli_tutor_frontend.Properties.Resources.GTH;
             this.pictureBox1.Location = new System.Drawing.Point(4, 54);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";

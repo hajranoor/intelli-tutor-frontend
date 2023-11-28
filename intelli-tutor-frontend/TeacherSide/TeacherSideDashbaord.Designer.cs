@@ -41,6 +41,9 @@
             this.currentUser = new System.Windows.Forms.Label();
             this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -55,12 +58,13 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, -1);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.34806F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.65194F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
@@ -79,7 +83,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5, 20, 5, 0);
-            this.label1.Size = new System.Drawing.Size(371, 152);
+            this.label1.Size = new System.Drawing.Size(371, 148);
             this.label1.TabIndex = 0;
             this.label1.Text = "Intelli Tutor";
             // 
@@ -93,13 +97,14 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashboardToolStripMenuItem,
             this.availableCoursesToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.myCoursesToolStripMenuItem,
             this.hekkoToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 152);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 148);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(20, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(371, 595);
+            this.menuStrip1.Size = new System.Drawing.Size(371, 582);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -125,8 +130,9 @@
             this.myCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.myCoursesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.myCoursesToolStripMenuItem.Name = "myCoursesToolStripMenuItem";
-            this.myCoursesToolStripMenuItem.Size = new System.Drawing.Size(174, 41);
-            this.myCoursesToolStripMenuItem.Text = "My Courses";
+            this.myCoursesToolStripMenuItem.Size = new System.Drawing.Size(224, 41);
+            this.myCoursesToolStripMenuItem.Text = "Course Offering";
+            this.myCoursesToolStripMenuItem.Click += new System.EventHandler(this.myCoursesToolStripMenuItem_Click);
             // 
             // hekkoToolStripMenuItem
             // 
@@ -215,17 +221,53 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "jdfdfnld";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 41);
+            this.toolStripMenuItem1.Text = "My Courses";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 733);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 11);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(378, 104);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(940, 574);
+            this.flowLayoutPanel2.TabIndex = 8;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            // 
             // TeacherSideDashbaord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 677);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label3);
-            this.MaximumSize = new System.Drawing.Size(1346, 724);
+            this.MinimumSize = new System.Drawing.Size(1346, 724);
             this.Name = "TeacherSideDashbaord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TeacherSideDashbaord";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TeacherSideDashbaord_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -258,5 +300,8 @@
         private System.Windows.Forms.Label currentUser;
         private System.Windows.Forms.PictureBox notificationIcon;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

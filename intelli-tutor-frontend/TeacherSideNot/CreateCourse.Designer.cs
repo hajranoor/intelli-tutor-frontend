@@ -71,18 +71,20 @@
             this.panel2.Controls.Add(this.panel12);
             this.panel2.Controls.Add(this.panel13);
             this.panel2.Controls.Add(this.panel14);
-            this.panel2.Location = new System.Drawing.Point(0, 75);
+            this.panel2.Location = new System.Drawing.Point(0, 92);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 585);
+            this.panel2.Size = new System.Drawing.Size(329, 720);
             this.panel2.TabIndex = 15;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel10.Controls.Add(this.label8);
-            this.panel10.Location = new System.Drawing.Point(6, 175);
+            this.panel10.Location = new System.Drawing.Point(8, 215);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(234, 42);
+            this.panel10.Size = new System.Drawing.Size(312, 52);
             this.panel10.TabIndex = 11;
             this.panel10.Click += new System.EventHandler(this.panel10_Click);
             // 
@@ -90,18 +92,20 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 10);
+            this.label8.Location = new System.Drawing.Point(28, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 27);
+            this.label8.Size = new System.Drawing.Size(194, 34);
             this.label8.TabIndex = 0;
             this.label8.Text = "Create Course";
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label9);
-            this.panel9.Location = new System.Drawing.Point(6, 429);
+            this.panel9.Location = new System.Drawing.Point(8, 528);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(234, 41);
+            this.panel9.Size = new System.Drawing.Size(312, 50);
             this.panel9.TabIndex = 10;
             this.panel9.Click += new System.EventHandler(this.panel9_Click);
             // 
@@ -109,18 +113,20 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 11);
+            this.label9.Location = new System.Drawing.Point(32, 14);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 27);
+            this.label9.Size = new System.Drawing.Size(184, 34);
             this.label9.TabIndex = 0;
             this.label9.Text = "Your Journey";
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.label10);
-            this.panel11.Location = new System.Drawing.Point(6, 362);
+            this.panel11.Location = new System.Drawing.Point(8, 446);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(234, 46);
+            this.panel11.Size = new System.Drawing.Size(312, 57);
             this.panel11.TabIndex = 9;
             this.panel11.Click += new System.EventHandler(this.panel11_Click);
             // 
@@ -128,18 +134,20 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(21, 10);
+            this.label10.Location = new System.Drawing.Point(28, 12);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 27);
+            this.label10.Size = new System.Drawing.Size(127, 34);
             this.label10.TabIndex = 0;
             this.label10.Text = "Progress";
             // 
             // panel12
             // 
             this.panel12.Controls.Add(this.label11);
-            this.panel12.Location = new System.Drawing.Point(6, 303);
+            this.panel12.Location = new System.Drawing.Point(8, 373);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(234, 45);
+            this.panel12.Size = new System.Drawing.Size(312, 55);
             this.panel12.TabIndex = 8;
             this.panel12.Click += new System.EventHandler(this.panel12_Click);
             // 
@@ -147,18 +155,20 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(21, 11);
+            this.label11.Location = new System.Drawing.Point(28, 14);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(125, 27);
+            this.label11.Size = new System.Drawing.Size(163, 34);
             this.label11.TabIndex = 0;
             this.label11.Text = "My Courses";
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.label12);
-            this.panel13.Location = new System.Drawing.Point(6, 237);
+            this.panel13.Location = new System.Drawing.Point(8, 292);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(234, 45);
+            this.panel13.Size = new System.Drawing.Size(312, 55);
             this.panel13.TabIndex = 7;
             this.panel13.Click += new System.EventHandler(this.panel13_Click);
             // 
@@ -166,9 +176,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(21, 9);
+            this.label12.Location = new System.Drawing.Point(28, 11);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(190, 27);
+            this.label12.Size = new System.Drawing.Size(249, 34);
             this.label12.TabIndex = 0;
             this.label12.Text = "Available Courses ";
             // 
@@ -176,9 +187,10 @@
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel14.Controls.Add(this.label13);
-            this.panel14.Location = new System.Drawing.Point(6, 115);
+            this.panel14.Location = new System.Drawing.Point(8, 142);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(234, 42);
+            this.panel14.Size = new System.Drawing.Size(312, 52);
             this.panel14.TabIndex = 6;
             this.panel14.Click += new System.EventHandler(this.panel14_Click);
             // 
@@ -186,9 +198,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 10);
+            this.label13.Location = new System.Drawing.Point(28, 12);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 27);
+            this.label13.Size = new System.Drawing.Size(155, 34);
             this.label13.TabIndex = 0;
             this.label13.Text = "Dashboard";
             // 
@@ -198,21 +211,21 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 26F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.Location = new System.Drawing.Point(2, 1);
+            this.label1.Location = new System.Drawing.Point(3, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(4, 16, 4, 0);
-            this.label1.Size = new System.Drawing.Size(245, 78);
+            this.label1.Padding = new System.Windows.Forms.Padding(5, 20, 5, 0);
+            this.label1.Size = new System.Drawing.Size(312, 99);
             this.label1.TabIndex = 13;
             this.label1.Text = "Intelli Tutor";
             // 
             // accountIcon
             // 
             this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountIcon.Location = new System.Drawing.Point(763, 3);
-            this.accountIcon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.accountIcon.Location = new System.Drawing.Point(1017, 4);
+            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accountIcon.Name = "accountIcon";
-            this.accountIcon.Size = new System.Drawing.Size(43, 64);
+            this.accountIcon.Size = new System.Drawing.Size(56, 78);
             this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.accountIcon.TabIndex = 3;
             this.accountIcon.TabStop = false;
@@ -223,20 +236,20 @@
             this.formName.AutoSize = true;
             this.formName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formName.ForeColor = System.Drawing.Color.White;
-            this.formName.Location = new System.Drawing.Point(7, 22);
-            this.formName.Margin = new System.Windows.Forms.Padding(7, 0, 2, 0);
+            this.formName.Location = new System.Drawing.Point(9, 27);
+            this.formName.Margin = new System.Windows.Forms.Padding(9, 0, 3, 0);
             this.formName.Name = "formName";
-            this.formName.Size = new System.Drawing.Size(166, 26);
+            this.formName.Size = new System.Drawing.Size(210, 32);
             this.formName.TabIndex = 0;
             this.formName.Text = "Create Course";
             // 
             // notificationIcon
             // 
             this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationIcon.Location = new System.Drawing.Point(716, 3);
-            this.notificationIcon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.notificationIcon.Location = new System.Drawing.Point(955, 4);
+            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.notificationIcon.Name = "notificationIcon";
-            this.notificationIcon.Size = new System.Drawing.Size(43, 64);
+            this.notificationIcon.Size = new System.Drawing.Size(56, 78);
             this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.notificationIcon.TabIndex = 2;
             this.notificationIcon.TabStop = false;
@@ -247,10 +260,10 @@
             this.currentUser.AutoSize = true;
             this.currentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentUser.ForeColor = System.Drawing.Color.White;
-            this.currentUser.Location = new System.Drawing.Point(815, 22);
-            this.currentUser.Margin = new System.Windows.Forms.Padding(7, 0, 2, 0);
+            this.currentUser.Location = new System.Drawing.Point(1085, 27);
+            this.currentUser.Margin = new System.Windows.Forms.Padding(9, 0, 3, 0);
             this.currentUser.Name = "currentUser";
-            this.currentUser.Size = new System.Drawing.Size(92, 26);
+            this.currentUser.Size = new System.Drawing.Size(117, 32);
             this.currentUser.TabIndex = 1;
             this.currentUser.Text = "Shanza";
             // 
@@ -268,13 +281,13 @@
             this.tableLayoutPanel2.Controls.Add(this.formName, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.notificationIcon, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.currentUser, 3, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(241, 1);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(321, 1);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(952, 78);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1269, 96);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
             // flowLayoutPanel1
@@ -284,22 +297,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(253, 85);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(337, 105);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(928, 564);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1237, 694);
             this.flowLayoutPanel1.TabIndex = 16;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // CreateCourse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1193, 661);
+            this.ClientSize = new System.Drawing.Size(1591, 814);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.MinimumSize = new System.Drawing.Size(1000, 600);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1327, 728);
             this.Name = "CreateCourse";
             this.Text = "CreateCourse";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -513,3 +513,4 @@ C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\ob
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.My_Courses.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.dll
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.xml
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherSideDashbaord.resources

@@ -16,7 +16,7 @@ namespace intelli_tutor_frontend
 
     {
 
-        userApi uApi = new userApi();
+        UserApi uApi = new UserApi();
         public Loginform()
         {
             InitializeComponent();

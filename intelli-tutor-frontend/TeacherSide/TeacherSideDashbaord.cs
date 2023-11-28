@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using intelli_tutor_frontend.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,19 @@ namespace intelli_tutor_frontend.TeacherSide
         private void TeacherSideDashbaord_Load(object sender, EventArgs e)
         {
             dashboardToolStripMenuItem.Enabled = true;
+        }
+
+        private void myCoursesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            CourseOffering courseOffering = new CourseOffering();
+            coursesModel c = new coursesModel();
+            courseOffering.CourseOfferingShow(c, flowLayoutPanel2);
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
