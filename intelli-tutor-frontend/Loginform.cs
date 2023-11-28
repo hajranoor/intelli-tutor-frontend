@@ -1,4 +1,6 @@
-﻿using System;
+﻿using intelli_tutor_frontend.BackendApi;
+using intelli_tutor_frontend.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +13,10 @@ using System.Windows.Forms;
 namespace intelli_tutor_frontend
 {
     public partial class Loginform : Form
+
     {
+
+        UserApi uApi = new UserApi();
         public Loginform()
         {
             InitializeComponent();
@@ -51,12 +56,38 @@ namespace intelli_tutor_frontend
             textBox2.UseSystemPasswordChar = true;
         }
 
-        private void SignIn_Click(object sender, EventArgs e)
+        private async void SignIn_Click(object sender, EventArgs e)
         {
-            Registerform mainForm2 = new Registerform();
-            this.Hide();
-            mainForm2.ShowDialog();
-            this.Close();
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+
+            userModel u = new userModel();
+            u.username = username;
+            u.pass_word = password;
+
+           // string result = await uApi.AuthenticateUser(u);
+
+            string result = await uApi.checkUserExists(u);
+            Console.WriteLine("result");
+            Console.WriteLine(result);
+
+            if (result == "true")
+            {
+                MessageBox.Show("Hello,sign in !");
+            }
+
+            else if ( result == "false")
+            {
+                MessageBox.Show("incorrect credentials");
+            }
+
+            else
+            {
+                MessageBox.Show("jkndkffkff");
+            }
+
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)

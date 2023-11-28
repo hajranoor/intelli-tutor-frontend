@@ -10,8 +10,9 @@
 
 namespace intelli_tutor_frontend.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -31,7 +32,9 @@ namespace intelli_tutor_frontend.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
+        public static Image GTH { get; internal set; }
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -73,16 +76,6 @@ namespace intelli_tutor_frontend.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GTH {
-            get {
-                object obj = ResourceManager.GetObject("GTH", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Login {
             get {
                 object obj = ResourceManager.GetObject("Login", resourceCulture);
@@ -106,6 +99,16 @@ namespace intelli_tutor_frontend.Properties {
         internal static System.Drawing.Bitmap Loginimg {
             get {
                 object obj = ResourceManager.GetObject("Loginimg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OOP {
+            get {
+                object obj = ResourceManager.GetObject("OOP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

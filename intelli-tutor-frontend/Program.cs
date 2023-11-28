@@ -17,10 +17,11 @@ namespace intelli_tutor_frontend
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            problemModel p = new problemModel();
-            Application.Run(new StudentSide.Dashboard());
+            //problemModel p = new problemModel();
+            //Application.Run(new StudentSide.Dashboard());
 
             //Application.Run(new authenticationCheck());
+            Application.Run(new TeacherSide.TeacherSideDashbaord());
         }
     }
 }

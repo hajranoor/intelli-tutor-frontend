@@ -15,6 +15,13 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using ScintillaNET;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using System.Collections.Immutable;
+using System.Diagnostics;
+using System.Reflection.Emit;
+using static ScintillaNET.Style;
 
 namespace intelli_tutor_frontend.StudentSide
 {
@@ -27,15 +34,34 @@ namespace intelli_tutor_frontend.StudentSide
         private int sidebarStep = 20;
         private int originalSidebarWidth;
         private int originalMainPanelWidth;
+
         //private Dictionary<Control, int> originalControlLeftPositions = new Dictionary<Control, int>();
         public SolveProblem(problemModel problem)
         {
             InitializeComponent();
+            InitializeCodeEditor();
             loadIcons();
             this.problem = problem;
             originalSidebarWidth = sidePanel.Width;
             originalMainPanelWidth = mainPanel.Width;
             selectLanguage.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+        }
+
+        private void InitializeCodeEditor()
+        {
+            codeEditor.Styles[Style.Default].Font = "Consolas"; // Set the font
+            codeEditor.Margins[0].Width = 20; // Set the margin for line numbers
+
+            //// Enable syntax highlighting (You can set a specific programming language here)
+            codeEditor.Lexer = Lexer.Cpp;
+            codeEditor.IndentWidth = 4;
+            codeEditor.UseTabs = false;
+            codeEditor.Styles[Style.Default].Size = 10;
+
+            codeEditor.Styles[Style.Cpp.Default].ForeColor = Color.Black;
+            codeEditor.Styles[Style.Cpp.CommentDocKeyword].ForeColor = Color.Blue;
+            codeEditor.Styles[Style.Cpp.Comment].ForeColor = Color.Green;
+            codeEditor.Styles[Style.Cpp.String].ForeColor = Color.Red;            // You can set other options and styles for syntax highlighting and indentation as needed.
         }
 
         private void loadCompilers()
@@ -47,6 +73,7 @@ namespace intelli_tutor_frontend.StudentSide
             {
                 string displayName = Path.GetFileName(compiler);
                 selectLanguage.Items.Add(displayName);
+                selectLanguage.SelectedIndex = 0;
             }
         }
 
@@ -80,9 +107,9 @@ namespace intelli_tutor_frontend.StudentSide
                 questionBox.AppendText("Input Data: ");
 
                 questionBox.SelectionFont = questionBox.Font;
-                foreach (var item1 in item.input_data)
+                foreach (var inputItem in item.input_data)
                 {
-                    questionBox.AppendText(item1 + ", ");
+                    questionBox.AppendText(inputItem + ", ");
                 }
                 questionBox.AppendText("\n");
 
@@ -90,7 +117,11 @@ namespace intelli_tutor_frontend.StudentSide
                 questionBox.AppendText("Output Data: ");
 
                 questionBox.SelectionFont = questionBox.Font;
-                questionBox.AppendText(item.output_data + "\n" + "\n");
+                foreach (var outputItem in item.output_data)
+                {
+                    questionBox.AppendText(outputItem + ", ");
+                }
+                questionBox.AppendText("\n");
 
                 count++;
             }
@@ -186,6 +217,45 @@ namespace intelli_tutor_frontend.StudentSide
 
         private void codeEditor_TextChanged(object sender, EventArgs e)
         {
+            
+            //using (Process process = new Process())
+            //{
+            //    process.StartInfo = startInfo;
+            //    process.Start();
+
+            //    // Capture error output (diagnostics)
+            //    string errorOutput = process.StandardError.ReadToEnd();
+            //    process.WaitForExit();
+
+            //    // Display error diagnostics or handle them as needed
+            //    MessageBox.Show(errorOutput);
+            //    outputBox.SelectionStart = questionBox.TextLength;
+            //    outputBox.SelectionFont = new Font(questionBox.Font.FontFamily, 18, FontStyle.Bold);
+            //    outputBox.SelectionColor = Color.Black;
+            //    outputBox.AppendText(errorOutput + "\n");
+            //    //outputBox.Text += errorOutput + '\n';
+            //    Console.WriteLine(errorOutput);
+
+            //    // Clean up: delete the temporary file
+            //    File.Delete(tempFilePath);
+            //}
+
+            //SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(code);
+            //CSharpCompilation compilation = CSharpCompilation.Create("MyCompilation",
+            //    syntaxTrees: new[] { syntaxTree },
+            //    references: new[]
+            //    {
+            //MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
+            //        // Add any other references your code may depend on
+            //    });
+
+            //ImmutableArray<Diagnostic> diagnostics = compilation.GetDiagnostics();
+
+            //outputBox.Clear();
+            //foreach (var diagnostic in diagnostics.Where(d => d.Severity == DiagnosticSeverity.Error))
+            //{
+            //    outputBox.Text  += (diagnostic.ToString() + '\n');
+            //}
 
         }
 
@@ -196,7 +266,8 @@ namespace intelli_tutor_frontend.StudentSide
 
         private void runProgram_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("button has been clicked");
+            outputBox.Text = "";
+            //MessageBox.Show("button has been clicked");
             string path = Path.Combine(Application.StartupPath, "compilersFolder");
             //string studentCode1 = codeEditor.Text;
 
@@ -206,27 +277,42 @@ namespace intelli_tutor_frontend.StudentSide
 
             if (selectLanguage.Text == "c++")
             {
-                 
+                int count = 0;
                 foreach (testCaseModel tc in testcaseList)
                 {
+                    count++;
                     string studentCode = codeEditor.Text;
-                    MessageBox.Show(studentCode, path);
-                    MessageBox.Show(tc.input_data[0]);
+                    //MessageBox.Show(studentCode, path);
+                    //MessageBox.Show(tc.input_data[0]);
                     cppClass cppClassObj = new cppClass(path, studentCode);
                     //bool result = cppClassObj.runCode(studentCode, problem.regex, tc.input_data, tc.output_data);
                     //if (result == true)
                     //{
                     // MessageBox.Show("test case passed.");
                     // }
-                   string responseStr = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data, tc.output_data);
+                    string[] data = {"yes", "2" };
+                    bool passTestCase = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data,tc.output_data, outputBox, count);
+                    if (passTestCase == false) 
+                    {
+                        break;
+                    }
+                    //var jsonArray = JsonConvert.DeserializeObject<dynamic[]>(responseStr);
 
-                    var jsonArray = JsonConvert.DeserializeObject<dynamic[]>(responseStr);
-
-                    var toShow = jsonArray[0].ToString();
+                    //var toShow = jsonArray[0].ToString();
                     //string yourOutputValue = (string)toShow["YourOutput"];
                     //MessageBox.Show(yourOutputValue);
                 }
             }
         }
+
+        private void codeEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void codeEditor_TextChanged_1(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
