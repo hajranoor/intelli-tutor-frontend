@@ -115,6 +115,7 @@
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
+    <Compile Include="BackendApi\userApi.cs" />
     <Compile Include="BackendApi\UniversityApi.cs" />
     <Compile Include="BackendApi\UserApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
@@ -145,13 +146,20 @@
     <Compile Include="Model\StudentModel.cs" />
     <Compile Include="Model\TeacherModel.cs" />
     <Compile Include="Model\testCaseModel.cs" />
+
     <Compile Include="Model\UniversityModel.cs" />
+
     <Compile Include="Model\userModel.cs" />
     <Compile Include="Model\weekModel.cs" />
     <Compile Include="Program.cs" />
     <!-- <Compile Include="javaClass.cs" /> -->
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="compilerClasses\pythonClass.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,14 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,9 +313,6 @@
     <Content Include="image.png" />
     <Content Include="labimage.png" />
     <None Include="Resources\OOP.png" />
-    <None Include="Resources\download-removebg-preview1.png" />
-    <None Include="Resources\download-removebg-preview.png" />
-    <None Include="Resources\GTH.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

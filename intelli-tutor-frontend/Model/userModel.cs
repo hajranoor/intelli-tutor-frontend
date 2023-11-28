@@ -17,5 +17,6 @@ namespace intelli_tutor_frontend.Model
         public DateTime create_at { get; set; }
         public DateTime update_at { get; set; }
         public bool active { get; set; }
+
     }
 }

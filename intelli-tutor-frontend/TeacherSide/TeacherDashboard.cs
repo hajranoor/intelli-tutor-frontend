@@ -1,4 +1,5 @@
-﻿using intelli_tutor_frontend.StudentSide;
+﻿using FontAwesome.Sharp;
+using intelli_tutor_frontend.StudentSide;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,7 @@ namespace intelli_tutor_frontend.TeacherSide
             chart3.Series["s3"].Points[1].Color = Color.DarkSlateBlue;
             chart3.Legends.Clear();
             chart3.ChartAreas[0].BackColor = Color.Transparent;
+            loadIcons();
         }
 
         private void TeacherDashboard_Load(object sender, EventArgs e)
@@ -119,67 +121,82 @@ namespace intelli_tutor_frontend.TeacherSide
         private void panel5_Click(object sender, EventArgs e)
         {
             panel5.BackColor= Color.White;
-            panel6.BackColor = Color.MediumPurple;
-            panel7.BackColor = Color.MediumPurple;
-            panel8.BackColor = Color.MediumPurple;
-            panel9.BackColor = Color.MediumPurple;
-            panel10.BackColor = Color.MediumPurple;
+            panel6.BackColor = Color.FromArgb(192, 192, 255);
+            panel7.BackColor = Color.FromArgb(192, 192, 255);
+            panel8.BackColor = Color.FromArgb(192, 192, 255);
+            panel9.BackColor = Color.FromArgb(192, 192, 255);
+            panel10.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void panel6_Click(object sender, EventArgs e)
         {
-            panel5.BackColor= Color.MediumPurple;
+            panel5.BackColor= Color.FromArgb(192, 192, 255); 
             panel6.BackColor= Color.White;
-            panel7.BackColor = Color.MediumPurple;
-            panel8.BackColor = Color.MediumPurple;
-            panel9.BackColor = Color.MediumPurple;
-            panel10.BackColor = Color.MediumPurple;
+            panel7.BackColor = Color.FromArgb(192, 192, 255);
+            panel8.BackColor = Color.FromArgb(192, 192, 255);
+            panel9.BackColor = Color.FromArgb(192, 192, 255); 
+            panel10.BackColor = Color.FromArgb(192, 192, 255); 
             Available_Courses available_CoursesForm= new Available_Courses();
             available_CoursesForm.Show();
+            this.Hide();
                  }
 
         private void panel7_Click(object sender, EventArgs e)
         {
-            panel5.BackColor= Color.MediumPurple;
-            panel6.BackColor= Color.MediumPurple;
+            panel5.BackColor= Color.FromArgb(192, 192, 255); 
+            panel6.BackColor= Color.FromArgb(192, 192, 255); 
             panel7.BackColor= Color.White;
-            panel8.BackColor = Color.MediumPurple;  
-            panel9.BackColor = Color.MediumPurple;
-            panel10.BackColor = Color.MediumPurple;
+            panel8.BackColor = Color.FromArgb(192, 192, 255);   
+            panel9.BackColor = Color.FromArgb(192, 192, 255); 
+            panel10.BackColor = Color.FromArgb(192, 192, 255); 
             My_Courses MyCoursesForm = new My_Courses();
             MyCoursesForm.Show();
+            this.Hide();
         }
 
         private void panel8_Click(object sender, EventArgs e)
         {
             panel8.BackColor= Color.White;
-            panel9.BackColor= Color.MediumPurple;
-            panel7.BackColor= Color.MediumPurple;
-            panel5.BackColor= Color.MediumPurple;
-            panel6.BackColor= Color.MediumPurple;
-            panel10.BackColor= Color.MediumPurple;
+            panel9.BackColor= Color.FromArgb(192, 192, 255); 
+            panel7.BackColor= Color.FromArgb(192, 192, 255); 
+            panel5.BackColor= Color.FromArgb(192, 192, 255); 
+            panel6.BackColor= Color.FromArgb(192, 192, 255); 
+            panel10.BackColor= Color.FromArgb(192, 192, 255); 
         }
 
         private void panel9_Click(object sender, EventArgs e)
         {
             panel9.BackColor= Color.White;
-            panel5.BackColor = Color.MediumPurple;
-            panel6.BackColor = Color.MediumPurple;
-            panel7.BackColor = Color.MediumPurple;
-            panel8.BackColor = Color.MediumPurple;
-            panel10.BackColor= Color.MediumPurple;
+            panel5.BackColor = Color.FromArgb(192, 192, 255); 
+            panel6.BackColor = Color.FromArgb(192, 192, 255);
+            panel7.BackColor = Color.FromArgb(192, 192, 255); 
+            panel8.BackColor = Color.FromArgb(192, 192, 255); 
+            panel10.BackColor= Color.FromArgb(192, 192, 255); 
         }
 
         private void panel10_Click(object sender, EventArgs e)
         {
             panel10.BackColor = Color.White;
-            panel9.BackColor=Color.MediumPurple;
-            panel5.BackColor=Color.MediumPurple;
-            panel6.BackColor= Color.MediumPurple;   
-            panel7.BackColor= Color.MediumPurple;
-            panel8.BackColor= Color.MediumPurple;
+            panel9.BackColor=Color.FromArgb(192, 192, 255); 
+            panel5.BackColor=Color.FromArgb(192, 192, 255); 
+            panel6.BackColor= Color.FromArgb(192, 192, 255);   
+            panel7.BackColor= Color.FromArgb(192, 192, 255); 
+            panel8.BackColor= Color.FromArgb(192, 192, 255); 
             CreateCourse CreateCourseForm = new CreateCourse();
             CreateCourseForm.Show();
+            this.Hide();
+        }
+
+        public void loadIcons()
+        {
+            this.notificationIcon.Image = IconChar.Bell.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+            this.accountIcon.Image = IconChar.Person.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+
+
+        }
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
