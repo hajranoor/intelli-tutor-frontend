@@ -116,7 +116,6 @@
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
-    <Compile Include="BackendApi\userApi.cs" />
     <Compile Include="BackendApi\UniversityApi.cs" />
     <Compile Include="BackendApi\UserApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
