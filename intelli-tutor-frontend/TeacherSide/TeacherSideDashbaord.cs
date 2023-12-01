@@ -45,5 +45,18 @@ namespace intelli_tutor_frontend.TeacherSide
         {
 
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            CourseContent cdinstance  = new CourseContent();
+            //CourseAndEnrolledCourseDTO course = new CourseAndEnrolledCourseDTO();
+            cdinstance.CourseContentSjow(flowLayoutPanel2);
+        }
     }
 }

@@ -276,6 +276,7 @@
     </EmbeddedResource>
     <Compile Include="TeacherSide\Class1.cs" />
     <Compile Include="TeacherSide\CourseOffering.cs" />
+    <Compile Include="TeacherSide\CourseContent.cs" />
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>
