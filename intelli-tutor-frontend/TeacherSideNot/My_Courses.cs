@@ -220,9 +220,9 @@ namespace intelli_tutor_frontend.TeacherSide
                 enrollButton.Click += async (sender, e) =>
                 {
 
-                    flowLayoutPanel1.Controls.Clear();
-                    CourseContent c = new CourseContent();
-                    c.CourseContentSjow(item, flowLayoutPanel1);
+                    //flowLayoutPanel1.Controls.Clear();
+                    //CourseContent c = new CourseContent();
+                    //c.CourseContentSjow(item, flowLayoutPanel1);
 
                 };
 

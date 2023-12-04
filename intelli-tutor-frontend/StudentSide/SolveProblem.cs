@@ -27,8 +27,8 @@ namespace intelli_tutor_frontend.StudentSide
 {
     public partial class SolveProblem : Form
     {
-        private problemModel problem;
-        private List<testCaseModel> testcaseList;
+        private ProblemModel problem;
+        private List<TestCaseModel> testcaseList;
 
         private bool isSidebarCollapsed = false;
         private int sidebarStep = 20;
@@ -36,7 +36,7 @@ namespace intelli_tutor_frontend.StudentSide
         private int originalMainPanelWidth;
 
         //private Dictionary<Control, int> originalControlLeftPositions = new Dictionary<Control, int>();
-        public SolveProblem(problemModel problem)
+        public SolveProblem(ProblemModel problem)
         {
             InitializeComponent();
             InitializeCodeEditor();
@@ -80,7 +80,7 @@ namespace intelli_tutor_frontend.StudentSide
         private void loadStarterCode()
         {
             this.codeEditor.Text = "";
-            this.codeEditor.Text = problem.startercode;
+            this.codeEditor.Text = problem.starter_code;
         }
 
         private async void SolveProblem_Load(object sender, EventArgs e)
@@ -278,7 +278,7 @@ namespace intelli_tutor_frontend.StudentSide
             if (selectLanguage.Text == "c++")
             {
                 int count = 0;
-                foreach (testCaseModel tc in testcaseList)
+                foreach (TestCaseModel tc in testcaseList)
                 {
                     count++;
                     string studentCode = codeEditor.Text;

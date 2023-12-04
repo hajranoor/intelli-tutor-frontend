@@ -278,8 +278,12 @@
     </EmbeddedResource>
     <Compile Include="TeacherSide\Class1.cs" />
     <Compile Include="TeacherSide\CourseOffering.cs" />
+<<<<<<< HEAD
     <Compile Include="TeacherSide\SuperAdmin-coursecontent.cs" />
     <Compile Include="TeacherSide\teacher-AvailableCourse.cs" />
+=======
+    <Compile Include="TeacherSide\CourseContent.cs" />
+>>>>>>> 3c8aefd26ccc02e60ae8248b21675b4cd5c48773
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -14,8 +14,8 @@ namespace intelli_tutor_frontend.StudentSide
     internal class ProblemsContent
     {
 
-        problemApi ProblemApi = new problemApi();
-        List<problemModel> problemList;
+        ProblemApi ProblemApi = new ProblemApi();
+        List<ProblemModel> problemList;
 
         public async void ProblemContentShow(int labId, FlowLayoutPanel flowLayoutPanel1)
         {

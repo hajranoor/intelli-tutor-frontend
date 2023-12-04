@@ -14,8 +14,27 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class CourseOffering
     {
+        CourseOfferingApi courseOfferingApi = new CourseOfferingApi();
+
+        MainContentApi mainContentApi = new MainContentApi();
+        List<MainContentModel> mainContentList = new List<MainContentModel>();  
+
+        ContentApi contentApi = new ContentApi();
+
         MainWeekApi mainWeekApi = new MainWeekApi();  
         List<MainWeekModel> mainWeekList = new List<MainWeekModel>();
+
+        WeekApi weekApi = new WeekApi();    
+
+        MainProblemApi mainProblemApi = new MainProblemApi();
+        List<MainProblemsModel> mainProblemsList = new List<MainProblemsModel>();
+
+        ProblemApi problemApi = new ProblemApi();   
+
+        MainTestCaseApi mainTestCaseApi = new MainTestCaseApi();
+        List<MainTestCaseModel> mainTestCaseList = new List<MainTestCaseModel>();
+
+        TestCasesApi TestCasesApi = new TestCasesApi(); 
 
         RadioButton defaultRadioButton = new RadioButton();
         RadioButton newRadioButton = new RadioButton();
@@ -181,9 +200,16 @@ namespace intelli_tutor_frontend.TeacherSide
                         {
                             if (int.TryParse(capacityTextBox.Text, out int capacity) && capacity > 0)
                             {
-                                
-                                mainWeekList = await mainWeekApi.getAllWeekData(1);
-                                MessageBox.Show(mainWeekList.Count.ToString());
+                                CourseOfferingModel courseOfferingModel = new CourseOfferingModel();
+                                courseOfferingModel.description = descriptionTextBox.Text;  
+                                courseOfferingModel.offering_year = offeringYear;
+                                courseOfferingModel.capacity = capacity;
+                                courseOfferingModel.course_id = 1;
+                                courseOfferingModel.semester = semesterComboBox.Text;
+                                courseOfferingModel.teacher_id = 1;
+
+                                int courseOfferingId = await courseOfferingApi.InsertCourseOfferingData(courseOfferingModel);
+                                copyCourseData(courseOfferingId);
                             }
                             else
                             {
@@ -241,9 +267,64 @@ namespace intelli_tutor_frontend.TeacherSide
                 MessageBox.Show("Please select an option.");
             }
         }
-
-        private void validateData()
+        private async void copyCourseData(int courseOfferingId)
         {
+            mainWeekList = await mainWeekApi.getAllMainWeekData(1);
+            foreach (var mainWeekItem in mainWeekList)
+            {
+                int insertedWeekId = await weekApi.InsertWeekData(new WeekModel
+                {
+                    week_name = mainWeekItem.week_name,
+                    course_offering_id = courseOfferingId,
+                    description = mainWeekItem.description,
+                });
+
+                mainContentList = await mainContentApi.getMainContentByWeekId(mainWeekItem.week_id);
+                foreach (var mainContentItem in mainContentList)
+                {
+                    int insertedContentId = await contentApi.InsertContentData(new ContentModel
+                    {
+                        content_name = mainContentItem.content_name,
+                        content_type = mainContentItem.content_type,
+                        sequence_number = mainContentItem.sequence_number,
+                        week_id = insertedWeekId,
+                    });
+
+                    mainProblemsList = await mainProblemApi.getAllMainProblemData(mainContentItem.content_id);
+                    foreach (var mainProblemItem in mainProblemsList)
+                    {
+                        int insertedProblemId = await problemApi.InsertProblemData(new ProblemModel
+                        {
+                            content_id = insertedContentId,
+                            problem_name = mainProblemItem.problem_name,
+                            description = mainProblemItem.description,
+                            regex = mainProblemItem.regex,
+                            starter_code = mainProblemItem.starter_code,
+                            right_code = mainProblemItem.right_code,
+                            complexity_level = mainProblemItem.complexity_level,
+                            category = mainProblemItem.category,
+
+                        });
+
+                        mainTestCaseList = await mainTestCaseApi.getAllMainTestCaseData(mainProblemItem.problem_id);
+                        foreach (var mainTestCaseItem in mainTestCaseList)
+                        {
+                            int insertedTestCaseId = await TestCasesApi.InsertTestCaseData(new TestCaseModel
+                            {
+                                problem_id = insertedProblemId,
+                                input_data = mainTestCaseItem.input_data,
+                                output_data = mainTestCaseItem.output_data, 
+                            });
+                        }
+                    }
+
+                    //assignment
+                    //quiz
+
+                }
+
+            }
+            MessageBox.Show("end");
 
         }
     }

@@ -534,6 +534,7 @@ C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\ob
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.dll
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.xml
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherSideDashbaord.resources
+<<<<<<< HEAD
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Auth.dll
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Auth.PlatformServices.dll
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Core.dll
@@ -555,3 +556,28 @@ C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bi
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\System.CodeDom.xml
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.authenticationCheck.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherSideDashbaord.resources
+=======
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Auth.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Core.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.PeopleService.v1.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Plus.v1.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\System.CodeDom.dll
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.pdb
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.xml
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Auth.xml
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Core.pdb
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Core.xml
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.PeopleService.v1.pdb
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.PeopleService.v1.xml
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Plus.v1.pdb
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Plus.v1.xml
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.xml
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\System.CodeDom.xml
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.authenticationCheck.resources
+C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherSideDashbaord.resources
+>>>>>>> 3c8aefd26ccc02e60ae8248b21675b4cd5c48773
