@@ -1,42 +1,36 @@
-﻿using FontAwesome.Sharp;
-using intelli_tutor_frontend.BackendApi;
+﻿using intelli_tutor_frontend.BackendApi;
 using intelli_tutor_frontend.Model;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace intelli_tutor_frontend.StudentSide
+namespace intelli_tutor_frontend.TeacherSide
 {
-    public partial class availableCourses : Dashboard
+    internal class teacherMyCourses
     {
-        CourseApi courseApi = new CourseApi();
-        EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
+        courseOfferingapi courseofferingapi = new courseOfferingapi();
+        List<courseOfferingModel> courseofferinglist;
 
-        List<coursesModel> availableCoursesList;
-        public availableCourses()
+        public async Task ShowMyCoursesAsync(FlowLayoutPanel flowLayoutPanel)
         {
-            formName.Text = "Availabe Courses";   
-            InitializeComponent();
-        }
+            courseofferinglist = await courseofferingapi.getCourseOfferings(1);
 
-        private async void availableCourses_Load(object sender, EventArgs e)
-        {
-            availableCoursesList = await courseApi.getAllCourseData();
-            showData();
+            MessageBox.Show("clicked 2" + courseofferinglist.Count.ToString());
+
+
+            ShowCourses(flowLayoutPanel);
+
 
         }
-        private void showData()
+
+        public void ShowCourses(FlowLayoutPanel flowLayoutPanel)
         {
-            foreach (var item in availableCoursesList)
+            MessageBox.Show("are we here?");
+            foreach (var course in courseofferinglist)
             {
                 Panel outerPanel = new Panel();
                 outerPanel.Width = 480;
@@ -50,14 +44,14 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
                 cardPanel.Width = 480;
                 cardPanel.Height = 400;
-                cardPanel.Margin = new Padding(20,20,20,20);
+                cardPanel.Margin = new Padding(20, 20, 20, 20);
                 cardPanel.BackColor = Color.Lavender;
                 cardPanel.AutoScroll = true;
-               
+
                 PictureBox pictureBox = new PictureBox();
                 //pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
                 //pictureBox.Load("D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
-                
+
                 pictureBox.Width = 150;
                 pictureBox.Height = 150;
                 pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -65,7 +59,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(pictureBox, 0, 0);
 
                 Label titleLabel = new Label();
-                titleLabel.Text = item.course_title;
+                titleLabel.Text = course.course_offering_id.ToString();
                 titleLabel.Dock = DockStyle.Fill;
                 titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                 titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -73,7 +67,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = item.description;
+                instructorLabel.Text = course.course_id.ToString();
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                 instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
@@ -85,10 +79,10 @@ namespace intelli_tutor_frontend.StudentSide
                 buttonPanel.Width = 70;
                 //buttonPanel.BackColor = Color.DarkSlateBlue;
                 buttonPanel.Dock = DockStyle.Bottom;
-                buttonPanel.Margin = new Padding(150, 0, 150, 20); 
+                buttonPanel.Margin = new Padding(150, 0, 150, 20);
 
                 Button enrollButton = new Button();
-                
+
                 enrollButton.Text = "Enroll";
                 enrollButton.Dock = DockStyle.Fill;
                 enrollButton.Width = 70;
@@ -99,21 +93,21 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += async (sender, e) =>
                 {
-                    DialogResult result = MessageBox.Show("Do you want to add this course" + item.course_title + " ?" , "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Do you want to enroll in this course " + course.offering_year + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (result == DialogResult.Yes)
-                    {
-                        enrolledCourses enrolledCourses = new enrolledCourses();
-                        enrolledCourses.courseId = item.course_id;
-                        enrolledCourses.studentId = 1;
-                        enrolledCourses.grade = "";
-                        string data = await  enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
+                    //if (result == DialogResult.Yes)
+                    //{
+                        //enrolledCourses enrolledCourses = new enrolledCourses();
+                        //enrolledCourses.courseId = course.semester.ToString();
+                        //enrolledCourses.studentId = 1;
+                        //enrolledCourses.grade = "";
+                        //string data = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
 
-                        MessageBox.Show(data);
-                    }
-                    else
-                    {
-                    }
+                        //MessageBox.Show(data);
+                    //}
+                    //else
+                    //{
+                    //}
                 };
 
                 buttonPanel.Controls.Add(enrollButton);
@@ -121,17 +115,8 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(buttonPanel, 0, 3);
                 outerPanel.Controls.Add(cardPanel);
 
-                flowLayoutPanel1.Controls.Add(outerPanel);
+                flowLayoutPanel.Controls.Add(outerPanel);
             }
-
         }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
     }
 }
