@@ -45,5 +45,14 @@ namespace intelli_tutor_frontend.TeacherSide
         {
 
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            MessageBox.Show("clicked");
+            teacherMyCourses teacherCourses = new teacherMyCourses();
+            teacherCourses.ShowMyCoursesAsync(flowLayoutPanel2);
+            //for available courses
+        }
     }
 }

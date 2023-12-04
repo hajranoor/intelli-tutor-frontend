@@ -140,6 +140,7 @@
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="BackendApi\CourseApi.cs" />
+    <Compile Include="BackendApi\courseOfferingapi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\LabApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
@@ -170,6 +171,7 @@
       <DependentUpon>Loginform.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
+    <Compile Include="Model\courseOfferingModel.cs" />
     <Compile Include="Model\CoursesModel.cs" />
     <Compile Include="Model\enrolledCourses.cs" />
     <Compile Include="Model\labModel.cs" />
@@ -276,6 +278,7 @@
     </EmbeddedResource>
     <Compile Include="TeacherSide\Class1.cs" />
     <Compile Include="TeacherSide\CourseOffering.cs" />
+    <Compile Include="TeacherSide\teacherMyCourses.cs" />
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>
