@@ -41,9 +41,19 @@ namespace intelli_tutor_frontend.TeacherSide
             courseOffering.CourseOfferingShow(c, flowLayoutPanel2);
         }
 
+
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void availableCoursesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            formName.Text = "Available Courses";
+            teacherAvailableCourses ta = new teacherAvailableCourses();
+            MainCourse c = new MainCourse();
+            _ = ta.availableCoursesAsync(c, flowLayoutPanel2);
         }
     }
 }

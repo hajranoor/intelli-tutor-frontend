@@ -142,6 +142,7 @@
     <Compile Include="BackendApi\CourseApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\LabApi.cs" />
+    <Compile Include="BackendApi\MainCourseApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
     <Compile Include="BackendApi\problemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Model\CoursesModel.cs" />
     <Compile Include="Model\enrolledCourses.cs" />
     <Compile Include="Model\labModel.cs" />
+    <Compile Include="Model\MainCourse.cs" />
     <Compile Include="Model\MainWeekModel.cs" />
     <Compile Include="Model\problemModel.cs" />
     <Compile Include="Model\StudentModel.cs" />
@@ -276,6 +278,8 @@
     </EmbeddedResource>
     <Compile Include="TeacherSide\Class1.cs" />
     <Compile Include="TeacherSide\CourseOffering.cs" />
+    <Compile Include="TeacherSide\SuperAdmin-coursecontent.cs" />
+    <Compile Include="TeacherSide\teacher-AvailableCourse.cs" />
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>
