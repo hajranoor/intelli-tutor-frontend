@@ -23,6 +23,7 @@ namespace intelli_tutor_frontend
             //Application.Run(new authenticationCheck());
             //Application.Run(new TeacherSide.TeacherSideDashbaord());
             Application.Run(new TeacherSide.TeacherSideDashbaord());
+           
         }
     }
 }

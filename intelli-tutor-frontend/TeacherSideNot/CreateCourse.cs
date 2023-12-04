@@ -20,7 +20,7 @@ namespace intelli_tutor_frontend.TeacherSide
     {
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
         WeekApi weekApi = new WeekApi();
-        List<weekModel> weeksList;
+        List<WeekModel> weeksList;
         List<CourseAndEnrolledCourseDTO> enrolledCourseList;
         private Label labelCourseTitle;
         private TextBox textBoxCourseTitle;

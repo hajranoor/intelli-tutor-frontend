@@ -17,7 +17,7 @@ namespace intelli_tutor_frontend.StudentSide
     {
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
         WeekApi weekApi = new WeekApi();
-        List<weekModel> weeksList;
+        List<WeekModel> weeksList;
         List<CourseAndEnrolledCourseDTO> enrolledCourseList;
         public myCourses()
         {

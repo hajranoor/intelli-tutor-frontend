@@ -6,20 +6,22 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace intelli_tutor_frontend.BackendApi
 {
-    internal class MainWeekApi
+    internal class MainContentApi
     {
-        public async Task<List<MainWeekModel>> getAllMainWeekData(int courseId)
+        public async Task<List<MainContentModel>> getMainContentByWeekId(int weekId)
         {
-            List<MainWeekModel> list = new List<MainWeekModel>();
+            List<MainContentModel> list = new List<MainContentModel>();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:7008/MainWeeks/" + courseId ))
+                using (var response = await client.GetAsync("http://localhost:7008/MainContent/" + weekId))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    list = JsonConvert.DeserializeObject<List<MainWeekModel>>(apiResponse);
+                    list = JsonConvert.DeserializeObject<List<MainContentModel>>(apiResponse);
+
                 }
             }
             return list;

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace intelli_tutor_frontend.Model
 {
-    internal class TestCaseModel
+    internal class MainTestCaseModel
     {
-        public int test_case_id { get; set; }
         public int problem_id { get; set; }
         public string[] input_data { get; set; }
         public string[] output_data { get; set; }

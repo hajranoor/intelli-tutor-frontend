@@ -9,17 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace intelli_tutor_frontend.StudentSide
+namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class CourseContent
+    internal class SuperAdmin_coursecontent
     {
-        WeekApi weekApi = new WeekApi();
-        List<WeekModel> weeksList;
-    
-        public async void CourseContentSjow(CourseAndEnrolledCourseDTO myCourseData, FlowLayoutPanel flowLayoutPanel1)
-        {
-            weeksList = await weekApi.getAllWeekData(myCourseData.course_id);
 
+        public async Task CourseContentSuperAdmin(MainCourse myCourseData, FlowLayoutPanel flowLayoutPanel1)
+        {
+
+           
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel1.AutoScroll = false;
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -28,7 +26,7 @@ namespace intelli_tutor_frontend.StudentSide
             mainPanel.Height = flowLayoutPanel1.Height;
             mainPanel.AutoScroll = true;
 
-          
+
             flowLayoutPanel1.Controls.Add(mainPanel);
 
             flowLayoutPanel1.SizeChanged += (sender, e) =>
@@ -39,7 +37,7 @@ namespace intelli_tutor_frontend.StudentSide
 
 
             Label courseTitle = new Label();
-            courseTitle.Text = myCourseData.course_title;
+            courseTitle.Text = myCourseData.course_name;
             courseTitle.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             courseTitle.Dock = DockStyle.Fill;
             courseTitle.Font = new Font("Segoe UI Semibold", 16F);
@@ -51,7 +49,7 @@ namespace intelli_tutor_frontend.StudentSide
             mainPanel.Controls.Add(courseTitle, 0, 1);
 
             NoCaretRichTextBox CourseDescription = new NoCaretRichTextBox();
-            CourseDescription.Text = myCourseData.description;
+            CourseDescription.Text = myCourseData.course_description;
             CourseDescription.Font = new Font("Segoe UI", 14F);
             CourseDescription.Dock = DockStyle.Fill;
             CourseDescription.ReadOnly = true;
@@ -87,10 +85,12 @@ namespace intelli_tutor_frontend.StudentSide
             mainPanel.Controls.Add(weekPanel, 0, 3);
             int counter = 0;
             weekPanel.Margin = new Padding(10, 20, 10, 20);
+            int numberofweeks = myCourseData.number_of_weeks;
+            Console.WriteLine(numberofweeks);
 
-            foreach (var item in weeksList)
+            for (int i = 1; i <= numberofweeks; i++)
             {
-                counter += 1;
+                counter = counter + 1;
                 Panel outerPanel = new Panel();
                 outerPanel.Width = 180;
                 outerPanel.Height = 180;
@@ -99,7 +99,7 @@ namespace intelli_tutor_frontend.StudentSide
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
 
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
-                ////cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                //cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
                 cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
                 cardPanel.Width = 180;
                 cardPanel.Height = 180;
@@ -114,19 +114,10 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.Width = 70;
                 enrollButton.Height = 30;
                 enrollButton.TextAlign = ContentAlignment.MiddleCenter;
-                //enrollButton.Padding = new Padding(5, 15, 5, 15);
                 enrollButton.Font = new Font("Segoe UI Semibold", 16F);
                 enrollButton.BackColor = Color.DarkSlateBlue;
                 enrollButton.ForeColor = Color.White;
                 enrollButton.FlatStyle = FlatStyle.Flat;
-                //enrollButton.Click += async (sender, e) =>
-                //{
-
-                    //flowLayoutPanel1.Controls.Clear();
-                    //CourseContent c = new CourseContent();
-                    //c.CourseContentSjow(item, flowLayoutPanel1);
-
-                //};
 
                 Label titleLabel = new Label();
                 titleLabel.Text = "Week " + counter;
@@ -139,27 +130,13 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(enrollButton, 0, 1);
                 outerPanel.Controls.Add(cardPanel);
 
-                enrollButton.Click += async (sender, e) =>
-                {
-
-                    flowLayoutPanel1.Controls.Clear();
-                    LabsContent l = new LabsContent();
-                    l.LabContentShow(item.week_id, flowLayoutPanel1);
-
-                };
 
                 weekPanel.Controls.Add(outerPanel, counter, 0);
             }
+
+
+
+
         }
-
-
-
-
-
-
-
     }
-
-
-
 }

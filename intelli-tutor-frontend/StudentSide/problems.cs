@@ -18,8 +18,8 @@ namespace intelli_tutor_frontend.StudentSide
     {
         public int problemcount;
         public int labid;
-        problemApi ProblemApi = new problemApi();
-        List<problemModel> problemList;
+        ProblemApi ProblemApi = new ProblemApi();
+        List<ProblemModel> problemList;
         public problems(int problemsCount , int reallabid )
         {
             formName.Text = "Problems";

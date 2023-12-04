@@ -9,11 +9,33 @@ using System.Threading.Tasks;
 
 namespace intelli_tutor_frontend.BackendApi
 {
-    internal class problemApi
+    internal class ProblemApi
     {
-        public async Task<List<problemModel>> getAllproblemData(int id)
+        public async Task<int> InsertProblemData(ProblemModel problemModel)
         {
-            List<problemModel> problemList = new List<problemModel>();
+            using (var client = new HttpClient())
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(problemModel), Encoding.UTF8, "application/json");
+
+                using (var response = await client.PostAsync("http://localhost:7008/Problem", content))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        var responseData = JsonConvert.DeserializeAnonymousType(apiResponse, new { Id = 0 });
+                        return responseData.Id;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+        //--------------------------------------------------------------------
+        public async Task<List<ProblemModel>> getAllproblemData(int id)
+        {
+            List<ProblemModel> problemList = new List<ProblemModel>();
             string apiUrl = $"http://localhost:7008/Problem/{id}";
             using (var client = new HttpClient())
             {
@@ -21,7 +43,7 @@ namespace intelli_tutor_frontend.BackendApi
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
 
-                    problemList = JsonConvert.DeserializeObject<List<problemModel>>(apiResponse);
+                    problemList = JsonConvert.DeserializeObject<List<ProblemModel>>(apiResponse);
                     Console.WriteLine(problemList);
                 }
             }
