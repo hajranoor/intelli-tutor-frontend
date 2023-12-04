@@ -1,5 +1,4 @@
 ﻿using intelli_tutor_frontend.BackendApi;
-using intelli_tutor_frontend.CustomComponent;
 using intelli_tutor_frontend.Model;
 using System;
 using System.Collections.Generic;
@@ -13,189 +12,118 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class CourseContent
     {
-        //WeekApi weekApi = new WeekApi();
-        //List<weekModel> weeksList;
-
-        public List<string> weeksList = new List<string>
+        List<MainContentModel> mainContentModels = new List<MainContentModel>();
+        MainContentApi mainContentApi = new MainContentApi();   
+        public async void CourseContentShow(int week_id, FlowLayoutPanel flowLayoutPanel)
         {
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            // Add more week titles as needed
-        };
-
-        public async void CourseContentSjow(FlowLayoutPanel flowLayoutPanel1)
-        {
-            //weeksList = await weekApi.getAllWeekData(myCourseData.course_id);
-           
-
+            mainContentModels = await mainContentApi.getMainContentByWeekId(week_id);
+            MessageBox.Show(mainContentModels.Count.ToString());
             TableLayoutPanel mainPanel = new TableLayoutPanel();
-            flowLayoutPanel1.AutoScroll = false;
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel.AutoScroll = false;
+            flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.BackColor = Color.Lavender;
-            mainPanel.Width = flowLayoutPanel1.Width;
-            mainPanel.Height = flowLayoutPanel1.Height;
+            mainPanel.Width = flowLayoutPanel.Width;
+            mainPanel.Height = flowLayoutPanel.Height;
             mainPanel.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(mainPanel);
-
-            flowLayoutPanel1.SizeChanged += (sender, e) =>
+            mainPanel.RowCount = 10;
+            mainPanel.ColumnCount = 4;
+            flowLayoutPanel.Controls.Add(mainPanel);
+            flowLayoutPanel.SizeChanged += (sender, e) =>
             {
-                mainPanel.Size = new Size(flowLayoutPanel1.Width, flowLayoutPanel1.Height);
-                flowLayoutPanel1.Margin = new Padding(3, 3, 3, 3);
+                mainPanel.Size = new Size(flowLayoutPanel.Width, flowLayoutPanel.Height);
+                flowLayoutPanel.Margin = new Padding(3, 3, 3, 3);
             };
 
+            Label contentTypeLabel = new Label();
+            contentTypeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            contentTypeLabel.Margin = new Padding(20, 10, 20, 10);
+            contentTypeLabel.Text = "Course Type";
+            contentTypeLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+            contentTypeLabel.Font = new Font("Segoe UI Semibold", 12F);
+            contentTypeLabel.Height = 30;
+            //contentTypeLabel.Width = 400;
+            contentTypeLabel.Top = 15;
 
-            Label courseTitle = new Label();
-            //courseTitle.Text = myCourseData.course_title;
-            courseTitle.Text = "Object Oriented Programming";
-            courseTitle.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            courseTitle.Dock = DockStyle.Fill;
-            courseTitle.Font = new Font("Segoe UI Semibold", 16F);
-            courseTitle.Height = 60;
-            courseTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            courseTitle.AutoSize = true;
-            courseTitle.Margin = new Padding(10, 10, 10, 10);
-            courseTitle.Padding = new Padding(0, 10, 0, 10);
-            mainPanel.Controls.Add(courseTitle, 0, 1);
+            mainPanel.Controls.Add(contentTypeLabel, 0, 0);
 
-            NoCaretRichTextBox CourseDescription = new NoCaretRichTextBox();
-            //CourseDescription.Text = myCourseData.description;
-            CourseDescription.Text = "In summary, Object-Oriented Programming is a programming paradigm that structures code around objects and classes, promoting principles such as encapsulation, inheritance, polymorphism, and abstraction. It provides a powerful way to model real-world entities and create modular, maintainable, and reusable software. OOP is commonly used in languages like Java, C++, C#, and Python, among others.";
-            CourseDescription.Font = new Font("Segoe UI", 14F);
-            CourseDescription.Dock = DockStyle.Fill;
-            CourseDescription.ReadOnly = true;
-            CourseDescription.HideSelection = true;
-            CourseDescription.BackColor = Color.Lavender;
-            CourseDescription.BorderStyle = BorderStyle.None;
-            // Add CourseDescription to your form's controls
+            Label contentNameLabel = new Label();
+            contentNameLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            contentNameLabel.Margin = new Padding(20, 10, 20, 10);
+            contentNameLabel.Text = "Name";
+            contentNameLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+            contentNameLabel.Font = new Font("Segoe UI Semibold", 12F);
+            contentNameLabel.Height = 30;
+            //contentNameLabel.Width = 400;
+            contentNameLabel.Top = 15;
 
-            Panel descriptionPanel = new Panel();
-            descriptionPanel.Margin = new Padding(10, 10, 10, 10);
-            descriptionPanel.Dock = DockStyle.Fill;
-            descriptionPanel.AutoScroll = true;
-            descriptionPanel.BackColor = Color.Lavender;
-            descriptionPanel.Height = 280;
-            descriptionPanel.Controls.Add(CourseDescription);
-            descriptionPanel.BackColor = Color.Lavender;
-            descriptionPanel.Padding = new Padding(10, 50, 10, 10);
-            descriptionPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Button editButton = new Button();
-            editButton.Text = "Edit";
-            //editButton.Dock = DockStyle.Right;
-            editButton.Width = 70;
-            editButton.Height = 40;
-            editButton.TextAlign = ContentAlignment.MiddleCenter;
-            editButton.Font = new Font("Segoe UI Semibold", 16F);
-            editButton.BackColor = Color.DarkSlateBlue;
-            editButton.Anchor = AnchorStyles.Top | AnchorStyles.Right; // Position at top right corner
-            editButton.ForeColor = Color.White;
-            editButton.FlatStyle = FlatStyle.Flat;
-            editButton.Click += (sender, e) =>
+            mainPanel.Controls.Add(contentNameLabel, 1, 0);
+
+            Label contentSequenceLabel = new Label();
+            contentSequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            contentSequenceLabel.Margin = new Padding(20, 10, 20, 10);
+            contentSequenceLabel.Text = "Sequence";
+            contentSequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+            contentSequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
+            contentSequenceLabel.Height = 30;
+            //contentSequenceLabel.Width = 400;
+            contentSequenceLabel.Top = 15;
+
+            mainPanel.Controls.Add(contentSequenceLabel, 2, 0);
+            //---------------------------------------------------------------------------------------
+
+            int row = 1;
+            foreach (var item in mainContentModels)
             {
-                MessageBox.Show("Edit Description");
-            };
-
-            descriptionPanel.Controls.Add(editButton); // Add the edit button to the description panel
-            descriptionPanel.Controls.Add(CourseDescription);
-
-            mainPanel.Controls.Add(descriptionPanel, 0, 2);
-
-
-            TableLayoutPanel weekPanel = new TableLayoutPanel();
-            weekPanel.AutoScroll = true;
-            weekPanel.Anchor = AnchorStyles.Right | AnchorStyles.Left;
-            weekPanel.Height = 250;
-            //weekPanel.Dock = DockStyle.Bottom;
-            //weekPanel.BackColor = Color.Cyan;
-            weekPanel.VerticalScroll.Enabled = false;
-            weekPanel.VerticalScroll.Visible = false;
-            weekPanel.HorizontalScroll.Enabled = true;
-            weekPanel.HorizontalScroll.Visible = true;
-            mainPanel.Controls.Add(weekPanel, 0, 3);
-
-            int newRow = weekPanel.RowCount++;
-            weekPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
-            Button newbutton = new Button();
-            newbutton.Text = "Edit";
-            newbutton.Width = 70;
-            newbutton.Height = 40;
-            newbutton.TextAlign = ContentAlignment.MiddleCenter;
-            newbutton.Font = new Font("Segoe UI Semibold", 16F);
-            newbutton.BackColor = Color.DarkSlateBlue;
-            newbutton.ForeColor = Color.White;
-            newbutton.FlatStyle = FlatStyle.Flat;
-            newbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weekPanel.Controls.Add(newbutton, 0, newRow);
-            int counter = 0;
-            weekPanel.Margin = new Padding(10, 10, 10, 0);
-            foreach (var item in weeksList)
-            {
-                counter += 1;
                 Panel outerPanel = new Panel();
-                outerPanel.Width = 180;
-                outerPanel.Height = 180;
-                outerPanel.Margin = new Padding(20, 20, 20, 20);
-                ////outerPanel.BackColor = Color.Lavender;
+                ////outerPanel.Width = 1300;
+                outerPanel.Height = 100;
+                outerPanel.Margin = new Padding(20, 0, 20, 20);
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
-                TableLayoutPanel cardPanel = new TableLayoutPanel();
-                ////cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-                cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
-                cardPanel.Width = 180;
-                cardPanel.Height = 180;
-                cardPanel.Margin = new Padding(20, 20, 20, 20);
-                cardPanel.BackColor = Color.DarkSlateBlue;
-                //cardPanel.AutoScroll = true;
-
-                Button enrollButton = new Button();
-                enrollButton.Text = "Week " + counter;
-                enrollButton.Dock = DockStyle.Fill;
-                enrollButton.Width = 70;
-                enrollButton.Height = 30;
-                enrollButton.TextAlign = ContentAlignment.MiddleCenter;
-                //enrollButton.Padding = new Padding(5, 15, 5, 15);
-                enrollButton.Font = new Font("Segoe UI Semibold", 16F);
-                enrollButton.BackColor = Color.DarkSlateBlue;
-                enrollButton.ForeColor = Color.White;
-                enrollButton.FlatStyle = FlatStyle.Flat;
-                //enrollButton.Click += async (sender, e) =>
-                //{
-
-                //flowLayoutPanel1.Controls.Clear();
-                //CourseContent c = new CourseContent();
-                //c.CourseContentSjow(item, flowLayoutPanel1);
-
-                //};
-
-                Label titleLabel = new Label();
-                titleLabel.Text = "Week " + counter;
-
-                titleLabel.Dock = DockStyle.Fill;
-                titleLabel.TextAlign = ContentAlignment.MiddleCenter;
-                titleLabel.Font = new Font("Segoe UI Semibold", 16F);
-                titleLabel.Height = 30;
-                titleLabel.ForeColor = Color.White;
-
-                cardPanel.Controls.Add(enrollButton, 0, 1);
-                outerPanel.Controls.Add(cardPanel);
-
-                enrollButton.Click += async (sender, e) =>
+                outerPanel.Width = 1200;
+                outerPanel.BackColor = Color.Lavender;
+                mainPanel.SizeChanged += (sender, e) =>
                 {
-
-                    flowLayoutPanel1.Controls.Clear();
-                    //LabsContent l = new LabsContent();
-                    //l.LabContentShow(item.week_id, flowLayoutPanel1);
-
+                    outerPanel.Size = new Size(mainPanel.Width - 10, outerPanel.Height);
+                    //flowLayoutPanel1.Margin = new Padding(3, 3, 3, 3);
                 };
+                Label contentTypeLabel1 = new Label();
+                contentTypeLabel1.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                contentTypeLabel1.Margin = new Padding(20, 10, 20, 10);
+                contentTypeLabel1.Text = item.content_type;
+                contentTypeLabel1.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+                contentTypeLabel1.Font = new Font("Segoe UI Semibold", 12F);
+                contentTypeLabel1.Height = 30;
+                //contentTypeLabel1.Width = 400;
+                contentTypeLabel1.Top = 15;
 
-                weekPanel.Controls.Add(outerPanel, counter, 0);
+                mainPanel.Controls.Add(contentTypeLabel1, 0, row);
+
+                Label contentNameLabel1 = new Label();
+                contentNameLabel1.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                contentNameLabel1.Margin = new Padding(20, 10, 20, 10);
+                contentNameLabel1.Text = item.content_name;
+                contentNameLabel1.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+                contentNameLabel1.Font = new Font("Segoe UI Semibold", 12F);
+                contentNameLabel1.Height = 30;
+                //contentNameLabel1.Width = 400;
+                contentNameLabel1.Top = 15;
+
+                mainPanel.Controls.Add(contentNameLabel1, 1, row);
+
+                Label contentSequenceLabel1 = new Label();
+                contentSequenceLabel1.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                contentSequenceLabel1.Margin = new Padding(20, 10, 20, 10);
+                contentSequenceLabel1.Text = item.sequence_number.ToString();
+                contentSequenceLabel1.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+                contentSequenceLabel1.Font = new Font("Segoe UI Semibold", 12F);
+                contentSequenceLabel1.Height = 30;
+                //contentSequenceLabel1.Width = 400;
+                contentSequenceLabel1.Top = 15;
+
+                mainPanel.Controls.Add(contentSequenceLabel1, 2, row);
+
+                row++;
             }
         }
     }
 }
-
