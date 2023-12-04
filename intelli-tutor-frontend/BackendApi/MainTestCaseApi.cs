@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace intelli_tutor_frontend.BackendApi
 {
-    internal class MainWeekApi
+    internal class MainTestCaseApi
     {
-        public async Task<List<MainWeekModel>> getAllMainWeekData(int courseId)
+        public async Task<List<MainTestCaseModel>> getAllMainTestCaseData(int problemId)
         {
-            List<MainWeekModel> list = new List<MainWeekModel>();
+            List<MainTestCaseModel> list = new List<MainTestCaseModel>();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:7008/MainWeeks/" + courseId ))
+                using (var response = await client.GetAsync("http://localhost:7008/MainTestCase/" + problemId))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    list = JsonConvert.DeserializeObject<List<MainWeekModel>>(apiResponse);
+                    list = JsonConvert.DeserializeObject<List<MainTestCaseModel>>(apiResponse);
                 }
             }
             return list;

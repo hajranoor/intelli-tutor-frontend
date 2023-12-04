@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.Model
 {
-    internal class weekModel
+    internal class WeekModel
     {
         public int week_id { get; set; }
-        public int course_id { get; set; }
+        public int course_offering_id { get; set; }
+        public string week_name { get; set; }
         public string description { get; set; }
-        public int labCount { get; set; }
     }
 }
 

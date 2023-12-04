@@ -19,9 +19,9 @@ namespace intelli_tutor_frontend
 {
     public partial class QuestionForm : Form
     {
-        private problemModel problem;
-        private List<testCaseModel> testcaseList;
-        public QuestionForm(problemModel problem)
+        private ProblemModel problem;
+        private List<TestCaseModel> testcaseList;
+        public QuestionForm(ProblemModel problem)
         {
             InitializeComponent();
             this.problem = problem;

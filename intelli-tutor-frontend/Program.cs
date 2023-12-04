@@ -17,7 +17,7 @@ namespace intelli_tutor_frontend
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            problemModel p = new problemModel();
+            ProblemModel p = new ProblemModel();
             Application.Run(new TeacherSide.TeacherSideDashbaord());
         }
     }

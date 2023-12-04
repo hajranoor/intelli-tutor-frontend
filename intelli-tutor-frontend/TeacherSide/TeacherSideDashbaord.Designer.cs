@@ -29,24 +29,27 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.availableCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.myCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
             this.currentUser = new System.Windows.Forms.Label();
-            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.accountIcon = new System.Windows.Forms.PictureBox();
+            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +74,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(371, 747);
             this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 733);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 11);
+            this.flowLayoutPanel1.TabIndex = 7;
             // 
             // label1
             // 
@@ -99,7 +114,8 @@
             this.availableCoursesToolStripMenuItem,
             this.toolStripMenuItem1,
             this.myCoursesToolStripMenuItem,
-            this.hekkoToolStripMenuItem});
+            this.hekkoToolStripMenuItem,
+            this.toolStripMenuItem2});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 148);
             this.menuStrip1.Name = "menuStrip1";
@@ -107,6 +123,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(371, 582);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // dashboardToolStripMenuItem
             // 
@@ -125,6 +142,14 @@
             this.availableCoursesToolStripMenuItem.Size = new System.Drawing.Size(245, 41);
             this.availableCoursesToolStripMenuItem.Text = "Available Courses";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 41);
+            this.toolStripMenuItem1.Text = "My Courses";
+            // 
             // myCoursesToolStripMenuItem
             // 
             this.myCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
@@ -138,6 +163,15 @@
             // 
             this.hekkoToolStripMenuItem.Name = "hekkoToolStripMenuItem";
             this.hekkoToolStripMenuItem.Size = new System.Drawing.Size(14, 4);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.toolStripMenuItem2.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 41);
+            this.toolStripMenuItem2.Text = "CourseContent";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -161,17 +195,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(955, 100);
             this.tableLayoutPanel2.TabIndex = 7;
-            // 
-            // accountIcon
-            // 
-            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountIcon.Location = new System.Drawing.Point(766, 2);
-            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.accountIcon.Name = "accountIcon";
-            this.accountIcon.Size = new System.Drawing.Size(41, 96);
-            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.accountIcon.TabIndex = 3;
-            this.accountIcon.TabStop = false;
             // 
             // formName
             // 
@@ -199,17 +222,6 @@
             this.currentUser.TabIndex = 1;
             this.currentUser.Text = "Shanza";
             // 
-            // notificationIcon
-            // 
-            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
-            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.notificationIcon.Name = "notificationIcon";
-            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
-            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.notificationIcon.TabIndex = 2;
-            this.notificationIcon.TabStop = false;
-            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Black;
@@ -221,26 +233,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "jdfdfnld";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 41);
-            this.toolStripMenuItem1.Text = "My Courses";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 733);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 11);
-            this.flowLayoutPanel1.TabIndex = 7;
-            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -248,11 +240,43 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel2.Controls.Add(this.button1);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(378, 104);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(940, 574);
             this.flowLayoutPanel2.TabIndex = 8;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // accountIcon
+            // 
+            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountIcon.Location = new System.Drawing.Point(766, 2);
+            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accountIcon.Name = "accountIcon";
+            this.accountIcon.Size = new System.Drawing.Size(41, 96);
+            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.accountIcon.TabIndex = 3;
+            this.accountIcon.TabStop = false;
+            // 
+            // notificationIcon
+            // 
+            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
+            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.notificationIcon.Name = "notificationIcon";
+            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
+            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.notificationIcon.TabIndex = 2;
+            this.notificationIcon.TabStop = false;
             // 
             // TeacherSideDashbaord
             // 
@@ -275,6 +299,7 @@
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).EndInit();
             this.ResumeLayout(false);
@@ -303,5 +328,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

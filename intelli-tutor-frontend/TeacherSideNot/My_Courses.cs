@@ -20,7 +20,7 @@ namespace intelli_tutor_frontend.TeacherSide
     {
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
         WeekApi weekApi = new WeekApi();
-        List<weekModel> weeksList;
+        List<WeekModel> weeksList;
         List<CourseAndEnrolledCourseDTO> enrolledCourseList;
         public My_Courses()
         {
@@ -221,7 +221,7 @@ namespace intelli_tutor_frontend.TeacherSide
                 {
 
                     flowLayoutPanel1.Controls.Clear();
-                    CourseContent c = new CourseContent();
+                    StudentSide.CourseContent c = new StudentSide.CourseContent();
                     c.CourseContentSjow(item, flowLayoutPanel1);
 
                 };

@@ -14,7 +14,7 @@ namespace intelli_tutor_frontend.StudentSide
     internal class CourseContent
     {
         WeekApi weekApi = new WeekApi();
-        List<weekModel> weeksList;
+        List<WeekModel> weeksList;
     
         public async void CourseContentSjow(CourseAndEnrolledCourseDTO myCourseData, FlowLayoutPanel flowLayoutPanel1)
         {

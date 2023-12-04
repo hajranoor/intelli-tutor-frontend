@@ -11,15 +11,42 @@ namespace intelli_tutor_frontend.BackendApi
 {
     internal class WeekApi
     {
-        public async Task<List<weekModel>> getAllWeekData(int courseId)
+
+        public async Task<int> InsertWeekData(WeekModel week)
         {
-            List<weekModel> list = new List<weekModel>();
+            using (var client = new HttpClient())
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(week), Encoding.UTF8, "application/json");
+
+                using (var response = await client.PostAsync("http://localhost:7008/Week", content))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        var responseData = JsonConvert.DeserializeAnonymousType(apiResponse, new { Id = 0 });
+                        return responseData.Id;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+
+
+
+        //-----------------------------------------------------------------
+        public async Task<List<WeekModel>> getAllWeekData(int courseId)
+        {
+            List<WeekModel> list = new List<WeekModel>();
             using (var client = new HttpClient())
             {
                 using (var response = await client.GetAsync("http://localhost:7008/Week/"+ courseId +  "?courseId=" + courseId))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    list = JsonConvert.DeserializeObject<List<weekModel>>(apiResponse);
+                    list = JsonConvert.DeserializeObject<List<WeekModel>>(apiResponse);
                 }
             }
             return list;
