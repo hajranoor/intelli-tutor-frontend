@@ -15,7 +15,7 @@ namespace intelli_tutor_frontend.StudentSide
     {
 
         LabApi labApi = new LabApi();
-        List<labModel> labList;
+        List<LabModel> labList;
         public async void LabContentShow(int weekId, FlowLayoutPanel flowLayoutPanel1)
         {
             labList = await labApi.getAlllabData(weekId);

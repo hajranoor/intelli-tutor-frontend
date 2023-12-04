@@ -12,9 +12,9 @@ namespace intelli_tutor_frontend.BackendApi
 {
     internal class LabApi
     {
-        public async Task<List<labModel>> getAlllabData(int id)
+        public async Task<List<LabModel>> getAlllabData(int id)
         {
-            List<labModel> labList = new List<labModel>();
+            List<LabModel> labList = new List<LabModel>();
             Console.WriteLine(id);
             string apiUrl = $"http://localhost:7008/labs/{id}";
             using (var client = new HttpClient())
@@ -24,7 +24,7 @@ namespace intelli_tutor_frontend.BackendApi
                     string apiResponse = await response.Content.ReadAsStringAsync();
 
 
-                    labList = JsonConvert.DeserializeObject<List<labModel>>(apiResponse);
+                    labList = JsonConvert.DeserializeObject<List<LabModel>>(apiResponse);
                     Console.WriteLine(labList);
                 }
             }

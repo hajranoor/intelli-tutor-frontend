@@ -10,27 +10,37 @@ using System.Windows;
 
 namespace intelli_tutor_frontend.BackendApi
 {
-    internal class courseOfferingapi
+    internal class CourseOfferingApi
     {
-        public async Task<List<courseOfferingModel>> getCourseOfferings(int id)
+        public async Task<int> InsertCourseOfferingData(CourseOfferingModel courseOffering)
         {
-            List<courseOfferingModel> courseOfferingList = new List<courseOfferingModel>();
-            string apiUrl = "https://localhost:7008/CourseOffering/" + id;
-
             using (var client = new HttpClient())
             {
-                MessageBox.Show("i am in the water pls help me");
+                var content = new StringContent(JsonConvert.SerializeObject(courseOffering), Encoding.UTF8, "application/json");
 
-                using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/id?id=" + id))
+                using (var response = await client.PostAsync("http://localhost:7008/CourseOffering", content))
                 {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show(apiResponse);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Read the response content as a string
+                        
 
-                    string apiResponse = await response.Content.ReadAsStringAsync();    
-                    courseOfferingList = JsonConvert.DeserializeObject<List<courseOfferingModel>>(apiResponse);
-                    MessageBox.Show(courseOfferingList.ToString());
+                        // Deserialize the JSON response to an anonymous type containing the ID
+                        var responseData = JsonConvert.DeserializeAnonymousType(apiResponse, new { Id = 0 });
+
+                        // Return the ID
+                        return responseData.Id;
+                    }
+                    else
+                    {
+                        // Handle non-success status codes if needed
+                        return -1; // Indicate failure
+                    }
                 }
             }
-
-            return courseOfferingList;
         }
+
     }
 }

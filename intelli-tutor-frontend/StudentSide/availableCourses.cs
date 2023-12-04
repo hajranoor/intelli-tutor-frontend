@@ -103,7 +103,7 @@ namespace intelli_tutor_frontend.StudentSide
 
                     if (result == DialogResult.Yes)
                     {
-                        enrolledCourses enrolledCourses = new enrolledCourses();
+                        EnrolledCourses enrolledCourses = new EnrolledCourses();
                         enrolledCourses.courseId = item.course_id;
                         enrolledCourses.studentId = 1;
                         enrolledCourses.grade = "";

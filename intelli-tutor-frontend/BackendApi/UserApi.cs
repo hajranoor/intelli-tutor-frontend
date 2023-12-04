@@ -14,9 +14,9 @@ namespace intelli_tutor_frontend.BackendApi
 {
     internal class UserApi
     {
-        public async Task<List<userModel>> checkUserEmailExists(string email)
+        public async Task<List<UserModel>> checkUserEmailExists(string email)
         {
-            List<userModel> userList = new List<userModel>();
+            List<UserModel> userList = new List<UserModel>();
             using (var client = new HttpClient())
             {
                 var content = new StringContent(JsonConvert.SerializeObject(email), Encoding.UTF8, "application/json");
@@ -25,12 +25,12 @@ namespace intelli_tutor_frontend.BackendApi
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
 
-                    userList = JsonConvert.DeserializeObject<List<userModel>>(apiResponse);
+                    userList = JsonConvert.DeserializeObject<List<UserModel>>(apiResponse);
                 }
             }
             return userList;
         }
-        public async Task<int> insertUser(userModel user)
+        public async Task<int> insertUser(UserModel user)
         {
             using (var client = new HttpClient())
             {
@@ -65,7 +65,7 @@ namespace intelli_tutor_frontend.BackendApi
         }
 
 
-        public async Task<string> checkUserExists(Model.userModel u)
+        public async Task<string> checkUserExists(Model.UserModel u)
         {
             string Response;
 

@@ -17,7 +17,7 @@ namespace intelli_tutor_frontend
     {
         UserApi userApi = new UserApi();
 
-        List<userModel> userList;
+        List<UserModel> userList;
 
         public Register()
         {

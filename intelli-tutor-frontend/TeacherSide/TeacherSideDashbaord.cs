@@ -36,32 +36,13 @@ namespace intelli_tutor_frontend.TeacherSide
         private void myCoursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
+            formName.Text = "Create Course Offering";
             CourseOffering courseOffering = new CourseOffering();
             coursesModel c = new coursesModel();
             courseOffering.CourseOfferingShow(c, flowLayoutPanel2);
         }
 
-
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel2.Controls.Clear();
-            MessageBox.Show("clicked");
-            teacherMyCourses teacherCourses = new teacherMyCourses();
-            teacherCourses.ShowMyCoursesAsync(flowLayoutPanel2);
-            //for available courses
-        private void availableCoursesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel2.Controls.Clear();
-            formName.Text = "Available Courses";
-            teacherAvailableCourses ta = new teacherAvailableCourses();
-            MainCourse c = new MainCourse();
-            _ = ta.availableCoursesAsync(c, flowLayoutPanel2);
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -69,9 +50,14 @@ namespace intelli_tutor_frontend.TeacherSide
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
-            CourseContent cdinstance  = new CourseContent();
-            //CourseAndEnrolledCourseDTO course = new CourseAndEnrolledCourseDTO();
-            cdinstance.CourseContentSjow(flowLayoutPanel2);
+            formName.Text = "Course Content";
+            CourseContent courseContent = new CourseContent();
+            courseContent.CourseContentSjow(flowLayoutPanel2);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

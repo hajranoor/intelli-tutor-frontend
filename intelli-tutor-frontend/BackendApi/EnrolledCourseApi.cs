@@ -14,7 +14,7 @@ namespace intelli_tutor_frontend.BackendApi
 {
     internal class EnrolledCourseApi
     {
-        public async Task<string> makeEnrollmentInCourse(enrolledCourses enrolledCourses)
+        public async Task<string> makeEnrollmentInCourse(EnrolledCourses enrolledCourses)
         {
             using (var client = new HttpClient())
             {

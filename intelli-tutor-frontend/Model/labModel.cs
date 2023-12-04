@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace intelli_tutor_frontend.Model
 {
-    public class labModel
+    public class LabModel
     {
         public int labid { get; set; }
         public int weekid { get; set; }

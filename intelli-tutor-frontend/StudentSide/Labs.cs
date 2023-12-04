@@ -16,7 +16,7 @@ namespace intelli_tutor_frontend.StudentSide
 
     {
         LabApi labApi = new LabApi();
-        List<labModel> labList;
+        List<LabModel> labList;
         public Labs()
         {
             formName.Text = "Labs";
