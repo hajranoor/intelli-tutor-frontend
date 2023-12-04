@@ -1,7 +1,7 @@
 ﻿    namespace intelli_tutor_frontend.Model
 
 {
-    public class enrolledCourses
+    public class EnrolledCourses
     {
         public int enrollmentId { get; set; }
         public int studentId { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace intelli_tutor_frontend.Model
 {
-    internal class courseOfferingModel
+    internal class CourseOfferingModel
     {
         public int course_offering_id { get; set; }
         public int course_id { get; set; }

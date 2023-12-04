@@ -61,7 +61,7 @@ namespace intelli_tutor_frontend
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            userModel u = new userModel();
+            UserModel u = new UserModel();
             u.username = username;
             u.pass_word = password;
 

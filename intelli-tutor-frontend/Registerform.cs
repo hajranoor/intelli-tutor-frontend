@@ -21,7 +21,7 @@ namespace intelli_tutor_frontend
         TeacherApi teacherApi = new TeacherApi();
         StudentApi studentApi = new StudentApi();
         UniversityApi universityApi = new UniversityApi();
-        List<userModel> userList;
+        List<UserModel> userList;
         public Registerform()
         {
             InitializeComponent();
@@ -87,7 +87,7 @@ namespace intelli_tutor_frontend
                             userList = await userApi.checkUserEmailExists(email.Text);
                             if (userList.Count == 0)
                             {
-                                userModel u = new userModel();
+                                UserModel u = new UserModel();
                                 u.email = email.Text;
                                 u.username = username.Text;
                                 u.pass_word = password.Text;
@@ -131,7 +131,7 @@ namespace intelli_tutor_frontend
                             userList = await userApi.checkUserEmailExists(email.Text);
                             if (userList.Count == 0)
                             {
-                                userModel u = new userModel();
+                                UserModel u = new UserModel();
                                 u.email = email.Text;
                                 u.username = username.Text;
                                 u.pass_word = password.Text;

@@ -12,6 +12,26 @@ namespace intelli_tutor_frontend.BackendApi
 {
     internal class CourseOfferingApi
     {
+        public async Task<List<CourseOfferingModel>> getCourseOfferings(int id)
+        {
+            List<CourseOfferingModel> courseOfferingList = new List<CourseOfferingModel>();
+            string apiUrl = "https://localhost:7008/CourseOffering/" + id;
+
+            using (var client = new HttpClient())
+            {
+                MessageBox.Show("i am in the water pls help me");
+
+                using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/id?id=" + id))
+                {
+
+                    string apiResponse = await response.Content.ReadAsStringAsync();    
+                    courseOfferingList = JsonConvert.DeserializeObject<List<CourseOfferingModel>>(apiResponse);
+                    MessageBox.Show(courseOfferingList.ToString());
+                }
+            }
+
+            return courseOfferingList;
+        }
         public async Task<int> InsertCourseOfferingData(CourseOfferingModel courseOffering)
         {
             using (var client = new HttpClient())
@@ -25,7 +45,7 @@ namespace intelli_tutor_frontend.BackendApi
                     if (response.IsSuccessStatusCode)
                     {
                         // Read the response content as a string
-                        
+
 
                         // Deserialize the JSON response to an anonymous type containing the ID
                         var responseData = JsonConvert.DeserializeAnonymousType(apiResponse, new { Id = 0 });
@@ -41,6 +61,5 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
         }
-
     }
 }
