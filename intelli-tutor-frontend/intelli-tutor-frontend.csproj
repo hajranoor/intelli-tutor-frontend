@@ -139,13 +139,15 @@
     <Compile Include="authenticationCheck.Designer.cs">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="BackendApi\ContentApi.cs" />
     <Compile Include="BackendApi\CourseApi.cs" />
-    <Compile Include="BackendApi\courseOfferingapi.cs" />
+    <Compile Include="BackendApi\CourseOfferingApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
-    <Compile Include="BackendApi\LabApi.cs" />
-    <Compile Include="BackendApi\MainCourseApi.cs" />
+    <Compile Include="BackendApi\MainContentApi.cs" />
+    <Compile Include="BackendApi\MainProblemApi.cs" />
+    <Compile Include="BackendApi\MainTestCaseApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
-    <Compile Include="BackendApi\problemApi.cs" />
+    <Compile Include="BackendApi\ProblemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
@@ -159,32 +161,28 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="compilerClasses\javaClass.cs" />
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Loginform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Loginform.Designer.cs">
       <DependentUpon>Loginform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ContentModel.cs" />
     <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
-    <Compile Include="Model\courseOfferingModel.cs" />
+    <Compile Include="Model\CourseOfferingModel.cs" />
     <Compile Include="Model\CoursesModel.cs" />
-    <Compile Include="Model\enrolledCourses.cs" />
-    <Compile Include="Model\labModel.cs" />
-    <Compile Include="Model\MainCourse.cs" />
+    <Compile Include="Model\EnrolledCourses.cs" />
+    <Compile Include="Model\MainContentModel.cs" />
+    <Compile Include="Model\MainProblemsModel.cs" />
+    <Compile Include="Model\MainTestCaseModel.cs" />
     <Compile Include="Model\MainWeekModel.cs" />
-    <Compile Include="Model\problemModel.cs" />
+    <Compile Include="Model\ProblemModel.cs" />
     <Compile Include="Model\StudentModel.cs" />
     <Compile Include="Model\TeacherModel.cs" />
-    <Compile Include="Model\testCaseModel.cs" />
+    <Compile Include="Model\TestCaseModel.cs" />
     <Compile Include="Model\UniversityModel.cs" />
-    <Compile Include="Model\userModel.cs" />
-    <Compile Include="Model\weekModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\WeekModel.cs" />
     <Compile Include="Program.cs" />
     <!-- <Compile Include="javaClass.cs" /> -->
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,12 +197,6 @@
     </Compile>
     <Compile Include="QuestionForm.Designer.cs">
       <DependentUpon>QuestionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Register.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Registerform.cs">
       <SubType>Form</SubType>
@@ -245,30 +237,6 @@
       <DependentUpon>problems.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentSide\ProblemsContent.cs" />
-    <Compile Include="TeacherSideNot\Available_Courses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeacherSideNot\Available_Courses.Designer.cs">
-      <DependentUpon>Available_Courses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherSideNot\CreateCourse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeacherSideNot\CreateCourse.Designer.cs">
-      <DependentUpon>CreateCourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherSideNot\My_Courses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeacherSideNot\My_Courses.Designer.cs">
-      <DependentUpon>My_Courses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherSideNot\TeacherDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeacherSideNot\TeacherDashboard.Designer.cs">
-      <DependentUpon>TeacherDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentSide\SolveProblem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,21 +247,15 @@
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="TeacherSide\Class1.cs" />
-    <Compile Include="TeacherSide\CourseOffering.cs" />
-
-    <Compile Include="TeacherSide\teacherMyCourses.cs" />
-    <Compile Include="TeacherSide\SuperAdmin-coursecontent.cs" />
-    <Compile Include="TeacherSide\teacher-AvailableCourse.cs" />
     <Compile Include="TeacherSide\CourseContent.cs" />
+    <Compile Include="TeacherSide\CourseOffering.cs" />
+    <Compile Include="TeacherSide\CourseWeek.cs" />
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TeacherSide\TeacherSideDashbaord.Designer.cs">
       <DependentUpon>TeacherSideDashbaord.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,9 +266,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registerform.resx">
       <DependentUpon>Registerform.cs</DependentUpon>
@@ -325,18 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\problems.resx">
       <DependentUpon>problems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeacherSideNot\Available_Courses.resx">
-      <DependentUpon>Available_Courses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeacherSideNot\CreateCourse.resx">
-      <DependentUpon>CreateCourse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeacherSideNot\My_Courses.resx">
-      <DependentUpon>My_Courses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeacherSideNot\TeacherDashboard.resx">
-      <DependentUpon>TeacherDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\SolveProblem.resx">
       <DependentUpon>SolveProblem.cs</DependentUpon>
