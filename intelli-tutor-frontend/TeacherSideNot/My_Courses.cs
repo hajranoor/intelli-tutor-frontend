@@ -20,7 +20,7 @@ namespace intelli_tutor_frontend.TeacherSide
     {
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
         WeekApi weekApi = new WeekApi();
-        List<WeekModel> weeksList;
+        List<weekModel> weeksList;
         List<CourseAndEnrolledCourseDTO> enrolledCourseList;
         public My_Courses()
         {
@@ -220,9 +220,9 @@ namespace intelli_tutor_frontend.TeacherSide
                 enrollButton.Click += async (sender, e) =>
                 {
 
-                    flowLayoutPanel1.Controls.Clear();
-                    StudentSide.CourseContent c = new StudentSide.CourseContent();
-                    c.CourseContentSjow(item, flowLayoutPanel1);
+                    //flowLayoutPanel1.Controls.Clear();
+                    //CourseContent c = new CourseContent();
+                    //c.CourseContentSjow(item, flowLayoutPanel1);
 
                 };
 

@@ -36,7 +36,6 @@ namespace intelli_tutor_frontend.TeacherSide
         private void myCoursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
-            formName.Text = "Create Course Offering";
             CourseOffering courseOffering = new CourseOffering();
             coursesModel c = new coursesModel();
             courseOffering.CourseOfferingShow(c, flowLayoutPanel2);
@@ -47,17 +46,17 @@ namespace intelli_tutor_frontend.TeacherSide
 
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
-            formName.Text = "Course Content";
-            CourseContent courseContent = new CourseContent();
-            courseContent.CourseContentShow(1, flowLayoutPanel2);
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            CourseContent cdinstance  = new CourseContent();
+            //CourseAndEnrolledCourseDTO course = new CourseAndEnrolledCourseDTO();
+            cdinstance.CourseContentSjow(flowLayoutPanel2);
         }
     }
 }

@@ -39,6 +39,27 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.64.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.64.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.64.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.64.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PeopleService.v1, Version=1.64.0.3093, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.PeopleService.v1.1.64.0.3093\lib\net45\Google.Apis.PeopleService.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.64.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Plus.v1, Version=1.49.0.1627, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Plus.v1.1.49.0.1627\lib\net45\Google.Apis.Plus.v1.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=4.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Common.4.7.0\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
@@ -69,10 +90,14 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
     <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -108,16 +133,17 @@
   <ItemGroup>
     <!-- <Compile Include="compilerInterface.cs" /> -->
     <!-- <Compile Include="cSharpClass.cs" /> -->
-    <Compile Include="BackendApi\ContentApi.cs" />
+    <Compile Include="authenticationCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="authenticationCheck.Designer.cs">
+      <DependentUpon>authenticationCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="BackendApi\CourseApi.cs" />
-    <Compile Include="BackendApi\CourseOfferingApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\LabApi.cs" />
-    <Compile Include="BackendApi\MainContentApi.cs" />
-    <Compile Include="BackendApi\MainProblemApi.cs" />
-    <Compile Include="BackendApi\MainTestCaseApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
-    <Compile Include="BackendApi\ProblemApi.cs" />
+    <Compile Include="BackendApi\problemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
@@ -143,23 +169,18 @@
     <Compile Include="Loginform.Designer.cs">
       <DependentUpon>Loginform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ContentModel.cs" />
     <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
-    <Compile Include="Model\CourseOfferingModel.cs" />
     <Compile Include="Model\CoursesModel.cs" />
     <Compile Include="Model\enrolledCourses.cs" />
     <Compile Include="Model\labModel.cs" />
-    <Compile Include="Model\MainContentModel.cs" />
-    <Compile Include="Model\MainProblemsModel.cs" />
-    <Compile Include="Model\MainTestCaseModel.cs" />
     <Compile Include="Model\MainWeekModel.cs" />
-    <Compile Include="Model\ProblemModel.cs" />
+    <Compile Include="Model\problemModel.cs" />
     <Compile Include="Model\StudentModel.cs" />
     <Compile Include="Model\TeacherModel.cs" />
-    <Compile Include="Model\TestCaseModel.cs" />
+    <Compile Include="Model\testCaseModel.cs" />
     <Compile Include="Model\UniversityModel.cs" />
     <Compile Include="Model\userModel.cs" />
-    <Compile Include="Model\WeekModel.cs" />
+    <Compile Include="Model\weekModel.cs" />
     <Compile Include="Program.cs" />
     <!-- <Compile Include="javaClass.cs" /> -->
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -250,9 +271,12 @@
     <Compile Include="StudentSide\SolveProblem.Designer.cs">
       <DependentUpon>SolveProblem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="authenticationCheck.resx">
+      <DependentUpon>authenticationCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="TeacherSide\Class1.cs" />
-    <Compile Include="TeacherSide\CourseContent.cs" />
     <Compile Include="TeacherSide\CourseOffering.cs" />
+    <Compile Include="TeacherSide\CourseContent.cs" />
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,7 +357,6 @@
   <ItemGroup>
     <Content Include="image.png" />
     <Content Include="labimage.png" />
-    <None Include="Resources\loading.gif" />
     <None Include="Resources\OOP.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
