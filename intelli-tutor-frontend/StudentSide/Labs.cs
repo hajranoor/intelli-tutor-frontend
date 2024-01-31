@@ -16,7 +16,11 @@ namespace intelli_tutor_frontend.StudentSide
 
     {
         //LabApi labApi = new LabApi();
+<<<<<<< Updated upstream
         //List<labModel> labList;
+=======
+        List<labModel> labList;
+>>>>>>> Stashed changes
         public Labs()
         {
             formName.Text = "Labs";
@@ -27,12 +31,17 @@ namespace intelli_tutor_frontend.StudentSide
         private async void labs_Load(object sender, EventArgs e)
         {
             int id = 8;
+<<<<<<< Updated upstream
             //labList = await labApi.getAlllabData(id);
+=======
+            // labList = await labApi.getAlllabData(id);
+>>>>>>> Stashed changes
             showLabData();
 
         }
         private void showLabData()
         {
+<<<<<<< Updated upstream
             //foreach (var item in labList)
             //{
             //    Panel outerPanel = new Panel();
@@ -41,6 +50,16 @@ namespace intelli_tutor_frontend.StudentSide
             //    outerPanel.Margin = new Padding(20, 20, 20, 20);
             //    //outerPanel.BackColor = Color.Lavender;
             //    outerPanel.BorderStyle = BorderStyle.FixedSingle;
+=======
+            /*foreach (var item in labList)
+            {
+                Panel outerPanel = new Panel();
+                outerPanel.Width = 480;
+                outerPanel.Height = 400;
+                outerPanel.Margin = new Padding(20, 20, 20, 20);
+                //outerPanel.BackColor = Color.Lavender;
+                outerPanel.BorderStyle = BorderStyle.FixedSingle;
+>>>>>>> Stashed changes
 
             //    TableLayoutPanel cardPanel = new TableLayoutPanel();
             //    cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -105,7 +124,11 @@ namespace intelli_tutor_frontend.StudentSide
 
             //    flowLayoutPanel1.Controls.Add(outerPanel);
 
+<<<<<<< Updated upstream
             //}
+=======
+            }*/
+>>>>>>> Stashed changes
 
 
         }

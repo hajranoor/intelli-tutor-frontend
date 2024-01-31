@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace intelli_tutor_frontend.Model
 {
-    public class MainCourse
+    public class MainCoursesModel
     {
 
         public int course_id { get; set; }

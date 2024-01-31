@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.StudentSide
 {
-    internal class ProblemsContent
+    internal class ProblemsContentUseless
     {
 
         ProblemApi ProblemApi = new ProblemApi();

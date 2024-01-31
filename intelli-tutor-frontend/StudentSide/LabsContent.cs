@@ -69,6 +69,7 @@ namespace intelli_tutor_frontend.StudentSide
 
             //    Button enrollButton = new Button();
 
+<<<<<<< Updated upstream
             //    enrollButton.Text = "Problems";
             //    enrollButton.Dock = DockStyle.Fill;
             //    enrollButton.Width = 130;
@@ -87,6 +88,26 @@ namespace intelli_tutor_frontend.StudentSide
             //        //this.Hide();
             //        //problems p = new problems(problemsCount, realLabid);
             //        //p.Show();
+=======
+                enrollButton.Text = "Problems";
+                enrollButton.Dock = DockStyle.Fill;
+                enrollButton.Width = 130;
+                enrollButton.TextAlign = ContentAlignment.MiddleCenter;
+                enrollButton.Padding = new Padding(5, 15, 5, 15);
+                enrollButton.Font = new Font("Segoe UI Semibold", 12F);
+                enrollButton.BackColor = Color.DarkSlateBlue;
+                enrollButton.ForeColor = Color.White;
+                enrollButton.Click += (sender, e) =>
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                    ProblemsContentUseless p = new ProblemsContentUseless();
+                    p.ProblemContentShow(item.labid, flowLayoutPanel1);
+                    //int problemsCount = item.problemcount;
+                    //int realLabid = item.labid;
+                    //this.Hide();
+                    //problems p = new problems(problemsCount, realLabid);
+                    //p.Show();
+>>>>>>> Stashed changes
 
 
             //    };
