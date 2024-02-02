@@ -140,16 +140,12 @@
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="BackendApi\ContentApi.cs" />
-    <Compile Include="BackendApi\CourseApi.cs" />
     <Compile Include="BackendApi\CourseOfferingApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
-<<<<<<< Updated upstream
     <Compile Include="BackendApi\MainContentApi.cs" />
     <Compile Include="BackendApi\MainProblemApi.cs" />
     <Compile Include="BackendApi\MainTestCaseApi.cs" />
-=======
     <Compile Include="BackendApi\MainCourseApi.cs" />
->>>>>>> Stashed changes
     <Compile Include="BackendApi\MainWeekApi.cs" />
     <Compile Include="BackendApi\ProblemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
@@ -173,18 +169,14 @@
     </Compile>
     <Compile Include="Model\ContentModel.cs" />
     <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
-<<<<<<< Updated upstream
     <Compile Include="Model\CourseOfferingModel.cs" />
-    <Compile Include="Model\CoursesModel.cs" />
     <Compile Include="Model\EnrolledCourses.cs" />
     <Compile Include="Model\MainContentModel.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
     <Compile Include="Model\MainTestCaseModel.cs" />
-=======
     <Compile Include="Model\useless.cs" />
     <Compile Include="Model\EnrolledCourses.cs" />
     <Compile Include="Model\MainCoursesModel.cs" />
->>>>>>> Stashed changes
     <Compile Include="Model\MainWeekModel.cs" />
     <Compile Include="Model\ProblemModel.cs" />
     <Compile Include="Model\StudentModel.cs" />
@@ -217,40 +209,34 @@
     <Compile Include="StudentSide\availableCourses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentSide\availableCourses.Designer.cs">
-      <DependentUpon>availableCourses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StudentSide\CourseContent.cs" />
+    <Compile Include="StudentSide\StudentCourseWeek.cs" />
     <Compile Include="StudentSide\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentSide\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide\Labs.cs">
+    <Compile Include="StudentSide\StudentEnrolledCourseContent.cs" />
+    <Compile Include="StudentSide\NoUseLabs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentSide\Labs.Designer.cs">
-      <DependentUpon>Labs.cs</DependentUpon>
+    <Compile Include="StudentSide\NoUseLabs.Designer.cs">
+      <DependentUpon>NoUseLabs.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide\LabsContent.cs" />
+    <Compile Include="StudentSide\NoUseLabsContent.cs" />
     <Compile Include="StudentSide\myCourses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentSide\myCourses.Designer.cs">
       <DependentUpon>myCourses.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide\problems.cs">
+    <Compile Include="StudentSide\NoUseproblems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentSide\problems.Designer.cs">
-      <DependentUpon>problems.cs</DependentUpon>
+    <Compile Include="StudentSide\NoUseproblems.Designer.cs">
+      <DependentUpon>NoUseproblems.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
-    <Compile Include="StudentSide\ProblemsContent.cs" />
-=======
-    <Compile Include="StudentSide\ProblemsContentUseless.cs" />
->>>>>>> Stashed changes
+    <Compile Include="StudentSide\NoUseProblemsContent.cs" />
     <Compile Include="StudentSide\SolveProblem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,17 +246,12 @@
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
-    <Compile Include="TeacherSide\Class1.cs" />
-    <Compile Include="TeacherSide\CourseContent.cs" />
-    <Compile Include="TeacherSide\CourseOffering.cs" />
-    <Compile Include="TeacherSide\CourseWeek.cs" />
-=======
-    <Compile Include="TeacherSide\CourseOffering.cs" />
-    <Compile Include="TeacherSide\SuperAdmin-coursecontent.cs" />
-    <Compile Include="TeacherSide\teacher-AvailableCourse.cs" />
-    <Compile Include="TeacherSide\CourseContent.cs" />
->>>>>>> Stashed changes
+    <Compile Include="TeacherSide\TeacherCourseContent.cs" />
+    <Compile Include="TeacherSide\TeacherCourseOffering.cs" />
+    <Compile Include="TeacherSide\TeacherCourseWeek.cs" />
+    <Compile Include="TeacherSide\SuperAdminCourseWeek.cs" />
+    <Compile Include="TeacherSide\TeacherAvailableCourse.cs" />
+    <Compile Include="TeacherSide\TeacherMyCourses.cs" />
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,14 +278,14 @@
     <EmbeddedResource Include="StudentSide\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide\Labs.resx">
-      <DependentUpon>Labs.cs</DependentUpon>
+    <EmbeddedResource Include="StudentSide\NoUseLabs.resx">
+      <DependentUpon>NoUseLabs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\myCourses.resx">
       <DependentUpon>myCourses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide\problems.resx">
-      <DependentUpon>problems.cs</DependentUpon>
+    <EmbeddedResource Include="StudentSide\NoUseproblems.resx">
+      <DependentUpon>NoUseproblems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\SolveProblem.resx">
       <DependentUpon>SolveProblem.cs</DependentUpon>

@@ -109,7 +109,7 @@ namespace intelli_tutor_frontend.StudentSide
                 {
                     
                         flowLayoutPanel1.Controls.Clear();
-                    CourseContent c = new CourseContent();
+                    StudentCourseWeek c = new StudentCourseWeek();
                     c.CourseContentSjow(item, flowLayoutPanel1);
 
                 };

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.StudentSide
 {
-    internal class CourseContent
+    internal class StudentCourseWeek
     {
         WeekApi weekApi = new WeekApi();
         List<WeekModel> weeksList;
@@ -142,9 +142,9 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.Click += async (sender, e) =>
                 {
 
-                    flowLayoutPanel1.Controls.Clear();
-                    LabsContent l = new LabsContent();
-                    l.LabContentShow(item.week_id, flowLayoutPanel1);
+                    //flowLayoutPanel1.Controls.Clear();
+                    //NoUseLabsContent l = new NoUseLabsContent();
+                    //l.LabContentShow(item.week_id, flowLayoutPanel1);
 
                 };
 

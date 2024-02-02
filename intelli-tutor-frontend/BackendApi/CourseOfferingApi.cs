@@ -1,4 +1,5 @@
 ﻿using intelli_tutor_frontend.Model;
+using intelli_tutor_frontend.TeacherSide;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -19,24 +20,22 @@ namespace intelli_tutor_frontend.BackendApi
 
             using (var client = new HttpClient())
             {
-                var content = new StringContent(JsonConvert.SerializeObject(courseOffering), Encoding.UTF8, "application/json");
 
-                using (var response = await client.PostAsync("http://localhost:7008/CourseOffering", content))
+                using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/id?id=" + id))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     MessageBox.Show(apiResponse);
                     if (response.IsSuccessStatusCode)
                     {
-                        // Read the response content as a string
-                        
-
-                    string apiResponse = await response.Content.ReadAsStringAsync();    
-                    courseOfferingList = JsonConvert.DeserializeObject<List<CourseOfferingModel>>(apiResponse);
-                    //MessageBox.Show(courseOfferingList.ToString());
+                        apiResponse = await response.Content.ReadAsStringAsync();
+                        courseOfferingList = JsonConvert.DeserializeObject<List<CourseOfferingModel>>(apiResponse);
+                        //MessageBox.Show(courseOfferingList.ToString());
+                    }
                 }
+
+                return courseOfferingList;
             }
         }
-
         public async Task<int> InsertCourseOfferingData(CourseOfferingModel courseOffering)
         {
             using (var client = new HttpClient())

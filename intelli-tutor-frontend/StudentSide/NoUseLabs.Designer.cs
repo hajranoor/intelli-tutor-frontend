@@ -1,6 +1,6 @@
 ﻿namespace intelli_tutor_frontend.StudentSide
 {
-    partial class Labs
+    partial class NoUseLabs
     {
         /// <summary>
         /// Required designer variable.

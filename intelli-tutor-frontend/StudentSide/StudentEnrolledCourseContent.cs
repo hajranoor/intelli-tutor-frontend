@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.StudentSide
 {
-    internal class EnrolledCourseContent
+    internal class StudentEnrolledCourseContent
     {
         List<ContentModel> contentList = new List<ContentModel>();
         ContentApi contentApi = new ContentApi();

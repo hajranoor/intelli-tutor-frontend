@@ -21,7 +21,7 @@ namespace intelli_tutor_frontend.StudentSide
         MainCourseApi courseApi = new MainCourseApi();
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
 
-        List<MainCourseModel> availableCoursesList;
+        List<MainCoursesModel> availableCoursesList;
         public availableCourses()
         {
             formName.Text = "Availabe Courses";   
@@ -131,7 +131,19 @@ namespace intelli_tutor_frontend.StudentSide
 
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // availableCourses
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.ClientSize = new System.Drawing.Size(1331, 746);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "availableCourses";
+            this.Load += new System.EventHandler(this.availableCourses_Load);
+            this.ResumeLayout(false);
 
-
+        }
     }
 }

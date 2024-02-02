@@ -122,7 +122,6 @@ D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\inte
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.pdb
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\FontAwesome.Sharp.dll
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.CopyComplete
-D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.availableCourses.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.dll
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\intelli-tutor-frontend.exe.config
@@ -144,8 +143,6 @@ C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\ob
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.pdb
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.problems.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.myCourses.resources
-D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Labs.resources
-D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.problems.resources
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Form1.resources
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Register.resources
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.availableCourses.resources
@@ -571,3 +568,6 @@ D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Goog
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Plus.v1.xml
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\System.CodeDom.xml
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.authenticationCheck.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.availableCourses.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.NoUseLabs.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.NoUseproblems.resources

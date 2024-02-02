@@ -19,7 +19,7 @@ namespace intelli_tutor_frontend.StudentSide
 
         public async void ProblemContentShow(int labId, FlowLayoutPanel flowLayoutPanel1)
         {
-            problemList = await ProblemApi.getAllproblemData(labId);
+            //problemList = await ProblemApi.getAllproblemData(labId);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel1.AutoScroll = false;
@@ -99,8 +99,8 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += (sender, e) =>
                 {
-                    SolveProblem solveProblem = new SolveProblem(item);
-                    solveProblem.Show();
+                    //SolveProblem solveProblem = new SolveProblem(item);
+                    //solveProblem.Show();
                 };
 
                 buttonPanel.Controls.Add(enrollButton);
@@ -122,7 +122,7 @@ namespace intelli_tutor_frontend.StudentSide
         }
         public async void ProblemContentSho(int labId, FlowLayoutPanel flowLayoutPanel1)
         {
-            problemList = await ProblemApi.getAllproblemData(labId);
+            //problemList = await ProblemApi.getAllproblemData(labId);
             flowLayoutPanel1.AutoScroll = false;
             //flowLayoutPanel1.HorizontalScroll.Enabled = false;
             //flowLayoutPanel1.HorizontalScroll.Visible = false;
@@ -200,8 +200,8 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += (sender, e) =>
                 {
-                    SolveProblem solveProblem = new SolveProblem(item);
-                    solveProblem.Show();
+                    //SolveProblem solveProblem = new SolveProblem(item);
+                    //solveProblem.Show();
                 };
 
                 buttonPanel.Controls.Add(enrollButton);

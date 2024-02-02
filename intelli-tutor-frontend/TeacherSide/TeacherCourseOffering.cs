@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class CourseOffering
+    internal class TeacherCourseOffering
     {
         CourseOfferingApi courseOfferingApi = new CourseOfferingApi();
 
@@ -38,7 +38,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
         RadioButton defaultRadioButton = new RadioButton();
         RadioButton newRadioButton = new RadioButton();
-        public void CourseOfferingShow(MainCourseModel selectedCourse, FlowLayoutPanel flowLayoutPanel, Label formName)
+        public void CourseOfferingShow(MainCoursesModel selectedCourse, FlowLayoutPanel flowLayoutPanel, Label formName)
         {
             formName.Text = "Course Offering";
 

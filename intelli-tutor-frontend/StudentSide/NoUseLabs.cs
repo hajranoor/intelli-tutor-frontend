@@ -12,16 +12,13 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.StudentSide
 {
-    public partial class Labs : Dashboard
+    public partial class NoUseLabs : Dashboard
 
     {
         //LabApi labApi = new LabApi();
-<<<<<<< Updated upstream
         //List<labModel> labList;
-=======
-        List<labModel> labList;
->>>>>>> Stashed changes
-        public Labs()
+        //List<labModel> labList;
+        public NoUseLabs()
         {
             formName.Text = "Labs";
             InitializeComponent();
@@ -31,17 +28,13 @@ namespace intelli_tutor_frontend.StudentSide
         private async void labs_Load(object sender, EventArgs e)
         {
             int id = 8;
-<<<<<<< Updated upstream
             //labList = await labApi.getAlllabData(id);
-=======
             // labList = await labApi.getAlllabData(id);
->>>>>>> Stashed changes
             showLabData();
 
         }
         private void showLabData()
         {
-<<<<<<< Updated upstream
             //foreach (var item in labList)
             //{
             //    Panel outerPanel = new Panel();
@@ -50,7 +43,6 @@ namespace intelli_tutor_frontend.StudentSide
             //    outerPanel.Margin = new Padding(20, 20, 20, 20);
             //    //outerPanel.BackColor = Color.Lavender;
             //    outerPanel.BorderStyle = BorderStyle.FixedSingle;
-=======
             /*foreach (var item in labList)
             {
                 Panel outerPanel = new Panel();
@@ -59,7 +51,6 @@ namespace intelli_tutor_frontend.StudentSide
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
                 //outerPanel.BackColor = Color.Lavender;
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
->>>>>>> Stashed changes
 
             //    TableLayoutPanel cardPanel = new TableLayoutPanel();
             //    cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -124,13 +115,8 @@ namespace intelli_tutor_frontend.StudentSide
 
             //    flowLayoutPanel1.Controls.Add(outerPanel);
 
-<<<<<<< Updated upstream
             //}
-=======
             }*/
->>>>>>> Stashed changes
-
-
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

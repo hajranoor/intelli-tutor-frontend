@@ -15,7 +15,7 @@ namespace intelli_tutor_frontend.TeacherSide
     {
         MainCourseApi mcourseApi = new MainCourseApi();
 
-        List<MainCourseModel> availableCoursesList;
+        List<MainCoursesModel> availableCoursesList;
         public teacherAvailableCourses()
         {
 
@@ -94,7 +94,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     if (result.Equals(DialogResult.Yes))
                     {
                         flowLayoutPanel.Controls.Clear();
-                        CourseOffering courseOffering = new CourseOffering();
+                        TeacherCourseOffering courseOffering = new TeacherCourseOffering();
                         courseOffering.CourseOfferingShow(item, flowLayoutPanel, formName);
                     }
                   

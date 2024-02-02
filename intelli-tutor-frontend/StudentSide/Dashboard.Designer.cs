@@ -296,6 +296,6 @@ namespace intelli_tutor_frontend.StudentSide
         private System.Windows.Forms.PictureBox notificationIcon;
         private System.Windows.Forms.ToolStripMenuItem hekkoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

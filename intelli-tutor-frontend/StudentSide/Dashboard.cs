@@ -69,7 +69,7 @@ namespace intelli_tutor_frontend.StudentSide
         {
             //this.Hide();
             this.flowLayoutPanel1.Controls.Clear();
-            EnrolledCourseContent enrolledCourseContent = new EnrolledCourseContent();
+            StudentEnrolledCourseContent enrolledCourseContent = new StudentEnrolledCourseContent();
             enrolledCourseContent.EnrolledCourseContentShow(1, flowLayoutPanel1);
         }
 

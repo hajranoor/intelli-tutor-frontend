@@ -14,13 +14,13 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.StudentSide
 {
-    public partial class problems : Dashboard
+    public partial class NoUseproblems : Dashboard
     {
         public int problemcount;
         public int labid;
         ProblemApi ProblemApi = new ProblemApi();
         List<ProblemModel> problemList;
-        public problems(int problemsCount , int reallabid )
+        public NoUseproblems(int problemsCount , int reallabid )
         {
             formName.Text = "Problems";
             problemcount = problemsCount;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class CourseContent
+    internal class TeacherCourseContent
     {
         List<MainContentModel> mainContentModels = new List<MainContentModel>();
         MainContentApi mainContentApi = new MainContentApi();   

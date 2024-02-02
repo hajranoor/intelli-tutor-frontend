@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class teacherMyCourses
+    internal class TeacherMyCourses
     {
         CourseOfferingApi courseofferingapi = new CourseOfferingApi();
         List<CourseOfferingModel> courseofferinglist;
