@@ -52,7 +52,7 @@ namespace intelli_tutor_frontend.TeacherSide
             flowLayoutPanel2.Controls.Clear();
             formName.Text = "Course Content";
             CourseContent courseContent = new CourseContent();
-            courseContent.CourseContentShow(1, flowLayoutPanel2);
+            courseContent.CourseContentSjow(flowLayoutPanel2);
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

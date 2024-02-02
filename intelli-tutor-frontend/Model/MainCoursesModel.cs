@@ -1,10 +1,14 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace intelli_tutor_frontend.Model
-
 {
-    public class MainCourseModel
+    public class MainCoursesModel
     {
+
         public int course_id { get; set; }
         public string course_code { get; set; }
         public string course_name { get; set; }
@@ -13,6 +17,7 @@ namespace intelli_tutor_frontend.Model
         public int contact_hour { get; set; }
         public string course_type { get; set; }
         public int number_of_weeks { get; set; }
+       
         public byte[] icon { get; set; }
     }
 }

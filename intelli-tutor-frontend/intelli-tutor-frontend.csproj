@@ -140,12 +140,16 @@
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="BackendApi\ContentApi.cs" />
+    <Compile Include="BackendApi\CourseApi.cs" />
     <Compile Include="BackendApi\CourseOfferingApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
+<<<<<<< Updated upstream
     <Compile Include="BackendApi\MainContentApi.cs" />
-    <Compile Include="BackendApi\MainCourseApi.cs" />
     <Compile Include="BackendApi\MainProblemApi.cs" />
     <Compile Include="BackendApi\MainTestCaseApi.cs" />
+=======
+    <Compile Include="BackendApi\MainCourseApi.cs" />
+>>>>>>> Stashed changes
     <Compile Include="BackendApi\MainWeekApi.cs" />
     <Compile Include="BackendApi\ProblemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
@@ -169,12 +173,18 @@
     </Compile>
     <Compile Include="Model\ContentModel.cs" />
     <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Model\CourseOfferingModel.cs" />
-    <Compile Include="Model\MainCoursesModel.cs" />
+    <Compile Include="Model\CoursesModel.cs" />
     <Compile Include="Model\EnrolledCourses.cs" />
     <Compile Include="Model\MainContentModel.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
     <Compile Include="Model\MainTestCaseModel.cs" />
+=======
+    <Compile Include="Model\useless.cs" />
+    <Compile Include="Model\EnrolledCourses.cs" />
+    <Compile Include="Model\MainCoursesModel.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Model\MainWeekModel.cs" />
     <Compile Include="Model\ProblemModel.cs" />
     <Compile Include="Model\StudentModel.cs" />
@@ -236,7 +246,11 @@
     <Compile Include="StudentSide\problems.Designer.cs">
       <DependentUpon>problems.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide\EnrolledCourseContent.cs" />
+<<<<<<< Updated upstream
+    <Compile Include="StudentSide\ProblemsContent.cs" />
+=======
+    <Compile Include="StudentSide\ProblemsContentUseless.cs" />
+>>>>>>> Stashed changes
     <Compile Include="StudentSide\SolveProblem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,12 +260,17 @@
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
+    <Compile Include="TeacherSide\Class1.cs" />
     <Compile Include="TeacherSide\CourseContent.cs" />
     <Compile Include="TeacherSide\CourseOffering.cs" />
     <Compile Include="TeacherSide\CourseWeek.cs" />
+=======
+    <Compile Include="TeacherSide\CourseOffering.cs" />
     <Compile Include="TeacherSide\SuperAdmin-coursecontent.cs" />
     <Compile Include="TeacherSide\teacher-AvailableCourse.cs" />
-    <Compile Include="TeacherSide\teacherMyCourses.cs" />
+    <Compile Include="TeacherSide\CourseContent.cs" />
+>>>>>>> Stashed changes
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>
