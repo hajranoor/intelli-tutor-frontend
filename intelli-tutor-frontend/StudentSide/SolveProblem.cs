@@ -29,6 +29,8 @@ namespace intelli_tutor_frontend.StudentSide
     {
         private ProblemModel problem;
         private List<TestCaseModel> testcaseList;
+        int content_id;
+        ProblemApi problemApi = new ProblemApi();
 
         private bool isSidebarCollapsed = false;
         private int sidebarStep = 20;
@@ -36,12 +38,12 @@ namespace intelli_tutor_frontend.StudentSide
         private int originalMainPanelWidth;
 
         //private Dictionary<Control, int> originalControlLeftPositions = new Dictionary<Control, int>();
-        public SolveProblem(ProblemModel problem)
+        public SolveProblem(int content_id)
         {
             InitializeComponent();
             InitializeCodeEditor();
             loadIcons();
-            this.problem = problem;
+            this.content_id = content_id;
             originalSidebarWidth = sidePanel.Width;
             originalMainPanelWidth = mainPanel.Width;
             selectLanguage.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -85,6 +87,7 @@ namespace intelli_tutor_frontend.StudentSide
 
         private async void SolveProblem_Load(object sender, EventArgs e)
         {
+            this.problem = await problemApi.getproblemData(content_id);
             loadCompilers();
             loadStarterCode();
             TestCasesApi testCasesApi = new TestCasesApi();

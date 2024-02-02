@@ -26,7 +26,7 @@ namespace intelli_tutor_frontend.BackendApi
 
                     string apiResponse = await response.Content.ReadAsStringAsync();    
                     courseOfferingList = JsonConvert.DeserializeObject<List<CourseOfferingModel>>(apiResponse);
-                    MessageBox.Show(courseOfferingList.ToString());
+                    //MessageBox.Show(courseOfferingList.ToString());
                 }
             }
 

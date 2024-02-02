@@ -11,15 +11,15 @@ namespace intelli_tutor_frontend.BackendApi
 {
     internal class MainCourseApi
     {
-        public async Task<List<MainCourse>> getAvailableCourse()
+        public async Task<List<MainCourseModel>> getAvailableCourse()
         {
-            List<MainCourse> courseList = new List<MainCourse>();
+            List<MainCourseModel> courseList = new List<MainCourseModel>();
             using (var client = new HttpClient())
             {
                 using (var response = await client.GetAsync("http://localhost:7008/MainCourse"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    courseList = JsonConvert.DeserializeObject<List<MainCourse>>(apiResponse);
+                    courseList = JsonConvert.DeserializeObject<List<MainCourseModel>>(apiResponse);
                 }
             }
             return courseList;

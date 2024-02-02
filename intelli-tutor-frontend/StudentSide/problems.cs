@@ -31,7 +31,7 @@ namespace intelli_tutor_frontend.StudentSide
         private async void problems_Load(object sender, EventArgs e)
         {
            
-            problemList = await ProblemApi.getAllproblemData(labid);
+            //problemList = await ProblemApi.getAllproblemData(labid);
             showProblemData();
 
         }
@@ -88,7 +88,7 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += (sender, e) =>
                 {
-                    SolveProblem solveProblem = new SolveProblem(item);
+                    SolveProblem solveProblem = new SolveProblem(item.problem_id);
                     solveProblem.Show();
                 };
 

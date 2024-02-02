@@ -39,19 +39,19 @@
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
             this.currentUser = new System.Windows.Forms.Label();
+            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.accountIcon = new System.Windows.Forms.PictureBox();
-            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -141,6 +141,7 @@
             this.availableCoursesToolStripMenuItem.Name = "availableCoursesToolStripMenuItem";
             this.availableCoursesToolStripMenuItem.Size = new System.Drawing.Size(245, 41);
             this.availableCoursesToolStripMenuItem.Text = "Available Courses";
+            this.availableCoursesToolStripMenuItem.Click += new System.EventHandler(this.availableCoursesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -149,6 +150,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 41);
             this.toolStripMenuItem1.Text = "My Courses";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // myCoursesToolStripMenuItem
             // 
@@ -196,6 +198,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(955, 100);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
+            // accountIcon
+            // 
+            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountIcon.Location = new System.Drawing.Point(766, 2);
+            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accountIcon.Name = "accountIcon";
+            this.accountIcon.Size = new System.Drawing.Size(41, 96);
+            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.accountIcon.TabIndex = 3;
+            this.accountIcon.TabStop = false;
+            // 
             // formName
             // 
             this.formName.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -221,6 +234,17 @@
             this.currentUser.Size = new System.Drawing.Size(117, 32);
             this.currentUser.TabIndex = 1;
             this.currentUser.Text = "Shanza";
+            // 
+            // notificationIcon
+            // 
+            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
+            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.notificationIcon.Name = "notificationIcon";
+            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
+            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.notificationIcon.TabIndex = 2;
+            this.notificationIcon.TabStop = false;
             // 
             // label3
             // 
@@ -256,28 +280,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // accountIcon
-            // 
-            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountIcon.Location = new System.Drawing.Point(766, 2);
-            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.accountIcon.Name = "accountIcon";
-            this.accountIcon.Size = new System.Drawing.Size(41, 96);
-            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.accountIcon.TabIndex = 3;
-            this.accountIcon.TabStop = false;
-            // 
-            // notificationIcon
-            // 
-            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
-            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.notificationIcon.Name = "notificationIcon";
-            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
-            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.notificationIcon.TabIndex = 2;
-            this.notificationIcon.TabStop = false;
-            // 
             // TeacherSideDashbaord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,9 +301,9 @@
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

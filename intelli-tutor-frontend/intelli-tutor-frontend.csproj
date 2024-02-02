@@ -140,10 +140,10 @@
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="BackendApi\ContentApi.cs" />
-    <Compile Include="BackendApi\CourseApi.cs" />
     <Compile Include="BackendApi\CourseOfferingApi.cs" />
     <Compile Include="BackendApi\EnrolledCourseApi.cs" />
     <Compile Include="BackendApi\MainContentApi.cs" />
+    <Compile Include="BackendApi\MainCourseApi.cs" />
     <Compile Include="BackendApi\MainProblemApi.cs" />
     <Compile Include="BackendApi\MainTestCaseApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
@@ -170,7 +170,7 @@
     <Compile Include="Model\ContentModel.cs" />
     <Compile Include="Model\CourseAndEnrolledCourseDTO.cs" />
     <Compile Include="Model\CourseOfferingModel.cs" />
-    <Compile Include="Model\CoursesModel.cs" />
+    <Compile Include="Model\MainCoursesModel.cs" />
     <Compile Include="Model\EnrolledCourses.cs" />
     <Compile Include="Model\MainContentModel.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
@@ -236,7 +236,7 @@
     <Compile Include="StudentSide\problems.Designer.cs">
       <DependentUpon>problems.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide\ProblemsContent.cs" />
+    <Compile Include="StudentSide\EnrolledCourseContent.cs" />
     <Compile Include="StudentSide\SolveProblem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,10 +246,12 @@
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="TeacherSide\Class1.cs" />
     <Compile Include="TeacherSide\CourseContent.cs" />
     <Compile Include="TeacherSide\CourseOffering.cs" />
     <Compile Include="TeacherSide\CourseWeek.cs" />
+    <Compile Include="TeacherSide\SuperAdmin-coursecontent.cs" />
+    <Compile Include="TeacherSide\teacher-AvailableCourse.cs" />
+    <Compile Include="TeacherSide\teacherMyCourses.cs" />
     <Compile Include="TeacherSide\TeacherSideDashbaord.cs">
       <SubType>Form</SubType>
     </Compile>

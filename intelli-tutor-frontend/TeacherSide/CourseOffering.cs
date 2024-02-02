@@ -38,8 +38,10 @@ namespace intelli_tutor_frontend.TeacherSide
 
         RadioButton defaultRadioButton = new RadioButton();
         RadioButton newRadioButton = new RadioButton();
-        public void CourseOfferingShow(coursesModel selectedCourse, FlowLayoutPanel flowLayoutPanel)
+        public void CourseOfferingShow(MainCourseModel selectedCourse, FlowLayoutPanel flowLayoutPanel, Label formName)
         {
+            formName.Text = "Course Offering";
+
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel.AutoScroll = false;
             flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -204,12 +206,16 @@ namespace intelli_tutor_frontend.TeacherSide
                                 courseOfferingModel.description = descriptionTextBox.Text;  
                                 courseOfferingModel.offering_year = offeringYear;
                                 courseOfferingModel.capacity = capacity;
-                                courseOfferingModel.course_id = 1;
+                                courseOfferingModel.course_id = selectedCourse.course_id;
                                 courseOfferingModel.semester = semesterComboBox.Text;
                                 courseOfferingModel.teacher_id = 1;
 
                                 int courseOfferingId = await courseOfferingApi.InsertCourseOfferingData(courseOfferingModel);
                                 copyCourseData(courseOfferingId);
+                                MessageBox.Show("Course is created: ");
+                                flowLayoutPanel.Controls.Clear();
+                                teacherAvailableCourses teacherAvailableCourses = new teacherAvailableCourses(); ;
+                                teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel, formName);
                             }
                             else
                             {
@@ -324,8 +330,6 @@ namespace intelli_tutor_frontend.TeacherSide
                 }
 
             }
-            MessageBox.Show("end");
-
         }
     }
 }

@@ -34,13 +34,12 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
         }
-        //---------------------------------
-        public async Task<List<TestCaseModel>> getAllTestCasesData(int problemId)
+        public async Task<List<TestCaseModel>> getAllTestCasesData(int problem_id)
         {
             List<TestCaseModel> testCaseList = new List<TestCaseModel>();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:7008/testcases/" + problemId))
+                using (var response = await client.GetAsync("http://localhost:7008/TestCase/" + problem_id))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     testCaseList = JsonConvert.DeserializeObject<List<TestCaseModel>>(apiResponse);

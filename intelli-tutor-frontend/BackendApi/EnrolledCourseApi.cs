@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Net.NetworkInformation;
+using System.Windows;
 
 namespace intelli_tutor_frontend.BackendApi
 {
@@ -45,6 +46,7 @@ namespace intelli_tutor_frontend.BackendApi
                 using (var response = await client.GetAsync("http://localhost:7008/EnrolledCourses/" + studentId ))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show(apiResponse);
                     list = JsonConvert.DeserializeObject<List<CourseAndEnrolledCourseDTO>>(apiResponse);
                 }
             }

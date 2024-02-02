@@ -32,22 +32,20 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
         }
-        //--------------------------------------------------------------------
-        public async Task<List<ProblemModel>> getAllproblemData(int id)
+        public async Task<ProblemModel> getproblemData(int content_id)
         {
-            List<ProblemModel> problemList = new List<ProblemModel>();
-            string apiUrl = $"http://localhost:7008/Problem/{id}";
+            ProblemModel problem = new ProblemModel();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync(apiUrl))
+                using (var response = await client.GetAsync($"http://localhost:7008/Problem/{content_id}"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
 
-                    problemList = JsonConvert.DeserializeObject<List<ProblemModel>>(apiResponse);
-                    Console.WriteLine(problemList);
+                    problem = JsonConvert.DeserializeObject<ProblemModel>(apiResponse);
+                    Console.WriteLine(problem);
                 }
             }
-            return problemList;
+            return problem;
         }
     }
 }

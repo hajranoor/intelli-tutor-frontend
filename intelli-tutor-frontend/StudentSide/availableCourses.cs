@@ -18,10 +18,10 @@ namespace intelli_tutor_frontend.StudentSide
 {
     public partial class availableCourses : Dashboard
     {
-        CourseApi courseApi = new CourseApi();
+        MainCourseApi courseApi = new MainCourseApi();
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
 
-        List<coursesModel> availableCoursesList;
+        List<MainCourseModel> availableCoursesList;
         public availableCourses()
         {
             formName.Text = "Availabe Courses";   
@@ -30,7 +30,7 @@ namespace intelli_tutor_frontend.StudentSide
 
         private async void availableCourses_Load(object sender, EventArgs e)
         {
-            availableCoursesList = await courseApi.getAllCourseData();
+            availableCoursesList = await courseApi.getAvailableCourse();
             showData();
 
         }
@@ -65,7 +65,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(pictureBox, 0, 0);
 
                 Label titleLabel = new Label();
-                titleLabel.Text = item.course_title;
+                titleLabel.Text = item.course_name;
                 titleLabel.Dock = DockStyle.Fill;
                 titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                 titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -73,7 +73,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = item.description;
+                instructorLabel.Text = item.course_description;
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                 instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
@@ -99,7 +99,7 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += async (sender, e) =>
                 {
-                    DialogResult result = MessageBox.Show("Do you want to add this course" + item.course_title + " ?" , "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Do you want to add this course" + item.course_name + " ?" , "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {

@@ -15,24 +15,16 @@ namespace intelli_tutor_frontend.TeacherSide
     {
         MainCourseApi mcourseApi = new MainCourseApi();
 
-        List<MainCourse> availableCoursesList;
+        List<MainCourseModel> availableCoursesList;
         public teacherAvailableCourses()
         {
 
         }
 
-        public async Task availableCoursesAsync(MainCourse course, FlowLayoutPanel flowLayoutPanel)
+        public async Task availableCoursesAsync(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
-
+            formName.Text = "Available Courses";
             availableCoursesList = await mcourseApi.getAvailableCourse();
-            showData(flowLayoutPanel);
-
-        }
-
-
-
-        private void showData(FlowLayoutPanel flowLayoutPanel)
-        {
             foreach (var item in availableCoursesList)
             {
                 Panel outerPanel = new Panel();
@@ -53,7 +45,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
-                pictureBox.Load("C:\\Users\\Laiba\\Documents\\GitHub\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
+                pictureBox.Load("D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
                 
                 pictureBox.Width = 165;
                 pictureBox.Height = 165;
@@ -88,7 +80,7 @@ namespace intelli_tutor_frontend.TeacherSide
                 buttonPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
                 Button enrollButton = new Button();
 
-                enrollButton.Text = "Create course";
+                enrollButton.Text = "Create Course";
                 enrollButton.Dock = DockStyle.Fill;
                 enrollButton.Width = 60;
                 enrollButton.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,8 +90,13 @@ namespace intelli_tutor_frontend.TeacherSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += async (sender, e) =>
                 {
-                    DialogResult result = MessageBox.Show("Do you want to create this course " + item.course_name + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                    DialogResult result = MessageBox.Show("Do you want to offer " + item.course_name + " ?", "Offering Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result.Equals(DialogResult.Yes))
+                    {
+                        flowLayoutPanel.Controls.Clear();
+                        CourseOffering courseOffering = new CourseOffering();
+                        courseOffering.CourseOfferingShow(item, flowLayoutPanel, formName);
+                    }
                   
                 };
 
@@ -107,7 +104,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
                 Button viewbutton = new Button();
 
-                viewbutton.Text = "View course";
+                viewbutton.Text = "View Course";
                 viewbutton.Dock = DockStyle.Fill;
                 viewbutton.Width = 60;
                 viewbutton.TextAlign = ContentAlignment.MiddleCenter;
@@ -117,10 +114,9 @@ namespace intelli_tutor_frontend.TeacherSide
                 viewbutton.ForeColor = Color.White;
                 viewbutton.Click += async (sender, e) =>
                 {
-                    Console.WriteLine("laibaa");
                     flowLayoutPanel.Controls.Clear();
                     SuperAdmin_coursecontent c = new SuperAdmin_coursecontent();
-                    await c.CourseContentSuperAdmin(item, flowLayoutPanel);
+                    await c.CourseContentSuperAdmin(item, flowLayoutPanel, formName);
 
                 };
 

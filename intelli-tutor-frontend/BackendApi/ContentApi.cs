@@ -32,5 +32,19 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
         }
+
+        public async Task<List<ContentModel>> getContentByWeekId(int weekId)
+        {
+            List<ContentModel> list = new List<ContentModel>();
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync("http://localhost:7008/Content/" + weekId))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    list = JsonConvert.DeserializeObject<List<ContentModel>>(apiResponse);
+                }
+            }
+            return list;
+        }
     }
 }

@@ -14,9 +14,9 @@ namespace intelli_tutor_frontend.TeacherSide
     internal class SuperAdmin_coursecontent
     {
 
-        public async Task CourseContentSuperAdmin(MainCourse myCourseData, FlowLayoutPanel flowLayoutPanel1)
+        public async Task CourseContentSuperAdmin(MainCourseModel myCourseData, FlowLayoutPanel flowLayoutPanel1, Label formName)
         {
-
+            formName.Text = "Available Course Description";
            
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel1.AutoScroll = false;

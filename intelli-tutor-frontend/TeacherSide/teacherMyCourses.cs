@@ -12,11 +12,12 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class teacherMyCourses
     {
-        courseOfferingapi courseofferingapi = new courseOfferingapi();
-        List<courseOfferingModel> courseofferinglist;
+        CourseOfferingApi courseofferingapi = new CourseOfferingApi();
+        List<CourseOfferingModel> courseofferinglist;
 
-        public async Task ShowMyCoursesAsync(FlowLayoutPanel flowLayoutPanel)
+        public async Task ShowMyCoursesAsync(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
+            formName.Text = "My Courses";
             courseofferinglist = await courseofferingapi.getCourseOfferings(1);
 
             MessageBox.Show("clicked 2" + courseofferinglist.Count.ToString());

@@ -65,6 +65,17 @@ namespace intelli_tutor_frontend.StudentSide
             myCourses.Show();
         }
 
-       
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            this.flowLayoutPanel1.Controls.Clear();
+            EnrolledCourseContent enrolledCourseContent = new EnrolledCourseContent();
+            enrolledCourseContent.EnrolledCourseContentShow(1, flowLayoutPanel1);
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
