@@ -73,7 +73,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(pictureBox, 0, 0);
 
                 Label titleLabel = new Label();
-                titleLabel.Text = item.course_title;
+                titleLabel.Text = item.course_name;
                 titleLabel.Dock = DockStyle.Fill;
                 titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                 titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -81,11 +81,13 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = item.description;
+                instructorLabel.Text = item.course_code;
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                 instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
                 instructorLabel.Height = 60;
+
+
 
                 cardPanel.Controls.Add(instructorLabel, 0, 2);
                 Panel buttonPanel = new Panel();
@@ -153,7 +155,7 @@ namespace intelli_tutor_frontend.StudentSide
 
 
             Label courseTitle = new Label();
-            courseTitle.Text = myCourseData.course_title + "iuwehwuheuhsdkjhaskjdn,msa dkjnsajkdaskjdkjsadkjsa   asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav";
+            courseTitle.Text = myCourseData.course_name + "iuwehwuheuhsdkjhaskjdn,msa dkjnsajkdaskjdkjsadkjsa   asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa  asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsa asjdsalkjdhlsad a dsajdnjkasdkjashd asdjksakjdkjsav";
             courseTitle.Dock = DockStyle.Fill;
             courseTitle.Font = new Font("Segoe UI Semibold", 16F);
             courseTitle.Height = 60;
@@ -161,7 +163,7 @@ namespace intelli_tutor_frontend.StudentSide
             mainPanel.Controls.Add(courseTitle, 0, 1);
 
             RichTextBox CourseDescription = new RichTextBox();
-            CourseDescription.Text = myCourseData.description;
+            CourseDescription.Text = myCourseData.course_code;
             CourseDescription.Font = new Font("Segoe UI Semibold", 10F);
             CourseDescription.Dock = DockStyle.Fill;
             CourseDescription.ReadOnly = true;

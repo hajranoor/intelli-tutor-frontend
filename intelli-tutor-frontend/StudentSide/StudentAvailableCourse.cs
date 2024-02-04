@@ -5,6 +5,7 @@ using intelli_tutor_frontend.TeacherSide;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,7 +48,8 @@ namespace intelli_tutor_frontend.StudentSide
 
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
-                pictureBox.Load("D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
+                string imagePath = Path.Combine(Application.StartupPath, "labimage.png");
+                pictureBox.Load(imagePath);
 
                 pictureBox.Width = 150;
                 pictureBox.Height = 150;
@@ -56,7 +58,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(pictureBox, 0, 0);
 
                 Label titleLabel = new Label();
-                titleLabel.Text = courseData.course_name;
+                titleLabel.Text = courseData.course_offering_id.ToString();
                 titleLabel.Dock = DockStyle.Fill;
                 titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                 titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -64,7 +66,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = courseData.description;
+                instructorLabel.Text = courseData.course_code;
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                 instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
@@ -97,12 +99,12 @@ namespace intelli_tutor_frontend.StudentSide
                     if (result == DialogResult.Yes)
                     {
                         EnrolledCourses enrolledCourses = new EnrolledCourses();
-                        enrolledCourses.course_offering_id = courseData.course_offering_id;
-                        enrolledCourses.student_id = 1; //chnage it
-                        enrolledCourses.grade = "";
-                        string data = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
+                        enrolledCourses.courseId = courseData.course_offering_id;
+                        enrolledCourses.studentId = 1; //chnage it
+                        enrolledCourses.grade = "null";
+                        await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
 
-                        MessageBox.Show(data);
+                        
                     }
                     
                 };

@@ -39,7 +39,7 @@ namespace intelli_tutor_frontend.StudentSide
 
 
             Label courseTitle = new Label();
-            courseTitle.Text = myCourseData.course_title;
+            courseTitle.Text = myCourseData.course_name;
             courseTitle.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             courseTitle.Dock = DockStyle.Fill;
             courseTitle.Font = new Font("Segoe UI Semibold", 16F);
@@ -51,7 +51,7 @@ namespace intelli_tutor_frontend.StudentSide
             mainPanel.Controls.Add(courseTitle, 0, 1);
 
             NoCaretRichTextBox CourseDescription = new NoCaretRichTextBox();
-            CourseDescription.Text = myCourseData.description;
+            CourseDescription.Text = myCourseData.course_code;
             CourseDescription.Font = new Font("Segoe UI", 14F);
             CourseDescription.Dock = DockStyle.Fill;
             CourseDescription.ReadOnly = true;

@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -57,7 +58,8 @@ namespace intelli_tutor_frontend.StudentSide
                 PictureBox pictureBox = new PictureBox();
                 //pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
                 //pictureBox.Load("D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
-                
+                string imagePath = Path.Combine(Application.StartupPath, "labimage.png");
+                pictureBox.Load(imagePath);
                 pictureBox.Width = 150;
                 pictureBox.Height = 150;
                 pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -104,12 +106,12 @@ namespace intelli_tutor_frontend.StudentSide
                     if (result == DialogResult.Yes)
                     {
                         EnrolledCourses enrolledCourses = new EnrolledCourses();
-                        enrolledCourses.course_offering_id = item.course_id;
-                        enrolledCourses.student_id = 1;
+                        enrolledCourses.courseId = item.course_id;
+                        enrolledCourses.studentId = 1;
                         enrolledCourses.grade = "";
                         string data = await  enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
 
-                        MessageBox.Show(data);
+                        
                     }
                     else
                     {

@@ -17,6 +17,10 @@ namespace intelli_tutor_frontend.BackendApi
     {
         public async Task<string> makeEnrollmentInCourse(EnrolledCourses enrolledCourses)
         {
+
+            Console.WriteLine(enrolledCourses.courseId);
+            Console.WriteLine(enrolledCourses.studentId);
+
             using (var client = new HttpClient())
             {
                 string courseJson = JsonConvert.SerializeObject(enrolledCourses);
