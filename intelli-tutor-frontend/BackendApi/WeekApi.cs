@@ -38,12 +38,26 @@ namespace intelli_tutor_frontend.BackendApi
 
 
         //-----------------------------------------------------------------
-        public async Task<List<WeekModel>> getAllWeekData(int courseId)
+        public async Task<List<WeekModel>> getAllWeekData(int course_offering_Id)
         {
             List<WeekModel> list = new List<WeekModel>();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:7008/Week/"+ courseId +  "?courseId=" + courseId))
+                using (var response = await client.GetAsync("http://localhost:7008/Week/"+ course_offering_Id + "?course_offering_Id=" + course_offering_Id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    list = JsonConvert.DeserializeObject<List<WeekModel>>(apiResponse);
+                }
+            }
+            return list;
+        }
+
+        public async Task<List<WeekModel>> getAllMainWeekDataByCourseOfferingId(int course_offering_Id)
+        {
+            List<WeekModel> list = new List<WeekModel>();
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync("http://localhost:7008/Week/" + course_offering_Id))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     list = JsonConvert.DeserializeObject<List<WeekModel>>(apiResponse);

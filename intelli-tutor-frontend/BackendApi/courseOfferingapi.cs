@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace intelli_tutor_frontend.BackendApi
 {
@@ -35,6 +36,21 @@ namespace intelli_tutor_frontend.BackendApi
 
                 return courseOfferingList;
             }
+        }
+
+        public async Task<List<MainCourseAndCourseOfferingDTO>> getCourseOfferingForStudent()
+        {
+            List<MainCourseAndCourseOfferingDTO> mainCourseAndCourseOfferingDTOList = new List<MainCourseAndCourseOfferingDTO>();
+            using (var client = new HttpClient())
+            {
+
+                using (var response = await client.GetAsync("http://localhost:7008/CourseOffering"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    mainCourseAndCourseOfferingDTOList = JsonConvert.DeserializeObject<List<MainCourseAndCourseOfferingDTO>>(apiResponse);
+                }
+            }
+            return mainCourseAndCourseOfferingDTOList;
         }
         public async Task<int> InsertCourseOfferingData(CourseOfferingModel courseOffering)
         {

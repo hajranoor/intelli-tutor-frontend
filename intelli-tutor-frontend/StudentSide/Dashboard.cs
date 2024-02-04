@@ -36,26 +36,14 @@ namespace intelli_tutor_frontend.StudentSide
             dashboardToolStripMenuItem.Enabled = true;
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void availableCoursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            availableCourses availableCourses = new availableCourses();
-            availableCourses.Show();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            this.flowLayoutPanel1.Controls.Clear();
+            StudentAvailableCourses studentAvailableCourses = new StudentAvailableCourses();
+            studentAvailableCourses.availableCoursesShow(flowLayoutPanel1, formName);
+            //this.Hide();
+            //availableCourses availableCourses = new availableCourses();
+            //availableCourses.Show();
         }
 
         private void myCoursesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,11 +59,6 @@ namespace intelli_tutor_frontend.StudentSide
             this.flowLayoutPanel1.Controls.Clear();
             StudentEnrolledCourseContent enrolledCourseContent = new StudentEnrolledCourseContent();
             enrolledCourseContent.EnrolledCourseContentShow(1, flowLayoutPanel1);
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

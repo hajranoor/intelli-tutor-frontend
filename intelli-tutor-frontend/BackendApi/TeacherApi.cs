@@ -1,4 +1,5 @@
 ﻿using intelli_tutor_frontend.Model;
+using MVCproject.DTO;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,20 @@ namespace intelli_tutor_frontend.BackendApi
                     }
                 }
             }
+        }
+
+        public async Task<List<UserAndTeacherDTO>> getTeacher(int teacher_id)
+        {
+            List<UserAndTeacherDTO> list = new List<UserAndTeacherDTO>();
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync("http://localhost:7008/teacher/" + teacher_id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    list = JsonConvert.DeserializeObject<List<UserAndTeacherDTO>>(apiResponse);
+                }
+            }
+            return list;
         }
     }
 }

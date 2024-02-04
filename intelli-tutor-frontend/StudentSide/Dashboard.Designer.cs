@@ -38,14 +38,14 @@ namespace intelli_tutor_frontend.StudentSide
             this.availableCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
             this.currentUser = new System.Windows.Forms.Label();
-            this.notificationIcon = new System.Windows.Forms.PictureBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.accountIcon = new System.Windows.Forms.PictureBox();
+            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,7 +72,6 @@ namespace intelli_tutor_frontend.StudentSide
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(371, 747);
             this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label1
             // 
@@ -109,7 +108,6 @@ namespace intelli_tutor_frontend.StudentSide
             this.menuStrip1.Size = new System.Drawing.Size(371, 595);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // dashboardToolStripMenuItem
             // 
@@ -143,6 +141,15 @@ namespace intelli_tutor_frontend.StudentSide
             this.hekkoToolStripMenuItem.Name = "hekkoToolStripMenuItem";
             this.hekkoToolStripMenuItem.Size = new System.Drawing.Size(14, 4);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 41);
+            this.toolStripMenuItem1.Text = "CourseContent";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Black;
@@ -153,7 +160,6 @@ namespace intelli_tutor_frontend.StudentSide
             this.label3.Size = new System.Drawing.Size(301, 2);
             this.label3.TabIndex = 3;
             this.label3.Text = "jdfdfnld";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -177,17 +183,6 @@ namespace intelli_tutor_frontend.StudentSide
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(955, 100);
             this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // accountIcon
-            // 
-            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountIcon.Location = new System.Drawing.Point(766, 2);
-            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.accountIcon.Name = "accountIcon";
-            this.accountIcon.Size = new System.Drawing.Size(41, 96);
-            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.accountIcon.TabIndex = 3;
-            this.accountIcon.TabStop = false;
             // 
             // formName
             // 
@@ -215,26 +210,6 @@ namespace intelli_tutor_frontend.StudentSide
             this.currentUser.TabIndex = 1;
             this.currentUser.Text = "Shanza";
             // 
-            // notificationIcon
-            // 
-            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
-            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.notificationIcon.Name = "notificationIcon";
-            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
-            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.notificationIcon.TabIndex = 2;
-            this.notificationIcon.TabStop = false;
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 41);
-            this.toolStripMenuItem1.Text = "CourseContent";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -246,7 +221,28 @@ namespace intelli_tutor_frontend.StudentSide
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(940, 630);
             this.flowLayoutPanel1.TabIndex = 7;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // accountIcon
+            // 
+            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountIcon.Location = new System.Drawing.Point(766, 2);
+            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accountIcon.Name = "accountIcon";
+            this.accountIcon.Size = new System.Drawing.Size(41, 96);
+            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.accountIcon.TabIndex = 3;
+            this.accountIcon.TabStop = false;
+            // 
+            // notificationIcon
+            // 
+            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
+            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.notificationIcon.Name = "notificationIcon";
+            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
+            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.notificationIcon.TabIndex = 2;
+            this.notificationIcon.TabStop = false;
             // 
             // Dashboard
             // 
@@ -293,9 +289,9 @@ namespace intelli_tutor_frontend.StudentSide
         public System.Windows.Forms.Label formName;
         private System.Windows.Forms.Label currentUser;
         private System.Windows.Forms.PictureBox accountIcon;
-        private System.Windows.Forms.PictureBox notificationIcon;
         private System.Windows.Forms.ToolStripMenuItem hekkoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox notificationIcon;
     }
 }

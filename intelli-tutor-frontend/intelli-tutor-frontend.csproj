@@ -172,10 +172,10 @@
     <Compile Include="Model\CourseOfferingModel.cs" />
     <Compile Include="Model\EnrolledCourses.cs" />
     <Compile Include="Model\MainContentModel.cs" />
+    <Compile Include="Model\MainCourseAndCourseOfferingDTO.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
     <Compile Include="Model\MainTestCaseModel.cs" />
     <Compile Include="Model\useless.cs" />
-    <Compile Include="Model\EnrolledCourses.cs" />
     <Compile Include="Model\MainCoursesModel.cs" />
     <Compile Include="Model\MainWeekModel.cs" />
     <Compile Include="Model\ProblemModel.cs" />
@@ -183,6 +183,7 @@
     <Compile Include="Model\TeacherModel.cs" />
     <Compile Include="Model\TestCaseModel.cs" />
     <Compile Include="Model\UniversityModel.cs" />
+    <Compile Include="Model\UserAndTeacherDTO.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Model\WeekModel.cs" />
     <Compile Include="Program.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="StudentSide\availableCourses.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StudentSide\StudentAvailableCourseWeek.cs" />
     <Compile Include="StudentSide\StudentCourseWeek.cs" />
     <Compile Include="StudentSide\Dashboard.cs">
       <SubType>Form</SubType>
@@ -246,6 +248,7 @@
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="StudentSide\StudentAvailableCourse.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseOffering.cs" />
@@ -315,6 +318,7 @@
   <ItemGroup>
     <Content Include="image.png" />
     <Content Include="labimage.png" />
+    <None Include="Resources\lock.png" />
     <None Include="Resources\OOP.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
