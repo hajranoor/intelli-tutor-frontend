@@ -19,13 +19,10 @@ namespace intelli_tutor_frontend.StudentSide
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
 
         List<MainCourseAndCourseOfferingDTO> availableCoursesList;
-        public StudentAvailableCourses()
-        {
-
-        }
 
         public async void availableCoursesShow(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
+            flowLayoutPanel.Controls.Clear();
             formName.Text = "Available Courses";
             availableCoursesList = await courseOfferingApi.getCourseOfferingForStudent();
             foreach (var courseData in availableCoursesList)
@@ -34,7 +31,6 @@ namespace intelli_tutor_frontend.StudentSide
                 outerPanel.Width = 480;
                 outerPanel.Height = 400;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
-                //outerPanel.BackColor = Color.Lavender;
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
 
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
@@ -58,7 +54,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(pictureBox, 0, 0);
 
                 Label titleLabel = new Label();
-                titleLabel.Text = courseData.course_offering_id.ToString();
+                titleLabel.Text = courseData.course_name;
                 titleLabel.Dock = DockStyle.Fill;
                 titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                 titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -76,7 +72,6 @@ namespace intelli_tutor_frontend.StudentSide
                 TableLayoutPanel buttonPanel = new TableLayoutPanel();
                 buttonPanel.Height = 70;
                 buttonPanel.Width = 150;
-                //buttonPanel.BackColor = Color.DarkSlateBlue;
                 buttonPanel.Dock = DockStyle.Bottom;
                 buttonPanel.Margin = new Padding(10, 0, 10, 20);
 
@@ -99,14 +94,14 @@ namespace intelli_tutor_frontend.StudentSide
                     if (result == DialogResult.Yes)
                     {
                         EnrolledCourses enrolledCourses = new EnrolledCourses();
-                        enrolledCourses.courseId = courseData.course_offering_id;
-                        enrolledCourses.studentId = 1; //chnage it
+                        enrolledCourses.course_offering_id = courseData.course_offering_id;
+                        enrolledCourses.student_id = 2; //change it
                         enrolledCourses.grade = "null";
-                        await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
+                        string message = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
+                        MessageBox.Show(message, " Message ");
 
-                        
                     }
-                    
+
                 };
 
                 buttonPanel.Controls.Add(enrollButton, 0, 0);
@@ -126,8 +121,6 @@ namespace intelli_tutor_frontend.StudentSide
                     flowLayoutPanel.Controls.Clear();
                     StudentAvailableCourseWeek studentAvailableCourseWeek = new StudentAvailableCourseWeek();
                     studentAvailableCourseWeek.AvailableCourseWeekShow(courseData, flowLayoutPanel, formName);
-                    //SuperAdmin_coursecontent c = new SuperAdmin_coursecontent();
-                    //await c.CourseContentSuperAdmin(item, flowLayoutPanel, formName);
 
                 };
 
@@ -139,11 +132,5 @@ namespace intelli_tutor_frontend.StudentSide
                 flowLayoutPanel.Controls.Add(outerPanel);
             }
         }
-
-
-
-
-
-
     }
 }

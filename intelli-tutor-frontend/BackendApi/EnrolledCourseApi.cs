@@ -17,10 +17,6 @@ namespace intelli_tutor_frontend.BackendApi
     {
         public async Task<string> makeEnrollmentInCourse(EnrolledCourses enrolledCourses)
         {
-
-            Console.WriteLine(enrolledCourses.courseId);
-            Console.WriteLine(enrolledCourses.studentId);
-
             using (var client = new HttpClient())
             {
                 string courseJson = JsonConvert.SerializeObject(enrolledCourses);
@@ -50,7 +46,6 @@ namespace intelli_tutor_frontend.BackendApi
                 using (var response = await client.GetAsync("http://localhost:7008/EnrolledCourses/" + studentId ))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    MessageBox.Show(apiResponse);
                     list = JsonConvert.DeserializeObject<List<CourseAndEnrolledCourseDTO>>(apiResponse);
                 }
             }

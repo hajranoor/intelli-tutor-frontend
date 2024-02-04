@@ -34,10 +34,6 @@ namespace intelli_tutor_frontend.BackendApi
             }
         }
 
-
-
-
-        //-----------------------------------------------------------------
         public async Task<List<WeekModel>> getAllWeekData(int course_offering_Id)
         {
             List<WeekModel> list = new List<WeekModel>();

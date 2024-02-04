@@ -23,7 +23,6 @@ namespace intelli_tutor_frontend.BackendApi
                     if (response.IsSuccessStatusCode)
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();
-
                         return apiResponse;
                     }
                     else

@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class SuperAdmin_coursecontent
+    internal class SuperAdminCourseWeek
     {
         List<MainWeekModel> mainWeekList = new List<MainWeekModel>(); 
         MainWeekApi mainWeekApi = new MainWeekApi();
-        public async Task CourseContentSuperAdmin(MainCoursesModel myCourseData, FlowLayoutPanel flowLayoutPanel1, Label formName)
+        public async Task CourseWeekShow(MainCoursesModel myCourseData, FlowLayoutPanel flowLayoutPanel1, Label formName)
         {
             mainWeekList = await mainWeekApi.getAllMainWeekData(myCourseData.course_id);
             formName.Text = "Available Course Description";
@@ -58,7 +58,6 @@ namespace intelli_tutor_frontend.TeacherSide
             CourseDescription.HideSelection = true;
             CourseDescription.BackColor = Color.Lavender;
             CourseDescription.BorderStyle = BorderStyle.None;
-            // Add CourseDescription to your form's controls
 
             Panel descriptionPanel = new Panel();
             descriptionPanel.Margin = new Padding(10, 10, 10, 10);
@@ -78,8 +77,6 @@ namespace intelli_tutor_frontend.TeacherSide
             weekPanel.AutoScroll = true;
             weekPanel.Anchor = AnchorStyles.Right | AnchorStyles.Left;
             weekPanel.Height = 250;
-            //weekPanel.Dock = DockStyle.Bottom;
-            //weekPanel.BackColor = Color.Cyan;
             weekPanel.VerticalScroll.Enabled = false;
             weekPanel.VerticalScroll.Visible = false;
             weekPanel.HorizontalScroll.Enabled = true;
@@ -87,9 +84,6 @@ namespace intelli_tutor_frontend.TeacherSide
             mainPanel.Controls.Add(weekPanel, 0, 3);
             int counter = 0;
             weekPanel.Margin = new Padding(10, 20, 10, 20);
-
-            //int numberofweeks = myCourseData.number_of_weeks;
-            //Console.WriteLine(numberofweeks);
 
             if(mainWeekList.Count == 0)
             {
@@ -100,10 +94,6 @@ namespace intelli_tutor_frontend.TeacherSide
                 messageLabel.Font = new Font("Segoe UI Semibold", 16F);
                 messageLabel.Height = 30;
                 messageLabel.ForeColor = Color.Black;
-
-                
-
-
                 weekPanel.Controls.Add(messageLabel, 0, 0);
             }
             else
@@ -115,18 +105,14 @@ namespace intelli_tutor_frontend.TeacherSide
                     outerPanel.Width = 180;
                     outerPanel.Height = 180;
                     outerPanel.Margin = new Padding(20, 20, 20, 20);
-                    ////outerPanel.BackColor = Color.Lavender;
                     outerPanel.BorderStyle = BorderStyle.FixedSingle;
 
                     TableLayoutPanel cardPanel = new TableLayoutPanel();
-                    //cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
                     cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
                     cardPanel.Width = 180;
                     cardPanel.Height = 180;
                     cardPanel.Margin = new Padding(20, 20, 20, 20);
                     cardPanel.BackColor = Color.DarkSlateBlue;
-                    //cardPanel.AutoScroll = true;
-
                     Button enrollButton = new Button();
 
                     enrollButton.Text = "Week " + weekData.week_sequence.ToString();
@@ -144,9 +130,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
                         flowLayoutPanel1.Controls.Clear();
                         SuperAdminCourseContent superAdminCourseContent = new SuperAdminCourseContent();
-                        superAdminCourseContent.SuperAdminCourseContentShow(weekData, flowLayoutPanel1);
-                        //NoUseLabsContent l = new NoUseLabsContent();
-                        //l.LabContentShow(item.week_id, flowLayoutPanel1);
+                        superAdminCourseContent.SuperAdminCourseContentShow(weekData, flowLayoutPanel1, formName);
 
                     };
 
@@ -161,16 +145,9 @@ namespace intelli_tutor_frontend.TeacherSide
                     cardPanel.Controls.Add(enrollButton, 0, 1);
                     outerPanel.Controls.Add(cardPanel);
 
-
                     weekPanel.Controls.Add(outerPanel, counter, 0);
                 }
             }
-
-            
-
-
-
-
         }
     }
 }

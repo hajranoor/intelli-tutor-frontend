@@ -31,7 +31,6 @@ namespace intelli_tutor_frontend.TeacherSide
                 outerPanel.Width = 480;
                 outerPanel.Height = 450;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
-                //outerPanel.BackColor = Color.Lavender;
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
 
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
@@ -72,7 +71,6 @@ namespace intelli_tutor_frontend.TeacherSide
                 TableLayoutPanel buttonPanel = new TableLayoutPanel();
                 buttonPanel.Height = 70;
                 buttonPanel.Width = 150;
-                //buttonPanel.BackColor = Color.DarkSlateBlue;
                 buttonPanel.Dock = DockStyle.Bottom;
                 buttonPanel.Margin = new Padding(10, 0, 10, 20);
 
@@ -115,8 +113,8 @@ namespace intelli_tutor_frontend.TeacherSide
                 viewbutton.Click += async (sender, e) =>
                 {
                     flowLayoutPanel.Controls.Clear();
-                    SuperAdmin_coursecontent c = new SuperAdmin_coursecontent();
-                    await c.CourseContentSuperAdmin(item, flowLayoutPanel, formName);
+                    SuperAdminCourseWeek superAdminCourseWeek = new SuperAdminCourseWeek();
+                    await superAdminCourseWeek.CourseWeekShow(item, flowLayoutPanel, formName);
 
                 };
 
@@ -127,13 +125,6 @@ namespace intelli_tutor_frontend.TeacherSide
 
                 flowLayoutPanel.Controls.Add(outerPanel);
             }
-
         }
-
-
-
-
-
-
     }
 }

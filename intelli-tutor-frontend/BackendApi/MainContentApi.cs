@@ -26,19 +26,5 @@ namespace intelli_tutor_frontend.BackendApi
             }
             return list;
         }
-
-        //public async Task<List<MainContentModel>> getSuperAdminCourseContentByWeekId(int weekId)
-        //{
-        //    List<MainContentModel> list = new List<MainContentModel>();
-        //    using (var client = new HttpClient())
-        //    {
-        //        using (var response = await client.GetAsync("http://localhost:7008/MainContent/" + weekId))
-        //        {
-        //            string apiResponse = await response.Content.ReadAsStringAsync();
-        //            list = JsonConvert.DeserializeObject<List<MainContentModel>>(apiResponse);
-        //        }
-        //    }
-        //    return list;
-        //}
     }
 }

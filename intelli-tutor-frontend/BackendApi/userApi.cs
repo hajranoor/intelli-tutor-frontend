@@ -84,7 +84,5 @@ namespace intelli_tutor_frontend.BackendApi
             }
             return Response;
         }
-
-
     }
 }

@@ -37,7 +37,6 @@ namespace intelli_tutor_frontend.StudentSide
         private int originalSidebarWidth;
         private int originalMainPanelWidth;
 
-        //private Dictionary<Control, int> originalControlLeftPositions = new Dictionary<Control, int>();
         public SolveProblem(int content_id)
         {
             InitializeComponent();
@@ -144,12 +143,6 @@ namespace intelli_tutor_frontend.StudentSide
             this.resetCode.Image = IconChar.ArrowRightRotate.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void barIcon_Click(object sender, EventArgs e)
         {
             this.sideBarTimer.Start();
@@ -212,10 +205,31 @@ namespace intelli_tutor_frontend.StudentSide
             }
 
         }
-
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        private void resetCode_Click(object sender, EventArgs e)
         {
+            loadStarterCode();
+        }
 
+        private void runProgram_Click(object sender, EventArgs e)
+        {
+            outputBox.Text = "";
+            string path = Path.Combine(Application.StartupPath, "compilersFolder");
+            if (selectLanguage.Text == "c++")
+            {
+                int count = 0;
+                foreach (TestCaseModel tc in testcaseList)
+                {
+                    count++;
+                    string studentCode = codeEditor.Text;
+                    cppClass cppClassObj = new cppClass(path, studentCode);
+                    string[] data = { "yes", "2" };
+                    bool passTestCase = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data, tc.output_data, outputBox, count);
+                    if (passTestCase == false)
+                    {
+                        break;
+                    }
+                }
+            }
         }
 
         private void codeEditor_TextChanged(object sender, EventArgs e)
@@ -262,60 +276,6 @@ namespace intelli_tutor_frontend.StudentSide
 
         }
 
-        private void resetCode_Click(object sender, EventArgs e)
-        {
-            loadStarterCode();
-        }
-
-        private void runProgram_Click(object sender, EventArgs e)
-        {
-            outputBox.Text = "";
-            //MessageBox.Show("button has been clicked");
-            string path = Path.Combine(Application.StartupPath, "compilersFolder");
-            //string studentCode1 = codeEditor.Text;
-
-            //cppClass cppclassObj = new cppClass(path, studentCode1);
-            //string returnval = cppclassObj.CompileCode();
-            //MessageBox.Show(returnval , "this is return val");
-
-            if (selectLanguage.Text == "c++")
-            {
-                int count = 0;
-                foreach (TestCaseModel tc in testcaseList)
-                {
-                    count++;
-                    string studentCode = codeEditor.Text;
-                    //MessageBox.Show(studentCode, path);
-                    //MessageBox.Show(tc.input_data[0]);
-                    cppClass cppClassObj = new cppClass(path, studentCode);
-                    //bool result = cppClassObj.runCode(studentCode, problem.regex, tc.input_data, tc.output_data);
-                    //if (result == true)
-                    //{
-                    // MessageBox.Show("test case passed.");
-                    // }
-                    string[] data = {"yes", "2" };
-                    bool passTestCase = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data,tc.output_data, outputBox, count);
-                    if (passTestCase == false) 
-                    {
-                        break;
-                    }
-                    //var jsonArray = JsonConvert.DeserializeObject<dynamic[]>(responseStr);
-
-                    //var toShow = jsonArray[0].ToString();
-                    //string yourOutputValue = (string)toShow["YourOutput"];
-                    //MessageBox.Show(yourOutputValue);
-                }
-            }
-        }
-
-        private void codeEditor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void codeEditor_TextChanged_1(object sender, EventArgs e)
-        //{
-
-        //}
+        
     }
 }

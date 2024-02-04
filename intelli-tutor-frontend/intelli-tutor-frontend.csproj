@@ -207,11 +207,8 @@
     <Compile Include="Registerform.Designer.cs">
       <DependentUpon>Registerform.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSide\availableCourses.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="StudentSide\StudentAvailableCourseWeek.cs" />
-    <Compile Include="StudentSide\StudentCourseWeek.cs" />
+    <Compile Include="StudentSide\StudentEnrolledCourseWeek.cs" />
     <Compile Include="StudentSide\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,26 +216,6 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentSide\StudentEnrolledCourseContent.cs" />
-    <Compile Include="StudentSide\NoUseLabs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentSide\NoUseLabs.Designer.cs">
-      <DependentUpon>NoUseLabs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StudentSide\NoUseLabsContent.cs" />
-    <Compile Include="StudentSide\myCourses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentSide\myCourses.Designer.cs">
-      <DependentUpon>myCourses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StudentSide\NoUseproblems.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentSide\NoUseproblems.Designer.cs">
-      <DependentUpon>NoUseproblems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StudentSide\NoUseProblemsContent.cs" />
     <Compile Include="StudentSide\SolveProblem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +226,7 @@
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="StudentSide\StudentAvailableCourse.cs" />
+    <Compile Include="StudentSide\StudentMyCourse.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseOffering.cs" />
@@ -276,20 +254,8 @@
     <EmbeddedResource Include="Registerform.resx">
       <DependentUpon>Registerform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide\availableCourses.resx">
-      <DependentUpon>availableCourses.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide\NoUseLabs.resx">
-      <DependentUpon>NoUseLabs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide\myCourses.resx">
-      <DependentUpon>myCourses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentSide\NoUseproblems.resx">
-      <DependentUpon>NoUseproblems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSide\SolveProblem.resx">
       <DependentUpon>SolveProblem.cs</DependentUpon>

@@ -113,7 +113,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Problem";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // barIcon
             // 
@@ -233,7 +232,7 @@
             // 
             this.resetCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resetCode.Location = new System.Drawing.Point(392, 4);
-            this.resetCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resetCode.Margin = new System.Windows.Forms.Padding(4);
             this.resetCode.Name = "resetCode";
             this.resetCode.Size = new System.Drawing.Size(108, 99);
             this.resetCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -264,7 +263,6 @@
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.mainPanel.Size = new System.Drawing.Size(903, 750);
             this.mainPanel.TabIndex = 2;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // outputBox
             // 
@@ -290,7 +288,6 @@
             this.codeEditor.TabIndex = 8;
             this.codeEditor.Text = "scintilla1";
             this.codeEditor.TextChanged += new System.EventHandler(this.codeEditor_TextChanged);
-            this.codeEditor.Click += new System.EventHandler(this.codeEditor_Click);
             // 
             // SolveProblem
             // 
