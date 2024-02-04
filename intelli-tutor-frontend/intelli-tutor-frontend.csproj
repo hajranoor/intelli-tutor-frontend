@@ -246,6 +246,7 @@
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseOffering.cs" />
     <Compile Include="TeacherSide\TeacherCourseWeek.cs" />

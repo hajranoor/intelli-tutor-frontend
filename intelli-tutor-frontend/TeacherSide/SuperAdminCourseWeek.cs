@@ -13,9 +13,11 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class SuperAdmin_coursecontent
     {
-
+        List<MainWeekModel> mainWeekList = new List<MainWeekModel>(); 
+        MainWeekApi mainWeekApi = new MainWeekApi();
         public async Task CourseContentSuperAdmin(MainCoursesModel myCourseData, FlowLayoutPanel flowLayoutPanel1, Label formName)
         {
+            mainWeekList = await mainWeekApi.getAllMainWeekData(myCourseData.course_id);
             formName.Text = "Available Course Description";
            
             TableLayoutPanel mainPanel = new TableLayoutPanel();
@@ -85,54 +87,86 @@ namespace intelli_tutor_frontend.TeacherSide
             mainPanel.Controls.Add(weekPanel, 0, 3);
             int counter = 0;
             weekPanel.Margin = new Padding(10, 20, 10, 20);
-            int numberofweeks = myCourseData.number_of_weeks;
-            Console.WriteLine(numberofweeks);
 
-            for (int i = 1; i <= numberofweeks; i++)
+            //int numberofweeks = myCourseData.number_of_weeks;
+            //Console.WriteLine(numberofweeks);
+
+            if(mainWeekList.Count == 0)
             {
-                counter = counter + 1;
-                Panel outerPanel = new Panel();
-                outerPanel.Width = 180;
-                outerPanel.Height = 180;
-                outerPanel.Margin = new Padding(20, 20, 20, 20);
-                ////outerPanel.BackColor = Color.Lavender;
-                outerPanel.BorderStyle = BorderStyle.FixedSingle;
+                Label messageLabel = new Label();
+                messageLabel.Text = "No weeks Available";
+                messageLabel.Dock = DockStyle.Fill;
+                messageLabel.TextAlign = ContentAlignment.MiddleCenter;
+                messageLabel.Font = new Font("Segoe UI Semibold", 16F);
+                messageLabel.Height = 30;
+                messageLabel.ForeColor = Color.Black;
 
-                TableLayoutPanel cardPanel = new TableLayoutPanel();
-                //cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-                cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
-                cardPanel.Width = 180;
-                cardPanel.Height = 180;
-                cardPanel.Margin = new Padding(20, 20, 20, 20);
-                cardPanel.BackColor = Color.DarkSlateBlue;
-                //cardPanel.AutoScroll = true;
-
-                Button enrollButton = new Button();
-
-                enrollButton.Text = "Week " + counter;
-                enrollButton.Dock = DockStyle.Fill;
-                enrollButton.Width = 70;
-                enrollButton.Height = 30;
-                enrollButton.TextAlign = ContentAlignment.MiddleCenter;
-                enrollButton.Font = new Font("Segoe UI Semibold", 16F);
-                enrollButton.BackColor = Color.DarkSlateBlue;
-                enrollButton.ForeColor = Color.White;
-                enrollButton.FlatStyle = FlatStyle.Flat;
-
-                Label titleLabel = new Label();
-                titleLabel.Text = "Week " + counter;
-                titleLabel.Dock = DockStyle.Fill;
-                titleLabel.TextAlign = ContentAlignment.MiddleCenter;
-                titleLabel.Font = new Font("Segoe UI Semibold", 16F);
-                titleLabel.Height = 30;
-                titleLabel.ForeColor = Color.White;
-
-                cardPanel.Controls.Add(enrollButton, 0, 1);
-                outerPanel.Controls.Add(cardPanel);
+                
 
 
-                weekPanel.Controls.Add(outerPanel, counter, 0);
+                weekPanel.Controls.Add(messageLabel, 0, 0);
             }
+            else
+            {
+                foreach (var weekData in mainWeekList)
+                {
+                    counter += 1;
+                    Panel outerPanel = new Panel();
+                    outerPanel.Width = 180;
+                    outerPanel.Height = 180;
+                    outerPanel.Margin = new Padding(20, 20, 20, 20);
+                    ////outerPanel.BackColor = Color.Lavender;
+                    outerPanel.BorderStyle = BorderStyle.FixedSingle;
+
+                    TableLayoutPanel cardPanel = new TableLayoutPanel();
+                    //cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                    cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+                    cardPanel.Width = 180;
+                    cardPanel.Height = 180;
+                    cardPanel.Margin = new Padding(20, 20, 20, 20);
+                    cardPanel.BackColor = Color.DarkSlateBlue;
+                    //cardPanel.AutoScroll = true;
+
+                    Button enrollButton = new Button();
+
+                    enrollButton.Text = "Week " + weekData.week_sequence.ToString();
+                    enrollButton.Dock = DockStyle.Fill;
+                    enrollButton.Width = 70;
+                    enrollButton.Height = 30;
+                    enrollButton.TextAlign = ContentAlignment.MiddleCenter;
+                    enrollButton.Font = new Font("Segoe UI Semibold", 16F);
+                    enrollButton.BackColor = Color.DarkSlateBlue;
+                    enrollButton.ForeColor = Color.White;
+                    enrollButton.FlatStyle = FlatStyle.Flat;
+
+                    enrollButton.Click += async (sender, e) =>
+                    {
+
+                        flowLayoutPanel1.Controls.Clear();
+                        SuperAdminCourseContent superAdminCourseContent = new SuperAdminCourseContent();
+                        superAdminCourseContent.SuperAdminCourseContentShow(weekData, flowLayoutPanel1);
+                        //NoUseLabsContent l = new NoUseLabsContent();
+                        //l.LabContentShow(item.week_id, flowLayoutPanel1);
+
+                    };
+
+                    Label titleLabel = new Label();
+                    titleLabel.Text = "Week " + counter;
+                    titleLabel.Dock = DockStyle.Fill;
+                    titleLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    titleLabel.Font = new Font("Segoe UI Semibold", 16F);
+                    titleLabel.Height = 30;
+                    titleLabel.ForeColor = Color.White;
+
+                    cardPanel.Controls.Add(enrollButton, 0, 1);
+                    outerPanel.Controls.Add(cardPanel);
+
+
+                    weekPanel.Controls.Add(outerPanel, counter, 0);
+                }
+            }
+
+            
 
 
 

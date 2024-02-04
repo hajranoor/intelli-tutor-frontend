@@ -12,5 +12,7 @@ namespace intelli_tutor_frontend.Model
         public int course_id { get; set; }
         public string week_name { get; set; }
         public string description { get; set; }
+        public int week_sequence { get; set; }
+
     }
 }
