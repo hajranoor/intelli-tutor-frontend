@@ -474,11 +474,9 @@ C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\zh
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.AssemblyReference.cache
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.SuggestedBindingRedirects.cache
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Form1.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Loginform.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Properties.Resources.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.QuestionForm.resources
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Register.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Registerform.resources
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.authenticationCheck.resources
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.Auth.dll
@@ -502,14 +500,7 @@ D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\
 D:\fyp\serious\frontend\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Google.Apis.PeopleService.v1.xml
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.dll
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\ScintillaNET.xml
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.availableCourses.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Dashboard.resources
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Labs.resources
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.myCourses.resources
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.problems.resources
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.CreateCourse.resources
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.My_Courses.resources
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherDashboard.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.SolveProblem.resources
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.GenerateResource.cache
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.CoreCompileInputs.cache
@@ -517,7 +508,6 @@ C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\in
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.exe
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.pdb
 C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\intelli-tutor-frontend.pdb
-C:\Users\Aqsa\Desktop\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.Available_Courses.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.Available_Courses.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.CreateCourse.resources
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.My_Courses.resources
