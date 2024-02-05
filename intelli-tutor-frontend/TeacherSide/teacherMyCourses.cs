@@ -13,14 +13,18 @@ namespace intelli_tutor_frontend.TeacherSide
     internal class TeacherMyCourses
     {
         CourseOfferingApi courseofferingapi = new CourseOfferingApi();
-        List<CourseOfferingModel> courseofferinglist;
+        //List<CourseOfferingModel> courseofferinglist;
+        List<CourseAndEnrolledCourseDTO> courseandenrolledcourselist;
 
         public async Task ShowMyCoursesAsync(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
             formName.Text = "My Courses";
-            courseofferinglist = await courseofferingapi.getCourseOfferings(1);
+            //courseofferinglist = await courseofferingapi.getCourseOfferings(1);
+            courseandenrolledcourselist = await courseofferingapi.getMyCoursesForTeacher(1);
 
-            MessageBox.Show("clicked 2" + courseofferinglist.Count.ToString());
+            //MessageBox.Show("clicked 2" + courseofferinglist.Count.ToString());
+            MessageBox.Show("clicked 2" + courseandenrolledcourselist.Count.ToString());
+
 
 
             ShowCourses(flowLayoutPanel);
@@ -31,7 +35,7 @@ namespace intelli_tutor_frontend.TeacherSide
         public void ShowCourses(FlowLayoutPanel flowLayoutPanel)
         {
             MessageBox.Show("are we here?");
-            foreach (var course in courseofferinglist)
+            foreach (var course in courseandenrolledcourselist)
             {
                 Panel outerPanel = new Panel();
                 outerPanel.Width = 480;
@@ -60,7 +64,7 @@ namespace intelli_tutor_frontend.TeacherSide
                 cardPanel.Controls.Add(pictureBox, 0, 0);
 
                 Label titleLabel = new Label();
-                titleLabel.Text = course.course_offering_id.ToString();
+                titleLabel.Text = course.course_name.ToString();
                 titleLabel.Dock = DockStyle.Fill;
                 titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                 titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -68,7 +72,7 @@ namespace intelli_tutor_frontend.TeacherSide
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = course.course_id.ToString();
+                instructorLabel.Text = course.course_code.ToString();
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                 instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
@@ -84,7 +88,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
                 Button enrollButton = new Button();
 
-                enrollButton.Text = "Enroll";
+                enrollButton.Text = "View Details";
                 enrollButton.Dock = DockStyle.Fill;
                 enrollButton.Width = 70;
                 enrollButton.TextAlign = ContentAlignment.MiddleCenter;
@@ -94,17 +98,24 @@ namespace intelli_tutor_frontend.TeacherSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += async (sender, e) =>
                 {
-                    DialogResult result = MessageBox.Show("Do you want to enroll in this course " + course.offering_year + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    flowLayoutPanel.Controls.Clear();
+                    MessageBox.Show("clicked");
+                    TeacherCourseWeek courseweek = new TeacherCourseWeek();
+                    courseweek.CourseContentSjow(flowLayoutPanel, course);
+                    MessageBox.Show("this is course offering id" + course.course_offering_id);
+                    MessageBox.Show("this is course name" + course.course_name);
+                   // MessageBox.Show("this is course course code in teacher courses that is being passed", course.description);
+                    //DialogResult result = MessageBox.Show("Do you want to enroll in this course " + course.offering_year + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     //if (result == DialogResult.Yes)
                     //{
-                        //enrolledCourses enrolledCourses = new enrolledCourses();
-                        //enrolledCourses.courseId = course.semester.ToString();
-                        //enrolledCourses.studentId = 1;
-                        //enrolledCourses.grade = "";
-                        //string data = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
+                    //enrolledCourses enrolledCourses = new enrolledCourses();
+                    //enrolledCourses.courseId = course.semester.ToString();
+                    //enrolledCourses.studentId = 1;
+                    //enrolledCourses.grade = "";
+                    //string data = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
 
-                        //MessageBox.Show(data);
+                    //MessageBox.Show(data);
                     //}
                     //else
                     //{
