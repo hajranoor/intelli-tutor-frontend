@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace intelli_tutor_frontend.BackendApi
 {
@@ -43,6 +45,7 @@ namespace intelli_tutor_frontend.BackendApi
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     list = JsonConvert.DeserializeObject<List<WeekModel>>(apiResponse);
+                    MessageBox.Show("this is is list count" + list.Count());
                 }
             }
             return list;

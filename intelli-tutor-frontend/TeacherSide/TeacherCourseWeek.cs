@@ -13,26 +13,14 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class TeacherCourseWeek
     {
-        //WeekApi weekApi = new WeekApi();
-        //List<weekModel> weeksList;
+        WeekApi weekApi = new WeekApi();
+        List<WeekModel> weeksList;
 
-        public List<string> weeksList = new List<string>
-        {
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            // Add more week titles as needed
-        };
+        
 
-        public async void CourseContentSjow(FlowLayoutPanel flowLayoutPanel1)
+        public async void CourseContentSjow(FlowLayoutPanel flowLayoutPanel1, CourseAndEnrolledCourseDTO course)
         {
-            //weeksList = await weekApi.getAllWeekData(myCourseData.course_id);
+            weeksList = await weekApi.getAllWeekData(course.course_offering_id);
            
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
@@ -53,7 +41,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
             Label courseTitle = new Label();
             //courseTitle.Text = myCourseData.course_title;
-            courseTitle.Text = "Object Oriented Programming";
+            courseTitle.Text = course.course_name;
             courseTitle.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             courseTitle.Dock = DockStyle.Fill;
             courseTitle.Font = new Font("Segoe UI Semibold", 16F);
@@ -66,7 +54,9 @@ namespace intelli_tutor_frontend.TeacherSide
 
             NoCaretRichTextBox CourseDescription = new NoCaretRichTextBox();
             //CourseDescription.Text = myCourseData.description;
-            CourseDescription.Text = "In summary, Object-Oriented Programming is a programming paradigm that structures code around objects and classes, promoting principles such as encapsulation, inheritance, polymorphism, and abstraction. It provides a powerful way to model real-world entities and create modular, maintainable, and reusable software. OOP is commonly used in languages like Java, C++, C#, and Python, among others.";
+            CourseDescription.Text = course.course_description;
+
+            //CourseDescription.Text = "In summary, Object-Oriented Programming is a programming paradigm that structures code around objects and classes, promoting principles such as encapsulation, inheritance, polymorphism, and abstraction. It provides a powerful way to model real-world entities and create modular, maintainable, and reusable software. OOP is commonly used in languages like Java, C++, C#, and Python, among others.";
             CourseDescription.Font = new Font("Segoe UI", 14F);
             CourseDescription.Dock = DockStyle.Fill;
             CourseDescription.ReadOnly = true;
@@ -136,6 +126,8 @@ namespace intelli_tutor_frontend.TeacherSide
             weekPanel.Margin = new Padding(10, 10, 10, 0);
             foreach (var item in weeksList)
             {
+                MessageBox.Show("this is item in list" + item.description);
+
                 counter += 1;
                 Panel outerPanel = new Panel();
                 outerPanel.Width = 180;
@@ -188,6 +180,9 @@ namespace intelli_tutor_frontend.TeacherSide
                 {
 
                     flowLayoutPanel1.Controls.Clear();
+                    MessageBox.Show("hahaha button clicked");
+                    TeacherCourseContent courseweek = new TeacherCourseContent();
+                    courseweek.TeacherMyCoursesContentShow(item, flowLayoutPanel1);
                     //LabsContent l = new LabsContent();
                     //l.LabContentShow(item.week_id, flowLayoutPanel1);
 
