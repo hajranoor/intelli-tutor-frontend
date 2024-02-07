@@ -16,26 +16,34 @@ namespace intelli_tutor_frontend.TeacherSide
         WeekApi weekApi = new WeekApi();
         List<WeekModel> weeksList;
 
+        public TeacherCourseWeek()
+        {
+            
+        }
         
 
-        public async void CourseContentSjow(FlowLayoutPanel flowLayoutPanel1, CourseAndEnrolledCourseDTO course)
+        public async void ShowCourseWeek(FlowLayoutPanel flowLayoutPanel, MainCourseAndCourseOfferingDTO course, Label formName, MenuStrip menuStrip)
         {
+            flowLayoutPanel.Controls.Clear();
+            MenuStripCourse menuStripCourse = new MenuStripCourse(menuStrip, flowLayoutPanel, formName, course);
+            menuStripCourse.createMenu();
+            formName.Text = "Course Week";
             weeksList = await weekApi.getAllWeekData(course.course_offering_id);
            
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
-            flowLayoutPanel1.AutoScroll = false;
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel.AutoScroll = false;
+            flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.BackColor = Color.Lavender;
-            mainPanel.Width = flowLayoutPanel1.Width;
-            mainPanel.Height = flowLayoutPanel1.Height;
+            mainPanel.Width = flowLayoutPanel.Width;
+            mainPanel.Height = flowLayoutPanel.Height;
             mainPanel.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(mainPanel);
+            flowLayoutPanel.Controls.Add(mainPanel);
 
-            flowLayoutPanel1.SizeChanged += (sender, e) =>
+            flowLayoutPanel.SizeChanged += (sender, e) =>
             {
-                mainPanel.Size = new Size(flowLayoutPanel1.Width, flowLayoutPanel1.Height);
-                flowLayoutPanel1.Margin = new Padding(3, 3, 3, 3);
+                mainPanel.Size = new Size(flowLayoutPanel.Width, flowLayoutPanel.Height);
+                flowLayoutPanel.Margin = new Padding(3, 3, 3, 3);
             };
 
 
@@ -54,7 +62,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
             NoCaretRichTextBox CourseDescription = new NoCaretRichTextBox();
             //CourseDescription.Text = myCourseData.description;
-            CourseDescription.Text = course.course_description;
+            CourseDescription.Text = course.description;
 
             //CourseDescription.Text = "In summary, Object-Oriented Programming is a programming paradigm that structures code around objects and classes, promoting principles such as encapsulation, inheritance, polymorphism, and abstraction. It provides a powerful way to model real-world entities and create modular, maintainable, and reusable software. OOP is commonly used in languages like Java, C++, C#, and Python, among others.";
             CourseDescription.Font = new Font("Segoe UI", 14F);
@@ -126,7 +134,6 @@ namespace intelli_tutor_frontend.TeacherSide
             weekPanel.Margin = new Padding(10, 10, 10, 0);
             foreach (var item in weeksList)
             {
-                MessageBox.Show("this is item in list" + item.description);
 
                 counter += 1;
                 Panel outerPanel = new Panel();
@@ -179,10 +186,9 @@ namespace intelli_tutor_frontend.TeacherSide
                 enrollButton.Click += async (sender, e) =>
                 {
 
-                    flowLayoutPanel1.Controls.Clear();
-                    MessageBox.Show("hahaha button clicked");
+                    flowLayoutPanel.Controls.Clear();
                     TeacherCourseContent courseweek = new TeacherCourseContent();
-                    courseweek.TeacherMyCoursesContentShow(item, flowLayoutPanel1);
+                    courseweek.TeacherMyCoursesContentShow(item, flowLayoutPanel, formName);
                     //LabsContent l = new LabsContent();
                     //l.LabContentShow(item.week_id, flowLayoutPanel1);
 

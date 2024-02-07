@@ -1,5 +1,6 @@
 ﻿using FontAwesome.Sharp;
 using intelli_tutor_frontend.Model;
+using intelli_tutor_frontend.StudentSide;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,24 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     public partial class TeacherSideDashbaord : Form
     {
+        public static string actualMenuStrip;
+        NewMenuStrip newMenuStrip = new NewMenuStrip();
+        public static List<ToolStripMenuItem> originalMenuItems = new List<ToolStripMenuItem>();
+        public static ToolStripItem lastClickedItem;
+
         public TeacherSideDashbaord()
         {
             InitializeComponent();
             loadIcons();
-
+            lastClickedItem = this.dashboardToolStripMenuItem;
+            originalMenuItems.Clear();
+            foreach (ToolStripMenuItem item in menuStrip1.Items)
+            {
+                originalMenuItems.Add(item);
+            }
         }
+
+        
         public void loadIcons()
         {
             this.notificationIcon.Image = IconChar.Bell.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
@@ -32,34 +45,6 @@ namespace intelli_tutor_frontend.TeacherSide
         {
             dashboardToolStripMenuItem.Enabled = true;
         }
-
-        private void myCoursesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel2.Controls.Clear();
-            formName.Text = "Create Course Offering";
-            TeacherCourseOffering courseOffering = new TeacherCourseOffering();
-            MainCoursesModel c = new MainCoursesModel();
-            courseOffering.CourseOfferingShow(c, flowLayoutPanel2, formName);
-        }
-
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel2.Controls.Clear();
-            formName.Text = "Course Content";
-            TeacherCourseContent courseContent = new TeacherCourseContent();
-            courseContent.CourseContentShow(1,flowLayoutPanel2);
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void availableCoursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
@@ -67,11 +52,43 @@ namespace intelli_tutor_frontend.TeacherSide
             teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel2, formName);
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        public void myCourseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
             flowLayoutPanel2.Controls.Clear();
             TeacherMyCourses teacherMyCourses = new TeacherMyCourses();
-            teacherMyCourses.ShowMyCoursesAsync(flowLayoutPanel2, formName);
+            teacherMyCourses.ShowMyCoursesAsync(flowLayoutPanel2, formName, menuStrip1);
+
+        }
+
+        private void courseOfferingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void courseContenttoolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+            flowLayoutPanel2.Controls.Clear();
+            formName.Text = "Course Content";
+            TeacherCourseContent courseContent = new TeacherCourseContent();
+            courseContent.CourseContentShow(1, flowLayoutPanel2);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+            if(lastClickedItem != null)
+            {
+                lastClickedItem.ForeColor = Color.Black; 
+                lastClickedItem.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));    
+            }
+
+            ToolStripItem clickedItem = e.ClickedItem;
+            clickedItem.ForeColor = Color.White;            
+            clickedItem.BackColor = Color.DarkSlateBlue;   
+
+            lastClickedItem = clickedItem;
         }
     }
 }

@@ -34,10 +34,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.availableCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.myCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myCourseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.courseOfferingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.courseContenttoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
@@ -45,18 +45,16 @@
             this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -77,8 +75,8 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
@@ -112,10 +110,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashboardToolStripMenuItem,
             this.availableCoursesToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.myCoursesToolStripMenuItem,
+            this.myCourseToolStripMenuItem1,
+            this.courseOfferingToolStripMenuItem,
             this.hekkoToolStripMenuItem,
-            this.toolStripMenuItem2});
+            this.courseContenttoolStripMenuItem2});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 148);
             this.menuStrip1.Name = "menuStrip1";
@@ -127,8 +125,9 @@
             // 
             // dashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dashboardToolStripMenuItem.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.dashboardToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
@@ -143,41 +142,41 @@
             this.availableCoursesToolStripMenuItem.Text = "Available Courses";
             this.availableCoursesToolStripMenuItem.Click += new System.EventHandler(this.availableCoursesToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
+            // myCourseToolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 41);
-            this.toolStripMenuItem1.Text = "My Courses";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.myCourseToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.myCourseToolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.myCourseToolStripMenuItem1.Name = "myCourseToolStripMenuItem1";
+            this.myCourseToolStripMenuItem1.Size = new System.Drawing.Size(174, 41);
+            this.myCourseToolStripMenuItem1.Text = "My Courses";
+            this.myCourseToolStripMenuItem1.Click += new System.EventHandler(this.myCourseToolStripMenuItem1_Click);
             // 
-            // myCoursesToolStripMenuItem
+            // courseOfferingToolStripMenuItem
             // 
-            this.myCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.myCoursesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.myCoursesToolStripMenuItem.Name = "myCoursesToolStripMenuItem";
-            this.myCoursesToolStripMenuItem.Size = new System.Drawing.Size(224, 41);
-            this.myCoursesToolStripMenuItem.Text = "Course Offering";
-            this.myCoursesToolStripMenuItem.Click += new System.EventHandler(this.myCoursesToolStripMenuItem_Click);
+            this.courseOfferingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.courseOfferingToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.courseOfferingToolStripMenuItem.Name = "courseOfferingToolStripMenuItem";
+            this.courseOfferingToolStripMenuItem.Size = new System.Drawing.Size(224, 41);
+            this.courseOfferingToolStripMenuItem.Text = "Course Offering";
+            this.courseOfferingToolStripMenuItem.Click += new System.EventHandler(this.courseOfferingToolStripMenuItem_Click);
             // 
             // hekkoToolStripMenuItem
             // 
             this.hekkoToolStripMenuItem.Name = "hekkoToolStripMenuItem";
             this.hekkoToolStripMenuItem.Size = new System.Drawing.Size(14, 4);
             // 
-            // toolStripMenuItem2
+            // courseContenttoolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.toolStripMenuItem2.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 41);
-            this.toolStripMenuItem2.Text = "CourseContent";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.courseContenttoolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.courseContenttoolStripMenuItem2.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.courseContenttoolStripMenuItem2.Name = "courseContenttoolStripMenuItem2";
+            this.courseContenttoolStripMenuItem2.Size = new System.Drawing.Size(215, 41);
+            this.courseContenttoolStripMenuItem2.Text = "CourseContent";
+            this.courseContenttoolStripMenuItem2.Click += new System.EventHandler(this.courseContenttoolStripMenuItem2_Click);
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.tableLayoutPanel2.ColumnCount = 4;
@@ -259,26 +258,15 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel2.Controls.Add(this.button1);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(378, 104);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(940, 574);
             this.flowLayoutPanel2.TabIndex = 8;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // TeacherSideDashbaord
             // 
@@ -303,7 +291,6 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificationIcon)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -314,23 +301,22 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem availableCoursesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem myCoursesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hekkoToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem availableCoursesToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem courseOfferingToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem hekkoToolStripMenuItem;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox accountIcon;
         public System.Windows.Forms.Label formName;
         private System.Windows.Forms.Label currentUser;
         private System.Windows.Forms.PictureBox notificationIcon;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        public System.Windows.Forms.ToolStripMenuItem myCourseToolStripMenuItem1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        public System.Windows.Forms.ToolStripMenuItem courseContenttoolStripMenuItem2;
     }
 }

@@ -16,6 +16,7 @@
         public int offering_year { get; set; }
         public string semester { get; set; }
         public int capacity { get; set; }
+        public string description { get; set; }
         public int enrollment_id { get; set; }
         public int student_id { get; set; }
         public string grade { get; set; }

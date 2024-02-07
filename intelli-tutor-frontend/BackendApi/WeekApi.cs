@@ -45,7 +45,6 @@ namespace intelli_tutor_frontend.BackendApi
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     list = JsonConvert.DeserializeObject<List<WeekModel>>(apiResponse);
-                    MessageBox.Show("this is is list count" + list.Count());
                 }
             }
             return list;

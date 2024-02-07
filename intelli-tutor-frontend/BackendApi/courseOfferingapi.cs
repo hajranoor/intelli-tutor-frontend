@@ -46,15 +46,15 @@ namespace intelli_tutor_frontend.BackendApi
             return mainCourseAndCourseOfferingDTOList;
         }
 
-        public async Task<List<CourseAndEnrolledCourseDTO>> getMyCoursesForTeacher(int id)
+        public async Task<List<MainCourseAndCourseOfferingDTO>> getMyCoursesForTeacher(int id)
         {
-            List<CourseAndEnrolledCourseDTO> courseandcourseofferingDTOList = new List<CourseAndEnrolledCourseDTO>();
+            List<MainCourseAndCourseOfferingDTO> courseandcourseofferingDTOList = new List<MainCourseAndCourseOfferingDTO>();
             using (var client = new HttpClient())
             {
                 using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/teacherID?teacherId=" + id))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    courseandcourseofferingDTOList = JsonConvert.DeserializeObject<List<CourseAndEnrolledCourseDTO>>(apiResponse);
+                    courseandcourseofferingDTOList = JsonConvert.DeserializeObject<List<MainCourseAndCourseOfferingDTO>>(apiResponse);
 
                 }
             }

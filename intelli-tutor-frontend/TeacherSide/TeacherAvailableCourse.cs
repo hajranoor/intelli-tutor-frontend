@@ -92,7 +92,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     if (result.Equals(DialogResult.Yes))
                     {
                         flowLayoutPanel.Controls.Clear();
-                        TeacherCourseOffering courseOffering = new TeacherCourseOffering();
+                        TeacherCreateCourseOffering courseOffering = new TeacherCreateCourseOffering();
                         courseOffering.CourseOfferingShow(item, flowLayoutPanel, formName);
                     }
                   

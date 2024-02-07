@@ -227,9 +227,10 @@
     </EmbeddedResource>
     <Compile Include="StudentSide\StudentAvailableCourse.cs" />
     <Compile Include="StudentSide\StudentMyCourse.cs" />
+    <Compile Include="TeacherSide\MenuStripCourse.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseContent.cs" />
-    <Compile Include="TeacherSide\TeacherCourseOffering.cs" />
+    <Compile Include="TeacherSide\TeacherCreateCourseOffering.cs" />
     <Compile Include="TeacherSide\TeacherCourseWeek.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseWeek.cs" />
     <Compile Include="TeacherSide\TeacherAvailableCourse.cs" />
