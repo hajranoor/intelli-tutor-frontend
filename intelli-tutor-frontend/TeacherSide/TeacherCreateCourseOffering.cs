@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class TeacherCourseOffering
+    internal class TeacherCreateCourseOffering
     {
         CourseOfferingApi courseOfferingApi = new CourseOfferingApi();
 

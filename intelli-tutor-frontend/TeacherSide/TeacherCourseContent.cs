@@ -20,7 +20,6 @@ namespace intelli_tutor_frontend.TeacherSide
         public async void CourseContentShow(int week_id, FlowLayoutPanel flowLayoutPanel)
         {
             mainContentModels = await mainContentApi.getMainContentByWeekId(week_id);
-            //MessageBox.Show(mainContentModels.Count.ToString());
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel.AutoScroll = false;
             flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -132,9 +131,9 @@ namespace intelli_tutor_frontend.TeacherSide
 
 
 
-        public async void TeacherMyCoursesContentShow(WeekModel weekData, FlowLayoutPanel flowLayoutPanel)
+        public async void TeacherMyCoursesContentShow(WeekModel weekData, FlowLayoutPanel flowLayoutPanel, Label formName)
         {
-            //formName.Text = "Course Content";
+            formName.Text = "Week Content";
             contentlist = await contentApi.getContentByWeekId(weekData.week_id);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();

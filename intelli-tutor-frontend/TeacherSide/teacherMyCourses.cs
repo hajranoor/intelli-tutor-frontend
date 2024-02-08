@@ -13,35 +13,28 @@ namespace intelli_tutor_frontend.TeacherSide
     internal class TeacherMyCourses
     {
         CourseOfferingApi courseofferingapi = new CourseOfferingApi();
-        //List<CourseOfferingModel> courseofferinglist;
-        List<CourseAndEnrolledCourseDTO> courseandenrolledcourselist;
+        List<MainCourseAndCourseOfferingDTO> myCourseList;
 
-        public async Task ShowMyCoursesAsync(FlowLayoutPanel flowLayoutPanel, Label formName)
+        public async void ShowMyCoursesAsync(FlowLayoutPanel flowLayoutPanel, Label formName, MenuStrip menuStrip)
         {
+            ToolStripItem[] changeColor = menuStrip.Items.Find("myCourseToolStripMenuItem1", true);
+            foreach (var change in changeColor)
+            {
+                change.ForeColor = Color.White;
+                change.BackColor = Color.DarkSlateBlue;
+                TeacherSideDashbaord.lastClickedItem = change;
+            }
+
+            
+            flowLayoutPanel.Controls.Clear();
             formName.Text = "My Courses";
-            //courseofferinglist = await courseofferingapi.getCourseOfferings(1);
-            courseandenrolledcourselist = await courseofferingapi.getMyCoursesForTeacher(1);
-
-            //MessageBox.Show("clicked 2" + courseofferinglist.Count.ToString());
-            MessageBox.Show("clicked 2" + courseandenrolledcourselist.Count.ToString());
-
-
-
-            ShowCourses(flowLayoutPanel);
-
-
-        }
-
-        public void ShowCourses(FlowLayoutPanel flowLayoutPanel)
-        {
-            MessageBox.Show("are we here?");
-            foreach (var course in courseandenrolledcourselist)
+            myCourseList = await courseofferingapi.getMyCoursesForTeacher(1);
+            foreach (var course in myCourseList)
             {
                 Panel outerPanel = new Panel();
                 outerPanel.Width = 480;
                 outerPanel.Height = 400;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
-                //outerPanel.BackColor = Color.Lavender;
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
 
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
@@ -54,8 +47,6 @@ namespace intelli_tutor_frontend.TeacherSide
                 cardPanel.AutoScroll = true;
 
                 PictureBox pictureBox = new PictureBox();
-                //pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
-                //pictureBox.Load("D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\image.png");
 
                 pictureBox.Width = 150;
                 pictureBox.Height = 150;
@@ -82,7 +73,6 @@ namespace intelli_tutor_frontend.TeacherSide
                 Panel buttonPanel = new Panel();
                 buttonPanel.Height = 65;
                 buttonPanel.Width = 70;
-                //buttonPanel.BackColor = Color.DarkSlateBlue;
                 buttonPanel.Dock = DockStyle.Bottom;
                 buttonPanel.Margin = new Padding(150, 0, 150, 20);
 
@@ -99,11 +89,8 @@ namespace intelli_tutor_frontend.TeacherSide
                 enrollButton.Click += async (sender, e) =>
                 {
                     flowLayoutPanel.Controls.Clear();
-                    MessageBox.Show("clicked");
                     TeacherCourseWeek courseweek = new TeacherCourseWeek();
-                    courseweek.CourseContentSjow(flowLayoutPanel, course);
-                    MessageBox.Show("this is course offering id" + course.course_offering_id);
-                    MessageBox.Show("this is course name" + course.course_name);
+                    courseweek.ShowCourseWeek(flowLayoutPanel, course, formName, menuStrip);
                    // MessageBox.Show("this is course course code in teacher courses that is being passed", course.description);
                     //DialogResult result = MessageBox.Show("Do you want to enroll in this course " + course.offering_year + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
