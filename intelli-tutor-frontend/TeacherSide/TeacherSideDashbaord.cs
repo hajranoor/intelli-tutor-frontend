@@ -198,5 +198,16 @@ namespace intelli_tutor_frontend.TeacherSide
             flowLayoutPanel2.Controls.Add(outerPanel);
             flowLayoutPanel2.Controls.Add(Numberofstdpanel);
         }
+
+  
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            ViewEnrollments enrollments = new ViewEnrollments();
+            enrollments.ViewEnrollmentsAsync(flowLayoutPanel2, formName);
+
+        }
+
+       
     }
 }

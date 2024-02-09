@@ -1,24 +1,32 @@
-﻿using intelli_tutor_frontend.BackendApi;
+﻿using FontAwesome.Sharp;
+using intelli_tutor_frontend.BackendApi;
 using intelli_tutor_frontend.Model;
+using intelli_tutor_frontend.StudentSide;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace intelli_tutor_frontend.StudentSide
+namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class StudentEnrolledCourseContent
+    internal class ViewEnrollments
     {
-        List<ContentModel> contentList = new List<ContentModel>();
-        ContentApi contentApi = new ContentApi();
-        public async void StudentEnrolledCourseContentShow(WeekModel weekData, FlowLayoutPanel flowLayoutPanel, Label formName)
+
+        List<ViewEnrollmentsDTO> enrollmentList;
+        ViewEnrollmentsApi Viewenrollments = new ViewEnrollmentsApi();
+
+        public ViewEnrollments() { }
+
+        public async Task ViewEnrollmentsAsync(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
-            formName.Text = "Course Content";
-            contentList = await contentApi.getContentByWeekId(weekData.week_id);
+            formName.Text = "Enrollments";
+            enrollmentList = await Viewenrollments.getAllEnrollments(1,2);
+            Console.WriteLine(enrollmentList.Count());
+
+
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel.AutoScroll = false;
@@ -30,14 +38,14 @@ namespace intelli_tutor_frontend.StudentSide
             mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             flowLayoutPanel.Controls.Add(mainPanel);
 
-            if (contentList.Count == 0)
+            if (enrollmentList.Count == 0)
             {
                 Panel outerPanel = new Panel();
                 outerPanel.Width = mainPanel.Width;
                 outerPanel.Height = mainPanel.Height;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
                 Label messageLabel = new Label();
-                messageLabel.Text = "No content available!";
+                messageLabel.Text = "No current Enrollment Requests!";
                 messageLabel.Dock = DockStyle.Fill;
                 messageLabel.TextAlign = ContentAlignment.MiddleCenter;
                 messageLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -78,10 +86,12 @@ namespace intelli_tutor_frontend.StudentSide
                     contentOuterPanel.Size = new Size(mainPanel.Width - 12, contentOuterPanel.Height);
                     flowLayoutPanel.Margin = new Padding(3, 3, 3, 3);
                 };
+
+
                 Label contentTypeLabel = new Label();
                 contentTypeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 contentTypeLabel.Margin = new Padding(20, 10, 20, 10);
-                contentTypeLabel.Text = "Course Type";
+                contentTypeLabel.Text = "RegNo# ";
                 contentTypeLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                 contentTypeLabel.Font = new Font("Segoe UI Semibold", 12F);
                 contentTypeLabel.Height = 30;
@@ -103,7 +113,7 @@ namespace intelli_tutor_frontend.StudentSide
                 Label contentSequenceLabel = new Label();
                 contentSequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 contentSequenceLabel.Margin = new Padding(20, 10, 20, 10);
-                contentSequenceLabel.Text = "Sequence";
+                contentSequenceLabel.Text = "Section";
                 contentSequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                 contentSequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
                 contentSequenceLabel.Height = 30;
@@ -124,7 +134,7 @@ namespace intelli_tutor_frontend.StudentSide
                 mainPanel.Controls.Add(contentOuterPanel);
 
                 int count = 0;
-                foreach (var item in contentList)
+                foreach (var item in enrollmentList)
                 {
                     Panel outerPanel = new Panel();
                     outerPanel.Width = mainPanel.Width - 20;
@@ -156,7 +166,7 @@ namespace intelli_tutor_frontend.StudentSide
                     Label typeLabel = new Label();
                     typeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                     typeLabel.Margin = new Padding(20, 10, 20, 10);
-                    typeLabel.Text = item.content_type;
+                    typeLabel.Text = item.registration_no;
                     typeLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                     typeLabel.Font = new Font("Segoe UI Semibold", 12F);
                     typeLabel.Height = 30;
@@ -167,7 +177,7 @@ namespace intelli_tutor_frontend.StudentSide
                     Label nameLabel = new Label();
                     nameLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                     nameLabel.Margin = new Padding(20, 10, 20, 10);
-                    nameLabel.Text = item.content_name;
+                    nameLabel.Text = item.username;
                     nameLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                     nameLabel.Font = new Font("Segoe UI Semibold", 12F);
                     nameLabel.Height = 30;
@@ -178,7 +188,7 @@ namespace intelli_tutor_frontend.StudentSide
                     Label sequenceLabel = new Label();
                     sequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                     sequenceLabel.Margin = new Padding(20, 10, 20, 10);
-                    sequenceLabel.Text = item.sequence_number.ToString();
+                    sequenceLabel.Text = item.section_student;
                     sequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                     sequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
                     sequenceLabel.Height = 30;
@@ -191,21 +201,29 @@ namespace intelli_tutor_frontend.StudentSide
                     buttonPanel.Margin = new Padding(0, 0, 20, 0); // Adjust margin for spacing
 
                     Button enrollButton = new Button();
-                    enrollButton.Text = "View";
+                    enrollButton.Text = "Approved";
                     enrollButton.TextAlign = ContentAlignment.MiddleCenter;
-                    enrollButton.Height = 60;
-                    enrollButton.Width = 100;
-                    enrollButton.Top = 15;
+                    enrollButton.Height = 80;
+                    enrollButton.Width = 150;
+                    enrollButton.Top = 10;
                     enrollButton.Padding = new Padding(5, 5, 5, 5); // Adjust padding
                     enrollButton.Font = new Font("Segoe UI Semibold", 12F);
                     enrollButton.BackColor = Color.DarkSlateBlue;
                     enrollButton.ForeColor = Color.White;
                     enrollButton.Click += (sender, e) =>
                     {
-                        if (item.content_type == "Problem")
+                        Console.WriteLine("student ID");
+                        Console.WriteLine(item.student_id);
+                        ViewEnrollmentsApi N = new ViewEnrollmentsApi();
+                        var result = N.ChangeEnrollmentStatus(item.student_id,  item.course_offering_id,item.teacher_id);
+                        if (result != null)
                         {
-                            SolveProblem solveProblem = new SolveProblem(item.content_id);
-                            solveProblem.Show();
+                            MessageBox.Show("Enrollment has been successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show($"An error has occurred ");
                         }
 
                     };
@@ -223,7 +241,8 @@ namespace intelli_tutor_frontend.StudentSide
 
 
 
-
         }
+
+
     }
 }
