@@ -36,7 +36,6 @@ namespace intelli_tutor_frontend.TeacherSide
                 outerPanel.Height = 400;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
                 outerPanel.BorderStyle = BorderStyle.FixedSingle;
-
                 TableLayoutPanel cardPanel = new TableLayoutPanel();
                 cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
                 cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;

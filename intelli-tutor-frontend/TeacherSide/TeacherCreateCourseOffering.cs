@@ -288,7 +288,7 @@ namespace intelli_tutor_frontend.TeacherSide
                 mainContentList = await mainContentApi.getMainContentByWeekId(mainWeekItem.week_id);
                 foreach (var mainContentItem in mainContentList)
                 {
-                    int insertedContentId = await contentApi.InsertContentData(new ContentModel
+                    int insertedContentId = await contentApi.insertContentData(new ContentModel
                     {
                         content_name = mainContentItem.content_name,
                         content_type = mainContentItem.content_type,
@@ -299,7 +299,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     mainProblemsList = await mainProblemApi.getAllMainProblemData(mainContentItem.content_id);
                     foreach (var mainProblemItem in mainProblemsList)
                     {
-                        int insertedProblemId = await problemApi.InsertProblemData(new ProblemModel
+                        int insertedProblemId = await problemApi.insertProblemData(new ProblemModel
                         {
                             content_id = insertedContentId,
                             problem_name = mainProblemItem.problem_name,

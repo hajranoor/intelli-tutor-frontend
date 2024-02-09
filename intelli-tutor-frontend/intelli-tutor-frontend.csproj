@@ -229,6 +229,7 @@
     <Compile Include="StudentSide\StudentMyCourse.cs" />
     <Compile Include="TeacherSide\MenuStripCourse.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
+    <Compile Include="TeacherSide\TeacherAddWeekContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCreateCourseOffering.cs" />
     <Compile Include="TeacherSide\TeacherCourseWeek.cs" />
@@ -285,6 +286,7 @@
   <ItemGroup>
     <Content Include="image.png" />
     <Content Include="labimage.png" />
+    <None Include="Resources\add.png" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\OOP.png" />
   </ItemGroup>

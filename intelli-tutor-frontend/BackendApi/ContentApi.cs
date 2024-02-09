@@ -6,12 +6,13 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace intelli_tutor_frontend.BackendApi
 {
     internal class ContentApi
     {
-        public async Task<int> InsertContentData(ContentModel contentModel)
+        public async Task<int> insertContentData(ContentModel contentModel)
         {
             using (var client = new HttpClient())
             {
@@ -19,6 +20,7 @@ namespace intelli_tutor_frontend.BackendApi
 
                 using (var response = await client.PostAsync("http://localhost:7008/Content", content))
                 {
+                    MessageBox.Show(response.StatusCode.ToString());
                     if (response.IsSuccessStatusCode)
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();
@@ -45,6 +47,17 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
             return list;
+        }
+
+        public async Task deleteContentById(int content_id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync($"http://localhost:7008/Content/{content_id}"))
+                {
+                    //return response.IsSuccessStatusCode;
+                }
+            }
         }
     }
 }

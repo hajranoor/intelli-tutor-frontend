@@ -39,12 +39,12 @@
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseContenttoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
             this.currentUser = new System.Windows.Forms.Label();
-            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.accountIcon = new System.Windows.Forms.PictureBox();
+            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -197,17 +197,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(955, 100);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // accountIcon
-            // 
-            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountIcon.Location = new System.Drawing.Point(766, 2);
-            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.accountIcon.Name = "accountIcon";
-            this.accountIcon.Size = new System.Drawing.Size(41, 96);
-            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.accountIcon.TabIndex = 3;
-            this.accountIcon.TabStop = false;
-            // 
             // formName
             // 
             this.formName.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -234,17 +223,6 @@
             this.currentUser.TabIndex = 1;
             this.currentUser.Text = "Shanza";
             // 
-            // notificationIcon
-            // 
-            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
-            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.notificationIcon.Name = "notificationIcon";
-            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
-            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.notificationIcon.TabIndex = 2;
-            this.notificationIcon.TabStop = false;
-            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Black;
@@ -267,6 +245,28 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(940, 574);
             this.flowLayoutPanel2.TabIndex = 8;
+            // 
+            // accountIcon
+            // 
+            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountIcon.Location = new System.Drawing.Point(766, 2);
+            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accountIcon.Name = "accountIcon";
+            this.accountIcon.Size = new System.Drawing.Size(41, 96);
+            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.accountIcon.TabIndex = 3;
+            this.accountIcon.TabStop = false;
+            // 
+            // notificationIcon
+            // 
+            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
+            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.notificationIcon.Name = "notificationIcon";
+            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
+            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.notificationIcon.TabIndex = 2;
+            this.notificationIcon.TabStop = false;
             // 
             // TeacherSideDashbaord
             // 

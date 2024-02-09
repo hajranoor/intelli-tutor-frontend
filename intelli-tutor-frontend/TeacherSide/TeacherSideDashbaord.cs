@@ -16,7 +16,6 @@ namespace intelli_tutor_frontend.TeacherSide
     public partial class TeacherSideDashbaord : Form
     {
         public static string actualMenuStrip;
-        NewMenuStrip newMenuStrip = new NewMenuStrip();
         public static List<ToolStripMenuItem> originalMenuItems = new List<ToolStripMenuItem>();
         public static ToolStripItem lastClickedItem;
 
@@ -81,10 +80,10 @@ namespace intelli_tutor_frontend.TeacherSide
         private void courseContenttoolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
-            flowLayoutPanel2.Controls.Clear();
-            formName.Text = "Course Content";
-            TeacherCourseContent courseContent = new TeacherCourseContent();
-            courseContent.CourseContentShow(1, flowLayoutPanel2);
+            //flowLayoutPanel2.Controls.Clear();
+            //formName.Text = "Course Content";
+            //TeacherCourseContent courseContent = new TeacherCourseContent();
+            //courseContent.CourseContentShow(1, flowLayoutPanel2);
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
