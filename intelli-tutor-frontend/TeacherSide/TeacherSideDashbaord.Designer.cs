@@ -35,16 +35,14 @@
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.availableCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myCourseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.courseOfferingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.courseContenttoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
             this.currentUser = new System.Windows.Forms.Label();
+            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.accountIcon = new System.Windows.Forms.PictureBox();
-            this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -111,9 +109,7 @@
             this.dashboardToolStripMenuItem,
             this.availableCoursesToolStripMenuItem,
             this.myCourseToolStripMenuItem1,
-            this.courseOfferingToolStripMenuItem,
-            this.hekkoToolStripMenuItem,
-            this.courseContenttoolStripMenuItem2});
+            this.hekkoToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 148);
             this.menuStrip1.Name = "menuStrip1";
@@ -151,28 +147,10 @@
             this.myCourseToolStripMenuItem1.Text = "My Courses";
             this.myCourseToolStripMenuItem1.Click += new System.EventHandler(this.myCourseToolStripMenuItem1_Click);
             // 
-            // courseOfferingToolStripMenuItem
-            // 
-            this.courseOfferingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.courseOfferingToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.courseOfferingToolStripMenuItem.Name = "courseOfferingToolStripMenuItem";
-            this.courseOfferingToolStripMenuItem.Size = new System.Drawing.Size(224, 41);
-            this.courseOfferingToolStripMenuItem.Text = "Course Offering";
-            this.courseOfferingToolStripMenuItem.Click += new System.EventHandler(this.courseOfferingToolStripMenuItem_Click);
-            // 
             // hekkoToolStripMenuItem
             // 
             this.hekkoToolStripMenuItem.Name = "hekkoToolStripMenuItem";
             this.hekkoToolStripMenuItem.Size = new System.Drawing.Size(14, 4);
-            // 
-            // courseContenttoolStripMenuItem2
-            // 
-            this.courseContenttoolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.courseContenttoolStripMenuItem2.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.courseContenttoolStripMenuItem2.Name = "courseContenttoolStripMenuItem2";
-            this.courseContenttoolStripMenuItem2.Size = new System.Drawing.Size(215, 41);
-            this.courseContenttoolStripMenuItem2.Text = "CourseContent";
-            this.courseContenttoolStripMenuItem2.Click += new System.EventHandler(this.courseContenttoolStripMenuItem2_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -196,6 +174,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(955, 100);
             this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // accountIcon
+            // 
+            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountIcon.Location = new System.Drawing.Point(766, 2);
+            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accountIcon.Name = "accountIcon";
+            this.accountIcon.Size = new System.Drawing.Size(41, 96);
+            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.accountIcon.TabIndex = 3;
+            this.accountIcon.TabStop = false;
             // 
             // formName
             // 
@@ -223,6 +212,17 @@
             this.currentUser.TabIndex = 1;
             this.currentUser.Text = "Shanza";
             // 
+            // notificationIcon
+            // 
+            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
+            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.notificationIcon.Name = "notificationIcon";
+            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
+            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.notificationIcon.TabIndex = 2;
+            this.notificationIcon.TabStop = false;
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Black;
@@ -245,28 +245,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(940, 574);
             this.flowLayoutPanel2.TabIndex = 8;
-            // 
-            // accountIcon
-            // 
-            this.accountIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountIcon.Location = new System.Drawing.Point(766, 2);
-            this.accountIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.accountIcon.Name = "accountIcon";
-            this.accountIcon.Size = new System.Drawing.Size(41, 96);
-            this.accountIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.accountIcon.TabIndex = 3;
-            this.accountIcon.TabStop = false;
-            // 
-            // notificationIcon
-            // 
-            this.notificationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationIcon.Location = new System.Drawing.Point(719, 2);
-            this.notificationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.notificationIcon.Name = "notificationIcon";
-            this.notificationIcon.Size = new System.Drawing.Size(41, 96);
-            this.notificationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.notificationIcon.TabIndex = 2;
-            this.notificationIcon.TabStop = false;
             // 
             // TeacherSideDashbaord
             // 
@@ -306,7 +284,6 @@
         public System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem availableCoursesToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem courseOfferingToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem hekkoToolStripMenuItem;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox accountIcon;
@@ -317,6 +294,5 @@
         public System.Windows.Forms.ToolStripMenuItem myCourseToolStripMenuItem1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        public System.Windows.Forms.ToolStripMenuItem courseContenttoolStripMenuItem2;
     }
 }

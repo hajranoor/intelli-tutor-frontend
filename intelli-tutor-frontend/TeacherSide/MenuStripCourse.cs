@@ -33,6 +33,7 @@ namespace intelli_tutor_frontend.TeacherSide
         {
             
             ToolStripMenuItem enrolmentToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripMenuItem addWeekToolStripMenuItem = new ToolStripMenuItem();
             ToolStripMenuItem backToolStripMenuItem = new ToolStripMenuItem();
             // 
             // enrolmentToolStripMenuItem
@@ -45,6 +46,17 @@ namespace intelli_tutor_frontend.TeacherSide
             courseWeekToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
             courseWeekToolStripMenuItem.Text = "Course Week";
             courseWeekToolStripMenuItem.Click += new System.EventHandler(this.courseWeekToolStripMenuItem_Click);
+
+            // 
+            // addWeekToolStripMenuItem
+            // 
+            addWeekToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            addWeekToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            addWeekToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            addWeekToolStripMenuItem.Name = "addWeekToolStripMenuItem";
+            addWeekToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
+            addWeekToolStripMenuItem.Text = "Add Week";
+            addWeekToolStripMenuItem.Click += new System.EventHandler(this.addWeekToolStripMenuItem_Click);
 
             // 
             // enrolmentToolStripMenuItem
@@ -71,6 +83,7 @@ namespace intelli_tutor_frontend.TeacherSide
             menuStrip.Items.Clear();
             menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             courseWeekToolStripMenuItem,
+            addWeekToolStripMenuItem,
             enrolmentToolStripMenuItem,
             backToolStripMenuItem});
             menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -79,10 +92,14 @@ namespace intelli_tutor_frontend.TeacherSide
 
         private void courseWeekToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(lastClickedItem.Name.ToString());
-
             TeacherCourseWeek teacherCourseWeek = new TeacherCourseWeek();
             teacherCourseWeek.ShowCourseWeek(flowLayoutPanel, courseData, formName, menuStrip);
+        }
+
+        private void addWeekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TeacherAddWeek teacherAddWeek = new TeacherAddWeek();
+            teacherAddWeek.ShowTeacherAddWeek(courseData, flowLayoutPanel, formName);
         }
 
         private void enrolmentToolStripMenuItem_Click(object sender, EventArgs e)

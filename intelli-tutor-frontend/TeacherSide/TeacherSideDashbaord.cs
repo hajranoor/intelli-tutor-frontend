@@ -72,20 +72,6 @@ namespace intelli_tutor_frontend.TeacherSide
 
         }
 
-        private void courseOfferingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void courseContenttoolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
-            //flowLayoutPanel2.Controls.Clear();
-            //formName.Text = "Course Content";
-            //TeacherCourseContent courseContent = new TeacherCourseContent();
-            //courseContent.CourseContentShow(1, flowLayoutPanel2);
-        }
-
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 

@@ -28,6 +28,8 @@ namespace intelli_tutor_frontend.TeacherSide
             
             flowLayoutPanel.Controls.Clear();
             formName.Text = "My Courses";
+
+            flowLayoutPanel.AutoScroll = true;
             myCourseList = await courseofferingapi.getMyCoursesForTeacher(1);
             foreach (var course in myCourseList)
             {

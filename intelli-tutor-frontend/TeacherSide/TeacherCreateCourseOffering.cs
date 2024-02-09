@@ -211,11 +211,14 @@ namespace intelli_tutor_frontend.TeacherSide
                                 courseOfferingModel.teacher_id = 1;
 
                                 int courseOfferingId = await courseOfferingApi.InsertCourseOfferingData(courseOfferingModel);
-                                copyCourseData(courseOfferingId);
+                                if(defaultRadioButton.Checked == true)
+                                {
+                                    copyCourseData(courseOfferingId);
+                                }
                                 MessageBox.Show("Course is created: ");
                                 flowLayoutPanel.Controls.Clear();
                                 teacherAvailableCourses teacherAvailableCourses = new teacherAvailableCourses(); ;
-                                teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel, formName);
+                                await teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel, formName);
                             }
                             else
                             {
