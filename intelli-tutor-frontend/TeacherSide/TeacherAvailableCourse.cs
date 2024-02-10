@@ -126,12 +126,5 @@ namespace intelli_tutor_frontend.TeacherSide
                 flowLayoutPanel.Controls.Add(outerPanel);
             }
         }
-
-
-
-
-
-
-
     }
 }
