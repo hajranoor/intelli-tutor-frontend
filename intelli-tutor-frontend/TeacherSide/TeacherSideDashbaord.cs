@@ -203,5 +203,15 @@ namespace intelli_tutor_frontend.TeacherSide
         {
 
         }
+  
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            ViewEnrollments enrollments = new ViewEnrollments();
+            enrollments.ViewEnrollmentsAsync(flowLayoutPanel2, formName);
+
+        }
+
+       
     }
 }

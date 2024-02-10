@@ -154,6 +154,7 @@
     <Compile Include="BackendApi\TestCasesApi.cs" />
     <Compile Include="BackendApi\UniversityApi.cs" />
     <Compile Include="BackendApi\UserApi.cs" />
+    <Compile Include="BackendApi\ViewEnrollmentsApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
     <Compile Include="compilerClasses\compilerInterface.cs" />
     <Compile Include="compilerClasses\cppClass.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Model\UniversityModel.cs" />
     <Compile Include="Model\UserAndTeacherDTO.cs" />
     <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\ViewEnrollmentsDTO.cs" />
     <Compile Include="Model\WeekModel.cs" />
     <Compile Include="Program.cs" />
     <!-- <Compile Include="javaClass.cs" /> -->
@@ -224,6 +226,7 @@
     <Compile Include="StudentSide\SolveProblem.Designer.cs">
       <DependentUpon>SolveProblem.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherSide\ViewEnrollments.cs" />
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
