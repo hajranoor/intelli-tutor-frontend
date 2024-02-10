@@ -198,5 +198,10 @@ namespace intelli_tutor_frontend.TeacherSide
             flowLayoutPanel2.Controls.Add(outerPanel);
             flowLayoutPanel2.Controls.Add(Numberofstdpanel);
         }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

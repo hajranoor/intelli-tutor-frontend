@@ -128,6 +128,7 @@
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // availableCoursesToolStripMenuItem
             // 

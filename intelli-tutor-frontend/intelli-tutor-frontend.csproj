@@ -147,6 +147,7 @@
     <Compile Include="BackendApi\MainTestCaseApi.cs" />
     <Compile Include="BackendApi\MainCourseApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
+    <Compile Include="BackendApi\NotificationApi.cs" />
     <Compile Include="BackendApi\ProblemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Model\MainCourseAndCourseOfferingDTO.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
     <Compile Include="Model\MainTestCaseModel.cs" />
+    <Compile Include="Model\Notification.cs" />
     <Compile Include="Model\useless.cs" />
     <Compile Include="Model\MainCoursesModel.cs" />
     <Compile Include="Model\MainWeekModel.cs" />
@@ -227,6 +229,7 @@
     </EmbeddedResource>
     <Compile Include="StudentSide\StudentAvailableCourse.cs" />
     <Compile Include="StudentSide\StudentMyCourse.cs" />
+    <Compile Include="StudentSide\StudentNotification.cs" />
     <Compile Include="TeacherSide\MenuStripCourse.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherAddWeek.cs" />
