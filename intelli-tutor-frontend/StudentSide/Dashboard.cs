@@ -56,6 +56,12 @@ namespace intelli_tutor_frontend.StudentSide
             StudentMyCourse studentMyCourse = new StudentMyCourse();
             studentMyCourse.StudentMyCourseShow(flowLayoutPanel1, formName);
         }
+        private void notificationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.flowLayoutPanel1.Controls.Clear();
+            StudentNotification studentNotification = new StudentNotification();
+            studentNotification.ShowStudentNotification(flowLayoutPanel1, formName);
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -280,5 +286,7 @@ namespace intelli_tutor_frontend.StudentSide
 
 
         }
+
+       
     }
 }

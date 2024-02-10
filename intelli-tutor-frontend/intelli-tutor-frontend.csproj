@@ -147,13 +147,13 @@
     <Compile Include="BackendApi\MainTestCaseApi.cs" />
     <Compile Include="BackendApi\MainCourseApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
+    <Compile Include="BackendApi\NotificationApi.cs" />
     <Compile Include="BackendApi\ProblemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
     <Compile Include="BackendApi\UniversityApi.cs" />
     <Compile Include="BackendApi\UserApi.cs" />
-    <Compile Include="BackendApi\ViewEnrollmentsApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
     <Compile Include="compilerClasses\compilerInterface.cs" />
     <Compile Include="compilerClasses\cppClass.cs" />
@@ -176,6 +176,7 @@
     <Compile Include="Model\MainCourseAndCourseOfferingDTO.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
     <Compile Include="Model\MainTestCaseModel.cs" />
+    <Compile Include="Model\Notification.cs" />
     <Compile Include="Model\useless.cs" />
     <Compile Include="Model\MainCoursesModel.cs" />
     <Compile Include="Model\MainWeekModel.cs" />
@@ -186,7 +187,6 @@
     <Compile Include="Model\UniversityModel.cs" />
     <Compile Include="Model\UserAndTeacherDTO.cs" />
     <Compile Include="Model\UserModel.cs" />
-    <Compile Include="Model\ViewEnrollmentsDTO.cs" />
     <Compile Include="Model\WeekModel.cs" />
     <Compile Include="Program.cs" />
     <!-- <Compile Include="javaClass.cs" /> -->
@@ -224,12 +224,12 @@
     <Compile Include="StudentSide\SolveProblem.Designer.cs">
       <DependentUpon>SolveProblem.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherSide\ViewEnrollments.cs" />
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="StudentSide\StudentAvailableCourse.cs" />
     <Compile Include="StudentSide\StudentMyCourse.cs" />
+    <Compile Include="StudentSide\StudentNotification.cs" />
     <Compile Include="TeacherSide\MenuStripCourse.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherAddWeek.cs" />

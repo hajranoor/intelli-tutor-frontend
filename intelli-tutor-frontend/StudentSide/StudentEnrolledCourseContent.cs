@@ -217,13 +217,6 @@ namespace intelli_tutor_frontend.StudentSide
                     mainPanel.Controls.Add(outerPanel);
                 }
             }
-
-
-
-
-
-
-
         }
     }
 }

@@ -691,7 +691,11 @@ C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\int
 C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Properties.Resources.resources
 C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.QuestionForm.resources
 C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.Registerform.resources
+C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.availableCourses.resources
 C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.Dashboard.resources
+C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.NoUseLabs.resources
+C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.myCourses.resources
+C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.NoUseproblems.resources
 C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.StudentSide.SolveProblem.resources
 C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.TeacherSide.TeacherSideDashbaord.resources
 C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.GenerateResource.cache
