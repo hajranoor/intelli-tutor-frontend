@@ -18,7 +18,7 @@ namespace intelli_tutor_frontend.StudentSide
     
         public async void StudentEnrolledCourseWeekShow(CourseAndEnrolledCourseDTO courseData, FlowLayoutPanel flowLayoutPanel, Label formName)
         {
-            formName.Text = "Course Content";
+            formName.Text = "Course Week";
             weeksList = await weekApi.getAllWeekData(courseData.course_offering_id);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
@@ -104,7 +104,7 @@ namespace intelli_tutor_frontend.StudentSide
             tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
             //----------------------
             Label creditHourLabel = new Label();
-            creditHourLabel.Text = "credit_hour ";
+            creditHourLabel.Text = "Credit Hour ";
             creditHourLabel.Font = new Font("Segoe UI", 10F);
             creditHourLabel.Dock = DockStyle.Fill;
             creditHourLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -130,7 +130,7 @@ namespace intelli_tutor_frontend.StudentSide
             //------------------------
 
             Label teacheremailLabel = new Label();
-            teacheremailLabel.Text = "teacher_email";
+            teacheremailLabel.Text = "Teacher Email";
             teacheremailLabel.Font = new Font("Segoe UI", 10F);
             teacheremailLabel.Dock = DockStyle.Fill;
             teacheremailLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -143,7 +143,7 @@ namespace intelli_tutor_frontend.StudentSide
             //------------------------
 
             Label yearLabel = new Label();
-            yearLabel.Text = "offering year";
+            yearLabel.Text = "Offering Year";
             yearLabel.Font = new Font("Segoe UI", 10F);
             yearLabel.Dock = DockStyle.Fill;
             yearLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -156,7 +156,7 @@ namespace intelli_tutor_frontend.StudentSide
             //------------------------
 
             Label semesterLabel = new Label();
-            semesterLabel.Text = "semester";
+            semesterLabel.Text = "Semester";
             semesterLabel.Font = new Font("Segoe UI", 10F);
             semesterLabel.Dock = DockStyle.Fill;
             semesterLabel.TextAlign = ContentAlignment.MiddleCenter;
