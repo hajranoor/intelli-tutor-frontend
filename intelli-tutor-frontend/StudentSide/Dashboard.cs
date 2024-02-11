@@ -19,28 +19,31 @@ namespace intelli_tutor_frontend.StudentSide
         {
             InitializeComponent();
             loadIcons();
+           
 
         }
+
         public void loadIcons()
         {
             this.notificationIcon.Image = IconChar.Bell.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
             this.accountIcon.Image = IconChar.Person.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+            mydashboard();
+           
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            dashboardToolStripMenuItem.Enabled = true;
-            List<string> enrolledCourseNames = new List<string>();
 
-            // Add course names to the list
-            enrolledCourseNames.Add("Course 1");
-            enrolledCourseNames.Add("Course 2");
-            enrolledCourseNames.Add("Course 3");
-            enrolledCourseNames.Add("Course 4");
+           
 
-            List<int> attendancePercentages = new List<int> { 95, 80, 60, 40 };
-            int numberOfCoursesEnrolled = enrolledCourseNames.Count;
+           
+        }
 
-            showdata(numberOfCoursesEnrolled, enrolledCourseNames, attendancePercentages);
+        public void mydashboard()
+        {
+          this.flowLayoutPanel1.Controls.Clear();
+          studentdashBoard u = new studentdashBoard();
+          u.StudentDashboard(flowLayoutPanel1, formName);
+
         }
 
         private void availableCoursesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,8 +72,21 @@ namespace intelli_tutor_frontend.StudentSide
         }
         private bool courseNamesVisible = false; // Initialize as hidden
 
-        private void showdata(int numberOfCoursesEnrolled, List<string> enrolledCourseNames, List<int> attendancePercentages)
+        private void showdata()
         {
+
+            dashboardToolStripMenuItem.Enabled = true;
+            List<string> enrolledCourseNames = new List<string>();
+
+            // Add course names to the list
+            enrolledCourseNames.Add("Course 1");
+            enrolledCourseNames.Add("Course 2");
+            enrolledCourseNames.Add("Course 3");
+            enrolledCourseNames.Add("Course 4");
+
+            List<int> attendancePercentages = new List<int> { 95, 80, 60, 40 };
+            int numberOfCoursesEnrolled = enrolledCourseNames.Count;
+
             Panel outerPanel = new Panel();
             outerPanel.Width = 400;
             outerPanel.Height = 300;
@@ -287,6 +303,18 @@ namespace intelli_tutor_frontend.StudentSide
 
         }
 
-       
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.flowLayoutPanel1.Controls.Clear();
+            studentdashBoard u = new studentdashBoard();
+            u.StudentDashboard(flowLayoutPanel1, formName);
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

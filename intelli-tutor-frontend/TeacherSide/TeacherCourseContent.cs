@@ -14,6 +14,11 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class TeacherCourseContent
     {
+
+
+
+
+
         ContentApi contentApi = new ContentApi();
         List<ContentModel> contentlist = new List<ContentModel>();
 
@@ -364,6 +369,18 @@ namespace intelli_tutor_frontend.TeacherSide
             TeacherAddWeekContent teacherAddWeekContent = new TeacherAddWeekContent();
             teacherAddWeekContent.ShowTeacherAddWeekContent(newWeekData, newFlowLayoutPanel, newFormName);
         }
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

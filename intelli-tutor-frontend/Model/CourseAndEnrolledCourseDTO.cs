@@ -13,6 +13,8 @@
         public byte[] icon { get; set; }
         public int course_offering_id { get; set; }
         public int teacher_id { get; set; }
+        public string teacher_email { get; set; }
+        public string teacher_name { get; set; }
         public int offering_year { get; set; }
         public string semester { get; set; }
         public int capacity { get; set; }

@@ -212,6 +212,7 @@
       <DependentUpon>Registerform.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentSide\StudentAvailableCourseWeek.cs" />
+    <Compile Include="StudentSide\studentdashBoard.cs" />
     <Compile Include="StudentSide\StudentEnrolledCourseWeek.cs" />
     <Compile Include="StudentSide\Dashboard.cs">
       <SubType>Form</SubType>
