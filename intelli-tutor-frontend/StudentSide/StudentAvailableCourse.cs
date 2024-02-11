@@ -62,7 +62,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = courseData.course_code;
+                instructorLabel.Text = courseData.semester + (courseData.offering_year).ToString();
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                 instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
