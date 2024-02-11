@@ -92,22 +92,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     flowLayoutPanel.Controls.Clear();
                     TeacherCourseWeek courseweek = new TeacherCourseWeek();
                     courseweek.ShowCourseWeek(flowLayoutPanel, course, formName, menuStrip);
-                   // MessageBox.Show("this is course course code in teacher courses that is being passed", course.description);
-                    //DialogResult result = MessageBox.Show("Do you want to enroll in this course " + course.offering_year + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    //if (result == DialogResult.Yes)
-                    //{
-                    //enrolledCourses enrolledCourses = new enrolledCourses();
-                    //enrolledCourses.courseId = course.semester.ToString();
-                    //enrolledCourses.studentId = 1;
-                    //enrolledCourses.grade = "";
-                    //string data = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
-
-                    //MessageBox.Show(data);
-                    //}
-                    //else
-                    //{
-                    //}
+                   
                 };
 
                 buttonPanel.Controls.Add(enrollButton);

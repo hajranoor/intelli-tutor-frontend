@@ -54,7 +54,7 @@ namespace intelli_tutor_frontend.BackendApi
             }
 
         }
-        public async void DeleteUserById(int userId)
+        public async Task DeleteUserById(int userId)
         {
             using (var httpClient = new HttpClient())
             {

@@ -290,8 +290,10 @@ namespace intelli_tutor_frontend.TeacherSide
                     {
                         if (item.content_type == "Problem")
                         {
-                            SolveProblem solveProblem = new SolveProblem(item.content_id);
-                            solveProblem.Show();
+                            TeacherViewProblem teacherViewProblem = new TeacherViewProblem();
+                            teacherViewProblem.ShowTeacherViewProblem(item, flowLayoutPanel, formName, weekData);
+                            //SolveProblem solveProblem = new SolveProblem(item.content_id);
+                            //solveProblem.Show();
                         }
 
                     };

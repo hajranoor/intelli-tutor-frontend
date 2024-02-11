@@ -48,7 +48,7 @@ namespace intelli_tutor_frontend.BackendApi
             return testCaseList;
         }
 
-        public async void deleteTestCaseByTestCaseId(int test_case_id)
+        public async Task deleteTestCaseByTestCaseId(int test_case_id)
         {
             using (var httpClient = new HttpClient())
             {

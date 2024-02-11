@@ -20,7 +20,6 @@ namespace intelli_tutor_frontend.BackendApi
 
                 using (var response = await client.PostAsync("http://localhost:7008/Content", content))
                 {
-                    MessageBox.Show(response.StatusCode.ToString());
                     if (response.IsSuccessStatusCode)
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();

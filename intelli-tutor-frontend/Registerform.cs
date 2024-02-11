@@ -110,7 +110,7 @@ namespace intelli_tutor_frontend
                                 }
                                 else
                                 {
-                                    userApi.DeleteUserById(newUserId);
+                                    await userApi.DeleteUserById(newUserId);
                                     MessageBox.Show("Error");
                                 }
 
@@ -162,7 +162,7 @@ namespace intelli_tutor_frontend
                                 }
                                 else
                                 {
-                                    userApi.DeleteUserById(newUserId);
+                                    await userApi.DeleteUserById(newUserId);
                                     MessageBox.Show("Error");
                                 }
 

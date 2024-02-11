@@ -35,7 +35,6 @@ namespace intelli_tutor_frontend.TeacherSide
             mainPanel.AutoScroll = true;
             mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             flowLayoutPanel.Controls.Add(mainPanel);
-
             if (enrollmentList.Count == 0)
             {
                 Panel outerPanel = new Panel();
@@ -195,15 +194,15 @@ namespace intelli_tutor_frontend.TeacherSide
 
 
                     Panel buttonPanel = new Panel();
-                    buttonPanel.Height = 70;
+                    buttonPanel.Height = 80;
                     buttonPanel.Margin = new Padding(0, 0, 20, 0); // Adjust margin for spacing
 
                     Button enrollButton = new Button();
                     enrollButton.Text = "Approved";
                     enrollButton.TextAlign = ContentAlignment.MiddleCenter;
-                    enrollButton.Height = 80;
+                    enrollButton.Height = 70;
                     enrollButton.Width = 150;
-                    enrollButton.Top = 10;
+                    enrollButton.Top = 15;
                     enrollButton.Padding = new Padding(5, 5, 5, 5); // Adjust padding
                     enrollButton.Font = new Font("Segoe UI Semibold", 12F);
                     enrollButton.BackColor = Color.DarkSlateBlue;
@@ -222,7 +221,7 @@ namespace intelli_tutor_frontend.TeacherSide
                         }
                         else
                         {
-                            MessageBox.Show($"An error has occurred ");
+                            MessageBox.Show("Something went wrong. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     };

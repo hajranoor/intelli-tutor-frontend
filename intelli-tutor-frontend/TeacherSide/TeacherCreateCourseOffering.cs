@@ -17,24 +17,19 @@ namespace intelli_tutor_frontend.TeacherSide
         CourseOfferingApi courseOfferingApi = new CourseOfferingApi();
 
         MainContentApi mainContentApi = new MainContentApi();
-        List<MainContentModel> mainContentList = new List<MainContentModel>();  
+        MainWeekApi mainWeekApi = new MainWeekApi();
+        MainProblemApi mainProblemApi = new MainProblemApi();
+        MainTestCaseApi mainTestCaseApi = new MainTestCaseApi();
 
         ContentApi contentApi = new ContentApi();
+        WeekApi weekApi = new WeekApi();
+        ProblemApi problemApi = new ProblemApi();
+        TestCasesApi TestCasesApi = new TestCasesApi();
 
-        MainWeekApi mainWeekApi = new MainWeekApi();  
+        List<MainContentModel> mainContentList = new List<MainContentModel>();  
         List<MainWeekModel> mainWeekList = new List<MainWeekModel>();
-
-        WeekApi weekApi = new WeekApi();    
-
-        MainProblemApi mainProblemApi = new MainProblemApi();
         List<MainProblemsModel> mainProblemsList = new List<MainProblemsModel>();
-
-        ProblemApi problemApi = new ProblemApi();   
-
-        MainTestCaseApi mainTestCaseApi = new MainTestCaseApi();
         List<MainTestCaseModel> mainTestCaseList = new List<MainTestCaseModel>();
-
-        TestCasesApi TestCasesApi = new TestCasesApi(); 
 
         RadioButton defaultRadioButton = new RadioButton();
         RadioButton newRadioButton = new RadioButton();
@@ -42,9 +37,11 @@ namespace intelli_tutor_frontend.TeacherSide
         {
             formName.Text = "Course Offering";
 
-            TableLayoutPanel mainPanel = new TableLayoutPanel();
+            flowLayoutPanel.Controls.Clear();
             flowLayoutPanel.AutoScroll = false;
             flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+            TableLayoutPanel mainPanel = new TableLayoutPanel();
             mainPanel.BackColor = Color.Lavender;
             mainPanel.Width = flowLayoutPanel.Width;
             mainPanel.Height = flowLayoutPanel.Height;
@@ -102,6 +99,9 @@ namespace intelli_tutor_frontend.TeacherSide
             semesterComboBox.Width = 400;
             semesterComboBox.Top = 15; semesterComboBox.Margin = new Padding(20, 10, 20, 10);
             semesterComboBox.Dock = DockStyle.Fill;
+            semesterComboBox.SelectedIndex = 0;
+            
+            semesterComboBox.KeyPress += (sender, e) => e.Handled = true;
 
             mainPanel.Controls.Add(semesterComboBox, 1, 1);
             //---------------------------------------------------------
@@ -168,12 +168,10 @@ namespace intelli_tutor_frontend.TeacherSide
             defaultRadioButton.Text = "Default";
             defaultRadioButton.Height = 30;
             defaultRadioButton.Font = new Font("Segoe UI Semibold", 12F);
-            //defaultRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             
             newRadioButton.Text = "New";
             newRadioButton.Height = 30; 
             newRadioButton.Font = new Font("Segoe UI Semibold", 12F);
-            //newRadioButton.CheckedChanged += RadioButton_CheckedChanged;
 
             mainPanel.Controls.Add(defaultRadioButton, 1, 4);
             mainPanel.Controls.Add(newRadioButton, 1, 4);
@@ -184,7 +182,6 @@ namespace intelli_tutor_frontend.TeacherSide
             createButton.Text = "Create";
             createButton.Dock = DockStyle.Fill;
             createButton.Height = 65;
-            //createButton.Dock = DockStyle.Bottom;
             createButton.Margin = new Padding(150, 300, 150, 20);
             createButton.Width = 70;
             createButton.TextAlign = ContentAlignment.MiddleCenter;
@@ -211,70 +208,50 @@ namespace intelli_tutor_frontend.TeacherSide
                                 courseOfferingModel.teacher_id = 1;
 
                                 int courseOfferingId = await courseOfferingApi.InsertCourseOfferingData(courseOfferingModel);
-                                if(defaultRadioButton.Checked == true)
+                                if(courseOfferingId != -1)
                                 {
-                                    copyCourseData(courseOfferingId);
+                                    if (defaultRadioButton.Checked == true)
+                                    {
+                                        copyCourseData(courseOfferingId);
+                                    }
+                                    MessageBox.Show("Course created successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    flowLayoutPanel.Controls.Clear();
+                                    teacherAvailableCourses teacherAvailableCourses = new teacherAvailableCourses(); ;
+                                    await teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel, formName);
                                 }
-                                MessageBox.Show("Course is created: ");
-                                flowLayoutPanel.Controls.Clear();
-                                teacherAvailableCourses teacherAvailableCourses = new teacherAvailableCourses(); ;
-                                await teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel, formName);
+                                else
+                                {
+                                    MessageBox.Show("This course is already available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                
                             }
                             else
                             {
 
-                                MessageBox.Show("Please enter a valid positive integer for capacity.");
+                                MessageBox.Show("Please enter a valid positive integer for capacity.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
 
-                            MessageBox.Show("Please enter a valid positive integer for offering year e.g 2020.");
+                            MessageBox.Show("Please enter a valid positive integer for offering year e.g 2020.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         
                     }
                     else
                     {
-                        // No option is selected
-                        MessageBox.Show("Please select an option.");
+                        MessageBox.Show("Please select an option.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Select/fill all options");
+                    MessageBox.Show("Select/fill all options", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //DialogResult result = MessageBox.Show("Do you want to enroll in this course " + item.course_title + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //if (result == DialogResult.Yes)
-                //{
-                //    enrolledCourses enrolledCourses = new enrolledCourses();
-                //    enrolledCourses.courseId = item.course_id;
-                //    enrolledCourses.studentId = 1;
-                //    enrolledCourses.grade = "";
-                //    string data = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
-
-                    //    MessageBox.Show(data);
-                    //}
-                    //else
-                    //{
-                    //}
             };
 
             mainPanel.Controls.Add(createButton, 1, 5);
             //---------------------------------------------------------
 
-        }
-
-        private void RadioButton_CheckedChanged()
-        {
-            if (defaultRadioButton.Checked || newRadioButton.Checked)
-            {
-               
-            }
-            else
-            {
-                // No option is selected
-                MessageBox.Show("Please select an option.");
-            }
         }
         private async void copyCourseData(int courseOfferingId)
         {
@@ -326,10 +303,8 @@ namespace intelli_tutor_frontend.TeacherSide
                             });
                         }
                     }
-
                     //assignment
                     //quiz
-
                 }
 
             }

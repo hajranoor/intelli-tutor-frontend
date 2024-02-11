@@ -72,10 +72,10 @@ namespace intelli_tutor_frontend.TeacherSide
             //contentTypeLabel
             //
             Label contentTypeLabel = new Label();
-            contentTypeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            contentTypeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             contentTypeLabel.Margin = new Padding(20, 10, 20, 10);
             contentTypeLabel.Text = "Content Type";
-            contentTypeLabel.TextAlign = ContentAlignment.MiddleCenter; // Align text to the left
+            contentTypeLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
             contentTypeLabel.Font = new Font("Segoe UI Semibold", 12F);
             contentTypeLabel.Height = 30;
             contentTypeLabel.Width = 400;
@@ -86,22 +86,23 @@ namespace intelli_tutor_frontend.TeacherSide
             //contentTypeComboBox
             //
             ComboBox contentTypeComboBox = new ComboBox();
-            contentTypeComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            contentTypeComboBox.Height = 30;
+            contentTypeComboBox.Width = 400;
+            contentTypeComboBox.Top = 15;
             contentTypeComboBox.Font = new Font("Segoe UI Semibold", 12F);
-            contentTypeComboBox.FormattingEnabled = true;
             contentTypeComboBox.Items.AddRange(new object[] {
             "Problem",
             "Assignment",
             "Quiz"});
+            contentTypeComboBox.Margin = new Padding(20, 10, 20, 10);
+            contentTypeComboBox.Dock = DockStyle.Fill;
             //this.roleComboBox.Margin = new System.Windows.Forms.Padding(4);
             contentTypeComboBox.Name = "contentTypeComboBox";
-            contentTypeComboBox.Height = 30;
-            contentTypeComboBox.Width = 400;
-            contentTypeComboBox.TabIndex = 17;
-            contentTypeComboBox.SelectedIndex = 0; // change
-            //contentTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            contentTypeComboBox.SelectedIndex = 0;
+            contentTypeComboBox.KeyPress += (sender, e) => e.Handled = true;
 
-            mainPanel.Controls.Add(contentTypeLabel, 1, 1);
+
+            mainPanel.Controls.Add(contentTypeComboBox, 1, 1);
             //---------------------------------------------
             //
             //descriptionLabel
@@ -169,11 +170,11 @@ namespace intelli_tutor_frontend.TeacherSide
 
             mainPanel.Controls.Add(starterCodeLabel, 0, 4);
 
-            TextBox starterCodeTextBox = new TextBox();
+            RichTextBox starterCodeTextBox = new RichTextBox();
             starterCodeTextBox.Margin = new Padding(20, 10, 20, 10);
             starterCodeTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             starterCodeTextBox.Font = new Font("Segoe UI Semibold", 12F);
-            starterCodeTextBox.Height = 30;
+            starterCodeTextBox.Height = 100;
             starterCodeTextBox.Width = 400;
             starterCodeTextBox.Top = 15;
 
@@ -195,11 +196,11 @@ namespace intelli_tutor_frontend.TeacherSide
 
             mainPanel.Controls.Add(rightCodeLabel, 0, 5);
 
-            TextBox rightCodeTextBox = new TextBox();
+            RichTextBox rightCodeTextBox = new RichTextBox();
             rightCodeTextBox.Margin = new Padding(20, 10, 20, 10);
             rightCodeTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             rightCodeTextBox.Font = new Font("Segoe UI Semibold", 12F);
-            rightCodeTextBox.Height = 30;
+            rightCodeTextBox.Height = 100;
             rightCodeTextBox.Width = 400;
             rightCodeTextBox.Top = 15;
 
@@ -311,9 +312,9 @@ namespace intelli_tutor_frontend.TeacherSide
                             int newTestCaseId = await testCasesApi.InsertTestCaseData(testCaseModel);
                             if (newTestCaseId != -1)
                             {
-                                MessageBox.Show("Problem Added Successfully", "Message");
+                                MessageBox.Show("Problem Added Successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information );
 
-                                contentNameLabel.Text = "";
+                                contentNameTextBox.Text = "";
                                 descriptionTextBox.Text = "";
                                 regexTextBox.Text = "";
                                 starterCodeTextBox.Text = "";
@@ -323,55 +324,32 @@ namespace intelli_tutor_frontend.TeacherSide
                             }
                             else
                             {
-                                MessageBox.Show("3");
-                                contentApi.deleteContentById(newContentId);
-                                problemApi.deleteProblemById(newProblemId);
-                                testCasesApi.deleteTestCaseByTestCaseId(newTestCaseId);
+                                await contentApi.deleteContentById(newContentId);
+                                await problemApi.deleteProblemById(newProblemId);
+                                await testCasesApi.deleteTestCaseByTestCaseId(newTestCaseId);
                                 MessageBox.Show("Something went wrong. try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("2");
-                            contentApi.deleteContentById(newContentId);
-                            problemApi.deleteProblemById(newProblemId);
+                            await contentApi.deleteContentById(newContentId);
+                            await problemApi.deleteProblemById(newProblemId);
                             MessageBox.Show("Something went wrong. try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("1");
-                        contentApi.deleteContentById(newContentId);
-                        MessageBox.Show("Something went wrong. try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        await contentApi.deleteContentById(newContentId);
+                        MessageBox.Show("Problem Content with this name already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Fill the required fields.", "Error");
+                    MessageBox.Show("Fill the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             };
             mainPanel.Controls.Add(addButton, 1, 8);
-
-
-            //Button backButton = new Button();
-            //backButton.Text = "Back";
-            //backButton.Dock = DockStyle.Left;
-            //backButton.Height = 65;
-            ////createButton.Dock = DockStyle.Bottom;
-            //backButton.Margin = new Padding(150, 300, 150, 20);
-            //backButton.Width = 70;
-            //backButton.TextAlign = ContentAlignment.MiddleCenter;
-            //backButton.Padding = new Padding(5, 15, 5, 15);
-            //backButton.Font = new Font("Segoe UI Semibold", 12F);
-            //backButton.BackColor = Color.DarkSlateBlue;
-            //backButton.ForeColor = Color.White;
-            //backButton.Click += async (sender, e) =>
-            //{
-
-            //};
-            //mainPanel.Controls.Add(addButton, 2, 8);
-
         }
     }
 }
