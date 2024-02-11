@@ -20,13 +20,11 @@ namespace intelli_tutor_frontend.TeacherSide
 
         public ViewEnrollments() { }
 
-        public async Task ViewEnrollmentsAsync(FlowLayoutPanel flowLayoutPanel, Label formName)
+        public async Task ViewEnrollmentsAsync(FlowLayoutPanel flowLayoutPanel, Label formName,  MainCourseAndCourseOfferingDTO myCourse)
         {
+            flowLayoutPanel.Controls.Clear();
             formName.Text = "Enrollments";
-            enrollmentList = await Viewenrollments.getAllEnrollments(1,2);
-            Console.WriteLine(enrollmentList.Count());
-
-
+            enrollmentList = await Viewenrollments.getAllEnrollments(1,myCourse.course_offering_id);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel.AutoScroll = false;
@@ -210,7 +208,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     enrollButton.Font = new Font("Segoe UI Semibold", 12F);
                     enrollButton.BackColor = Color.DarkSlateBlue;
                     enrollButton.ForeColor = Color.White;
-                    enrollButton.Click += (sender, e) =>
+                    enrollButton.Click += async (sender, e) =>
                     {
                         Console.WriteLine("student ID");
                         Console.WriteLine(item.student_id);
@@ -219,6 +217,7 @@ namespace intelli_tutor_frontend.TeacherSide
                         if (result != null)
                         {
                             MessageBox.Show("Enrollment has been successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            await ViewEnrollmentsAsync(flowLayoutPanel, formName, myCourse);
                             
                         }
                         else

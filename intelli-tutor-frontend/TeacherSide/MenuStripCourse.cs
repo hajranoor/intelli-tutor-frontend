@@ -102,9 +102,10 @@ namespace intelli_tutor_frontend.TeacherSide
             teacherAddWeek.ShowTeacherAddWeek(courseData, flowLayoutPanel, formName);
         }
 
-        private void enrolmentToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void enrolmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           ViewEnrollments viewEnrollments = new ViewEnrollments();
+           await viewEnrollments.ViewEnrollmentsAsync(flowLayoutPanel, formName, courseData);
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)

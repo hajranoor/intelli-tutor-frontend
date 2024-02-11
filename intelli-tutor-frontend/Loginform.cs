@@ -1,5 +1,7 @@
 ﻿using intelli_tutor_frontend.BackendApi;
 using intelli_tutor_frontend.Model;
+using intelli_tutor_frontend.StudentSide;
+using intelli_tutor_frontend.TeacherSide;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,32 +69,42 @@ namespace intelli_tutor_frontend
 
            // string result = await uApi.AuthenticateUser(u);
 
-            string result = await uApi.checkUserExists(u);
+            UserModel user = await uApi.checkUserExists(u);
             Console.WriteLine("result");
-            Console.WriteLine(result);
+            Console.WriteLine(user.email);
 
-            if (result == "true")
+            if (user != null)
             {
-                MessageBox.Show("Hello,sign in !");
-            }
-
-            else if ( result == "false")
-            {
-                MessageBox.Show("incorrect credentials");
+                if(user.user_role == "Teacher")
+                {
+                    this.Hide();
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.Show();
+                }
+                if(user.user_role == "Student")
+                {
+                    this.Hide();
+                    TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
+                    teacherSideDashbaord.Show();
+                }
             }
 
             else
             {
-                MessageBox.Show("jkndkffkff");
+                MessageBox.Show("incorrect credentials");
             }
-
-
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Registerform registerform = new Registerform();
+            registerform.Show();
         }
     }
 }
