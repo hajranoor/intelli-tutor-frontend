@@ -16,7 +16,7 @@ namespace intelli_tutor_frontend.TeacherSide
     public partial class TeacherSideDashbaord : Form
     {
         public static string actualMenuStrip;
-        NewMenuStrip newMenuStrip = new NewMenuStrip();
+        //NewMenuStrip newMenuStrip = new NewMenuStrip();
         public static List<ToolStripMenuItem> originalMenuItems = new List<ToolStripMenuItem>();
         public static ToolStripItem lastClickedItem;
 

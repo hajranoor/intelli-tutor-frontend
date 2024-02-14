@@ -32,6 +32,21 @@ namespace intelli_tutor_frontend.StudentSide
         int content_id;
         ProblemApi problemApi = new ProblemApi();
 
+
+        DateTime startTime;
+        DateTime endTime;
+        float errorCount;
+        float passCount;
+        float totalTestCases;
+
+
+        float runCount;
+        float passRate;
+        float errorRate;
+
+        //int compilationCount = 0;
+
+
         private bool isSidebarCollapsed = false;
         private int sidebarStep = 20;
         private int originalSidebarWidth;
@@ -86,11 +101,19 @@ namespace intelli_tutor_frontend.StudentSide
 
         private async void SolveProblem_Load(object sender, EventArgs e)
         {
+            DateTime currentTimestamp = DateTime.Now;
+            startTime = currentTimestamp;
+            runCount = 0;
+            errorCount = 0;
+            passCount = 0;
+
+
             this.problem = await problemApi.getproblemData(content_id);
             loadCompilers();
             loadStarterCode();
             TestCasesApi testCasesApi = new TestCasesApi();
             testcaseList = await testCasesApi.getAllTestCasesData(problem.problem_id);
+            totalTestCases = testcaseList.Count;
 
             questionBox.SelectionStart = questionBox.TextLength;
             questionBox.SelectionFont = new Font(questionBox.Font.FontFamily, 18, FontStyle.Bold);
@@ -212,6 +235,7 @@ namespace intelli_tutor_frontend.StudentSide
 
         private void runProgram_Click(object sender, EventArgs e)
         {
+            runCount++;
             outputBox.Text = "";
             string path = Path.Combine(Application.StartupPath, "compilersFolder");
             if (selectLanguage.Text == "c++")
@@ -223,7 +247,7 @@ namespace intelli_tutor_frontend.StudentSide
                     string studentCode = codeEditor.Text;
                     cppClass cppClassObj = new cppClass(path, studentCode);
                     string[] data = { "yes", "2" };
-                    bool passTestCase = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data, tc.output_data, outputBox, count);
+                    bool passTestCase = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data, tc.output_data, outputBox, count, ref errorCount, ref passCount);
                     if (passTestCase == false)
                     {
                         break;
@@ -276,6 +300,17 @@ namespace intelli_tutor_frontend.StudentSide
 
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("this is run count" + runCount);
+            MessageBox.Show("this is error count" + errorCount);
+            MessageBox.Show("this was start time" + startTime);
+            MessageBox.Show("this is totla test case length" + totalTestCases);
+            MessageBox.Show("this is pass count" + passCount);
+            passRate = passCount / (totalTestCases * runCount);
+            errorRate = errorCount / runCount;
+            MessageBox.Show("this is passRate" + passRate);
+            MessageBox.Show("this is errorRate" + errorRate);
+        }
     }
 }

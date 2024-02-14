@@ -18,13 +18,18 @@ namespace intelli_tutor_frontend.StudentSide
         CourseOfferingApi courseOfferingApi = new CourseOfferingApi();
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
 
-        List<MainCourseAndCourseOfferingDTO> availableCoursesList;
+        List<MainCourseAndCourseOfferingAndTeacherDTO> availableCoursesList;
 
         public async void availableCoursesShow(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
             flowLayoutPanel.Controls.Clear();
             formName.Text = "Available Courses";
             availableCoursesList = await courseOfferingApi.getCourseOfferingForStudent();
+            if (availableCoursesList.Count == 0)
+            {
+                MessageBox.Show("No Courses Available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else { 
             foreach (var courseData in availableCoursesList)
             {
                 Panel outerPanel = new Panel();
@@ -62,7 +67,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = courseData.course_code;
+                instructorLabel.Text = courseData.username.ToString();
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                 instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
@@ -93,12 +98,25 @@ namespace intelli_tutor_frontend.StudentSide
 
                     if (result == DialogResult.Yes)
                     {
-                        EnrolledCourses enrolledCourses = new EnrolledCourses();
-                        enrolledCourses.course_offering_id = courseData.course_offering_id;
-                        enrolledCourses.student_id = 2; //change it
-                        enrolledCourses.grade = "null";
-                        string message = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
-                        MessageBox.Show(message, " Message ");
+                        bool isCapacitySufficient = await enrolledCourseApi.checkCourseCapacity(courseData.course_offering_id);
+
+                        if (isCapacitySufficient)
+                        {
+                            EnrolledCourses enrolledCourses = new EnrolledCourses();
+                            enrolledCourses.course_offering_id = courseData.course_offering_id;
+                            enrolledCourses.student_id = 2; //change it
+                            enrolledCourses.grade = "null";
+                            string message = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
+                            MessageBox.Show(message, " Message ");
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("course capacity exceeded.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        
 
                     }
 
@@ -131,6 +149,7 @@ namespace intelli_tutor_frontend.StudentSide
 
                 flowLayoutPanel.Controls.Add(outerPanel);
             }
+        }
         }
     }
 }

@@ -22,6 +22,10 @@ namespace intelli_tutor_frontend
             ProblemModel p = new ProblemModel();
             Application.Run(new TeacherSide.TeacherSideDashbaord());
             //Application.Run(new StudentSide.Dashboard());
+
+            //chartDemo chartDemoForm = new chartDemo();
+
+            //Application.Run(chartDemoForm);
         }
     }
 }
