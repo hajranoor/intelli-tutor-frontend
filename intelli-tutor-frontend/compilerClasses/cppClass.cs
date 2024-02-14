@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using intelli_tutor_frontend.StudentSide;
+//397 & 222
 
 
 namespace intelli_tutor_frontend.compilerClasses
@@ -196,7 +197,7 @@ namespace intelli_tutor_frontend.compilerClasses
         string inputString = "#include <iostream>\r\n\r\nint add(int a, int b) {\r\n            std::cout << a + b<< std::endl;\r\n\r\n}\r\n\r\nint main() {\r\n    add();\r\n    return 0;\r\n}";
 
 
-        public bool compileWithTestCases(string code, string regexPattern, string[] inputData, string[] output , RichTextBox outputBox, int testCaseCount)
+        public bool compileWithTestCases(string code, string regexPattern, string[] inputData, string[] output , RichTextBox outputBox, int testCaseCount,ref float errorcount , ref float passCount)
         {
             string responseString = "";
             try
@@ -211,6 +212,7 @@ namespace intelli_tutor_frontend.compilerClasses
                 string compilationOutput = CompileCode();
                 if (isError)
                 {
+                    errorcount++;
                     outputBox.Text = "";
                     outputBox.AppendText(compilationOutput);
                     return false;
@@ -218,6 +220,7 @@ namespace intelli_tutor_frontend.compilerClasses
                 //System.Windows.MessageBox.Show(compilationOutput, "OUTPUT");
                 //System.Windows.MessageBox.Show("this is output from db", output);
                 
+                //what does this condition mean??
                 if(compilationOutput == null || compilationOutput == "")
                 {
                     return false;
@@ -346,6 +349,7 @@ namespace intelli_tutor_frontend.compilerClasses
 
                     if (finalOutputCount == splitCompilationOutput.Length)
                     {
+                        passCount++;
                         outputBox.SelectionColor = System.Drawing.Color.Black;
                         outputBox.SelectionFont = new System.Drawing.Font(outputBox.Font.FontFamily, 16, System.Drawing.FontStyle.Bold);
                         outputBox.AppendText("Test Case " + testCaseCount + ": ");
@@ -390,6 +394,8 @@ namespace intelli_tutor_frontend.compilerClasses
                         return true; // to run other test case any one is failed
                     }
                 }
+
+                //what should i do here?
                 else
                 {
                     string data = "";

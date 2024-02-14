@@ -156,6 +156,12 @@
     <Compile Include="BackendApi\UserApi.cs" />
     <Compile Include="BackendApi\ViewEnrollmentsApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
+    <Compile Include="chartDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chartDemo.Designer.cs">
+      <DependentUpon>chartDemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="compilerClasses\compilerInterface.cs" />
     <Compile Include="compilerClasses\cppClass.cs" />
     <Compile Include="compilerClasses\cSharpClass.cs" />
@@ -163,6 +169,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="compilerClasses\javaClass.cs" />
+    <Compile Include="localCacheManager.cs" />
     <Compile Include="Loginform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +181,7 @@
     <Compile Include="Model\CourseOfferingModel.cs" />
     <Compile Include="Model\EnrolledCourses.cs" />
     <Compile Include="Model\MainContentModel.cs" />
+    <Compile Include="Model\MainCourseAndCourseOfferingAndTeacherDTO.cs" />
     <Compile Include="Model\MainCourseAndCourseOfferingDTO.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
     <Compile Include="Model\MainTestCaseModel.cs" />
@@ -252,6 +260,9 @@
     <Compile Include="TeacherSide\TeacherSideDashbaord.Designer.cs">
       <DependentUpon>TeacherSideDashbaord.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="chartDemo.resx">
+      <DependentUpon>chartDemo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>
     </EmbeddedResource>

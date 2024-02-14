@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Net.NetworkInformation;
 using System.Windows;
+using Google.Apis.PeopleService.v1.Data;
 
 namespace intelli_tutor_frontend.BackendApi
 {
@@ -36,6 +37,28 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
         }
+
+        public async Task<bool> checkCourseCapacity(int courseOfferingID)
+        {
+            bool ans;
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/courseOfferingID?courseOfferingID=" + courseOfferingID))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        ans =  true;
+                    }
+                    else
+                    {
+                        ans = false;
+                    }
+                }
+            }
+            return ans;
+        }
+                       // using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/teacherID?teacherId=" + id))
+
 
 
         public async Task<List<CourseAndEnrolledCourseDTO>> getAllEnrolledCourseData(int studentId)
