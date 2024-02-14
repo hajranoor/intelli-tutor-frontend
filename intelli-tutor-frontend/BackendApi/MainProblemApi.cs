@@ -24,5 +24,22 @@ namespace intelli_tutor_frontend.BackendApi
             }
             return list;
         }
+        public async Task<MainProblemsModel> getproblemData(int content_id)
+        {
+            MainProblemsModel problem = new MainProblemsModel();
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync($"http://localhost:7008/MainProblems/getMainProblem/" + content_id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    problem = JsonConvert.DeserializeObject<MainProblemsModel>(apiResponse);
+                    Console.WriteLine(problem);
+                }
+            }
+            return problem;
+        }
     }
+
+
 }

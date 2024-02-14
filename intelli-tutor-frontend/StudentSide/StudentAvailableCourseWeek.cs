@@ -115,8 +115,8 @@ namespace intelli_tutor_frontend.StudentSide
             otherInfoPanel.Controls.Add(new Label() { Text = "Semester: ", Font = new Font("Segoe UI", 12, FontStyle.Bold), AutoSize = true }, 0, 2);
             otherInfoPanel.Controls.Add(new Label() { Text = myCourseData.semester.ToString(), Font = new Font("Segoe UI", 12), AutoSize = true }, 1, 2);
 
-            otherInfoPanel.Controls.Add(new Label() { Text = "Instructor's Email: ", Font = new Font("Segoe UI", 12, FontStyle.Bold), AutoSize = true }, 0, 3);
-            otherInfoPanel.Controls.Add(new Label() { Text = myCourseData.email.ToString(), Font = new Font("Segoe UI", 12), AutoSize = true }, 1, 3);
+            //otherInfoPanel.Controls.Add(new Label() { Text = "Instructor's Email: ", Font = new Font("Segoe UI", 12, FontStyle.Bold), AutoSize = true }, 0, 3);
+            //otherInfoPanel.Controls.Add(new Label() { Text = myCourseData.email.ToString(), Font = new Font("Segoe UI", 12), AutoSize = true }, 1, 3);
 
 
 

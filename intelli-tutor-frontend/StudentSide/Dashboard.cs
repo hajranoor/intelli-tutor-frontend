@@ -13,8 +13,10 @@ using intelli_tutor_frontend.BackendApi;
 
 namespace intelli_tutor_frontend.StudentSide
 {
+    
     public partial class Dashboard : Form
     {
+        CurrentUser currentLoginUser = CurrentUser.Instance;
         public Dashboard()
         {
             InitializeComponent();
@@ -32,7 +34,8 @@ namespace intelli_tutor_frontend.StudentSide
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            this.currentUser.Text = "";
+            this.currentUser.Text = currentLoginUser.User.username;
            
 
            

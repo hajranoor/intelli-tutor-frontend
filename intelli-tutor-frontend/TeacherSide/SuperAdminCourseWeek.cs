@@ -115,7 +115,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     cardPanel.BackColor = Color.DarkSlateBlue;
                     Button enrollButton = new Button();
 
-                    enrollButton.Text = "Week " + weekData.week_sequence.ToString();
+                    enrollButton.Text = "Week " + counter.ToString();
                     enrollButton.Dock = DockStyle.Fill;
                     enrollButton.Width = 70;
                     enrollButton.Height = 30;
@@ -130,7 +130,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
                         flowLayoutPanel1.Controls.Clear();
                         SuperAdminCourseContent superAdminCourseContent = new SuperAdminCourseContent();
-                        superAdminCourseContent.SuperAdminCourseContentShow(weekData, flowLayoutPanel1, formName);
+                        superAdminCourseContent.ShowSuperAdminCourseContent(weekData, flowLayoutPanel1, formName);
 
                     };
 

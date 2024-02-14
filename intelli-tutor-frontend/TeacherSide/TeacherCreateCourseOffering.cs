@@ -12,8 +12,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace intelli_tutor_frontend.TeacherSide
 {
+    
     internal class TeacherCreateCourseOffering
     {
+        CurrentUser currentLoginUser = CurrentUser.Instance;
+
         CourseOfferingApi courseOfferingApi = new CourseOfferingApi();
 
         MainContentApi mainContentApi = new MainContentApi();
@@ -205,7 +208,7 @@ namespace intelli_tutor_frontend.TeacherSide
                                 courseOfferingModel.capacity = capacity;
                                 courseOfferingModel.course_id = selectedCourse.course_id;
                                 courseOfferingModel.semester = semesterComboBox.Text;
-                                courseOfferingModel.teacher_id = 1;
+                                courseOfferingModel.teacher_id = currentLoginUser.TeacherModel.teacher_id;
 
                                 int courseOfferingId = await courseOfferingApi.InsertCourseOfferingData(courseOfferingModel);
                                 if(courseOfferingId != -1)

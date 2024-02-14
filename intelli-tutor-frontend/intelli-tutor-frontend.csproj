@@ -165,6 +165,7 @@
     <Compile Include="compilerClasses\compilerInterface.cs" />
     <Compile Include="compilerClasses\cppClass.cs" />
     <Compile Include="compilerClasses\cSharpClass.cs" />
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="CustomComponent\NoCaretRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -236,6 +237,7 @@
       <DependentUpon>SolveProblem.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherSide\DashboardClass.cs" />
+    <Compile Include="TeacherSide\SuperAdminViewProblem.cs" />
     <Compile Include="TeacherSide\TeacherViewProblem.cs" />
     <Compile Include="TeacherSide\ViewEnrollments.cs" />
     <EmbeddedResource Include="authenticationCheck.resx">

@@ -49,5 +49,19 @@ namespace intelli_tutor_frontend.BackendApi
             }
             return list;
         }
+
+        public async Task<TeacherModel> getTeacherByUserId(int user_id)
+        {
+            TeacherModel teacher = new TeacherModel();
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync("http://localhost:7008/teacher/getTeacher/"  + user_id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    teacher = JsonConvert.DeserializeObject<TeacherModel>(apiResponse);
+                }
+            }
+            return teacher;
+        }
     }
 }

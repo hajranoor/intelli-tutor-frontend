@@ -14,6 +14,8 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class TeacherMyCourses
     {
+        CurrentUser currentLoginUser = CurrentUser.Instance;
+
         CourseOfferingApi courseofferingapi = new CourseOfferingApi();
         List<MainCourseAndCourseOfferingDTO> myCourseList;
 
@@ -32,87 +34,106 @@ namespace intelli_tutor_frontend.TeacherSide
             formName.Text = "My Courses";
 
             flowLayoutPanel.AutoScroll = true;
-            myCourseList = await courseofferingapi.getMyCoursesForTeacher(1);
+            myCourseList = await courseofferingapi.getMyCoursesForTeacher(currentLoginUser.TeacherModel.teacher_id);
 
             if (myCourseList.Count == 0)
             {
-                MessageBox.Show("You Have Not Created Any Courses.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            foreach (var course in myCourseList)
-            {
                 Panel outerPanel = new Panel();
-                outerPanel.Width = 480;
-                outerPanel.Height = 400;
+                outerPanel.Width = flowLayoutPanel.Width;
+                outerPanel.Height = flowLayoutPanel.Height;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
-                outerPanel.BorderStyle = BorderStyle.FixedSingle;
-                TableLayoutPanel cardPanel = new TableLayoutPanel();
-                cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-                cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
-                cardPanel.Width = 480;
-                cardPanel.Height = 400;
-                cardPanel.Margin = new Padding(20, 20, 20, 20);
-                cardPanel.BackColor = Color.Lavender;
-                cardPanel.AutoScroll = true;
+                Label messageLabel = new Label();
+                messageLabel.Text = "Not offered any course yet!";
+                messageLabel.Dock = DockStyle.Fill;
+                messageLabel.TextAlign = ContentAlignment.MiddleCenter;
+                messageLabel.Font = new Font("Segoe UI Semibold", 16F);
+                messageLabel.Height = 30;
+                messageLabel.ForeColor = Color.Black;
+                flowLayoutPanel.Controls.Add(messageLabel);
 
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
-                string imagePath = Path.Combine(Application.StartupPath, "labimage.png");
-                pictureBox.Load(imagePath);
-
-                pictureBox.Width = 150;
-                pictureBox.Height = 150;
-                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                pictureBox.Dock = DockStyle.Fill;
-                cardPanel.Controls.Add(pictureBox, 0, 0);
-
-                Label titleLabel = new Label();
-                titleLabel.Text = course.course_name.ToString();
-                titleLabel.Dock = DockStyle.Fill;
-                titleLabel.TextAlign = ContentAlignment.MiddleCenter;
-                titleLabel.Font = new Font("Segoe UI Semibold", 16F);
-                titleLabel.Height = 60;
-                cardPanel.Controls.Add(titleLabel, 0, 1);
-
-                Label instructorLabel = new Label();
-                instructorLabel.Text = course.course_code.ToString();
-                instructorLabel.Dock = DockStyle.Fill;
-                instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
-                instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-                instructorLabel.Height = 60;
-
-                cardPanel.Controls.Add(instructorLabel, 0, 2);
-                Panel buttonPanel = new Panel();
-                buttonPanel.Height = 65;
-                buttonPanel.Width = 70;
-                buttonPanel.Dock = DockStyle.Bottom;
-                buttonPanel.Margin = new Padding(150, 0, 150, 20);
-
-                Button enrollButton = new Button();
-
-                enrollButton.Text = "View Details";
-                enrollButton.Dock = DockStyle.Fill;
-                enrollButton.Width = 70;
-                enrollButton.TextAlign = ContentAlignment.MiddleCenter;
-                enrollButton.Padding = new Padding(5, 15, 5, 15);
-                enrollButton.Font = new Font("Segoe UI Semibold", 12F);
-                enrollButton.BackColor = Color.DarkSlateBlue;
-                enrollButton.ForeColor = Color.White;
-                enrollButton.Click += async (sender, e) =>
-                {
-                    flowLayoutPanel.Controls.Clear();
-                    TeacherCourseWeek courseweek = new TeacherCourseWeek();
-                    courseweek.ShowCourseWeek(flowLayoutPanel, course, formName, menuStrip);
-                   
-                };
-
-                buttonPanel.Controls.Add(enrollButton);
-
-                cardPanel.Controls.Add(buttonPanel, 0, 3);
-                outerPanel.Controls.Add(cardPanel);
+                outerPanel.Controls.Add(messageLabel);
 
                 flowLayoutPanel.Controls.Add(outerPanel);
+            }
+            else
+            {
+                foreach (var course in myCourseList)
+                {
+                    Panel outerPanel = new Panel();
+                    outerPanel.Width = 480;
+                    outerPanel.Height = 400;
+                    outerPanel.Margin = new Padding(20, 20, 20, 20);
+                    outerPanel.BorderStyle = BorderStyle.FixedSingle;
+                    TableLayoutPanel cardPanel = new TableLayoutPanel();
+                    cardPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                    cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+                    cardPanel.Width = 480;
+                    cardPanel.Height = 400;
+                    cardPanel.Margin = new Padding(20, 20, 20, 20);
+                    cardPanel.BackColor = Color.Lavender;
+                    cardPanel.AutoScroll = true;
+
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.Image = FontAwesome.Sharp.IconChar.Book.ToBitmap(color: Color.Black, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+                    string imagePath = Path.Combine(Application.StartupPath, "labimage.png");
+                    pictureBox.Load(imagePath);
+
+                    pictureBox.Width = 150;
+                    pictureBox.Height = 150;
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox.Dock = DockStyle.Fill;
+                    cardPanel.Controls.Add(pictureBox, 0, 0);
+
+                    Label titleLabel = new Label();
+                    titleLabel.Text = course.course_name.ToString();
+                    titleLabel.Dock = DockStyle.Fill;
+                    titleLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    titleLabel.Font = new Font("Segoe UI Semibold", 16F);
+                    titleLabel.Height = 60;
+                    cardPanel.Controls.Add(titleLabel, 0, 1);
+
+                    Label instructorLabel = new Label();
+                    instructorLabel.Text = course.course_code.ToString();
+                    instructorLabel.Dock = DockStyle.Fill;
+                    instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+                    instructorLabel.Height = 60;
+
+                    cardPanel.Controls.Add(instructorLabel, 0, 2);
+                    Panel buttonPanel = new Panel();
+                    buttonPanel.Height = 65;
+                    buttonPanel.Width = 70;
+                    buttonPanel.Dock = DockStyle.Bottom;
+                    buttonPanel.Margin = new Padding(150, 0, 150, 20);
+
+                    Button enrollButton = new Button();
+
+                    enrollButton.Text = "View Details";
+                    enrollButton.Dock = DockStyle.Fill;
+                    enrollButton.Width = 70;
+                    enrollButton.TextAlign = ContentAlignment.MiddleCenter;
+                    enrollButton.Padding = new Padding(5, 15, 5, 15);
+                    enrollButton.Font = new Font("Segoe UI Semibold", 12F);
+                    enrollButton.BackColor = Color.DarkSlateBlue;
+                    enrollButton.ForeColor = Color.White;
+                    enrollButton.Click += async (sender, e) =>
+                    {
+                        flowLayoutPanel.Controls.Clear();
+                        TeacherCourseWeek courseweek = new TeacherCourseWeek();
+                        courseweek.ShowCourseWeek(flowLayoutPanel, course, formName, menuStrip);
+
+                    };
+
+                    buttonPanel.Controls.Add(enrollButton);
+
+                    cardPanel.Controls.Add(buttonPanel, 0, 3);
+                    outerPanel.Controls.Add(cardPanel);
+
+                    flowLayoutPanel.Controls.Add(outerPanel);
+                }
+
+
+            
             }
         }
     }

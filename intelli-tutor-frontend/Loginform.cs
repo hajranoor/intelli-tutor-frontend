@@ -18,7 +18,11 @@ namespace intelli_tutor_frontend
 
     {
 
-        UserApi uApi = new UserApi();
+        UserApi userApi = new UserApi();
+        TeacherApi teacherApi = new TeacherApi();
+        StudentApi studentApi = new StudentApi();
+
+        CurrentUser currentUser = CurrentUser.Instance;
         public Loginform()
         {
             InitializeComponent();
@@ -43,11 +47,6 @@ namespace intelli_tutor_frontend
             pictureBox2.BackColor= SystemColors.Control;
         }
 
-        private void Loginform_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
             textBox2.UseSystemPasswordChar = false;
@@ -67,44 +66,58 @@ namespace intelli_tutor_frontend
             u.username = username;
             u.pass_word = password;
 
-           // string result = await uApi.AuthenticateUser(u);
 
-            UserModel user = await uApi.checkUserExists(u);
-            Console.WriteLine("result");
-            Console.WriteLine(user.email);
+            UserModel user = await userApi.checkUserExists(u);
 
             if (user != null)
             {
+
                 if(user.user_role == "Teacher")
                 {
-                    this.Hide();
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.Show();
+                    TeacherModel teacher = await teacherApi.getTeacherByUserId(user.user_id);
+                    if(teacher != null)
+                    {
+                        currentUser.User = user;
+                        currentUser.TeacherModel = teacher;
+                        this.Hide();
+                        TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
+                        teacherSideDashbaord.Show();
+                    }
+                    
                 }
                 if(user.user_role == "Student")
                 {
-                    this.Hide();
-                    TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
-                    teacherSideDashbaord.Show();
+                    StudentModel student = await studentApi.getStudentByUserId(user.user_id);
+                    if(student != null)
+                    {
+                        currentUser.User = user;
+                        currentUser.StudentModel = student;
+                        this.Hide();
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Show();
+                    }
+                    
+                    
                 }
             }
 
             else
             {
-                MessageBox.Show("incorrect credentials");
+                MessageBox.Show("incorrect credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
             this.Hide();
             Registerform registerform = new Registerform();
             registerform.Show();
+        }
+
+        private void Loginform_Load(object sender, EventArgs e)
+        {
+            currentUser.User = null;
+            currentUser.TeacherModel = null;
+            currentUser.StudentModel = null;
         }
     }
 }

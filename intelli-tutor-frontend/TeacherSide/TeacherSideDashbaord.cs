@@ -20,16 +20,12 @@ namespace intelli_tutor_frontend.TeacherSide
         public static List<ToolStripMenuItem> originalMenuItems = new List<ToolStripMenuItem>();
         public static ToolStripItem lastClickedItem;
 
+        private CurrentUser currentLoginUser = CurrentUser.Instance;
         public TeacherSideDashbaord()
         {
             InitializeComponent();
-            loadIcons();
-            lastClickedItem = this.dashboardToolStripMenuItem;
-            originalMenuItems.Clear();
-            foreach (ToolStripMenuItem item in menuStrip1.Items)
-            {
-                originalMenuItems.Add(item);
-            }
+            //loadIcons();
+            
         }
 
         
@@ -43,9 +39,18 @@ namespace intelli_tutor_frontend.TeacherSide
 
         private void TeacherSideDashbaord_Load(object sender, EventArgs e)
         {
-            flowLayoutPanel2.Controls.Clear();
+            lastClickedItem = this.dashboardToolStripMenuItem;
+            originalMenuItems.Clear();
+            foreach (ToolStripMenuItem item in menuStrip1.Items)
+            {
+                originalMenuItems.Add(item);
+            }
+
+            this.currentUser.Text = "";
+            this.currentUser.Text = currentLoginUser.User.username;
+            flowLayoutPanel1.Controls.Clear();
             DashboardClass dashboardClass = new DashboardClass();
-            dashboardClass.ShowDashbooard(flowLayoutPanel2, formName);
+            dashboardClass.ShowDashbooard(flowLayoutPanel1, formName);
             //dashboardToolStripMenuItem.Enabled = true;
             //List<string> enrolledCourseNames = new List<string>();
 
@@ -60,19 +65,21 @@ namespace intelli_tutor_frontend.TeacherSide
 
             //showdata(numberOfCoursesEnrolled, enrolledCourseNames, attendancePercentages);
         }
+
+      
         private void availableCoursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             teacherAvailableCourses teacherAvailableCourses = new teacherAvailableCourses();
-            teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel2, formName);
+            teacherAvailableCourses.availableCoursesAsync(flowLayoutPanel1, formName);
         }
 
         public void myCourseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             TeacherMyCourses teacherMyCourses = new TeacherMyCourses();
-            teacherMyCourses.ShowMyCoursesAsync(flowLayoutPanel2, formName, menuStrip1);
+            teacherMyCourses.ShowMyCoursesAsync(flowLayoutPanel1, formName, menuStrip1);
 
         }
 
@@ -94,9 +101,9 @@ namespace intelli_tutor_frontend.TeacherSide
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             DashboardClass dashboardClass = new DashboardClass();
-            dashboardClass.ShowDashbooard(flowLayoutPanel2, formName);
+            dashboardClass.ShowDashbooard(flowLayoutPanel1, formName);
             //this.Hide();
             //TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
             //teacherSideDashbaord.Show();
@@ -208,11 +215,17 @@ namespace intelli_tutor_frontend.TeacherSide
 
 
             Numberofstdpanel.Controls.Add(StudentPanel);
-            flowLayoutPanel2.FlowDirection = FlowDirection.LeftToRight;
-            flowLayoutPanel2.Controls.Add(outerPanel);
-            flowLayoutPanel2.Controls.Add(Numberofstdpanel);
+            flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight;
+            flowLayoutPanel1.Controls.Add(outerPanel);
+            flowLayoutPanel1.Controls.Add(Numberofstdpanel);
         }
 
-       
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Loginform loginform = new Loginform();
+            loginform.Show();
+        }
     }
 }
+;
