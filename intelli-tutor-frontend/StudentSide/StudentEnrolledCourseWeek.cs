@@ -18,7 +18,7 @@ namespace intelli_tutor_frontend.StudentSide
     
         public async void StudentEnrolledCourseWeekShow(CourseAndEnrolledCourseDTO courseData, FlowLayoutPanel flowLayoutPanel, Label formName)
         {
-            formName.Text = "Course Content";
+            formName.Text = "Course Week";
             weeksList = await weekApi.getAllWeekData(courseData.course_offering_id);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
@@ -72,6 +72,152 @@ namespace intelli_tutor_frontend.StudentSide
             descriptionPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 
             mainPanel.Controls.Add(descriptionPanel, 0, 2);
+
+
+            
+
+
+
+            Panel responsivePanel = new Panel();
+            responsivePanel.Dock = DockStyle.Fill;
+            responsivePanel.Height = 500;
+            responsivePanel.Width = 600;
+            responsivePanel.BackColor = System.Drawing.Color.DarkSlateBlue;
+            responsivePanel.BorderStyle = BorderStyle.FixedSingle;
+            responsivePanel.Padding = new Padding(2, 2, 2, 19); // Add padding for content
+
+            TableLayoutPanel tablePanel = new TableLayoutPanel();
+            tablePanel.Dock = DockStyle.Fill;
+            tablePanel.Height = 456;
+            tablePanel.Width = 500;
+            tablePanel.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            tablePanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tablePanel.RowCount = 5;
+            tablePanel.ColumnCount = 2;
+            tablePanel.Font = new Font("Segoe UI", 10F);
+            for (int i = 0; i < 5; i++)
+            {
+                tablePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / 5));
+            }
+
+            tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            //----------------------
+            Label creditHourLabel = new Label();
+            creditHourLabel.Text = "Credit Hour ";
+            creditHourLabel.Font = new Font("Segoe UI", 10F);
+            creditHourLabel.Dock = DockStyle.Fill;
+            creditHourLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label creditHourData = new Label();
+            creditHourData.Text = courseData.credit_hour.ToString();
+            creditHourData.Font = new Font("Segoe UI", 10F);
+            creditHourData.Dock = DockStyle.Fill;
+            creditHourData.TextAlign = ContentAlignment.MiddleCenter;
+            //-----------------------
+
+            Label weeksLabel = new Label();
+            weeksLabel.Text = "No of weeks";
+            weeksLabel.Font = new Font("Segoe UI", 10F);
+            weeksLabel.Dock = DockStyle.Fill;
+            weeksLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label weeksData = new Label();
+            weeksData.Text = courseData.number_of_weeks.ToString();
+            weeksData.Font = new Font("Segoe UI", 10F);
+            weeksData.Dock = DockStyle.Fill;
+            weeksData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+
+            Label teacheremailLabel = new Label();
+            teacheremailLabel.Text = "Teacher Email";
+            teacheremailLabel.Font = new Font("Segoe UI", 10F);
+            teacheremailLabel.Dock = DockStyle.Fill;
+            teacheremailLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label teacheremailData = new Label();
+            teacheremailData.Text = courseData.teacher_email;
+            teacheremailData.Font = new Font("Segoe UI", 8F);
+            teacheremailData.Dock = DockStyle.Fill;
+            teacheremailData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+
+            Label yearLabel = new Label();
+            yearLabel.Text = "Offering Year";
+            yearLabel.Font = new Font("Segoe UI", 10F);
+            yearLabel.Dock = DockStyle.Fill;
+            yearLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label yearData = new Label();
+            yearData.Text = courseData.offering_year.ToString();
+            yearData.Font = new Font("Segoe UI", 10F);
+            yearData.Dock = DockStyle.Fill;
+            yearData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+
+            Label semesterLabel = new Label();
+            semesterLabel.Text = "Semester";
+            semesterLabel.Font = new Font("Segoe UI", 10F);
+            semesterLabel.Dock = DockStyle.Fill;
+            semesterLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label semesterData = new Label();
+            semesterData.Text = courseData.semester;
+            semesterData.Font = new Font("Segoe UI", 10F);
+            semesterData.Dock = DockStyle.Fill;
+            semesterData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+            tablePanel.Controls.Add(teacheremailLabel, 0, 0);
+            tablePanel.Controls.Add(teacheremailData, 1, 0);
+
+            tablePanel.Controls.Add(weeksLabel, 0, 1);
+            tablePanel.Controls.Add(weeksData, 1, 1);
+
+            tablePanel.Controls.Add(creditHourLabel, 0, 2);
+            tablePanel.Controls.Add(creditHourData, 1, 2);
+
+            tablePanel.Controls.Add(yearLabel, 0, 3);
+            tablePanel.Controls.Add(yearData, 1, 3);
+
+            tablePanel.Controls.Add(semesterLabel, 0, 4);
+            tablePanel.Controls.Add(semesterData, 1, 4);
+
+
+            TableLayoutPanel parentTablePanel = new TableLayoutPanel();
+            parentTablePanel.Dock = DockStyle.Fill;
+            parentTablePanel.BackColor = Color.Lavender;
+            parentTablePanel.Height = 500;
+            parentTablePanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+            parentTablePanel.RowCount = 1;
+            parentTablePanel.ColumnCount = 2;
+            parentTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80));
+            parentTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+            parentTablePanel.Dock = DockStyle.Fill;
+
+            responsivePanel.Controls.Add(tablePanel);
+            parentTablePanel.Controls.Add(descriptionPanel, 0, 0);
+            parentTablePanel.Controls.Add(responsivePanel, 1, 0);
+
+            // Set Dock property for the parent table panel
+            parentTablePanel.Dock = DockStyle.Fill;
+
+            // Add the parent table panel to the form
+            ////----
+            ///
+            //
+            //
+            //
+
+
+            mainPanel.Controls.Add(parentTablePanel, 0, 2);
+
+
+
+
+
+
+
+
 
 
             TableLayoutPanel weekPanel = new TableLayoutPanel();

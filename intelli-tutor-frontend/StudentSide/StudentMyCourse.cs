@@ -73,7 +73,7 @@ namespace intelli_tutor_frontend.StudentSide
                     cardPanel.Controls.Add(pictureBox, 0, 0);
 
                     Label titleLabel = new Label();
-                    titleLabel.Text = enrolledCourse.course_name;
+                    titleLabel.Text = enrolledCourse.course_code;
                     titleLabel.Dock = DockStyle.Fill;
                     titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                     titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -81,7 +81,7 @@ namespace intelli_tutor_frontend.StudentSide
                     cardPanel.Controls.Add(titleLabel, 0, 1);
 
                     Label instructorLabel = new Label();
-                    instructorLabel.Text = enrolledCourse.course_code;
+                    instructorLabel.Text = enrolledCourse.teacher_name;
                     instructorLabel.Dock = DockStyle.Fill;
                     instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                     instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);

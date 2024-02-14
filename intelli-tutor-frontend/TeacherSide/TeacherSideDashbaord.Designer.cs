@@ -35,9 +35,7 @@
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.availableCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myCourseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.courseOfferingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.courseContenttoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
@@ -111,9 +109,7 @@
             this.dashboardToolStripMenuItem,
             this.availableCoursesToolStripMenuItem,
             this.myCourseToolStripMenuItem1,
-            this.courseOfferingToolStripMenuItem,
-            this.hekkoToolStripMenuItem,
-            this.courseContenttoolStripMenuItem2});
+            this.hekkoToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 148);
             this.menuStrip1.Name = "menuStrip1";
@@ -132,6 +128,7 @@
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // availableCoursesToolStripMenuItem
             // 
@@ -151,28 +148,10 @@
             this.myCourseToolStripMenuItem1.Text = "My Courses";
             this.myCourseToolStripMenuItem1.Click += new System.EventHandler(this.myCourseToolStripMenuItem1_Click);
             // 
-            // courseOfferingToolStripMenuItem
-            // 
-            this.courseOfferingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.courseOfferingToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.courseOfferingToolStripMenuItem.Name = "courseOfferingToolStripMenuItem";
-            this.courseOfferingToolStripMenuItem.Size = new System.Drawing.Size(224, 41);
-            this.courseOfferingToolStripMenuItem.Text = "Course Offering";
-            this.courseOfferingToolStripMenuItem.Click += new System.EventHandler(this.courseOfferingToolStripMenuItem_Click);
-            // 
             // hekkoToolStripMenuItem
             // 
             this.hekkoToolStripMenuItem.Name = "hekkoToolStripMenuItem";
             this.hekkoToolStripMenuItem.Size = new System.Drawing.Size(14, 4);
-            // 
-            // courseContenttoolStripMenuItem2
-            // 
-            this.courseContenttoolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.courseContenttoolStripMenuItem2.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.courseContenttoolStripMenuItem2.Name = "courseContenttoolStripMenuItem2";
-            this.courseContenttoolStripMenuItem2.Size = new System.Drawing.Size(215, 41);
-            this.courseContenttoolStripMenuItem2.Text = "CourseContent";
-            this.courseContenttoolStripMenuItem2.Click += new System.EventHandler(this.courseContenttoolStripMenuItem2_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -306,7 +285,6 @@
         public System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem availableCoursesToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem courseOfferingToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem hekkoToolStripMenuItem;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox accountIcon;
@@ -317,6 +295,5 @@
         public System.Windows.Forms.ToolStripMenuItem myCourseToolStripMenuItem1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        public System.Windows.Forms.ToolStripMenuItem courseContenttoolStripMenuItem2;
     }
 }

@@ -1,119 +1,48 @@
-﻿using intelli_tutor_frontend.BackendApi;
-using intelli_tutor_frontend.CustomComponent;
+﻿using FontAwesome.Sharp;
+using intelli_tutor_frontend.BackendApi;
 using intelli_tutor_frontend.Model;
-using intelli_tutor_frontend.TeacherSide;
+using intelli_tutor_frontend.StudentSide;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace intelli_tutor_frontend.StudentSide
+namespace intelli_tutor_frontend.TeacherSide
 {
-    internal class StudentEnrolledCourseContent
+    internal class ViewEnrollments
     {
 
+        List<ViewEnrollmentsDTO> enrollmentList;
+        ViewEnrollmentsApi Viewenrollments = new ViewEnrollmentsApi();
 
-       
+        public ViewEnrollments() { }
 
-        ContentApi contentApi = new ContentApi();
-        List<ContentModel> contentlist = new List<ContentModel>();
-
-        ProblemApi problemApi = new ProblemApi();
-        TestCasesApi testCasesApi = new TestCasesApi();
-
-        FlowLayoutPanel newFlowLayoutPanel = new FlowLayoutPanel();
-        Label newFormName = new Label();
-        WeekModel newWeekData = new WeekModel();
-
-       
-
-        public async void StudentEnrolledCourseContentShow(WeekModel weekData, FlowLayoutPanel flowLayoutPanel, Label formName)
+        public async Task ViewEnrollmentsAsync(FlowLayoutPanel flowLayoutPanel, Label formName,  MainCourseAndCourseOfferingDTO myCourse)
         {
-            newFlowLayoutPanel = flowLayoutPanel;
             flowLayoutPanel.Controls.Clear();
-            newFormName = formName;
-            newWeekData = weekData;
-
-            formName.Text = "Week Content";
-            contentlist = await contentApi.getContentByWeekId(weekData.week_id);
+            formName.Text = "Enrollments";
+            enrollmentList = await Viewenrollments.getAllEnrollments(1,myCourse.course_offering_id);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel.AutoScroll = false;
             flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.BackColor = Color.Lavender;
-            mainPanel.Width = flowLayoutPanel.Width - 20;
-            mainPanel.Height = flowLayoutPanel.Height - 20;
-            mainPanel.HorizontalScroll.Enabled = false;
-            mainPanel.HorizontalScroll.Visible = false;
+            mainPanel.Width = flowLayoutPanel.Width - 10;
+            mainPanel.Height = flowLayoutPanel.Height - 10;
             mainPanel.AutoScroll = true;
             mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             flowLayoutPanel.Controls.Add(mainPanel);
-            ////
-            ///weekName////
-            ///
-            Label weekName = new Label();
-            weekName.Text = weekData.week_name;
-            weekName.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            //weekName.Dock = DockStyle.Fill;
-            weekName.Width = mainPanel.Width - 100;
-            weekName.Font = new Font("Segoe UI Semibold", 16F);
-            weekName.Height = 60;
-            weekName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            weekName.AutoSize = true;
-            weekName.Margin = new Padding(10, 10, 10, 10);
-            weekName.Padding = new Padding(0, 10, 0, 10);
-            mainPanel.Controls.Add(weekName, 0, 0);
-
-            //
-            //CourseDescription
-            //
-            NoCaretRichTextBox weekDescription = new NoCaretRichTextBox();
-            weekDescription.Text = weekData.description;
-            weekDescription.Font = new Font("Segoe UI", 14F);
-            weekDescription.Width = mainPanel.Width - 600;
-            weekDescription.Dock = DockStyle.Fill;
-            weekDescription.ReadOnly = true;
-            weekDescription.HideSelection = true;
-            weekDescription.BackColor = Color.Lavender;
-            weekDescription.BorderStyle = BorderStyle.None;
-            //weekDescription.AutoSize = true; 
-
-            //
-            //descriptionPanel
-            //
-            Panel descriptionPanel = new Panel();
-            descriptionPanel.Margin = new Padding(10, 10, 10, 10);
-            //descriptionPanel.Dock = DockStyle.Fill;
-            descriptionPanel.Width = mainPanel.Width - 100;
-            descriptionPanel.AutoScroll = true;
-            descriptionPanel.BackColor = Color.Lavender;
-            descriptionPanel.Height = 250;
-            descriptionPanel.Controls.Add(weekDescription);
-            descriptionPanel.BackColor = Color.Lavender;
-            descriptionPanel.Padding = new Padding(10, 10, 10, 10);
-            descriptionPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mainPanel.Controls.Add(descriptionPanel, 0, 1);
-
-            int preferredHeight = weekDescription.PreferredSize.Height + descriptionPanel.Padding.Vertical;
-            descriptionPanel.Height = Math.Min(preferredHeight, 250);
-
-
-          
-
-            // Add the PictureBox to the form and align it to the right
-
-            if (contentlist.Count == 0)
+            if (enrollmentList.Count == 0)
             {
                 Panel outerPanel = new Panel();
                 outerPanel.Width = mainPanel.Width;
                 outerPanel.Height = mainPanel.Height;
                 outerPanel.Margin = new Padding(20, 20, 20, 20);
                 Label messageLabel = new Label();
-                messageLabel.Text = "No content available!";
+                messageLabel.Text = "No current Enrollment Requests!";
                 messageLabel.Dock = DockStyle.Fill;
                 messageLabel.TextAlign = ContentAlignment.MiddleCenter;
                 messageLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -128,7 +57,7 @@ namespace intelli_tutor_frontend.StudentSide
             else
             {
                 Panel contentOuterPanel = new Panel();
-                contentOuterPanel.Width = mainPanel.Width - 50;
+                contentOuterPanel.Width = mainPanel.Width - 20;
                 contentOuterPanel.BorderStyle = BorderStyle.FixedSingle;
                 contentOuterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
                 contentOuterPanel.Margin = new Padding(10, 10, 10, 10);
@@ -136,7 +65,7 @@ namespace intelli_tutor_frontend.StudentSide
                 TableLayoutPanel contentCardPanel = new TableLayoutPanel();
                 contentCardPanel.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
                 contentCardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
-                contentCardPanel.Width = contentOuterPanel.Width - 20;
+                contentCardPanel.Width = mainPanel.Width - 20;
                 contentCardPanel.ColumnCount = 4;
                 contentCardPanel.Height = 100;
                 contentCardPanel.Margin = new Padding(20, 10, 20, 10);
@@ -151,13 +80,15 @@ namespace intelli_tutor_frontend.StudentSide
                 {
 
                     mainPanel.Size = new Size(flowLayoutPanel.Width - 10, flowLayoutPanel.Height - 10);
-                    contentOuterPanel.Size = new Size(mainPanel.Width - 50, contentOuterPanel.Height);
+                    contentOuterPanel.Size = new Size(mainPanel.Width - 12, contentOuterPanel.Height);
                     flowLayoutPanel.Margin = new Padding(3, 3, 3, 3);
                 };
+
+
                 Label contentTypeLabel = new Label();
                 contentTypeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 contentTypeLabel.Margin = new Padding(20, 10, 20, 10);
-                contentTypeLabel.Text = "Course Type";
+                contentTypeLabel.Text = "RegNo# ";
                 contentTypeLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                 contentTypeLabel.Font = new Font("Segoe UI Semibold", 12F);
                 contentTypeLabel.Height = 30;
@@ -179,7 +110,7 @@ namespace intelli_tutor_frontend.StudentSide
                 Label contentSequenceLabel = new Label();
                 contentSequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 contentSequenceLabel.Margin = new Padding(20, 10, 20, 10);
-                contentSequenceLabel.Text = "Sequence";
+                contentSequenceLabel.Text = "Section";
                 contentSequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                 contentSequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
                 contentSequenceLabel.Height = 30;
@@ -200,18 +131,17 @@ namespace intelli_tutor_frontend.StudentSide
                 mainPanel.Controls.Add(contentOuterPanel);
 
                 int count = 0;
-                foreach (var item in contentlist)
+                foreach (var item in enrollmentList)
                 {
                     Panel outerPanel = new Panel();
-                    outerPanel.Width = mainPanel.Width - 50;
+                    outerPanel.Width = mainPanel.Width - 20;
                     outerPanel.BorderStyle = BorderStyle.FixedSingle;
                     outerPanel.BackColor = Color.Lavender;
                     outerPanel.Margin = new Padding(10, 10, 10, 10);
-
                     TableLayoutPanel cardPanel = new TableLayoutPanel();
                     cardPanel.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
                     cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
-                    cardPanel.Width = outerPanel.Width - 20;
+                    cardPanel.Width = mainPanel.Width - 20;
                     cardPanel.ColumnCount = 4;
                     cardPanel.Height = 100;
                     cardPanel.Margin = new Padding(20, 10, 20, 10);
@@ -226,14 +156,14 @@ namespace intelli_tutor_frontend.StudentSide
                     {
 
                         mainPanel.Size = new Size(flowLayoutPanel.Width - 10, flowLayoutPanel.Height - 10);
-                        outerPanel.Size = new Size(mainPanel.Width - 50, outerPanel.Height);
+                        outerPanel.Size = new Size(mainPanel.Width - 12, outerPanel.Height);
                         flowLayoutPanel.Margin = new Padding(3, 3, 3, 3);
                     };
 
                     Label typeLabel = new Label();
                     typeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                     typeLabel.Margin = new Padding(20, 10, 20, 10);
-                    typeLabel.Text = item.content_type;
+                    typeLabel.Text = item.registration_no;
                     typeLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                     typeLabel.Font = new Font("Segoe UI Semibold", 12F);
                     typeLabel.Height = 30;
@@ -244,7 +174,7 @@ namespace intelli_tutor_frontend.StudentSide
                     Label nameLabel = new Label();
                     nameLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                     nameLabel.Margin = new Padding(20, 10, 20, 10);
-                    nameLabel.Text = item.content_name;
+                    nameLabel.Text = item.username;
                     nameLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                     nameLabel.Font = new Font("Segoe UI Semibold", 12F);
                     nameLabel.Height = 30;
@@ -255,7 +185,7 @@ namespace intelli_tutor_frontend.StudentSide
                     Label sequenceLabel = new Label();
                     sequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                     sequenceLabel.Margin = new Padding(20, 10, 20, 10);
-                    sequenceLabel.Text = item.sequence_number.ToString();
+                    sequenceLabel.Text = item.section_student;
                     sequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                     sequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
                     sequenceLabel.Height = 30;
@@ -263,47 +193,53 @@ namespace intelli_tutor_frontend.StudentSide
                     cardPanel.Controls.Add(sequenceLabel, 2, 0);
 
 
-                    TableLayoutPanel buttonPanel = new TableLayoutPanel();
-                    buttonPanel.Height = 70;
+                    Panel buttonPanel = new Panel();
+                    buttonPanel.Height = 80;
                     buttonPanel.Margin = new Padding(0, 0, 20, 0); // Adjust margin for spacing
-                    buttonPanel.RowCount = 1;
-                    buttonPanel.ColumnCount = 2;
 
-                    Button viewButton = new Button();
-                    viewButton.Text = "View";
-                    viewButton.TextAlign = ContentAlignment.MiddleCenter;
-                    viewButton.Height = 60;
-                    viewButton.Width = 100;
-                    viewButton.Top = 15;
-                    viewButton.Padding = new Padding(5, 5, 5, 5); // Adjust padding
-                    viewButton.Font = new Font("Segoe UI Semibold", 12F);
-                    viewButton.BackColor = Color.DarkSlateBlue;
-                    viewButton.ForeColor = Color.White;
-                    viewButton.Click += (sender, e) =>
+                    Button enrollButton = new Button();
+                    enrollButton.Text = "Approved";
+                    enrollButton.TextAlign = ContentAlignment.MiddleCenter;
+                    enrollButton.Height = 70;
+                    enrollButton.Width = 150;
+                    enrollButton.Top = 15;
+                    enrollButton.Padding = new Padding(5, 5, 5, 5); // Adjust padding
+                    enrollButton.Font = new Font("Segoe UI Semibold", 12F);
+                    enrollButton.BackColor = Color.DarkSlateBlue;
+                    enrollButton.ForeColor = Color.White;
+                    enrollButton.Click += async (sender, e) =>
                     {
-                        if (item.content_type == "Problem")
+                        Console.WriteLine("student ID");
+                        Console.WriteLine(item.student_id);
+                        ViewEnrollmentsApi N = new ViewEnrollmentsApi();
+                        var result = N.ChangeEnrollmentStatus(item.student_id,  item.course_offering_id,item.teacher_id);
+                        if (result != null)
                         {
-                            SolveProblem solveProblem = new SolveProblem(item.content_id);
-                            solveProblem.Show();
+                            MessageBox.Show("Enrollment has been successfully approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            await ViewEnrollmentsAsync(flowLayoutPanel, formName, myCourse);
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something went wrong. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     };
 
-                    
-                    buttonPanel.Controls.Add(viewButton, 0, 0);
-                 
+                    buttonPanel.Controls.Add(enrollButton);
                     cardPanel.Controls.Add(buttonPanel, 3, 0);
                     count++;
                     outerPanel.Controls.Add(cardPanel);
                     mainPanel.Controls.Add(outerPanel);
                 }
             }
+
+
+
+
+
+
         }
-
-
-
-        
-
 
 
     }

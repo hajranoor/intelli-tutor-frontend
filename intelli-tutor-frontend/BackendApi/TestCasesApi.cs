@@ -47,5 +47,27 @@ namespace intelli_tutor_frontend.BackendApi
             }
             return testCaseList;
         }
+
+        public async Task deleteTestCaseByTestCaseId(int test_case_id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync($"http://localhost:7008/TestCase/{test_case_id}"))
+                {
+                    //return response.IsSuccessStatusCode;
+                }
+            }
+        }
+
+        public async Task deleteTestCaseByProblemId(int problem_id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync($"http://localhost:7008/TestCase/DeleteByProblemId/{problem_id}"))
+                {
+                    //return response.IsSuccessStatusCode;
+                }
+            }
+        }
     }
 }

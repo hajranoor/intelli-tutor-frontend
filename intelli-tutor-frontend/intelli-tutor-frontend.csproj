@@ -147,12 +147,14 @@
     <Compile Include="BackendApi\MainTestCaseApi.cs" />
     <Compile Include="BackendApi\MainCourseApi.cs" />
     <Compile Include="BackendApi\MainWeekApi.cs" />
+    <Compile Include="BackendApi\NotificationApi.cs" />
     <Compile Include="BackendApi\ProblemApi.cs" />
     <Compile Include="BackendApi\StudentApi.cs" />
     <Compile Include="BackendApi\TeacherApi.cs" />
     <Compile Include="BackendApi\TestCasesApi.cs" />
     <Compile Include="BackendApi\UniversityApi.cs" />
     <Compile Include="BackendApi\UserApi.cs" />
+    <Compile Include="BackendApi\ViewEnrollmentsApi.cs" />
     <Compile Include="BackendApi\WeekApi.cs" />
     <Compile Include="chartDemo.cs">
       <SubType>Form</SubType>
@@ -183,6 +185,7 @@
     <Compile Include="Model\MainCourseAndCourseOfferingDTO.cs" />
     <Compile Include="Model\MainProblemsModel.cs" />
     <Compile Include="Model\MainTestCaseModel.cs" />
+    <Compile Include="Model\Notification.cs" />
     <Compile Include="Model\useless.cs" />
     <Compile Include="Model\MainCoursesModel.cs" />
     <Compile Include="Model\MainWeekModel.cs" />
@@ -193,6 +196,7 @@
     <Compile Include="Model\UniversityModel.cs" />
     <Compile Include="Model\UserAndTeacherDTO.cs" />
     <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\ViewEnrollmentsDTO.cs" />
     <Compile Include="Model\WeekModel.cs" />
     <Compile Include="Program.cs" />
     <!-- <Compile Include="javaClass.cs" /> -->
@@ -216,6 +220,7 @@
       <DependentUpon>Registerform.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentSide\StudentAvailableCourseWeek.cs" />
+    <Compile Include="StudentSide\studentdashBoard.cs" />
     <Compile Include="StudentSide\StudentEnrolledCourseWeek.cs" />
     <Compile Include="StudentSide\Dashboard.cs">
       <SubType>Form</SubType>
@@ -230,13 +235,19 @@
     <Compile Include="StudentSide\SolveProblem.Designer.cs">
       <DependentUpon>SolveProblem.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherSide\DashboardClass.cs" />
+    <Compile Include="TeacherSide\TeacherViewProblem.cs" />
+    <Compile Include="TeacherSide\ViewEnrollments.cs" />
     <EmbeddedResource Include="authenticationCheck.resx">
       <DependentUpon>authenticationCheck.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="StudentSide\StudentAvailableCourse.cs" />
     <Compile Include="StudentSide\StudentMyCourse.cs" />
+    <Compile Include="StudentSide\StudentNotification.cs" />
     <Compile Include="TeacherSide\MenuStripCourse.cs" />
     <Compile Include="TeacherSide\SuperAdminCourseContent.cs" />
+    <Compile Include="TeacherSide\TeacherAddWeek.cs" />
+    <Compile Include="TeacherSide\TeacherAddWeekContent.cs" />
     <Compile Include="TeacherSide\TeacherCourseContent.cs" />
     <Compile Include="TeacherSide\TeacherCreateCourseOffering.cs" />
     <Compile Include="TeacherSide\TeacherCourseWeek.cs" />
@@ -296,6 +307,7 @@
   <ItemGroup>
     <Content Include="image.png" />
     <Content Include="labimage.png" />
+    <None Include="Resources\add.png" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\OOP.png" />
   </ItemGroup>

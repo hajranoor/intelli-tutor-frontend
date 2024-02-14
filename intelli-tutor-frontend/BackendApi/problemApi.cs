@@ -4,14 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace intelli_tutor_frontend.BackendApi
 {
     internal class ProblemApi
     {
-        public async Task<int> InsertProblemData(ProblemModel problemModel)
+        public async Task<int> insertProblemData(ProblemModel problemModel)
         {
             using (var client = new HttpClient())
             {
@@ -47,6 +49,30 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
             return problem;
+        }
+
+        public async Task<int> getProblemId(int content_id)
+        {
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync($"http://localhost:7008/Problem/content_id1?content_id1=" + content_id.ToString()))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    var responseData = JsonConvert.DeserializeAnonymousType(apiResponse, new { Id = 0 });
+                    return responseData.Id;
+                }
+            }
+        }
+
+        public async Task deleteProblemById(int problem_id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync($"http://localhost:7008/Problem/{problem_id}"))
+                {
+                    //return response.IsSuccessStatusCode;
+                }
+            }
         }
     }
 }

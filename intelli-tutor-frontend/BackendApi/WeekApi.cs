@@ -63,5 +63,15 @@ namespace intelli_tutor_frontend.BackendApi
             }
             return list;
         }
+        public async Task deleteWeekByWeekId(int week_id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync($"http://localhost:7008/Week/deleteByWeekId{week_id}"))
+                {
+                    //return response.IsSuccessStatusCode;
+                }
+            }
+        }
     }
 }

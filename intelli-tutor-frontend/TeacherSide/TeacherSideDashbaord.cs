@@ -43,19 +43,22 @@ namespace intelli_tutor_frontend.TeacherSide
 
         private void TeacherSideDashbaord_Load(object sender, EventArgs e)
         {
-            dashboardToolStripMenuItem.Enabled = true;
-            List<string> enrolledCourseNames = new List<string>();
+            flowLayoutPanel2.Controls.Clear();
+            DashboardClass dashboardClass = new DashboardClass();
+            dashboardClass.ShowDashbooard(flowLayoutPanel2, formName);
+            //dashboardToolStripMenuItem.Enabled = true;
+            //List<string> enrolledCourseNames = new List<string>();
 
-            // Add course names to the list
-            enrolledCourseNames.Add("Course 1");
-            enrolledCourseNames.Add("Course 2");
-            enrolledCourseNames.Add("Course 3");
-            enrolledCourseNames.Add("Course 4");
+            //// Add course names to the list
+            //enrolledCourseNames.Add("Course 1");
+            //enrolledCourseNames.Add("Course 2");
+            //enrolledCourseNames.Add("Course 3");
+            //enrolledCourseNames.Add("Course 4");
 
-            List<int> attendancePercentages = new List<int> { 95, 80, 60, 40 };
-            int numberOfCoursesEnrolled = enrolledCourseNames.Count;
+            //List<int> attendancePercentages = new List<int> { 95, 80, 60, 40 };
+            //int numberOfCoursesEnrolled = enrolledCourseNames.Count;
 
-            showdata(numberOfCoursesEnrolled, enrolledCourseNames, attendancePercentages);
+            //showdata(numberOfCoursesEnrolled, enrolledCourseNames, attendancePercentages);
         }
         private void availableCoursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -73,20 +76,6 @@ namespace intelli_tutor_frontend.TeacherSide
 
         }
 
-        private void courseOfferingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void courseContenttoolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
-            flowLayoutPanel2.Controls.Clear();
-            formName.Text = "Course Content";
-            TeacherCourseContent courseContent = new TeacherCourseContent();
-            courseContent.CourseContentShow(1, flowLayoutPanel2);
-        }
-
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -101,6 +90,16 @@ namespace intelli_tutor_frontend.TeacherSide
             clickedItem.BackColor = Color.DarkSlateBlue;   
 
             lastClickedItem = clickedItem;
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            DashboardClass dashboardClass = new DashboardClass();
+            dashboardClass.ShowDashbooard(flowLayoutPanel2, formName);
+            //this.Hide();
+            //TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
+            //teacherSideDashbaord.Show();
         }
         private bool courseNamesVisible = false; // Initialize as hidden
 
@@ -213,5 +212,7 @@ namespace intelli_tutor_frontend.TeacherSide
             flowLayoutPanel2.Controls.Add(outerPanel);
             flowLayoutPanel2.Controls.Add(Numberofstdpanel);
         }
+
+       
     }
 }

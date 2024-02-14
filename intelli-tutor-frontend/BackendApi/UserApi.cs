@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
+using static Google.Apis.Requests.BatchRequest;
 
 namespace intelli_tutor_frontend.BackendApi
 {
@@ -53,7 +54,7 @@ namespace intelli_tutor_frontend.BackendApi
             }
 
         }
-        public async void DeleteUserById(int userId)
+        public async Task DeleteUserById(int userId)
         {
             using (var httpClient = new HttpClient())
             {
@@ -65,9 +66,9 @@ namespace intelli_tutor_frontend.BackendApi
         }
 
 
-        public async Task<string> checkUserExists(Model.UserModel u)
+        public async Task<UserModel> checkUserExists(Model.UserModel u)
         {
-            string Response;
+            UserModel user; ;
 
             Console.WriteLine(u);
             using (var client = new HttpClient())
@@ -76,13 +77,13 @@ namespace intelli_tutor_frontend.BackendApi
 
                 using (var response = await client.GetAsync(apiUrl))
                 {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
+                        string apiResponse = await response.Content.ReadAsStringAsync();
 
-                    Response = JsonConvert.DeserializeObject<string>(apiResponse);
-                    Console.WriteLine(Response);
+                        user = JsonConvert.DeserializeObject<UserModel>(apiResponse);
+                    
                 }
             }
-            return Response;
+            return user;
         }
     }
 }

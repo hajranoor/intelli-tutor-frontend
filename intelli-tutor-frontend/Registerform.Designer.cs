@@ -50,6 +50,8 @@
             this.designationComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.StudentInfo = new System.Windows.Forms.Panel();
+            this.regNo = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.universityComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.sectionComboBox = new System.Windows.Forms.ComboBox();
@@ -57,8 +59,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.registerBtn = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.regNo = new System.Windows.Forms.TextBox();
+            this.accountExists = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BasicInfo.SuspendLayout();
@@ -384,6 +385,33 @@
             this.StudentInfo.Size = new System.Drawing.Size(800, 202);
             this.StudentInfo.TabIndex = 19;
             // 
+            // regNo
+            // 
+            this.regNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.regNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regNo.Location = new System.Drawing.Point(205, 162);
+            this.regNo.Margin = new System.Windows.Forms.Padding(4);
+            this.regNo.Name = "regNo";
+            this.regNo.Size = new System.Drawing.Size(524, 37);
+            this.regNo.TabIndex = 18;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(28)))), ((int)(((byte)(79)))));
+            this.label14.Location = new System.Drawing.Point(44, 162);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(161, 27);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Registration No";
+            // 
             // universityComboBox
             // 
             this.universityComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -494,38 +522,22 @@
             this.registerBtn.UseVisualStyleBackColor = false;
             this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
-            // label14
+            // accountExists
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(28)))), ((int)(((byte)(79)))));
-            this.label14.Location = new System.Drawing.Point(44, 162);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(161, 27);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Registration No";
-            // 
-            // regNo
-            // 
-            this.regNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.regNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regNo.Location = new System.Drawing.Point(205, 162);
-            this.regNo.Margin = new System.Windows.Forms.Padding(4);
-            this.regNo.Name = "regNo";
-            this.regNo.Size = new System.Drawing.Size(524, 37);
-            this.regNo.TabIndex = 18;
+            this.accountExists.AutoSize = true;
+            this.accountExists.Location = new System.Drawing.Point(584, 580);
+            this.accountExists.Name = "accountExists";
+            this.accountExists.Size = new System.Drawing.Size(144, 16);
+            this.accountExists.TabIndex = 21;
+            this.accountExists.Text = "Alreagy have account?";
+            this.accountExists.Click += new System.EventHandler(this.accountExists_Click);
             // 
             // Registerform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 625);
+            this.Controls.Add(this.accountExists);
             this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.Teacher_Role);
             this.Controls.Add(this.label8);
@@ -585,5 +597,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox regNo;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label accountExists;
     }
 }

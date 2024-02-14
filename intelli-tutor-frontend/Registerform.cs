@@ -1,5 +1,7 @@
 ﻿using intelli_tutor_frontend.BackendApi;
 using intelli_tutor_frontend.Model;
+using intelli_tutor_frontend.StudentSide;
+using intelli_tutor_frontend.TeacherSide;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,7 +85,6 @@ namespace intelli_tutor_frontend
                     {
                         if (CheckValidations())
                         {
-                            
                             userList = await userApi.checkUserEmailExists(email.Text);
                             if (userList.Count == 0)
                             {
@@ -102,10 +103,14 @@ namespace intelli_tutor_frontend
                                     t.qualification = qualification.Text;
                                     t.designation = designationComboBox.Text;
                                     MessageBox.Show(await teacherApi.insertTeacherData(t));
+                                    this.Hide();
+
+                                    TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
+                                    teacherSideDashbaord.Show();
                                 }
                                 else
                                 {
-                                    userApi.DeleteUserById(newUserId);
+                                    await userApi.DeleteUserById(newUserId);
                                     MessageBox.Show("Error");
                                 }
 
@@ -139,6 +144,7 @@ namespace intelli_tutor_frontend
                                 u.google_verification = true;
                                 u.user_role = roleComboBox.Text;
                                 int newUserId = await userApi.insertUser(u);
+                                MessageBox.Show(newUserId.ToString());
                                 if (newUserId != -1)
                                 {
                                     StudentModel s = new StudentModel();
@@ -149,10 +155,14 @@ namespace intelli_tutor_frontend
                                     s.university_id = await universityApi.getUniversityId(universityComboBox.Text);
                                     
                                     MessageBox.Show(await studentApi.insertStudentData(s));
+                                    this.Hide();
+
+                                    Dashboard dashboard = new Dashboard();
+                                    dashboard.Show();
                                 }
                                 else
                                 {
-                                    userApi.DeleteUserById(newUserId);
+                                    await userApi.DeleteUserById(newUserId);
                                     MessageBox.Show("Error");
                                 }
 
@@ -179,6 +189,13 @@ namespace intelli_tutor_frontend
         private void Registerform_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void accountExists_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Loginform loginform = new Loginform();
+            loginform.Show();
         }
     }
 }
