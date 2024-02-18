@@ -524,10 +524,10 @@
             // 
             // accountExists
             // 
-            this.accountExists.AutoSize = true;
-            this.accountExists.Location = new System.Drawing.Point(584, 580);
+            this.accountExists.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.accountExists.Location = new System.Drawing.Point(472, 590);
             this.accountExists.Name = "accountExists";
-            this.accountExists.Size = new System.Drawing.Size(144, 16);
+            this.accountExists.Size = new System.Drawing.Size(227, 16);
             this.accountExists.TabIndex = 21;
             this.accountExists.Text = "Alreagy have account?";
             this.accountExists.Click += new System.EventHandler(this.accountExists_Click);

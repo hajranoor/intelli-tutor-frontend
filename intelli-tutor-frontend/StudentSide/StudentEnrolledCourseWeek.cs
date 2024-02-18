@@ -273,7 +273,7 @@ namespace intelli_tutor_frontend.StudentSide
                     enrollButton.FlatStyle = FlatStyle.Flat;
 
                     Label titleLabel = new Label();
-                    titleLabel.Text = "Week " + weekData.week_sequence.ToString();
+                    titleLabel.Text = "Week " + counter.ToString();
                     titleLabel.Dock = DockStyle.Fill;
                     titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                     titleLabel.Font = new Font("Segoe UI Semibold", 16F);

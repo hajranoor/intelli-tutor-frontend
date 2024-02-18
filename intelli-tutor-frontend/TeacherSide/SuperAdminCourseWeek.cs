@@ -18,7 +18,7 @@ namespace intelli_tutor_frontend.TeacherSide
         public async Task CourseWeekShow(MainCoursesModel myCourseData, FlowLayoutPanel flowLayoutPanel1, Label formName)
         {
             mainWeekList = await mainWeekApi.getAllMainWeekData(myCourseData.course_id);
-            formName.Text = "Available Course Description";
+            formName.Text = "Course Week";
            
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel1.AutoScroll = false;

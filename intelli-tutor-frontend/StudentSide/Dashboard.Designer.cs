@@ -46,6 +46,8 @@ namespace intelli_tutor_frontend.StudentSide
             this.currentUser = new System.Windows.Forms.Label();
             this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -102,7 +104,8 @@ namespace intelli_tutor_frontend.StudentSide
             this.availableCoursesToolStripMenuItem,
             this.myCoursesToolStripMenuItem,
             this.hekkoToolStripMenuItem,
-            this.notificationToolStripMenuItem1});
+            this.notificationToolStripMenuItem1,
+            this.logoutToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 152);
             this.menuStrip1.Name = "menuStrip1";
@@ -114,28 +117,28 @@ namespace intelli_tutor_frontend.StudentSide
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.dashboardToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(164, 41);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // availableCoursesToolStripMenuItem
             // 
-            this.availableCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.availableCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.availableCoursesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.availableCoursesToolStripMenuItem.Name = "availableCoursesToolStripMenuItem";
-            this.availableCoursesToolStripMenuItem.Size = new System.Drawing.Size(272, 45);
+            this.availableCoursesToolStripMenuItem.Size = new System.Drawing.Size(245, 41);
             this.availableCoursesToolStripMenuItem.Text = "Available Courses";
             this.availableCoursesToolStripMenuItem.Click += new System.EventHandler(this.availableCoursesToolStripMenuItem_Click);
             // 
             // myCoursesToolStripMenuItem
             // 
-            this.myCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.myCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.myCoursesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.myCoursesToolStripMenuItem.Name = "myCoursesToolStripMenuItem";
-            this.myCoursesToolStripMenuItem.Size = new System.Drawing.Size(191, 45);
+            this.myCoursesToolStripMenuItem.Size = new System.Drawing.Size(174, 41);
             this.myCoursesToolStripMenuItem.Text = "My Courses";
             this.myCoursesToolStripMenuItem.Click += new System.EventHandler(this.myCoursesToolStripMenuItem_Click);
             // 
@@ -146,10 +149,10 @@ namespace intelli_tutor_frontend.StudentSide
             // 
             // notificationToolStripMenuItem1
             // 
-            this.notificationToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.notificationToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.notificationToolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.notificationToolStripMenuItem1.Name = "notificationToolStripMenuItem1";
-            this.notificationToolStripMenuItem1.Size = new System.Drawing.Size(208, 45);
+            this.notificationToolStripMenuItem1.Size = new System.Drawing.Size(189, 41);
             this.notificationToolStripMenuItem1.Text = "Notifications";
             this.notificationToolStripMenuItem1.Click += new System.EventHandler(this.notificationToolStripMenuItem1_Click);
             // 
@@ -249,6 +252,20 @@ namespace intelli_tutor_frontend.StudentSide
             this.flowLayoutPanel1.TabIndex = 7;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
+            this.logoutToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(129, 41);
+            this.logoutToolStripMenuItem.Text = "Log Out";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,5 +315,7 @@ namespace intelli_tutor_frontend.StudentSide
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox notificationIcon;
         private System.Windows.Forms.ToolStripMenuItem notificationToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

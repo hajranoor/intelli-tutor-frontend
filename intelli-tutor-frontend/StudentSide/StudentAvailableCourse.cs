@@ -15,10 +15,12 @@ namespace intelli_tutor_frontend.StudentSide
 {
     internal class StudentAvailableCourses
     {
+        CurrentUser currentLoginUser = CurrentUser.Instance;
+
         CourseOfferingApi courseOfferingApi = new CourseOfferingApi();
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
 
-        List<MainCourseAndCourseOfferingAndTeacherDTO> availableCoursesList;
+        List<MainCourseAndCourseOfferingDTO> availableCoursesList;
 
         public async void availableCoursesShow(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
@@ -43,7 +45,7 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
                 cardPanel.Width = 480;
                 cardPanel.Height = 400;
-                cardPanel.Margin = new Padding(20, 20, 20, 20);
+                cardPanel.Margin = new Padding(5, 20, 5, 20);
                 cardPanel.BackColor = Color.Lavender;
                 cardPanel.AutoScroll = true;
 
@@ -59,18 +61,18 @@ namespace intelli_tutor_frontend.StudentSide
                 cardPanel.Controls.Add(pictureBox, 0, 0);
 
                 Label titleLabel = new Label();
-                titleLabel.Text = courseData.course_name;
+                titleLabel.Text = courseData.course_code + " " + courseData.course_name;
                 titleLabel.Dock = DockStyle.Fill;
                 titleLabel.TextAlign = ContentAlignment.MiddleCenter;
-                titleLabel.Font = new Font("Segoe UI Semibold", 16F);
+                titleLabel.Font = new Font("Segoe UI Semibold", 13F);
                 titleLabel.Height = 60;
                 cardPanel.Controls.Add(titleLabel, 0, 1);
 
                 Label instructorLabel = new Label();
-                instructorLabel.Text = courseData.semester + (courseData.offering_year).ToString();
+                instructorLabel.Text = courseData.username + "\n" + courseData.semester + " "+ (courseData.offering_year).ToString();
                 instructorLabel.Dock = DockStyle.Fill;
                 instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
-                instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+                instructorLabel.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
                 instructorLabel.Height = 60;
 
                 cardPanel.Controls.Add(instructorLabel, 0, 2);
@@ -94,7 +96,7 @@ namespace intelli_tutor_frontend.StudentSide
                 enrollButton.ForeColor = Color.White;
                 enrollButton.Click += async (sender, e) =>
                 {
-                    DialogResult result = MessageBox.Show("Do you want to enroll in this course" + courseData.course_name + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Do you want to enroll in the course " + courseData.course_name + " ?", "Enrollment Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
@@ -104,8 +106,9 @@ namespace intelli_tutor_frontend.StudentSide
                         {
                             EnrolledCourses enrolledCourses = new EnrolledCourses();
                             enrolledCourses.course_offering_id = courseData.course_offering_id;
-                            enrolledCourses.student_id = 2; //change it
+                            enrolledCourses.student_id = currentLoginUser.StudentModel.student_id; //change it
                             enrolledCourses.grade = "null";
+                            enrolledCourses.status = "Disapprove";
                             string message = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
                             MessageBox.Show(message, " Message ");
 

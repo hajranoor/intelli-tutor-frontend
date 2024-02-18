@@ -85,7 +85,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     cardPanel.Controls.Add(pictureBox, 0, 0);
 
                     Label titleLabel = new Label();
-                    titleLabel.Text = course.course_name.ToString();
+                    titleLabel.Text = course.course_code.ToString() + " " + course.course_name.ToString();
                     titleLabel.Dock = DockStyle.Fill;
                     titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                     titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -93,7 +93,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     cardPanel.Controls.Add(titleLabel, 0, 1);
 
                     Label instructorLabel = new Label();
-                    instructorLabel.Text = course.course_code.ToString();
+                    instructorLabel.Text = currentLoginUser.User.username + "\n" + course.semester + " " + (course.offering_year).ToString(); 
                     instructorLabel.Dock = DockStyle.Fill;
                     instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
                     instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
@@ -108,7 +108,7 @@ namespace intelli_tutor_frontend.TeacherSide
 
                     Button enrollButton = new Button();
 
-                    enrollButton.Text = "View Details";
+                    enrollButton.Text = "View";
                     enrollButton.Dock = DockStyle.Fill;
                     enrollButton.Width = 70;
                     enrollButton.TextAlign = ContentAlignment.MiddleCenter;

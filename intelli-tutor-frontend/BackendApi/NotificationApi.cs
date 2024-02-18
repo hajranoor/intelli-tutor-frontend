@@ -38,5 +38,24 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
         }
+
+        public async Task<bool> insertNotification(Notification notification)
+        {
+            using (var client = new HttpClient())
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(notification), Encoding.UTF8, "application/json");
+
+                using (var response = await client.PostAsync("http://localhost:7008/Notification", content))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    
+                }
+            }
+            return false;
+        }
     }
 }

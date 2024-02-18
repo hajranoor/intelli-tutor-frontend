@@ -35,6 +35,7 @@
             this.availableCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myCourseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hekkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.accountIcon = new System.Windows.Forms.PictureBox();
             this.formName = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.notificationIcon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -90,7 +90,7 @@
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,29 +111,29 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.dashboardToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(164, 41);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // availableCoursesToolStripMenuItem
             // 
-            this.availableCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.availableCoursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.availableCoursesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.availableCoursesToolStripMenuItem.Name = "availableCoursesToolStripMenuItem";
-            this.availableCoursesToolStripMenuItem.Size = new System.Drawing.Size(272, 45);
+            this.availableCoursesToolStripMenuItem.Size = new System.Drawing.Size(245, 41);
             this.availableCoursesToolStripMenuItem.Text = "Available Courses";
             this.availableCoursesToolStripMenuItem.Click += new System.EventHandler(this.availableCoursesToolStripMenuItem_Click);
             // 
             // myCourseToolStripMenuItem1
             // 
-            this.myCourseToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.myCourseToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             this.myCourseToolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.myCourseToolStripMenuItem1.Name = "myCourseToolStripMenuItem1";
-            this.myCourseToolStripMenuItem1.Size = new System.Drawing.Size(191, 45);
+            this.myCourseToolStripMenuItem1.Size = new System.Drawing.Size(174, 41);
             this.myCourseToolStripMenuItem1.Text = "My Courses";
             this.myCourseToolStripMenuItem1.Click += new System.EventHandler(this.myCourseToolStripMenuItem1_Click);
             // 
@@ -141,6 +141,15 @@
             // 
             this.hekkoToolStripMenuItem.Name = "hekkoToolStripMenuItem";
             this.hekkoToolStripMenuItem.Size = new System.Drawing.Size(14, 4);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
+            this.logoutToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(129, 41);
+            this.logoutToolStripMenuItem.Text = "Log Out";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -235,15 +244,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(943, 643);
             this.flowLayoutPanel1.TabIndex = 7;
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
-            this.logoutToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(143, 45);
-            this.logoutToolStripMenuItem.Text = "Log Out";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // TeacherSideDashbaord
             // 

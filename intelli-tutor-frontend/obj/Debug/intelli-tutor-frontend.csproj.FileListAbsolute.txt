@@ -121,7 +121,6 @@ D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\inte
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.exe
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.pdb
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\FontAwesome.Sharp.dll
-D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.csproj.CopyComplete
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.dll
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Laiba\Documents\GitHub\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\intelli-tutor-frontend.exe.config
@@ -842,3 +841,4 @@ D:\FYP\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-
 D:\FYP\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-tutor-frontend.pdb
 D:\FYP\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.chartDemo.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.chartDemo.resources
+D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-.531CA781.Up2Date

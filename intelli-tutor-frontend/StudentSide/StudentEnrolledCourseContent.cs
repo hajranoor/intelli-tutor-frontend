@@ -270,7 +270,7 @@ namespace intelli_tutor_frontend.StudentSide
                     buttonPanel.ColumnCount = 2;
 
                     Button viewButton = new Button();
-                    viewButton.Text = "View";
+                    viewButton.Text = "Solve";
                     viewButton.TextAlign = ContentAlignment.MiddleCenter;
                     viewButton.Height = 60;
                     viewButton.Width = 100;

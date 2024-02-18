@@ -13,6 +13,7 @@ namespace intelli_tutor_frontend.StudentSide
 {
     internal class StudentMyCourse
     {
+        CurrentUser currentLoginUser = CurrentUser.Instance;
         EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
         WeekApi weekApi = new WeekApi();
         List<WeekModel> weeksList;
@@ -21,7 +22,7 @@ namespace intelli_tutor_frontend.StudentSide
         public async void StudentMyCourseShow(FlowLayoutPanel flowLayoutPanel, Label formName)
         {
             formName.Text = "My Courses";
-            enrolledCourseList = await enrolledCourseApi.getAllEnrolledCourseData(2);
+            enrolledCourseList = await enrolledCourseApi.getAllEnrolledCourseData(currentLoginUser.StudentModel.student_id);
 
             if(enrolledCourseList.Count == 0)
             {
@@ -73,18 +74,18 @@ namespace intelli_tutor_frontend.StudentSide
                     cardPanel.Controls.Add(pictureBox, 0, 0);
 
                     Label titleLabel = new Label();
-                    titleLabel.Text = enrolledCourse.course_code;
+                    titleLabel.Text = enrolledCourse.course_code + " " + enrolledCourse.course_name;
                     titleLabel.Dock = DockStyle.Fill;
                     titleLabel.TextAlign = ContentAlignment.MiddleCenter;
-                    titleLabel.Font = new Font("Segoe UI Semibold", 16F);
+                    titleLabel.Font = new Font("Segoe UI Semibold", 13F);
                     titleLabel.Height = 60;
                     cardPanel.Controls.Add(titleLabel, 0, 1);
 
                     Label instructorLabel = new Label();
-                    instructorLabel.Text = enrolledCourse.teacher_name;
+                    instructorLabel.Text = enrolledCourse.teacher_name + "\n"+ enrolledCourse.semester + " " + enrolledCourse.offering_year.ToString();
                     instructorLabel.Dock = DockStyle.Fill;
                     instructorLabel.TextAlign = ContentAlignment.MiddleCenter;
-                    instructorLabel.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+                    instructorLabel.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
                     instructorLabel.Height = 60;
 
 

@@ -21,36 +21,26 @@ namespace intelli_tutor_frontend.StudentSide
         List<UserAndTeacherDTO> teacherInfo;
         List<WeekModel> weeksList;
 
-        public async void AvailableCourseWeekShow(MainCourseAndCourseOfferingAndTeacherDTO myCourseData, FlowLayoutPanel flowLayoutPanel1, Label formName)
+        public async void AvailableCourseWeekShow(MainCourseAndCourseOfferingDTO myCourseData, FlowLayoutPanel flowLayoutPanel, Label formName)
         {
-            flowLayoutPanel1.Controls.Clear();
-            formName.Text = "Course Description";
-            teacherInfo = await teacherApi.getTeacher(myCourseData.teacher_id);
-            weeksList = await weekApi.getAllMainWeekDataByCourseOfferingId(myCourseData.course_offering_id);
+            formName.Text = "Course Week";
+            weeksList = await weekApi.getAllWeekData(myCourseData.course_offering_id);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
-            flowLayoutPanel1.AutoScroll = false;
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel.AutoScroll = false;
+            flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.BackColor = Color.Lavender;
-            mainPanel.Width = flowLayoutPanel1.Width;
-            mainPanel.Height = flowLayoutPanel1.Height;
+            mainPanel.Width = flowLayoutPanel.Width;
+            mainPanel.Height = flowLayoutPanel.Height;
             mainPanel.AutoScroll = true;
 
-            //new added lines
-            mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50)); // Adjust the percentage as needed
-            mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-            mainPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None; // Remove cell borders
 
+            flowLayoutPanel.Controls.Add(mainPanel);
 
-
-
-
-            flowLayoutPanel1.Controls.Add(mainPanel);
-
-            flowLayoutPanel1.SizeChanged += (sender, e) =>
+            flowLayoutPanel.SizeChanged += (sender, e) =>
             {
-                mainPanel.Size = new Size(flowLayoutPanel1.Width, flowLayoutPanel1.Height);
-                flowLayoutPanel1.Margin = new Padding(3, 3, 3, 3);
+                mainPanel.Size = new Size(flowLayoutPanel.Width, flowLayoutPanel.Height);
+                flowLayoutPanel.Margin = new Padding(3, 3, 3, 3);
             };
 
 
@@ -66,31 +56,6 @@ namespace intelli_tutor_frontend.StudentSide
             courseTitle.Padding = new Padding(0, 10, 0, 10);
             mainPanel.Controls.Add(courseTitle, 0, 1);
 
-            Panel tabPanel = new Panel();
-            tabPanel.Dock = DockStyle.Fill;
-
-            
-            TabControl tabControl = new TabControl();
-            tabControl.Dock = DockStyle.Fill;
-
-            TabPage descriptionTabPage = new TabPage("Course Description");
-            TabPage otherTabPage = new TabPage("Course Details");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             NoCaretRichTextBox CourseDescription = new NoCaretRichTextBox();
             CourseDescription.Text = myCourseData.description;
             CourseDescription.Font = new Font("Segoe UI", 14F);
@@ -100,146 +65,164 @@ namespace intelli_tutor_frontend.StudentSide
             CourseDescription.BackColor = Color.Lavender;
             CourseDescription.BorderStyle = BorderStyle.None;
 
-            TableLayoutPanel otherInfoPanel = new TableLayoutPanel();
-            otherInfoPanel.Dock = DockStyle.Fill;
-            otherInfoPanel.AutoSize = true;
-            otherInfoPanel.AutoScroll = true;
-            otherInfoPanel.ColumnCount = 2; // You can adjust the number of columns as needed
-
-            otherInfoPanel.Controls.Add(new Label() { Text = "Course Capacity: ", Font = new Font("Segoe UI", 12, FontStyle.Bold), AutoSize = true }, 0, 0);
-            otherInfoPanel.Controls.Add(new Label() { Text = myCourseData.capacity.ToString(), Font = new Font("Segoe UI", 12), AutoSize = true }, 1, 0);
-
-            otherInfoPanel.Controls.Add(new Label() { Text = "Offering Year: ", Font = new Font("Segoe UI", 12, FontStyle.Bold), AutoSize = true }, 0, 1);
-            otherInfoPanel.Controls.Add(new Label() { Text = myCourseData.offering_year.ToString(), Font = new Font("Segoe UI", 12), AutoSize = true }, 1, 1);
-
-            otherInfoPanel.Controls.Add(new Label() { Text = "Semester: ", Font = new Font("Segoe UI", 12, FontStyle.Bold), AutoSize = true }, 0, 2);
-            otherInfoPanel.Controls.Add(new Label() { Text = myCourseData.semester.ToString(), Font = new Font("Segoe UI", 12), AutoSize = true }, 1, 2);
-
-            //otherInfoPanel.Controls.Add(new Label() { Text = "Instructor's Email: ", Font = new Font("Segoe UI", 12, FontStyle.Bold), AutoSize = true }, 0, 3);
-            //otherInfoPanel.Controls.Add(new Label() { Text = myCourseData.email.ToString(), Font = new Font("Segoe UI", 12), AutoSize = true }, 1, 3);
-
-
-
-
-
-            Label otherContentLabel = new Label();
-            otherContentLabel.Text = "Additional information for the other tab.";
-            otherContentLabel.Font = new Font("Segoe UI", 12F);
-            otherContentLabel.Dock = DockStyle.Fill;
-            otherContentLabel.TextAlign = ContentAlignment.MiddleCenter;
-
-            descriptionTabPage.Controls.Add(CourseDescription);
-            otherTabPage.Controls.Add(otherInfoPanel);
-
-            tabControl.TabPages.Add(descriptionTabPage);
-            tabControl.TabPages.Add(otherTabPage);
-
-            // Add DrawItem event handler to customize tab appearance
-            tabControl.DrawItem += (sender, e) =>
-            {
-                Graphics g = e.Graphics;
-                Brush _textBrush;
-                Font tabFont = new Font("Segoe UI", 12F, FontStyle.Bold); // Set custom font for tab text
-
-                // Get the current tab
-                TabPage _tabPage = tabControl.TabPages[e.Index];
-
-                // Get the bounds of the tab
-                Rectangle _tabBounds = tabControl.GetTabRect(e.Index);
-
-                int padding = 10;
-                RectangleF textBounds = new RectangleF(_tabBounds.X + padding, _tabBounds.Y, _tabBounds.Width - 2 * padding, _tabBounds.Height);
-
-                
-
-
-
-                // Set the text color based on tab selection
-                if (e.State == DrawItemState.Selected)
-                {
-                    _textBrush = new SolidBrush(Color.White); // Set text color for selected tab
-                    g.FillRectangle(Brushes.DarkSlateBlue, e.Bounds); // Set background color for selected tab
-                    System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-                    int radius = 10; // Set the radius for rounded corners
-                    int x = e.Bounds.X;
-                    int y = e.Bounds.Y;
-                    int width = e.Bounds.Width;
-                    int height = e.Bounds.Height;
-                    path.AddArc(x, y, radius, radius, 180, 90);
-                    path.AddArc(x + width - radius, y, radius, radius, 270, 90);
-                    path.AddArc(x + width - radius, y + height - radius, radius, radius, 0, 90);
-                    path.AddArc(x, y + height - radius, radius, radius, 90, 90);
-                    path.CloseFigure();
-                    e.Graphics.FillPath(Brushes.DarkSlateBlue, path);
-
-                }
-                else
-                {
-                    _textBrush = new SolidBrush(Color.Black); // Set text color for unselected tab
-                    g.FillRectangle(Brushes.LightGray, e.Bounds); // Set background color for unselected tab
-                    e.Graphics.FillRectangle(Brushes.LightGray, e.Bounds);
-                    System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-                    int radius = 10; // Set the radius for rounded corners
-                    int x = e.Bounds.X;
-                    int y = e.Bounds.Y;
-                    int width = e.Bounds.Width;
-                    int height = e.Bounds.Height;
-                    path.AddArc(x, y, radius, radius, 180, 90);
-                    path.AddArc(x + width - radius, y, radius, radius, 270, 90);
-                    path.AddLine(x + width, y + radius, x + width, y + height - radius);
-                    path.AddArc(x + width - radius, y + height - radius, radius, radius, 0, 90);
-                    path.AddArc(x, y + height - radius, radius, radius, 90, 90);
-                    path.CloseFigure();
-                    e.Graphics.FillPath(Brushes.LightGray, path);
-
-                }
-
-                // Draw the text on the tab
-                StringFormat _stringFlags = new StringFormat();
-                _stringFlags.Alignment = StringAlignment.Center;
-                _stringFlags.LineAlignment = StringAlignment.Center;
-                g.DrawString(_tabPage.Text, tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
-            };
-
-            // Set the DrawMode of the TabControl to OwnerDrawFixed to enable custom drawing
-            tabControl.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tabControl.SizeMode = TabSizeMode.Fixed;
-            tabControl.ItemSize = new Size(tabControl.Width / tabControl.TabCount, 50);
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            tabPanel.Controls.Add(tabControl);
-
-
-
-
             Panel descriptionPanel = new Panel();
             descriptionPanel.Margin = new Padding(10, 10, 10, 10);
             descriptionPanel.Dock = DockStyle.Fill;
             descriptionPanel.AutoScroll = true;
             descriptionPanel.BackColor = Color.Lavender;
             descriptionPanel.Height = 500;
-            descriptionPanel.Controls.Add(tabPanel);
+            descriptionPanel.Controls.Add(CourseDescription);
             descriptionPanel.BackColor = Color.Lavender;
             descriptionPanel.Padding = new Padding(10, 10, 10, 10);
             descriptionPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 
-            mainPanel.Controls.Add(descriptionPanel, 0, 2);  //was 0,2
+            mainPanel.Controls.Add(descriptionPanel, 0, 2);
+
+
+
+
+
+
+            Panel responsivePanel = new Panel();
+            responsivePanel.Dock = DockStyle.Fill;
+            responsivePanel.Height = 500;
+            responsivePanel.Width = 600;
+            responsivePanel.BackColor = System.Drawing.Color.DarkSlateBlue;
+            responsivePanel.BorderStyle = BorderStyle.FixedSingle;
+            responsivePanel.Padding = new Padding(2, 2, 2, 19); // Add padding for content
+
+            TableLayoutPanel tablePanel = new TableLayoutPanel();
+            tablePanel.Dock = DockStyle.Fill;
+            tablePanel.Height = 456;
+            tablePanel.Width = 500;
+            tablePanel.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            tablePanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tablePanel.RowCount = 5;
+            tablePanel.ColumnCount = 2;
+            tablePanel.Font = new Font("Segoe UI", 10F);
+            for (int i = 0; i < 5; i++)
+            {
+                tablePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / 5));
+            }
+
+            tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            //----------------------
+            Label creditHourLabel = new Label();
+            creditHourLabel.Text = "Credit Hour ";
+            creditHourLabel.Font = new Font("Segoe UI", 10F);
+            creditHourLabel.Dock = DockStyle.Fill;
+            creditHourLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label creditHourData = new Label();
+            creditHourData.Text = myCourseData.credit_hour.ToString();
+            creditHourData.Font = new Font("Segoe UI", 10F);
+            creditHourData.Dock = DockStyle.Fill;
+            creditHourData.TextAlign = ContentAlignment.MiddleCenter;
+            //-----------------------
+
+            Label weeksLabel = new Label();
+            weeksLabel.Text = "No of weeks";
+            weeksLabel.Font = new Font("Segoe UI", 10F);
+            weeksLabel.Dock = DockStyle.Fill;
+            weeksLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label weeksData = new Label();
+            weeksData.Text = myCourseData.number_of_weeks.ToString();
+            weeksData.Font = new Font("Segoe UI", 10F);
+            weeksData.Dock = DockStyle.Fill;
+            weeksData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+
+            Label teacheremailLabel = new Label();
+            teacheremailLabel.Text = "Teacher Email";
+            teacheremailLabel.Font = new Font("Segoe UI", 10F);
+            teacheremailLabel.Dock = DockStyle.Fill;
+            teacheremailLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label teacheremailData = new Label();
+            teacheremailData.Text = myCourseData.teacher_email;
+            teacheremailData.Font = new Font("Segoe UI", 8F);
+            teacheremailData.Dock = DockStyle.Fill;
+            teacheremailData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+
+            Label yearLabel = new Label();
+            yearLabel.Text = "Offering Year";
+            yearLabel.Font = new Font("Segoe UI", 10F);
+            yearLabel.Dock = DockStyle.Fill;
+            yearLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label yearData = new Label();
+            yearData.Text = myCourseData.offering_year.ToString();
+            yearData.Font = new Font("Segoe UI", 10F);
+            yearData.Dock = DockStyle.Fill;
+            yearData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+
+            Label semesterLabel = new Label();
+            semesterLabel.Text = "Semester";
+            semesterLabel.Font = new Font("Segoe UI", 10F);
+            semesterLabel.Dock = DockStyle.Fill;
+            semesterLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label semesterData = new Label();
+            semesterData.Text = myCourseData.semester;
+            semesterData.Font = new Font("Segoe UI", 10F);
+            semesterData.Dock = DockStyle.Fill;
+            semesterData.TextAlign = ContentAlignment.MiddleCenter;
+            //------------------------
+            tablePanel.Controls.Add(teacheremailLabel, 0, 0);
+            tablePanel.Controls.Add(teacheremailData, 1, 0);
+
+            tablePanel.Controls.Add(weeksLabel, 0, 1);
+            tablePanel.Controls.Add(weeksData, 1, 1);
+
+            tablePanel.Controls.Add(creditHourLabel, 0, 2);
+            tablePanel.Controls.Add(creditHourData, 1, 2);
+
+            tablePanel.Controls.Add(yearLabel, 0, 3);
+            tablePanel.Controls.Add(yearData, 1, 3);
+
+            tablePanel.Controls.Add(semesterLabel, 0, 4);
+            tablePanel.Controls.Add(semesterData, 1, 4);
+
+
+            TableLayoutPanel parentTablePanel = new TableLayoutPanel();
+            parentTablePanel.Dock = DockStyle.Fill;
+            parentTablePanel.BackColor = Color.Lavender;
+            parentTablePanel.Height = 500;
+            parentTablePanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+            parentTablePanel.RowCount = 1;
+            parentTablePanel.ColumnCount = 2;
+            parentTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80));
+            parentTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+            parentTablePanel.Dock = DockStyle.Fill;
+
+            responsivePanel.Controls.Add(tablePanel);
+            parentTablePanel.Controls.Add(descriptionPanel, 0, 0);
+            parentTablePanel.Controls.Add(responsivePanel, 1, 0);
+
+            // Set Dock property for the parent table panel
+            parentTablePanel.Dock = DockStyle.Fill;
+
+            // Add the parent table panel to the form
+            ////----
+            ///
+            //
+            //
+            //
+
+
+            mainPanel.Controls.Add(parentTablePanel, 0, 2);
+
+
+
+
+
+
+
+
 
 
             TableLayoutPanel weekPanel = new TableLayoutPanel();
@@ -263,10 +246,6 @@ namespace intelli_tutor_frontend.StudentSide
                 messageLabel.Font = new Font("Segoe UI Semibold", 16F);
                 messageLabel.Height = 30;
                 messageLabel.ForeColor = Color.Black;
-
-
-
-
                 weekPanel.Controls.Add(messageLabel, 0, 0);
             }
             else
@@ -286,10 +265,9 @@ namespace intelli_tutor_frontend.StudentSide
                     cardPanel.Height = 180;
                     cardPanel.Margin = new Padding(20, 20, 20, 20);
                     cardPanel.BackColor = Color.DarkSlateBlue;
-
                     Button enrollButton = new Button();
 
-                    enrollButton.Text = "Week " + weekData.week_sequence.ToString();
+                    enrollButton.Text = "Week " + counter;
                     enrollButton.Dock = DockStyle.Fill;
                     enrollButton.Width = 70;
                     enrollButton.Height = 30;
@@ -299,15 +277,8 @@ namespace intelli_tutor_frontend.StudentSide
                     enrollButton.ForeColor = Color.White;
                     enrollButton.FlatStyle = FlatStyle.Flat;
 
-                    enrollButton.Click += async (sender, e) =>
-                    {
-
-
-
-                    };
-
                     Label titleLabel = new Label();
-                    titleLabel.Text = "Week " + counter;
+                    titleLabel.Text = "Week " + weekData.week_sequence.ToString();
                     titleLabel.Dock = DockStyle.Fill;
                     titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                     titleLabel.Font = new Font("Segoe UI Semibold", 16F);
@@ -317,6 +288,15 @@ namespace intelli_tutor_frontend.StudentSide
                     cardPanel.Controls.Add(enrollButton, 0, 1);
                     outerPanel.Controls.Add(cardPanel);
 
+                    enrollButton.Click += async (sender, e) =>
+                    {
+
+                        //flowLayoutPanel.Controls.Clear();
+
+                        //StudentEnrolledCourseContent studentEnrolledCourseContent = new StudentEnrolledCourseContent();
+                        //studentEnrolledCourseContent.StudentEnrolledCourseContentShow(weekData, flowLayoutPanel, formName);
+
+                    };
 
                     weekPanel.Controls.Add(outerPanel, counter, 0);
                 }

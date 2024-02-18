@@ -16,6 +16,9 @@ namespace intelli_tutor_frontend.TeacherSide
     {
 
         List<ViewEnrollmentsDTO> enrollmentList;
+
+        NotificationApi notificationApi = new NotificationApi();
+
         ViewEnrollmentsApi Viewenrollments = new ViewEnrollmentsApi();
 
         public ViewEnrollments() { }
@@ -72,10 +75,10 @@ namespace intelli_tutor_frontend.TeacherSide
                 contentCardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
                 contentCardPanel.AutoScroll = true;
 
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40));
                 flowLayoutPanel.SizeChanged += (sender, e) =>
                 {
 
@@ -147,10 +150,10 @@ namespace intelli_tutor_frontend.TeacherSide
                     cardPanel.Margin = new Padding(20, 10, 20, 10);
                     cardPanel.BackColor = Color.Lavender;
                     cardPanel.AutoScroll = true;
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40));
 
                     flowLayoutPanel.SizeChanged += (sender, e) =>
                     {
@@ -193,12 +196,18 @@ namespace intelli_tutor_frontend.TeacherSide
                     cardPanel.Controls.Add(sequenceLabel, 2, 0);
 
 
-                    Panel buttonPanel = new Panel();
+                    TableLayoutPanel buttonPanel = new TableLayoutPanel();
                     buttonPanel.Height = 80;
-                    buttonPanel.Margin = new Padding(0, 0, 20, 0); // Adjust margin for spacing
+                    buttonPanel.Margin = new Padding(0, 0, 0, 0); // Adjust margin for spacing
+                    buttonPanel.RowCount = 1;
+                    buttonPanel.ColumnCount = 2;
+                    buttonPanel.Width = 400;
+                    buttonPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+                    buttonPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
 
                     Button enrollButton = new Button();
                     enrollButton.Text = "Approved";
+                    enrollButton.Anchor = AnchorStyles.Left;
                     enrollButton.TextAlign = ContentAlignment.MiddleCenter;
                     enrollButton.Height = 70;
                     enrollButton.Width = 150;
@@ -226,8 +235,49 @@ namespace intelli_tutor_frontend.TeacherSide
 
                     };
 
-                    buttonPanel.Controls.Add(enrollButton);
-                    cardPanel.Controls.Add(buttonPanel, 3, 0);
+                    Button disApproveButton = new Button();
+                    disApproveButton.Text = "Disapprove";
+                    disApproveButton.Anchor = AnchorStyles.Right;
+                    disApproveButton.TextAlign = ContentAlignment.MiddleCenter;
+                    disApproveButton.Height = 70;
+                    disApproveButton.Width = 150;
+                    disApproveButton.Top = 15;
+                    disApproveButton.Padding = new Padding(5, 5, 5, 5); // Adjust padding
+                    disApproveButton.Font = new Font("Segoe UI Semibold", 12F);
+                    disApproveButton.BackColor = Color.DarkSlateBlue;
+                    disApproveButton.ForeColor = Color.White;
+                    disApproveButton.Click += async (sender, e) =>
+                    {
+                        EnrolledCourseApi enrolledCourseApi = new EnrolledCourseApi();
+                        if (await enrolledCourseApi.deleteEnrollment(item.enrollment_id))
+                        {
+                            CurrentUser currentLoginUser = CurrentUser.Instance;
+                            Notification notification = new Notification();
+                            notification.sender_id = currentLoginUser.User.user_id;
+                            notification.receiver_id = item.user_id;
+                            notification.status = "unread";
+                            notification.title = "Disapproval of Enrolment Request";
+                            notification.description = "Your enrollment request in " + item.course_code + " " + myCourse.course_name + " has been disapproved by " + currentLoginUser.User.username;
+                            if(await notificationApi.insertNotification(notification))
+                            {
+                                MessageBox.Show("Disapproved Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                await ViewEnrollmentsAsync(flowLayoutPanel, formName, myCourse);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    };
+                    buttonPanel.Controls.Add(enrollButton, 0, 0);
+                    buttonPanel.Controls.Add(disApproveButton, 1, 0);
+
+                    cardPanel.Controls.Add(buttonPanel, 3,0);
                     count++;
                     outerPanel.Controls.Add(cardPanel);
                     mainPanel.Controls.Add(outerPanel);

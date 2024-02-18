@@ -133,16 +133,15 @@ namespace intelli_tutor_frontend.TeacherSide
                 contentCardPanel.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
                 contentCardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
                 contentCardPanel.Width = contentOuterPanel.Width - 20;
-                contentCardPanel.ColumnCount = 4;
+                contentCardPanel.ColumnCount = 3;
                 contentCardPanel.Height = 100;
                 contentCardPanel.Margin = new Padding(20, 10, 20, 10);
                 contentCardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
                 contentCardPanel.AutoScroll = true;
 
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35));
+                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35));
+                contentCardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30));
                 flowLayoutPanel.SizeChanged += (sender, e) =>
                 {
 
@@ -172,15 +171,15 @@ namespace intelli_tutor_frontend.TeacherSide
 
                 contentCardPanel.Controls.Add(contentNameLabel, 1, 0);
 
-                Label contentSequenceLabel = new Label();
-                contentSequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-                contentSequenceLabel.Margin = new Padding(20, 10, 20, 10);
-                contentSequenceLabel.Text = "Sequence";
-                contentSequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
-                contentSequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
-                contentSequenceLabel.Height = 30;
-                contentSequenceLabel.Top = 15;
-                contentCardPanel.Controls.Add(contentSequenceLabel, 2, 0);
+                //Label contentSequenceLabel = new Label();
+                //contentSequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                //contentSequenceLabel.Margin = new Padding(20, 10, 20, 10);
+                //contentSequenceLabel.Text = "Sequence";
+                //contentSequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+                //contentSequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
+                //contentSequenceLabel.Height = 30;
+                //contentSequenceLabel.Top = 15;
+                //contentCardPanel.Controls.Add(contentSequenceLabel, 2, 0);
 
                 Label contentActionLabel = new Label();
                 contentActionLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
@@ -191,7 +190,7 @@ namespace intelli_tutor_frontend.TeacherSide
                 contentActionLabel.Height = 30;
                 contentActionLabel.Top = 15;
 
-                contentCardPanel.Controls.Add(contentActionLabel, 3, 0);
+                contentCardPanel.Controls.Add(contentActionLabel, 2, 0);
                 contentOuterPanel.Controls.Add(contentCardPanel);
                 mainPanel.Controls.Add(contentOuterPanel);
 
@@ -208,15 +207,14 @@ namespace intelli_tutor_frontend.TeacherSide
                     cardPanel.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
                     cardPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
                     cardPanel.Width = outerPanel.Width - 20;
-                    cardPanel.ColumnCount = 4;
+                    cardPanel.ColumnCount = 3;
                     cardPanel.Height = 100;
                     cardPanel.Margin = new Padding(20, 10, 20, 10);
                     cardPanel.BackColor = Color.Lavender;
                     cardPanel.AutoScroll = true;
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35));
+                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35));
+                    cardPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30));
 
                     flowLayoutPanel.SizeChanged += (sender, e) =>
                     {
@@ -248,15 +246,15 @@ namespace intelli_tutor_frontend.TeacherSide
 
                     cardPanel.Controls.Add(nameLabel, 1, 0);
 
-                    Label sequenceLabel = new Label();
-                    sequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-                    sequenceLabel.Margin = new Padding(20, 10, 20, 10);
-                    sequenceLabel.Text = item.sequence_number.ToString();
-                    sequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
-                    sequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
-                    sequenceLabel.Height = 30;
-                    sequenceLabel.Top = 15;
-                    cardPanel.Controls.Add(sequenceLabel, 2, 0);
+                    //Label sequenceLabel = new Label();
+                    //sequenceLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                    //sequenceLabel.Margin = new Padding(20, 10, 20, 10);
+                    //sequenceLabel.Text = item.sequence_number.ToString();
+                    //sequenceLabel.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+                    //sequenceLabel.Font = new Font("Segoe UI Semibold", 12F);
+                    //sequenceLabel.Height = 30;
+                    //sequenceLabel.Top = 15;
+                    //cardPanel.Controls.Add(sequenceLabel, 2, 0);
 
 
                     TableLayoutPanel buttonPanel = new TableLayoutPanel();
@@ -288,12 +286,13 @@ namespace intelli_tutor_frontend.TeacherSide
 
                     buttonPanel.Controls.Add(viewButton, 0, 0);
 
-                    cardPanel.Controls.Add(buttonPanel, 3, 0);
+                    cardPanel.Controls.Add(buttonPanel, 2, 0);
                     count++;
                     outerPanel.Controls.Add(cardPanel);
                     mainPanel.Controls.Add(outerPanel);
                 }
             }
+
         }
        
 

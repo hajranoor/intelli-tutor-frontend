@@ -44,7 +44,6 @@ namespace intelli_tutor_frontend
             {
                 StudentInfo.Visible = true;
                 List<string> data = await universityApi.getAllUniversity();
-                MessageBox.Show(data.Count.ToString());
                 universityComboBox.DataSource = data;
                 
             }
@@ -56,7 +55,6 @@ namespace intelli_tutor_frontend
             {
                 MessageBox.Show("Invalid email format!", "Validation Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-                //MessageBox.Show("Email is valid!", "Validation Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             if (password.Text != cPassword.Text)
             {
@@ -111,19 +109,19 @@ namespace intelli_tutor_frontend
                                 else
                                 {
                                     await userApi.DeleteUserById(newUserId);
-                                    MessageBox.Show("Error");
+                                    MessageBox.Show("Something went wrong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("Email already exists");
+                                MessageBox.Show("Email already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Fill all the fields");
+                        MessageBox.Show("Fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
@@ -163,26 +161,26 @@ namespace intelli_tutor_frontend
                                 else
                                 {
                                     await userApi.DeleteUserById(newUserId);
-                                    MessageBox.Show("Error");
+                                    MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("Email already exists");
+                                MessageBox.Show("Email already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Fill all the fields");
+                        MessageBox.Show("Fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("Fill all the fileds");
+                MessageBox.Show("Fill all the fileds", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -20,7 +20,7 @@ namespace intelli_tutor_frontend.StudentSide
         public Dashboard()
         {
             InitializeComponent();
-            loadIcons();
+            //loadIcons();
            
 
         }
@@ -318,6 +318,13 @@ namespace intelli_tutor_frontend.StudentSide
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Loginform loginform = new Loginform();
+            loginform.Show();
         }
     }
 }

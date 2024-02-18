@@ -40,7 +40,7 @@ namespace intelli_tutor_frontend.TeacherSide
             // 
             courseWeekToolStripMenuItem.BackColor = System.Drawing.Color.DarkSlateBlue;
             courseWeekToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            courseWeekToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            courseWeekToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             courseWeekToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             courseWeekToolStripMenuItem.Name = "courseWeekToolStripMenuItem";
             courseWeekToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
@@ -51,7 +51,7 @@ namespace intelli_tutor_frontend.TeacherSide
             // addWeekToolStripMenuItem
             // 
             addWeekToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            addWeekToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            addWeekToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             addWeekToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             addWeekToolStripMenuItem.Name = "addWeekToolStripMenuItem";
             addWeekToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
@@ -62,7 +62,7 @@ namespace intelli_tutor_frontend.TeacherSide
             // enrolmentToolStripMenuItem
             // 
             enrolmentToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            enrolmentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            enrolmentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             enrolmentToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             enrolmentToolStripMenuItem.Name = "enrolmentToolStripMenuItem";
             enrolmentToolStripMenuItem.Size = new System.Drawing.Size(181, 45);
@@ -73,7 +73,7 @@ namespace intelli_tutor_frontend.TeacherSide
             // backToolStripMenuItem
             // 
             backToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            backToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            backToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
             backToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             backToolStripMenuItem.Name = "backToolStripMenuItem";
             backToolStripMenuItem.Size = new System.Drawing.Size(181, 45);

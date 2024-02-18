@@ -43,7 +43,7 @@ namespace intelli_tutor_frontend.BackendApi
             bool ans;
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/courseOfferingID?courseOfferingID=" + courseOfferingID))
+                using (var response = await client.GetAsync("http://localhost:7008/CourseOffering/checkCapacity/" + courseOfferingID))
                 {
                     if (response.IsSuccessStatusCode)
                     {
@@ -73,6 +73,21 @@ namespace intelli_tutor_frontend.BackendApi
                 }
             }
             return list;
+        }
+
+        public async Task<bool> deleteEnrollment(int enrollment_id)
+        {
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.DeleteAsync("http://localhost:7008/EnrolledCourses/"+ enrollment_id))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

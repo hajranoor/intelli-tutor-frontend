@@ -300,7 +300,7 @@ namespace intelli_tutor_frontend.TeacherSide
                     //weekButton
                     //
                     Button weekButton = new Button();
-                    weekButton.Text = "Week " + weekData.week_sequence.ToString();
+                    weekButton.Text = "Week " + counter.ToString();
                     weekButton.Dock = DockStyle.Fill;
                     weekButton.Width = 70;
                     weekButton.Height = 30;

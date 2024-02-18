@@ -334,12 +334,6 @@ namespace intelli_tutor_frontend.TeacherSide
                                 this.TeacherMyCoursesContentShow(weekData, flowLayoutPanel, formName);
                             }
                         }
-                        //if (item.content_type == "Problem")
-                        //{
-                        //    SolveProblem solveProblem = new SolveProblem(item.content_id);
-                        //    solveProblem.Show();
-                        //}
-
                     };
 
                     buttonPanel.Controls.Add(viewButton, 0, 0);

@@ -45,7 +45,6 @@
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.outputBox = new System.Windows.Forms.RichTextBox();
             this.codeEditor = new ScintillaNET.Scintilla();
-            this.button1 = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barIcon)).BeginInit();
@@ -233,7 +232,7 @@
             // 
             this.resetCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resetCode.Location = new System.Drawing.Point(392, 4);
-            this.resetCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resetCode.Margin = new System.Windows.Forms.Padding(4);
             this.resetCode.Name = "resetCode";
             this.resetCode.Size = new System.Drawing.Size(108, 99);
             this.resetCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -290,24 +289,12 @@
             this.codeEditor.Text = "scintilla1";
             this.codeEditor.TextChanged += new System.EventHandler(this.codeEditor_TextChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(473, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // SolveProblem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1331, 746);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.sidePanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -348,6 +335,5 @@
         private System.Windows.Forms.ComboBox selectLanguage;
         private System.Windows.Forms.PictureBox resetCode;
         private ScintillaNET.Scintilla codeEditor;
-        private System.Windows.Forms.Button button1;
     }
 }

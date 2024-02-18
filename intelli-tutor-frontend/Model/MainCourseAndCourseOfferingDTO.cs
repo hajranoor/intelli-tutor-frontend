@@ -16,5 +16,8 @@
         public string semester { get; set; }
         public int capacity { get; set; }
         public string description { get; set; }
+        public string teacher_email { get; set; }
+        public string username { get; set; }
+
     }
 }

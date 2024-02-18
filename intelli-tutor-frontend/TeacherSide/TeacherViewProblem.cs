@@ -126,18 +126,18 @@ namespace intelli_tutor_frontend.TeacherSide
                 starterCodeContent.BorderStyle = BorderStyle.FixedSingle;
 
                 mainPanel.Controls.Add(starterCodeContent, 0, 7);
-                TableLayoutPanel buttonPanel = new TableLayoutPanel();
-                buttonPanel.Height = 65;
-                buttonPanel.Margin = new Padding(150, 0, 150, 20);
-                buttonPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80));
-                buttonPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-
+                TableLayoutPanel backButtonPanel = new TableLayoutPanel();
+                backButtonPanel.Height = 65;
+                backButtonPanel.Margin = new Padding(5, 5, 5, 5);
+                backButtonPanel.Anchor = AnchorStyles.Right;
 
                 Button backButton = new Button();
 
                 backButton.Text = "Back";
                 backButton.Dock = DockStyle.Fill;
-                backButton.Width = 70;
+                backButton.Height = 65;
+                //backButton.Anchor = AnchorStyles.Right;
+                backButton.Width = 60;
                 backButton.TextAlign = ContentAlignment.MiddleCenter;
                 backButton.Padding = new Padding(5, 15, 5, 15);
                 backButton.Font = new Font("Segoe UI Semibold", 12F);
@@ -151,8 +151,9 @@ namespace intelli_tutor_frontend.TeacherSide
 
                 };
 
-                buttonPanel.Controls.Add(backButton,1,0);
-                mainPanel.Controls.Add(buttonPanel, 0, 8);
+                backButtonPanel.Controls.Add(backButton, 0, 0);
+               
+                mainPanel.Controls.Add(backButtonPanel, 0, 8);
 
             }
             else
