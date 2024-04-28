@@ -215,7 +215,7 @@ namespace intelli_tutor_frontend.TeacherSide
                                 {
                                     if (defaultRadioButton.Checked == true)
                                     {
-                                        copyCourseData(courseOfferingId);
+                                        copyCourseData(selectedCourse.course_id, courseOfferingId);
                                     }
                                     MessageBox.Show("Course created successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     flowLayoutPanel.Controls.Clear();
@@ -256,9 +256,9 @@ namespace intelli_tutor_frontend.TeacherSide
             //---------------------------------------------------------
 
         }
-        private async void copyCourseData(int courseOfferingId)
+        private async void copyCourseData(int courseId, int courseOfferingId)
         {
-            mainWeekList = await mainWeekApi.getAllMainWeekData(1);
+            mainWeekList = await mainWeekApi.getAllMainWeekData(courseId);
             foreach (var mainWeekItem in mainWeekList)
             {
                 int insertedWeekId = await weekApi.InsertWeekData(new WeekModel
