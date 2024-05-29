@@ -259,6 +259,7 @@ namespace intelli_tutor_frontend.TeacherSide
                             notification.status = "unread";
                             notification.title = "Disapproval of Enrolment Request";
                             notification.description = "Your enrollment request in " + item.course_code + " " + myCourse.course_name + " has been disapproved by " + currentLoginUser.User.username;
+                            notification.time_stamp = DateTime.UtcNow;
                             if(await notificationApi.insertNotification(notification))
                             {
                                 MessageBox.Show("Disapproved Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

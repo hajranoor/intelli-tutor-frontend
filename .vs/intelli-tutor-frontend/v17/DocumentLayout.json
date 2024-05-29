@@ -3,6 +3,153 @@
   "WorkspaceRootPath": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|d:\\fyp\\intellitutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\analytics\\analytics.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\analytics\\analytics.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SHANZA\\Desktop\\SolveProblem.cs.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\studentapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\studentapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\questionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\questionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\weekmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\weekmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\viewenrollmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\viewenrollmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\userandteacherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\userandteacherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\useless.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\useless.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\universitymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\universitymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\testcasemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\testcasemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\teachermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\teachermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\studentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\studentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\problemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\problemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\viewenrollments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\viewenrollments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\studentnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\studentnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\mainweekmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\mainweekmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\maintestcasemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\maintestcasemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\mainproblemsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\mainproblemsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\maincoursesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\maincoursesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\maincourseandcourseofferingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\maincourseandcourseofferingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\maincourseandcourseofferingandteacherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\maincourseandcourseofferingandteacherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\maincontentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\maincontentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\studentavailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\studentavailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\enrolledcourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\enrolledcourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\courseofferingmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\courseofferingmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\contentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\contentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\enrolledcourseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\enrolledcourseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\notificationapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\notificationapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\compilerclasses\\cppclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\compilerclasses\\cppclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\solveproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\solveproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,11 +158,19 @@
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\solveproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\compilerclasses\\cppclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\compilerclasses\\cppclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\maincourseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\maincourseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|d:\\fyp\\intellitutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\teachercreatecourseoffering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\teachercreatecourseoffering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\teachercreatecourseoffering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -35,20 +190,8 @@
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\teachercoursecontent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\viewenrollments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\viewenrollments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\viewenrollmentsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\viewenrollmentsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -57,14 +200,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\studentmycourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\studentmycourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\enrolledcourseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\enrolledcourseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\notificationapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\notificationapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\courseofferingapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,20 +230,8 @@
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\studentavailablecourseweek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\teachersidedashbaord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\teachersidedashbaord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\studentside\\studentenrolledcourseweek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -123,10 +246,6 @@
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\dashboardclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\enrolledcourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\enrolledcourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\teachercourseweek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\teacherside\\teachercourseweek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -139,28 +258,8 @@
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\studentside\\studentenrolledcoursecontent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\maincourseandcourseofferingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\maincourseandcourseofferingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\model\\maincourseandcourseofferingandteacherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\model\\maincourseandcourseofferingandteacherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\studentapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\studentapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\backendapi\\teacherapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\backendapi\\teacherapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|solutionrelative:intelli-tutor-frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{202DAC56-C38D-4953-9621-EA4CF7249A36}|intelli-tutor-frontend\\intelli-tutor-frontend.csproj|D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\teacherside\\teacheraddweekcontent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -182,7 +281,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -190,321 +289,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TeacherCreateCourseOffering.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
-              "ViewState": "AQIAAOkAAAAARJmZmRkVwPwAAAAOAAAA",
+              "DocumentIndex": 16,
+              "Title": "TestCaseModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\TestCaseModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\TestCaseModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\TestCaseModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\TestCaseModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T19:08:53.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "SuperAdminCourseContent.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
-              "ViewState": "AQIAAPoAAABQMjMzM/MqwB4BAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\UserApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\UserApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\UserApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\UserApi.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAQwE0AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T13:54:36.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "cppClass.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
-              "ViewState": "AQIAACABAAAAoJmZmZnZv9QAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T15:31:08.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SolveProblem.cs [Design]",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs [Design]",
-              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T19:15:14.035Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SolveProblem.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
-              "ViewState": "AQIAAOsAAADA/v///18zwPUAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T15:31:58.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ViewEnrollments.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
-              "ViewState": "AQIAAEsAAAAAMTMzMzMuwB4AAABtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T17:01:23.039Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TeacherCourseContent.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
-              "ViewState": "AQIAAEABAAAA/P////8vwFMBAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.868Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProblemApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
-              "ViewState": "AQIAAA8AAACQzMzMzMw5wC4AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T17:44:39.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainProblemApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T17:45:45.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Dashboard.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
-              "ViewState": "AQIAAAUAAAAA/f/////3vxYAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T16:44:34.539Z"
+              "WhenOpened": "2024-05-26T17:40:48.548Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ContentApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
-              "ViewState": "AQIAABIAAACAMjMzMzMvwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T16:54:29.843Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ViewEnrollmentsApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
-              "ViewState": "AQIAAAYAAABAy8zMzMwqwA4AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T13:29:39.331Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "StudentMyCourse.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAABQvRgAAAB6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T17:03:31.953Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EnrolledCourseApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
-              "ViewState": "AQIAAEUAAAAAYGZmZmbmv1EAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T16:38:29.103Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Dashboard.cs [Design]",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs [Design]",
-              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T15:15:15.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "NotificationApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
-              "ViewState": "AQIAACIAAAAANTMzMzMXwDkAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T13:40:44.581Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CourseOfferingApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
-              "ViewState": "AQIAAD8AAAAAyszMzMwmwFcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T13:51:30.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SuperAdminCourseWeek.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAjwIQAAABwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.876Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "SuperAdminViewProblem.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
-              "ViewState": "AQIAAIMAAAAA/v////8iwJ4AAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T17:40:04.945Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "TeacherViewProblem.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
-              "ViewState": "AQIAAIUAAADAYmZmZmYowJsAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T17:01:17.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TeacherMyCourses.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
-              "ViewState": "AQIAAGMAAAAAzMzMzMwvwG4AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.616Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "StudentAvailableCourseWeek.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
-              "ViewState": "AQIAABcAAACApczMzMw5wCsAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.872Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "TeacherAvailableCourse.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
-              "ViewState": "AQIAACkAAACANDMzMzMwwF8AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.862Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "TeacherSideDashbaord.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
-              "ViewState": "AQIAABIAAACwzMzMzMwiwBoAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Registerform.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Registerform.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Registerform.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Registerform.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\Registerform.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAALYAAABqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T10:43:29.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
               "Title": "Registerform.cs [Design]",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Registerform.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\Registerform.cs",
@@ -515,42 +312,425 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "StudentEnrolledCourseWeek.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
-              "ViewState": "AQIAAOIAAABgmZmZmZkhwBMBAABCAAAA",
+              "DocumentIndex": 3,
+              "Title": "Registerform.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Registerform.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Registerform.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Registerform.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Registerform.cs",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAswKMAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T11:40:27.875Z"
+              "WhenOpened": "2024-02-18T10:43:29.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ClassDiagram1.cd",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\ClassDiagram1.cd",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\ClassDiagram1.cd",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\ClassDiagram1.cd",
-              "RelativeToolTip": "intelli-tutor-frontend\\ClassDiagram1.cd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2024-02-15T18:37:49.599Z"
+              "DocumentIndex": 6,
+              "Title": "Loginform.cs [Design]",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Loginform.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs [Design]",
+              "RelativeToolTip": "intelli-tutor-frontend\\Loginform.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T14:39:55.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Loginform.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Loginform.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Loginform.cs",
+              "ViewState": "AQIAAD8AAAAAIjMzMzMPwFAAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T14:34:54.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StudentApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
+              "ViewState": "AQIAAAYAAAAALTMzMzMLwCIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T19:04:25.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\UserApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\UserApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\UserApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\UserApi.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAADgv00AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T13:54:36.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WeekModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\WeekModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\WeekModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\WeekModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\WeekModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:41:24.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SolveProblem.cs.txt",
+              "DocumentMoniker": "C:\\Users\\SHANZA\\Desktop\\SolveProblem.cs.txt",
+              "ToolTip": "C:\\Users\\SHANZA\\Desktop\\SolveProblem.cs.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-05-27T04:26:57.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Analytics.txt",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Analytics\\Analytics.txt",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Analytics\\Analytics.txt",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Analytics\\Analytics.txt",
+              "RelativeToolTip": "intelli-tutor-frontend\\Analytics\\Analytics.txt",
+              "ViewState": "AQIAAEAAAAAAbGZmZiYgwE4BAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-05-27T04:27:36.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "QuestionForm.cs [Design]",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\QuestionForm.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\QuestionForm.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\QuestionForm.cs [Design]",
+              "RelativeToolTip": "intelli-tutor-frontend\\QuestionForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T18:02:31.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UniversityModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\UniversityModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\UniversityModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\UniversityModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\UniversityModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:50.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "useless.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\useless.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\useless.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\useless.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\useless.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:51.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dashboard.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAvwCgAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T16:44:34.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserAndTeacherDTO.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\UserAndTeacherDTO.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\UserAndTeacherDTO.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\UserAndTeacherDTO.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\UserAndTeacherDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:53.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\UserModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\UserModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\UserModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:56.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ViewEnrollmentsDTO.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\ViewEnrollmentsDTO.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\ViewEnrollmentsDTO.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\ViewEnrollmentsDTO.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\ViewEnrollmentsDTO.cs",
+              "ViewState": "AQIAAAUAAABAZWZmZmYkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:41:19.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TeacherModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\TeacherModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\TeacherModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\TeacherModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\TeacherModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:47.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "StudentModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\StudentModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\StudentModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\StudentModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\StudentModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:45.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProblemModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\ProblemModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\ProblemModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\ProblemModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\ProblemModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:40:43.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "StudentNotification.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentNotification.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentNotification.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentNotification.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentNotification.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAiwIEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:39:21.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\Notification.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\Notification.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\Notification.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\Notification.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:39:11.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MainWeekModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainWeekModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainWeekModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainWeekModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainWeekModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:39:10.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MainTestCaseModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainTestCaseModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainTestCaseModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainTestCaseModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainTestCaseModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:39:08.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MainProblemsModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainProblemsModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainProblemsModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainProblemsModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainProblemsModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:39:06.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ViewEnrollments.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\ViewEnrollments.cs",
+              "ViewState": "AQIAAPIAAAAAAAAAAAAiwAUBAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T17:01:23.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MainCoursesModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCoursesModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainCoursesModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCoursesModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainCoursesModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:39:03.915Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
-              "Title": "DashboardClass.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Title": "MainContentModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainContentModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainContentModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainContentModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainContentModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T16:57:10.494Z"
+              "WhenOpened": "2024-05-26T17:38:54.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CourseOfferingModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\courseOfferingModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\courseOfferingModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\courseOfferingModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\courseOfferingModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:38:17.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MainCourseAndCourseOfferingAndTeacherDTO.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
+              "ViewState": "AQIAAAIAAAAAMjMzMzMbwAUAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T19:51:36.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MainCourseAndCourseOfferingDTO.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
+              "ViewState": "AQIAAAIAAABgZmZmZmYywBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T17:18:49.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "EnrolledCourseApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\EnrolledCourseApi.cs",
+              "ViewState": "AQIAAAQAAAAAMTMzMzMdwBIAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-15T16:38:29.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "MainCourseApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\MainCourseApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\MainCourseApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\MainCourseApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\MainCourseApi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T11:09:47.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "NotificationApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\NotificationApi.cs",
+              "ViewState": "AQIAABkAAABA/f////8DwCkAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T13:40:44.581Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 30,
+              "Title": "StudentAvailableCourse.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentAvailableCourse.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentAvailableCourse.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentAvailableCourse.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentAvailableCourse.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAiwG8AAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:08:13.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "cppClass.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\compilerClasses\\cppClass.cs",
+              "ViewState": "AQIAAIQAAAAAZ2ZmZmYuwIwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-15T15:31:08.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "SolveProblem.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs*",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs*",
+              "ViewState": "AQIAAN8AAABAZWZmZmYpwPkAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-15T15:31:58.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "EnrolledCourses.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\enrolledCourses.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\enrolledCourses.cs",
@@ -562,7 +742,280 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
+              "Title": "SolveProblem.cs [Design]",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\SolveProblem.cs [Design]*",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\SolveProblem.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T19:15:14.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Program.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Program.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Program.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T10:28:21.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ContentModel.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\ContentModel.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\ContentModel.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\ContentModel.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\Model\\ContentModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T10:28:29.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "TeacherCourseContent.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherCourseContent.cs",
+              "ViewState": "AQIAAEABAAAA/P////8vwFMBAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "ProblemApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\ProblemApi.cs",
+              "ViewState": "AQIAAA8AAACQzMzMzMw5wC4AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T17:44:39.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "TeacherAvailableCourse.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherAvailableCourse.cs",
+              "ViewState": "AQIAAAgAAAAAPDMzMzMbwF8AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "SuperAdminCourseContent.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseContent.cs",
+              "ViewState": "AQIAAPoAAABQMjMzM/MqwB4BAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "TeacherCreateCourseOffering.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherCreateCourseOffering.cs",
+              "ViewState": "AQIAAOkAAAAARJmZmRkVwPwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T19:08:53.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "MainProblemApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\MainProblemApi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T17:45:45.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ContentApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\ContentApi.cs",
+              "ViewState": "AQIAABIAAACAMjMzMzMvwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T16:54:29.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ViewEnrollmentsApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\ViewEnrollmentsApi.cs",
+              "ViewState": "AQIAAAYAAABAy8zMzMwqwA4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T13:29:39.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "StudentMyCourse.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentMyCourse.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAABQvRgAAAB6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T17:03:31.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Dashboard.cs [Design]",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\Dashboard.cs [Design]",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:15:15.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "CourseOfferingApi.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\courseOfferingapi.cs",
+              "ViewState": "AQIAAD8AAAAAyszMzMwmwFcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T13:51:30.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "SuperAdminCourseWeek.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\SuperAdminCourseWeek.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAjwIQAAABwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "SuperAdminViewProblem.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\SuperAdminViewProblem.cs",
+              "ViewState": "AQIAAIMAAAAA/v////8iwJ4AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T17:40:04.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "TeacherViewProblem.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherViewProblem.cs",
+              "ViewState": "AQIAAIUAAADAYmZmZmYowJsAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T17:01:17.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "TeacherMyCourses.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\teacherMyCourses.cs",
+              "ViewState": "AQIAAGMAAAAAzMzMzMwvwG4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "StudentAvailableCourseWeek.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentAvailableCourseWeek.cs",
+              "ViewState": "AQIAABcAAACApczMzMw5wCsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "TeacherSideDashbaord.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\TeacherSideDashbaord.cs",
+              "ViewState": "AQIAABIAAACwzMzMzMwiwBoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "StudentEnrolledCourseWeek.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseWeek.cs",
+              "ViewState": "AQIAAOIAAABgmZmZmZkhwBMBAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T11:40:27.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "ClassDiagram1.cd",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\ClassDiagram1.cd",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\ClassDiagram1.cd",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\ClassDiagram1.cd",
+              "RelativeToolTip": "intelli-tutor-frontend\\ClassDiagram1.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2024-02-15T18:37:49.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "DashboardClass.cs",
+              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
+              "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
+              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
+              "RelativeToolTip": "intelli-tutor-frontend\\TeacherSide\\DashboardClass.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T16:57:10.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
               "Title": "TeacherCourseWeek.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherCourseWeek.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherCourseWeek.cs",
@@ -574,7 +1027,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 62,
               "Title": "MenuStripCourse.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\MenuStripCourse.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\MenuStripCourse.cs",
@@ -586,7 +1039,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 63,
               "Title": "StudentEnrolledCourseContent.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseContent.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\StudentSide\\StudentEnrolledCourseContent.cs",
@@ -598,66 +1051,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "MainCourseAndCourseOfferingAndTeacherDTO.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingAndTeacherDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T19:51:36.032Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "MainCourseAndCourseOfferingDTO.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\Model\\MainCourseAndCourseOfferingDTO.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T17:18:49.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Loginform.cs [Design]",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Loginform.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs [Design]",
-              "RelativeToolTip": "intelli-tutor-frontend\\Loginform.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T14:39:55.066Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Loginform.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\Loginform.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\Loginform.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\Loginform.cs",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAcwHcAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T14:34:54.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "StudentApi.cs",
-              "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
-              "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
-              "ToolTip": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
-              "RelativeToolTip": "intelli-tutor-frontend\\BackendApi\\StudentApi.cs",
-              "ViewState": "AQIAABgAAAAAVjMzMzPjvygAAABlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T19:04:25.599Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 64,
               "Title": "TeacherApi.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\BackendApi\\TeacherApi.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\BackendApi\\TeacherApi.cs",
@@ -669,7 +1063,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 65,
               "Title": "TeacherAddWeekContent.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherAddWeekContent.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherAddWeekContent.cs",
@@ -681,7 +1075,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 66,
               "Title": "TeacherAddWeek.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\TeacherSide\\TeacherAddWeek.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\TeacherSide\\TeacherAddWeek.cs",
@@ -693,7 +1087,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 67,
               "Title": "CurrentUser.cs",
               "DocumentMoniker": "D:\\FYP\\IntelliTutor\\intelli-tutor-frontend\\intelli-tutor-frontend\\CurrentUser.cs",
               "RelativeDocumentMoniker": "intelli-tutor-frontend\\CurrentUser.cs",

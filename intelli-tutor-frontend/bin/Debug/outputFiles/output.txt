@@ -1,4 +1,1 @@
-D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\files\cplus.cpp: In function 'void calculateFactorial(int)':
-D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\bin\Debug\files\cplus.cpp:6:1: error: expected ';' before '}' token
- }
- ^
+5

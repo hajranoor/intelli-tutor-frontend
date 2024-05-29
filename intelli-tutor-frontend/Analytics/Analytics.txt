@@ -1,0 +1,338 @@
+﻿using FontAwesome.Sharp;
+using intelli_tutor_frontend.BackendApi;
+using intelli_tutor_frontend.compilerClasses;
+using intelli_tutor_frontend.Model;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
+using ScintillaNET;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using System.Collections.Immutable;
+using System.Diagnostics;
+using System.Reflection.Emit;
+using static ScintillaNET.Style;
+using TinCan;
+using TinCan.LRSResponses;
+
+
+namespace intelli_tutor_frontend.StudentSide
+{
+    public partial class SolveProblem : Form
+    {
+        private RemoteLRS lrs;
+
+
+
+        private ProblemModel problem;
+        private List<TestCaseModel> testcaseList;
+        int content_id;
+        ProblemApi problemApi = new ProblemApi();
+
+
+        DateTime startTime;
+        DateTime endTime;
+        float errorCount;
+        float passCount;
+        float totalTestCases;
+
+
+        float runCount;
+        float passRate;
+        float errorRate;
+
+        //int compilationCount = 0;
+
+
+        private bool isSidebarCollapsed = false;
+        private int sidebarStep = 20;
+        private int originalSidebarWidth;
+        private int originalMainPanelWidth;
+
+        private void InitializeLRS()
+        {
+            lrs = new RemoteLRS(
+                "https://watershedlrs.com/api/organizations/1234/lrs/",
+                "intelli_tutor",
+                "tutor123"
+            );
+        }
+
+
+        public SolveProblem(int content_id)
+        {
+            InitializeComponent();
+            InitializeCodeEditor();
+            loadIcons();
+            this.content_id = content_id;
+            originalSidebarWidth = sidePanel.Width;
+            originalMainPanelWidth = mainPanel.Width;
+            selectLanguage.BackColor = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+        }
+
+        private void InitializeCodeEditor()
+        {
+            codeEditor.Styles[Style.Default].Font = "Consolas"; // Set the font
+            codeEditor.Margins[0].Width = 20; // Set the margin for line numbers
+
+            //// Enable syntax highlighting (You can set a specific programming language here)
+            codeEditor.Lexer = Lexer.Cpp;
+            codeEditor.IndentWidth = 4;
+            codeEditor.UseTabs = false;
+            codeEditor.Styles[Style.Default].Size = 10;
+
+            codeEditor.Styles[Style.Cpp.Default].ForeColor = Color.Black;
+            codeEditor.Styles[Style.Cpp.CommentDocKeyword].ForeColor = Color.Blue;
+            codeEditor.Styles[Style.Cpp.Comment].ForeColor = Color.Green;
+            codeEditor.Styles[Style.Cpp.String].ForeColor = Color.Red;            // You can set other options and styles for syntax highlighting and indentation as needed.
+        }
+
+        private void loadCompilers()
+        {
+            string path = Path.Combine(Application.StartupPath, "compilersFolder");
+
+            string[] CompilersName = Directory.GetDirectories(path);
+            foreach (string compiler in CompilersName)
+            {
+                string displayName = Path.GetFileName(compiler);
+                selectLanguage.Items.Add(displayName);
+                selectLanguage.SelectedIndex = 0;
+            }
+        }
+
+        private void loadStarterCode()
+        {
+            this.codeEditor.Text = "";
+            this.codeEditor.Text = problem.starter_code;
+        }
+
+        private async void SolveProblem_Load(object sender, EventArgs e)
+        {
+            DateTime currentTimestamp = DateTime.Now;
+            startTime = currentTimestamp;
+            runCount = 0;
+            errorCount = 0;
+            passCount = 0;
+
+
+            this.problem = await problemApi.getproblemData(content_id);
+            loadCompilers();
+            loadStarterCode();
+            TestCasesApi testCasesApi = new TestCasesApi();
+            testcaseList = await testCasesApi.getAllTestCasesData(problem.problem_id);
+            totalTestCases = testcaseList.Count;
+
+            questionBox.SelectionStart = questionBox.TextLength;
+            questionBox.SelectionFont = new Font(questionBox.Font.FontFamily, 18, FontStyle.Bold);
+            questionBox.AppendText(problem.problem_name + "\n");
+
+            questionBox.SelectionFont = questionBox.Font;
+            questionBox.AppendText(problem.description + "\n" + "\n" + "");
+
+            int count = 1;
+            foreach (var item in testcaseList)
+            {
+                questionBox.SelectionFont = new Font(questionBox.Font.FontFamily, 16, FontStyle.Bold);
+                questionBox.AppendText("Test Case " + count + ": " + "\n" + "\n");
+
+                questionBox.SelectionFont = new Font(questionBox.Font.FontFamily, 12, FontStyle.Bold);
+                questionBox.AppendText("Input Data: ");
+
+                questionBox.SelectionFont = questionBox.Font;
+                foreach (var inputItem in item.input_data)
+                {
+                    questionBox.AppendText(inputItem + ", ");
+                }
+                questionBox.AppendText("\n");
+
+                questionBox.SelectionFont = new Font(questionBox.Font.FontFamily, 12, FontStyle.Bold);
+                questionBox.AppendText("Output Data: ");
+
+                questionBox.SelectionFont = questionBox.Font;
+                foreach (var outputItem in item.output_data)
+                {
+                    questionBox.AppendText(outputItem + ", ");
+                }
+                questionBox.AppendText("\n");
+
+                count++;
+            }
+
+            questionBox.SelectAll();
+            questionBox.SelectionBackColor = questionBox.BackColor;
+            questionBox.SelectionIndent = 10;
+            questionBox.SelectionRightIndent = 10;
+            questionBox.SelectionStart = 0;
+            questionBox.DeselectAll();
+            questionBox.WordWrap = true;
+        }
+
+        public void loadIcons()
+        {
+            this.barIcon.Image = IconChar.Bars.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+            this.resetCode.Image = IconChar.ArrowRightRotate.ToBitmap(color: Color.White, size: 40, rotation: 0, flip: FlipOrientation.Normal);
+
+        }
+        private void barIcon_Click(object sender, EventArgs e)
+        {
+            this.sideBarTimer.Start();
+        }
+
+        private void sideBarTimer_Tick(object sender, EventArgs e)
+        {
+            if (isSidebarCollapsed)
+            {
+                if (sidePanel.Width < originalSidebarWidth)
+                {
+                    sidePanel.Width += sidebarStep;
+
+
+                    tableLayoutPanel1.Controls.Clear();
+                    tableLayoutPanel1.BackColor = Color.DarkSlateBlue;
+                    tableLayoutPanel1.ColumnCount = 2;
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+                    tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+                    tableLayoutPanel1.Controls.Add(this.barIcon, 1, 0);
+                    tableLayoutPanel1.RowCount = 1;
+                    tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+                    tableLayoutPanel1.TabIndex = 0;
+                    tableLayoutPanel1.Width += sidebarStep;
+
+                    mainPanel.Width -= sidebarStep;
+                    mainPanel.Location = new Point(mainPanel.Location.X + sidebarStep, mainPanel.Location.Y);
+                }
+                else
+                {
+                    sideBarTimer.Stop();
+                    isSidebarCollapsed = false;
+                }
+            }
+            else
+            {
+                if (sidePanel.Width > 100)
+                {
+                    sidePanel.Width -= sidebarStep;
+                    mainPanel.Width += sidebarStep;
+
+                    mainPanel.Location = new Point(mainPanel.Location.X - sidebarStep, mainPanel.Location.Y);
+                }
+                else
+                {
+                    sideBarTimer.Stop();
+                    isSidebarCollapsed = true;
+
+
+                }
+                if (sidePanel.Width <= 100)
+                {
+                    tableLayoutPanel1.Controls.Clear();
+                    tableLayoutPanel1.RowCount = 1;
+                    tableLayoutPanel1.ColumnCount = 1;
+                    tableLayoutPanel1.Controls.Add(this.barIcon);
+                    tableLayoutPanel1.Width = 100;
+                }
+            }
+
+        }
+        private void resetCode_Click(object sender, EventArgs e)
+        {
+            loadStarterCode();
+        }
+
+        private void runProgram_Click(object sender, EventArgs e)
+        {
+
+                        var actor = new Agent();
+            actor.mbox = "mailto:hajra@gmail.com";
+            actor.name = "hajra noor";
+
+            var verb = new Verb();
+            verb.id = new Uri("http://adlnet.gov/expapi/verbs/experienced");
+            verb.display = new LanguageMap();
+            verb.display.Add("en-US", "experienced");
+
+            var activity = new Activity();
+            activity.id = new Uri("http://example.com/activities/compilation");
+            activity.definition = new ActivityDefinition();
+            activity.definition.name = new LanguageMap();
+            activity.definition.name.Add("en-US", "Compilation Button Press");
+            activity.definition.description = new LanguageMap();
+            activity.definition.description.Add("en-US", "The student pressed the compilation button.");
+
+            var statement = new Statement();
+            statement.actor = actor;
+            statement.verb = verb;
+            statement.target = activity;
+
+            try
+            {
+                var lrsResponse = lrs.SaveStatement(statement);
+                if (lrsResponse.success)
+                {
+                    MessageBox.Show("Statement sent successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to send statement: " + lrsResponse.errMsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error sending statement: " + ex.Message);
+            }
+
+
+
+
+            runCount++;
+            outputBox.Text = "";
+            string path = Path.Combine(Application.StartupPath, "compilersFolder");
+            if (selectLanguage.Text == "c++")
+            {
+                int count = 0;
+                foreach (TestCaseModel tc in testcaseList)
+                {
+                    count++;
+                    string studentCode = codeEditor.Text;
+                    cppClass cppClassObj = new cppClass(path, studentCode);
+                    string[] data = { "yes", "2" };
+                    bool passTestCase = cppClassObj.compileWithTestCases(studentCode, problem.regex, tc.input_data, tc.output_data, outputBox, count, ref errorCount, ref passCount);
+                    if (passTestCase == false)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void codeEditor_TextChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("this is run count" + runCount);
+            MessageBox.Show("this is error count" + errorCount);
+            MessageBox.Show("this was start time" + startTime);
+            MessageBox.Show("this is totla test case length" + totalTestCases);
+            MessageBox.Show("this is pass count" + passCount);
+            passRate = passCount / (totalTestCases * runCount);
+            errorRate = errorCount / runCount;
+            MessageBox.Show("this is passRate" + passRate);
+            MessageBox.Show("this is errorRate" + errorRate);
+        }
+    }
+}

@@ -109,6 +109,7 @@ namespace intelli_tutor_frontend.StudentSide
                             enrolledCourses.student_id = currentLoginUser.StudentModel.student_id; //change it
                             enrolledCourses.grade = "null";
                             enrolledCourses.status = "Disapprove";
+                            enrolledCourses.enrolled_at = DateTime.UtcNow;
                             string message = await enrolledCourseApi.makeEnrollmentInCourse(enrolledCourses);
                             MessageBox.Show(message, " Message ");
 

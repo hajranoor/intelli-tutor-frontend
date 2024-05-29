@@ -1,9 +1,9 @@
 #include <iostream>
-using namespace std;
-void calculateFactorial(int n = 2)
-{
-    cout
+
+int add(int a = 1, int b = 9) {
+std::cout<<5;
 }
 int main() {
-    calculateFactorial();
+    add();
+    return 0;
 }
