@@ -1,14 +1,11 @@
 #include <iostream>
 using namespace std;
-void calculateFactorial(int n = 7)
-{
-    int factorial = 1;
-for (int i = 1; i <=n; i++)
-    {
-        factorial *= i;
-    }
-    std::cout << factorial << std::endl;
+int add(int a = 2, int b = 3) {
+int result;
+result = a + b;
+cout<<result;
 }
 int main() {
-    calculateFactorial();
+    add();
+    return 0;
 }

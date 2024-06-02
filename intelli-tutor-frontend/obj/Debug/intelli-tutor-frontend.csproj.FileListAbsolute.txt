@@ -842,3 +842,4 @@ D:\FYP\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-
 D:\FYP\frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.chartDemo.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.chartDemo.resources
 D:\FYP\IntelliTutor\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli-.531CA781.Up2Date
+C:\Users\Laiba\Documents\GitHub\intelliTutor-frontend\intelli-tutor-frontend\intelli-tutor-frontend\obj\Debug\intelli_tutor_frontend.chartDemo.resources

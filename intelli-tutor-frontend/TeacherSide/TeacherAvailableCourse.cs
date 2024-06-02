@@ -25,6 +25,7 @@ namespace intelli_tutor_frontend.TeacherSide
         {
             formName.Text = "Available Courses";
             availableCoursesList = await mcourseApi.getAvailableCourse();
+            Console.WriteLine(availableCoursesList.Count.ToString());
             foreach (var item in availableCoursesList)
             {
                 Panel outerPanel = new Panel();
