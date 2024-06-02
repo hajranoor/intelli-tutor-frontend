@@ -14,6 +14,7 @@ namespace intelli_tutor_frontend.TeacherSide
 {
     internal class ViewEnrollments
     {
+        CurrentUser currentLoginUser = CurrentUser.Instance;
 
         List<ViewEnrollmentsDTO> enrollmentList;
 
@@ -27,7 +28,7 @@ namespace intelli_tutor_frontend.TeacherSide
         {
             flowLayoutPanel.Controls.Clear();
             formName.Text = "Enrollments";
-            enrollmentList = await Viewenrollments.getAllEnrollments(1,myCourse.course_offering_id);
+            enrollmentList = await Viewenrollments.getAllEnrollments(currentLoginUser.TeacherModel.teacher_id,myCourse.course_offering_id);
 
             TableLayoutPanel mainPanel = new TableLayoutPanel();
             flowLayoutPanel.AutoScroll = false;
@@ -258,6 +259,7 @@ namespace intelli_tutor_frontend.TeacherSide
                             notification.status = "unread";
                             notification.title = "Disapproval of Enrolment Request";
                             notification.description = "Your enrollment request in " + item.course_code + " " + myCourse.course_name + " has been disapproved by " + currentLoginUser.User.username;
+                            notification.time_stamp = DateTime.UtcNow;
                             if(await notificationApi.insertNotification(notification))
                             {
                                 MessageBox.Show("Disapproved Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -1,11 +1,9 @@
 #include <iostream>
-using namespace std;
-int add(int a = 2, int b = 3) {
-int result;
-result = a + b;
-cout<<result;
+
+int add(int a = 1, int b = 9) {
+std::cout<<5;
 }
 int main() {
     add();
-    return 0;
+    return 0;
 }

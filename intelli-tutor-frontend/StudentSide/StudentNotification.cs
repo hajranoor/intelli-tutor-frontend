@@ -126,7 +126,7 @@ namespace intelli_tutor_frontend.StudentSide
                         notificationDate.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                         notificationDate.Dock = DockStyle.Fill;
                         notificationDate.Margin = new Padding(20, 10, 20, 10);
-                        notificationDate.Text = notification.time_stamp.Date.ToString();
+                        notificationDate.Text = notification.time_stamp.ToString("yyyy-MM-dd HH:mm:ss");
                         notificationDate.TextAlign = ContentAlignment.MiddleRight; // Align text to the left
                         notificationDate.Font = new Font("Segoe UI", 12F);
                         notificationDate.Height = 30;

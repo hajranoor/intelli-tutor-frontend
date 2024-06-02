@@ -24,6 +24,8 @@ namespace intelli_tutor_frontend
         StudentApi studentApi = new StudentApi();
         UniversityApi universityApi = new UniversityApi();
         List<UserModel> userList;
+
+        CurrentUser currentUser = CurrentUser.Instance;
         public Registerform()
         {
             InitializeComponent();
@@ -102,9 +104,12 @@ namespace intelli_tutor_frontend
                                     t.designation = designationComboBox.Text;
                                     MessageBox.Show(await teacherApi.insertTeacherData(t));
                                     this.Hide();
-
-                                    TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
-                                    teacherSideDashbaord.Show();
+                                    Loginform loginform = new Loginform();
+                                    loginform.Show();
+                                    //currentUser.User = u;
+                                    //currentUser.TeacherModel = t;
+                                    //TeacherSideDashbaord teacherSideDashbaord = new TeacherSideDashbaord();
+                                    //teacherSideDashbaord.Show();
                                 }
                                 else
                                 {
@@ -142,7 +147,6 @@ namespace intelli_tutor_frontend
                                 u.google_verification = true;
                                 u.user_role = roleComboBox.Text;
                                 int newUserId = await userApi.insertUser(u);
-                                MessageBox.Show(newUserId.ToString());
                                 if (newUserId != -1)
                                 {
                                     StudentModel s = new StudentModel();
@@ -151,12 +155,17 @@ namespace intelli_tutor_frontend
                                     s.section_student = sectionComboBox.Text;
                                     s.registration_no = regNo.Text;
                                     s.university_id = await universityApi.getUniversityId(universityComboBox.Text);
+
+
                                     
                                     MessageBox.Show(await studentApi.insertStudentData(s));
                                     this.Hide();
-
-                                    Dashboard dashboard = new Dashboard();
-                                    dashboard.Show();
+                                    Loginform loginform = new Loginform();
+                                    loginform.Show();
+                                    //currentUser.User = u;
+                                    //currentUser.StudentModel = s;
+                                    //Dashboard dashboard = new Dashboard();
+                                    //dashboard.Show();
                                 }
                                 else
                                 {

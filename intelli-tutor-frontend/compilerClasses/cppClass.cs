@@ -30,11 +30,7 @@ namespace intelli_tutor_frontend.compilerClasses
 
         public cppClass(string folderPath, string codeText) 
         {
-            //using (StreamWriter sw = new StreamWriter(codePath))
-            //{
-                //sw.WriteLine(codeText);
-            //}
-            Console.WriteLine("yes, u got called");
+            
 
             filePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "files\\cplus.cpp");
              path = Path.GetDirectoryName(filePath);
@@ -55,14 +51,12 @@ namespace intelli_tutor_frontend.compilerClasses
             string command = "g++";
             string outputExePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "output.exe");
 
-            //string arguments = $"\"{filePath}\" -o \"{path}\\output.exe\"";
             string arguments = $"\"{filePath}\" -o \"{outputExePath}\"";
             compilerPath = Path.Combine(System.Windows.Forms.Application.StartupPath, "compilersFolder\\c++\\MinGW\\bin\\g++.exe");
 
             ProcessStartInfo processInfo = new ProcessStartInfo(compilerPath, arguments);
 
             Process compileProcess = new Process();
-            //System.Windows.Forms.MessageBox.Show(compileProcess.StartInfo.FileName);
             compileProcess.StartInfo = processInfo;
             compileProcess.StartInfo.UseShellExecute = false;
             compileProcess.StartInfo.CreateNoWindow = true;
@@ -71,11 +65,7 @@ namespace intelli_tutor_frontend.compilerClasses
             compileProcess.Start();
             compileProcess.WaitForExit();
             string compilationOutput = compileProcess.StandardOutput.ReadToEnd();
-            //System.Windows.Forms.MessageBox.Show(compilationOutput, "this is compilation output");
-
             string compilationErrors = compileProcess.StandardError.ReadToEnd();
-            //System.Windows.Forms.MessageBox.Show("this is compilation errors", compilationErrors);
-
 
             if (compileProcess.ExitCode == 0)
             {
@@ -92,25 +82,15 @@ namespace intelli_tutor_frontend.compilerClasses
 
                 string output = executeProcess.StandardOutput.ReadToEnd();
                 executeProcess.WaitForExit();
-                //System.Windows.Forms.MessageBox.Show(output, "this is standard output");
                 File.WriteAllText(outputFile, output);
                 return output;
             }
             else
             {
                 File.WriteAllText(outputFile, compilationErrors);
-                //System.Windows.Forms.MessageBox.Show(compilationErrors);
                 isError = true;
                 return compilationErrors;
-
             }
-
-            //if (File.Exists(outputExePath))
-            //{
-                //File.Delete(outputExePath);
-            //}
-
-
         }
 
         public bool runCode(string studentCode, string regexPattern, string[] testCaseInput, string testCaseOutput)
@@ -158,7 +138,6 @@ namespace intelli_tutor_frontend.compilerClasses
 
         public string replaceInputData(Match match, string[] inputData)
         {
-            //System.Windows.Forms.MessageBox.Show("yes called");
 
             string parametersText = match.Groups[1].Value;
             string[] parameters = parametersText.Split(',');

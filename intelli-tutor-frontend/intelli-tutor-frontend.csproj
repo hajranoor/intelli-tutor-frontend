@@ -307,6 +307,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Analytics\Analytics.txt" />
     <Content Include="image.png" />
     <Content Include="labimage.png" />
     <None Include="Resources\add.png" />
